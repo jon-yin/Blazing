@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
+	<title>BLAZING - Team Elm</title>
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- slick.js -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<!-- popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- source sans pro -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<body class="bg-dark">
+	<header></header>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<section>
+					<h2>SEARCH RESULTS: <span id="keyword-title"></span></h2>
+					<div style="display:none;">
+						<div>
+							<h4 class="section-header">Movies</h4>
+						</div>
+
+						<div>
+							<h4 class="section-header">TV</h4>
+						</div>
+
+						<div>
+							<h4 class="section-header">Celebrities</h4>
+						</div>
+
+						<div>
+							<h4 class="section-header">Critics</h4>
+						</div>
+					</div>
+
+					<div>
+						No results found!
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+
+<script src="./js/main.js"></script>
+<script src="./js/get-query-string.js"></script>
+<script>
+		var browseData = getDataFromQueryString();
+		document.getElementById("keyword-title").textContent = browseData["keyword"];
+</script>
+
+</html>

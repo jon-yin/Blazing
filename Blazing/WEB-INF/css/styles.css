@@ -1,0 +1,249 @@
+* {
+	border-radius: 0 !important;
+}
+html {
+	font-size: 14px;
+	height: 100%;
+}
+body{
+	height: 100%;
+	background-attachment: fixed;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+body > div.container{
+	flex: 1 0 auto;
+}
+footer{
+	flex-shrink: 0;
+}
+.nav-link {
+	color: #6c757d;
+}
+a {
+	color: #6c757d;
+	text-decoration: none!important;
+}
+.navbar .nav-link{
+	color: white!important;
+}
+.nav-pills a.active{
+	background-color: #aaaaaa!important;
+}
+a:hover{
+	color: #aaaaaa!important;
+}
+.nav-pills a.active:hover{
+	color: #ffffff!important;
+}
+/*.cover-image{
+	background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url('https://resizing.flixster.com/RRqugkGjsRsIG361g_cgwE7fIE4=/740x290/v1.bjsxODQ5MTU0O2o7MTc2NjE7MTIwMDsyMDQ4Ozg5MQ');
+	background-size: auto;
+	background-repeat: no-repeat;
+	height: 290px;
+}*/
+.image {
+	max-height: 200px;
+	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.image.profile {
+	max-width: 200px;
+	height: auto;
+}
+
+.episode-list{
+	padding: 15px;
+}
+.episode-list .episode{
+	display: flex;
+	padding-bottom: 10px;
+}
+
+/*section*/
+section {
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: white;
+	color: black;
+}
+section .section-header{
+	background-color: #66707a!important;
+	color: white;
+	text-align: center;
+	/*font-size: 20px;*/
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+section .section-carousel{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.section-carousel .section-carousel-item{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 0;
+}
+
+/*responsiveness of entire screen*/
+@media (min-width: 576px){
+	.container {
+		max-width: 560px;
+	}
+	.cover-image{
+		background-position: center;
+	}
+}
+@media (min-width: 768px){
+	.container {
+		max-width: 750px;
+	}
+/*	#right-sidebar{
+		width: 300px;
+	}
+	#left-sidebar{
+		width: 300px;
+	}*/
+	.sidebar{
+		width: 300px;
+	}
+}
+@media (min-width: 995px){
+	.container {
+		max-width: 980px;
+	}
+}
+@media (min-width: 1200px){
+	.container {
+		max-width: 1200px;
+	}
+	.cover-image{
+		background-position: right;
+	}
+}
+
+.main-content{
+	width: calc(100% - 300px);
+}
+.slick-prev:before{
+	color: rgb(100,100,100);
+}
+.slick-next:before{
+	color: rgb(100,100,100);
+}
+.play-button{
+	position: absolute;
+	font-size: 128px;
+	opacity: 0.5;
+	color: white;
+	left: 10px;
+	top: 48px;
+	padding-left: 25px;
+}
+.play-button:hover{
+	opacity: 1;
+}
+
+/*reviews*/
+.review {
+	margin: 25px;
+}
+.review .quote{
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+.review.audience .quote{
+	 height: 100px;
+	 overflow-y: scroll;
+}
+
+/*icon*/
+.icon {
+	background-image: url("./images/blazing-0.svg");
+	display: inline-block;
+}
+.icon.tiny {
+	height: 16px;
+	width: 16px;
+}
+.icon.tiny.ashes{
+	background-image: url("/images/blazing-0.svg");
+	background-size: cover;
+}
+.icon.tiny.burning{
+	background-image: url("/images/blazing-1.svg");
+	background-size: cover;
+}
+.icon.tiny.blazing{
+	background-image: url("/images/blazing-2.svg");
+	background-size: cover;
+}
+.icon.small {
+	height: 32px;
+	width: 32px;
+}
+.icon.small.ashes{
+	background-image: url("/images/blazing-0.svg");
+	background-size: cover;
+}
+.icon.small.burning{
+	background-image: url("/images/blazing-1.svg");
+	background-size: cover;
+}
+.icon.small.blazing{
+	background-image: url("/images/blazing-2.svg");
+	background-size: cover;
+}
+.icon.med {
+	height: 64px;
+	width: 64px;
+}
+.icon.med.ashes{
+	background-image: url("/images/blazing-0.svg");
+	background-size: cover;
+}
+.icon.med.burning{
+	background-image: url("/images/blazing-1.svg");
+	background-size: cover;
+}
+.icon.med.blazing{
+	background-image: url("/images/blazing-2.svg");
+	background-size: cover;
+}
+.icon.large {
+	height: 128px;
+	width: 128px;
+}
+.icon.large.ashes{
+	background-image: url("/images/blazing-0.svg");
+	background-size: cover;
+}
+.icon.large.burning{
+	background-image: url("/images/blazing-1.svg");
+	background-size: cover;
+}
+.icon.large.blazing{
+	background-image: url("/images/blazing-2.svg");
+	background-size: cover;
+}
+.icon.giant {
+	height: 256px;
+	width: 256px;
+}
+.icon.giant.ashes{
+	background-image: url("/images/blazing-0.svg");
+	background-size: cover;
+}
+.icon.giant.burning{
+	background-image: url("/images/blazing-1.svg");
+	background-size: cover;
+}
+.icon.giant.blazing{
+	background-image: url("/images/blazing-2.svg");
+	background-size: cover;
+}

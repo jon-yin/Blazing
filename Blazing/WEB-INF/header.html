@@ -1,0 +1,270 @@
+<div class="container-fluid px-0">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container">
+		<a class="navbar-brand" href="./home.html"><span class="icon tiny burning"></span>BLAZING</a>
+		<ul class="navbar-nav mr-auto pr-2">
+			<li class="nav-item">
+				<a class="nav-link text-secondary text-nowrap mr-auto" data-toggle="modal" data-target="#about" href="#">WHAT'S BLAZING?</a>
+			</li>
+		</ul>
+		<button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="my-2 my-md-0">
+				<div class="input-group" id="search-bar">
+					<input class="form-control form-control-dark" id="search-input" type="text" placeholder="Search...">
+					<div class="input-group-append">
+						<button class="btn btn-outline-light" id="search-button" type="submit"><i class="fa fa-search"></i></button>
+						<script>
+							$(function(){
+								$("#search-button").on("click",function(){
+									if ($("#search-input").val() != ""){
+										location.href = "./search.html?keyword=" + $("#search-input").val();
+									}
+								});
+								$("#search-input").keypress(function(e){
+									if (e.which == 13 && $(this).val() != ""){
+										location.href = "./search.html?keyword=" + $(this).val();
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+			<ul class="navbar-nav ml-auto text-nowrap small">
+				<li class="nav-item dropdown">
+					<a class="nav-link" href="./browse.html?type=all-movies">MOVIES</a>
+				</li>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link" href="./browse.html?type=all-tv">TV</a>
+				</li>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">BLAZING CRITICS</a>
+				</li>
+				<li class="nav-item">
+					<div class="d-md-flex" id="not-logged-in" style="display: none!important;">
+						<div>
+							<a class="nav-link d-inline-flex" data-toggle="modal" data-target="#signup" href="#">SIGN UP</a>
+						</div>
+						<div>
+							<a class="nav-link d-inline-flex" data-toggle="modal" data-target="#login" href="#">LOGIN</a>
+						</div>
+					</div>
+					<div class="dropdown" id="logged-in" style="display: none!important;">
+						<a class="nav-link dropdown-toggle" href="#" id="profile-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user" title="profile"></i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown">
+							<a class="dropdown-item" href="./profile.html">PROFILE</a>
+							<a class="dropdown-item" href="#">SETTINGS</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" id="logout" href="./home.html">LOGOUT</a>
+							<!-- temporary - remove once login system is implemented -->
+							<script>
+								$(function(){
+									$("#logout").click(function(){
+										document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+									});
+								});
+							</script>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+</div>
+
+<!-- ABOUT Modal -->
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="#aboutLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="aboutLabel">What's Blazing?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				The BLAZING score — based on the opinions of hundreds of film and television critics — is a trusted measurement of critical recommendation for millions of fans. It represents the percentage of professional critic reviews that are positive for a given film or television show.
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- LOGIN Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="#loginLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="loginLabel">Log In to Blazing</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="email-login">Email address</label>
+						<input type="email" class="form-control" id="email-login" placeholder="Enter email">
+						<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+					</div>
+					<div class="form-group">
+						<label for="password-login">Password</label>
+						<input type="password" class="form-control" id="password-login" placeholder="Password">
+						<small class="text-danger no-pass-alert" style="display: none;">Please enter a password</small>
+						<small class="text-danger inval-pass-alert" style="display: none;">Invalid password</small>
+					</div>
+					<button type="submit" class="btn btn-secondary" id="login-button">Login</button>
+					<!-- temporary - remove once login system is implemented -->
+					<script>
+						function getCookie(cname) {
+							var name = cname + "=";
+							var decodedCookie = decodeURIComponent(document.cookie);
+							var ca = decodedCookie.split(';');
+							for(var i = 0; i <ca.length; i++) {
+								var c = ca[i];
+								while (c.charAt(0) == ' ') {
+									c = c.substring(1);
+								}
+								if (c.indexOf(name) == 0) {
+									return c.substring(name.length, c.length);
+								}
+							}
+							return "";
+						}
+						$(function(){
+							var x = document.cookie;
+							var emailCookie = getCookie("email");
+							if (emailCookie != ""){
+								account = true;
+								$('#logged-in').show();
+								$('#not-logged-in').hide();
+							}else{
+								account = false;
+								$('#not-logged-in').show();
+								$('#logged-in').hide();
+							}
+							$("#login-button").click(function(e){
+								e.preventDefault();
+								var email = $("#email-login").val();
+								var password = $("#password-login").val();
+								// var date = new Date();
+								// date.setTime(date.getTime() + 25000);
+								// document.cookie = "email="+email+";expires="+date.toUTCString();
+								if (email == "a@a" && password == "a"){
+									document.cookie="email="+email+";password="+password;
+									location.reload();
+								}
+								else if (email != "a@a"){
+									$(".inval-user-alert").show();
+									$(".inval-pass-alert").hide();
+									$(".no-pass-alert").hide();
+								}
+								else if (password == ""){
+									$(".no-pass-alert").show();
+									$(".inval-user-alert").hide();
+									$(".inval-pass-alert").hide();
+								}
+								else if (password != "a"){
+									$(".inval-pass-alert").show();
+									$(".inval-user-alert").hide();
+									$(".no-pass-alert").hide();
+								}
+							});
+						});
+					</script>
+				</form>
+			</div>
+			<div class="modal-footer d-block text-center">
+				<div>
+					<a data-toggle="modal" data-dismiss="modal" href="#forgot-password">Forget your password?</a>
+				</div>
+				<div>
+					Want to sign up? Then <a data-toggle="modal" data-dismiss="modal" href="#signup">sign up</a>.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- SIGN UP Modal -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="#signupLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="signupLabel">Sign Up</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="d-flex">
+						<div class="form-group w-50 mr-1">
+							<label for="firstname-signup">First Name</label>
+							<input class="form-control" id="firstname-signup" placeholder="Enter first name">
+						</div>
+						<div class="form-group w-50 ml-1">
+							<label for="lastname-signup">Last Name</label>
+							<input class="form-control" id="lastname-signup" placeholder="Enter last name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email-signup">Email address</label>
+						<input type="email" class="form-control" id="email-signup" placeholder="Enter email">
+						<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+					</div>
+					<div class="form-group">
+						<label for="password-signup">Password</label>
+						<input type="password" class="form-control" id="password-signup" placeholder="Password">
+						<small class="text-danger no-pass-alert" style="display: none;">Please enter a password</small>
+						<small class="text-danger inval-pass-alert" style="display: none;">Invalid password</small>
+					</div>
+					<button type="submit" class="btn btn-secondary" id="signup-button">Sign Up</button>
+				</form>
+			</div>
+			<div class="modal-footer d-block text-center">
+				Already have an account? Then <a data-toggle="modal" data-dismiss="modal" href="#login">log in</a>.
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FORGOT PASSWORD Modal -->
+<div class="modal fade" id="forgot-password" tabindex="-1" role="dialog" aria-labelledby="#forgotpasswordLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="forgotPasswordLabel">Forgot Your Password</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Please enter your email address and we will email you a new password.
+				<!-- the rotten tomatoes forgot-your-password form accepts any argument. make sure to include a check whether an email address exists -->
+				<form>
+					<div class="form-group">
+						<label for="email-forgot">Email address</label>
+						<input type="email" class="form-control" id="email-forgot" placeholder="Enter email">
+					</div>
+					<button id="get-password" class="btn btn-secondary">Submit</button>
+					<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+					<script>
+						$(function(){
+							$("#get-password").click(function(e){
+								e.preventDefault();
+							});
+						});
+					</script>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

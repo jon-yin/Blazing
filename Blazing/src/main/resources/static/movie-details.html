@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
+	<title>BLAZING - Team Elm</title>
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- slick.js -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<!-- popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- source sans pro -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<body class="bg-dark">
+	<header></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-auto main-content">
+				<!-- <div class="w-100" style="background-color: black">
+					<a class="cover-video" href="#">
+						<div class="cover-image"></div>
+						<div class="play-button">
+							<i class="fa fa-play"></i>
+						</div>
+					</a>
+				</div> -->
+				<section class="container-fluid">
+					<h3 class="section-header">TITLE</h3>
+					<div class="row flex-row-reverse">
+						<section class="col-md-auto mx-auto text-center sidebar">
+							<img src="./images/black-panther.jpg">
+							<table class="text-left">
+								<tr>
+									<th style="vertical-align: top;">RATING:</th>
+									<td style="vertical-align: top;">PG-13 (for prolonged sequences of action violence, and a brief rude gesture)</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">GENRE:</th>
+									<td style="vertical-align: top;">Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">DIRECTED BY:</th>
+									<td style="vertical-align: top;">Ryan Coogler</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">WRITTEN BY:</th>
+									<td style="vertical-align: top;">Joe Robert Cole, Ryan Coogler</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">IN THEATERS:</th>
+									<td style="vertical-align: top;">Feb 16, 2018  Wide</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">BOX OFFICE:</th>
+									<td style="vertical-align: top;">$501,105,037</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">RUNTIME:</th>
+									<td style="vertical-align: top;">135 minutes</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">STUDIO:</th>
+									<td style="vertical-align: top;">Marvel Studios</td>
+								</tr>
+							</table>
+						</section>
+						<div class="col border-right">
+							<div class="row flex-nowrap">
+								<section class="col mb-0">
+									<h5 class="section-header">BLAZING METER</h5>
+									<div class="row no-gutters align-items-center">
+										<div class="col text-center">
+											<div class="icon large burning"></div>
+										</div>
+										<div class="col text-center">
+											<h1 style="font-size: 64px;"><span>70</span>%</h1>
+										</div>
+									</div>
+<!-- 									<div class="text-right dropdown">
+										<a class=" dropdown-toggle" data-toggle="dropdown" href="#">
+											Consensus
+										</a>
+										<div class="dropdown-menu dropdown-menu-right p-2 w-100"> -->
+											<div>It's OK, everyone said. consensus consensus consensus consensus consensus consensus consensus consensus consensus consensus consensus consensus.</div>
+<!-- 										</div>
+									</div> -->
+									<div class="text-right dropdown">
+										<a class=" dropdown-toggle" data-toggle="dropdown" href="#">
+											Statistics
+										</a>
+										<div class="dropdown-menu dropdown-menu-right text-right p-2">
+											<div>Average Rating: <span>7.8/10</span></div>
+											<div>Reviews Counted: <span>1000</span></div>
+											<div>Blazing: <span>700</span></div>
+											<div>Ashes: <span>300</span></div>
+										</div>
+									</div>
+								</section>
+								<section class="col mb-0">
+									<h5 class="section-header">AUDIENCE SCORE</h5>
+									<div class="row no-gutters align-items-center">
+										<div class="col text-center">
+											<div class="icon large burning"></div>
+										</div>
+										<div class="col text-center">
+											<h1 style="font-size: 64px;"><span>70</span>%</h1>
+										</div>
+									</div>
+									<div class="text-right dropdown">
+										<a class=" dropdown-toggle" data-toggle="dropdown" href="#">
+											Statistics
+										</a>
+										<div class="dropdown-menu dropdown-menu-right text-right p-2">
+											<div>Average Rating: <span>3.5/5</span></div>
+											<div>User Rating: <span>93,042</span></div>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col">
+									<h5 class="section-header">MOVIE INFO</h5>
+									<div id="description">
+										description description description description description description description description description description description description description description description description description description description description description description description description 
+									</div>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col">
+									<h5 class="section-header">CAST</h5>
+									<div class="celebrity-list row no-gutters">
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="celebrity-link col-12 col-md-4 pb-1" style="min-width: 200px;">
+											<a class="d-flex" href="./celebrity-details.html">
+												<img src="./images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<div style="padding-left: 10px;">
+													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div>
+														 as <span>Character</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="text-right"><a href="#">View All...</a></div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<section class="col">
+							<h5 class="section-header">VIDEOS AND PHOTOS</h5>
+							<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+								<li class="nav-item">
+									<a class="nav-item nav-link active" id="show-videos" data-toggle="tab" href="#videos" role="tab" aria-controls="videos" aria-selected="true">Videos</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-item nav-link" id="show-photos" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="false">Photos</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane show fade active" id="videos" role="tabpanel" aria-labelledby="videos">
+									<div class="section-carousel">
+										<div class="section-carousel-item">
+											<img src="./images/v1.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v2.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v3.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v4.jpg">
+										</div>
+									</div>
+									<div class="text-right"><a href="#">View All Videos...</a></div>
+								</div>
+								<div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="photos">
+									<div class="section-carousel">
+										<div class="section-carousel-item">
+											<img src="./images/v1.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v2.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v3.jpg">
+										</div>
+										<div class="section-carousel-item">
+											<img src="./images/v4.jpg">
+										</div>
+									</div>
+									<div class="text-right"><a href="#">View All Photos...</a></div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+				<section>
+					<h4 class="section-header">REVIEWS</h4>
+					<section class="border">
+						<h5 class="section-header">ADD YOUR RATING</h5>
+						<div class="row no-gutters flex-nowrap">
+							<div class="col-auto">
+								<img src="./images/placeholder.png" style="width: 107px; height: 107px;">
+							</div>
+							<div class="col">
+								<nav class="navbar">
+									<div class="btn-group btn-group-toggle" id="wts-ni" data-toggle="buttons">
+										<label class="btn btn-dark" id="want-to-see" style="width: 125px;">
+											<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
+										</label>
+										<label class="btn btn-dark" id="not-interested" style="width: 125px;">
+											<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
+										</label>
+									</div>
+									<div class="text-right">
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+									</div>
+								</nav>
+								<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none; height: 59px;"></textarea>
+							</div>
+						</div>
+						<div class="text-right">
+							<button class="btn btn-outline-dark">Submit</button>
+						</div>
+					</section>
+					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+						<li class="nav-item">
+							<a class="nav-item nav-link active" id="show-critic-reviews" data-toggle="tab" href="#critic-reviews" role="tab" aria-controls="critic-reviews" aria-selected="true">Critic Reviews</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" id="show-audience-reviews" data-toggle="tab" href="#audience-reviews" role="tab" aria-controls="audience-reviews" aria-selected="false">Audience Reviews</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane show fade active" id="critic-reviews" role="tabpanel" aria-labelledby="critic-reviews">
+							<section class="px-0 pb-0 mb-0">
+								<div class="reviews">
+									<div class="review critic">
+										<div class="quote d-flex flex-row">
+											<i class="fa fa-quote-left" style="padding-right: 25px;"></i>
+											<div>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</div>
+											<i class="fa fa-quote-right align-self-end" style="padding-left: 25px;"></i>
+										</div>
+										<div class="results text-right">
+											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+										</div>
+										<div class="reviewer text-right">
+											- <a href="#">Name</a>, <a href="#">Publication</a>
+										</div>
+									</div>
+									<div class="review critic">
+										<div class="quote d-flex flex-row">
+											<i class="fa fa-quote-left" style="padding-right: 25px;"></i>
+											<div>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</div>
+											<i class="fa fa-quote-right align-self-end" style="padding-left: 25px;"></i>
+										</div>
+										<div class="results text-right">
+											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+										</div>
+										<div class="reviewer text-right">
+											- <a href="#">Name</a>, <a href="#">Publication</a>
+										</div>
+									</div>
+									<div class="review critic">
+										<div class="quote d-flex flex-row">
+											<i class="fa fa-quote-left" style="padding-right: 25px;"></i>
+											<div>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</div>
+											<i class="fa fa-quote-right align-self-end" style="padding-left: 25px;"></i>
+										</div>
+										<div class="results text-right">
+											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+										</div>
+										<div class="reviewer text-right">
+											- <a href="#">Name</a>, <a href="#">Publication</a>
+										</div>
+									</div>
+								</div>
+								<div class="text-right"><a href="#">View All Critic Reviews...</a></div>
+							</section>
+						</div>
+						<div class="tab-pane fade" id="audience-reviews" role="tabpanel" aria-labelledby="audience-reviews">	<section class="px-0 pb-0 mb-0">
+								<div class="reviews">
+									<div class="review audience d-flex flex-row">
+										<div class="reviewer">
+											<span>Name</span>
+										</div>
+										<div class="quote">
+											<span>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+											</span>
+											 - 
+											<span>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</span>
+										</div>
+									</div>
+									<div class="review audience d-flex flex-row">
+										<div class="reviewer">
+											<span>Name</span>
+										</div>
+										<div class="quote">
+											<span>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+											</span>
+											 - 
+											<span>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</span>
+										</div>
+									</div>
+									<div class="review audience d-flex flex-row">
+										<div class="reviewer">
+											<span>Name</span>
+										</div>
+										<div class="quote">
+											<span>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+											</span>
+											 - 
+											<span>
+												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="text-right"><a href="#">View All Audience Reviews...</a></div>
+							</section>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="col-12 col-md-auto sidebar" id="right-sidebar">
+				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+					<li class="nav-item">
+						<a class="nav-item nav-link active" id="show-movie-links" data-toggle="tab" href="#movie-links" role="tab" aria-controls="movie-links" aria-selected="true">In Theaters</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-item nav-link" id="show-tv-links" data-toggle="tab" href="#tv-links" role="tab" aria-controls="tv-links" aria-selected="false">TV Shows</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="show-main-content">
+					<section class="tab-pane fade show active" id="movie-links" role="tabpanel" aria-labelledby="show-movie-links">
+						<h4 class="section-header">OPENING</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+						<h4 class="section-header">TOP BOX OFFICE</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+						<h4 class="section-header">COMING SOON</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./movie-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>MOVIE</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+					</section>
+					<section class="tab-pane fade" id="tv-links" role="tabpanel" aria-labelledby="show-tv-links">
+						<h4 class="section-header">NEW TV TONIGHT</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+						<h4 class="section-header">MOST POPULAR TV ON BLAZING</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+						<h4 class="section-header">CERTIFIED BLAZING TV</h4>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<div class="details-link">
+							<a class="w-100 d-flex align-items-center" href="./tv-details.html">
+								<div style="width: 75px;">
+									<span class="icon tiny burning"></span>
+									<span>70%</span>
+								</div>
+								<div class="text-truncate"><span>TV</span></div>
+							</a>
+						</div>
+						<a href="#">View All...</a>
+					</section>
+				</div>
+				<section>
+					<h4 class="section-header">CERTIFIED BLAZING PICKS</h4>
+					<div class="text-center">
+						<span class="icon large blazing"></span>
+					</div>
+					<div>Movies and TV shows are Certified BLAZING with a steady BLAZING score of 75% or higher after a set amount of reviews (80 for wide-release movies, 40 for limited-release movies, 20 for TV shows), including 5 reviews from Top Critics.</div>
+				</section>
+				<section id="blazing-movie-picks">
+					<h4 class="section-header">BLAZING MOVIE PICKS</h4>
+					<div class="section-carousel infinite-scroll">
+						<a class="section-carousel-item details-link btn text-center" href="./details.html" role="button">
+							<img class="image" src="./images/black-panther.jpg" alt="placeholder image">
+							<div class="name">Black Panther</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/game-night.jpg" alt="placeholder image">
+							<div class="name">Game Night</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/peter-rabbit.jpg" alt="placeholder image">
+							<div class="name">Peter Rabbit</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/annihilation.jpg" alt="placeholder image">
+							<div class="name">Annihilation</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+					</div>
+					<div class="text-right"><a href="./browse.html">View All...</a></div>
+				</section>
+				<section id="blazing-tv-picks">
+					<h4 class="section-header">BLAZING TV PICKS</h4>
+					<div class="section-carousel infinite-scroll">
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/counterpart.jpg" alt="placeholder image">
+							<div class="name">Counterpart</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/black-lightning.png" alt="placeholder image">
+							<div class="name">Black Lightning</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/altered-carbon.jpg" alt="placeholder image">
+							<div class="name">Altered Carbon</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+						<a class="section-carousel-item details-link btn text-center" href="./details.html">
+							<img class="image" src="./images/seven-seconds.jpg" alt="placeholder image">
+							<div class="name">Seven Seconds</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span>70</span>%
+							</div>
+						</a>
+					</div>
+					<div class="text-right"><a href="./browse.html">View All...</a></div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+
+<script src="./js/main.js"></script>
+<script src="./js/wts-ni-toggle.js"></script>
+
+</html>
+
