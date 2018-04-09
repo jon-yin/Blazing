@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SearchController {
 
 	@RequestMapping(method=RequestMethod.GET)
-	public String search(@RequestParam("q")String query)
+	public String search(@RequestParam(value="q",required=false)String query)
 	{
 		System.out.println(query);
 		return "search";

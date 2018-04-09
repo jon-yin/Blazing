@@ -11,8 +11,10 @@ public class IndexController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String home()
 	{
-		System.out.println("Controller here");
+		//System.out.println("Controller here");
 		return "home";
 	}
+	
+	
 
 }
