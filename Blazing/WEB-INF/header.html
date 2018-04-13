@@ -1,7 +1,7 @@
 <div class="container-fluid px-0">
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 		<div class="container">
-		<a class="navbar-brand" href="./home.html"><span class="icon tiny burning"></span>BLAZING</a>
+		<a class="navbar-brand" href="/home.html"><span class="icon tiny burning"></span>BLAZING</a>
 		<ul class="navbar-nav mr-auto pr-2">
 			<li class="nav-item">
 				<a class="nav-link text-secondary text-nowrap mr-auto" data-toggle="modal" data-target="#about" href="#">WHAT'S BLAZING?</a>
@@ -20,12 +20,12 @@
 							$(function(){
 								$("#search-button").on("click",function(){
 									if ($("#search-input").val() != ""){
-										location.href = "./search.html?keyword=" + $("#search-input").val();
+										location.href = "/search.html?keyword=" + $("#search-input").val();
 									}
 								});
 								$("#search-input").keypress(function(e){
 									if (e.which == 13 && $(this).val() != ""){
-										location.href = "./search.html?keyword=" + $(this).val();
+										location.href = "/search.html?keyword=" + $(this).val();
 									}
 								});
 							});
@@ -35,11 +35,11 @@
 			</div>
 			<ul class="navbar-nav ml-auto text-nowrap small">
 				<li class="nav-item dropdown">
-					<a class="nav-link" href="./browse.html?type=all-movies">MOVIES</a>
+					<a class="nav-link" href="/browse.html?type=all-movies">MOVIES</a>
 				</li>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link" href="./browse.html?type=all-tv">TV</a>
+					<a class="nav-link" href="/browse.html?type=all-tv">TV</a>
 				</li>
 				</li>
 				<li class="nav-item">
@@ -59,10 +59,10 @@
 							<i class="fa fa-user" title="profile"></i>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown">
-							<a class="dropdown-item" href="./profile.html">PROFILE</a>
+							<a class="dropdown-item" href="/profile.html">PROFILE</a>
 							<a class="dropdown-item" href="#">SETTINGS</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" id="logout" href="./home.html">LOGOUT</a>
+							<a class="dropdown-item" id="logout" href="/home.html">LOGOUT</a>
 							<!-- temporary - remove once login system is implemented -->
 							<script>
 								$(function(){

@@ -1,4 +1,5 @@
 $(function(){
+	// you can add bool values
 	$("#want-to-see").click(function(){
 		if($("#not-interested").hasClass("active")){
 			$("#not-interested").removeClass("active");
