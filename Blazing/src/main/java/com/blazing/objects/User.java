@@ -88,9 +88,29 @@ public class User {
 		reviews.remove(review);
 	}
 	
-	public void addCritic(Critic critic)
+	public void favCritic(Critic critic)
 	{
 		favCritics.add(critic);
+	}
+	
+	public void unfavCritic(Critic critic)
+	{
+		favCritics.remove(critic);
+	}
+	
+	public void addWishList(Media media)
+	{
+		wishlist.add(media);
+	}
+	
+	public void removeWishList(Media media)
+	{
+		wishlist.remove(media);
+	}
+	
+	public void reportReview(int reviewid)
+	{
+		
 	}
 	
 	

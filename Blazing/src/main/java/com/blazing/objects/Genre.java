@@ -1,0 +1,7 @@
+package com.blazing.objects;
+
+public enum Genre {
+
+	ACTION, ANIMATION, ART, CLASSIC, COMEDY, DOCUMENTARY, DRAMA, HORROR, KID, MYSTERY, SCIFI_FANTASY, ROMANCE 
+	
+}
