@@ -8,6 +8,6 @@ import com.blazing.objects.MovieCharacter;
 
 public interface CharacterRepository extends JpaRepository<MovieCharacter, Long>{
 
-	Optional<MovieCharacter> getMovieCharacterByName();
+	Optional<MovieCharacter> findMovieCharacterByName(String name);
 	
 }
