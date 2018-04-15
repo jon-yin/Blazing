@@ -2,6 +2,9 @@ package com.blazing.objects;
 
 import java.net.URL;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Critic extends User{
 
 	private String publication;

@@ -1,5 +1,8 @@
 package com.blazing.objects;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Editor extends User{
 
 	public void editMovie(Movie editedMovie)

@@ -1,16 +1,22 @@
 package com.blazing.objects;
 
 import java.util.List;
-import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Season extends Media{
 	
 	private TV show;
 	private int seasonNumber;
 	private List<Episode> episodes;
 	private String network;
-	private Set<Celebrity> creators;
-	private Set<Celebrity> executives;
+	
+	@ManyToOne
+	@JoinColumn(name = "TV_ID")
 	public TV getShow() {
 		return show;
 	}
@@ -23,6 +29,8 @@ public class Season extends Media{
 	public void setSeasonNumber(int seasonNumber) {
 		this.seasonNumber = seasonNumber;
 	}
+	
+	@OneToMany(mappedBy="season")
 	public List<Episode> getEpisodes() {
 		return episodes;
 	}
@@ -35,19 +43,6 @@ public class Season extends Media{
 	public void setNetwork(String network) {
 		this.network = network;
 	}
-	public Set<Celebrity> getCreators() {
-		return creators;
-	}
-	public void setCreators(Set<Celebrity> creators) {
-		this.creators = creators;
-	}
-	public Set<Celebrity> getExecutives() {
-		return executives;
-	}
-	public void setExecutives(Set<Celebrity> executives) {
-		this.executives = executives;
-	}
-	
 	
 	
 }

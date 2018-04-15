@@ -1,29 +1,30 @@
 package com.blazing.objects;
 
-import java.awt.Image;
 import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
+@Entity
 public class Celebrity {
-	@Id
-	@GeneratedValue
-	private int id;
+	private long id;
 	private LocalDate birthday;
 	private LocalDate death;
-	private Image portrait;
-	@OneToMany
+	private ImageEntity portrait;
 	private Set<Media> filmography;
-	@OneToMany
 	private Set<MovieCharacter> characters;
-	public int getId() {
+	@Id
+	@GeneratedValue
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public LocalDate getBirthday() {
@@ -38,18 +39,24 @@ public class Celebrity {
 	public void setDeath(LocalDate death) {
 		this.death = death;
 	}
-	public Image getPortrait() {
+	@OneToOne
+	@JoinColumn(name="IMAGE_ID")
+	public ImageEntity getPortrait() {
 		return portrait;
 	}
-	public void setPortrait(Image portrait) {
+	public void setPortrait(ImageEntity portrait) {
 		this.portrait = portrait;
 	}
+	
+	@Transient
 	public Set<Media> getFilmography() {
 		return filmography;
 	}
 	public void setFilmography(Set<Media> filmography) {
 		this.filmography = filmography;
 	}
+	
+	@OneToMany(mappedBy="actor")
 	public Set<MovieCharacter> getCharacters() {
 		return characters;
 	}

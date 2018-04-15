@@ -1,23 +1,50 @@
 package com.blazing.objects;
 
-import java.awt.Image;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+
+
+@Entity
+@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
 public abstract class Media {
 
+	private long id;
 	private String title;
 	private String description;
-	private Image poster;
+	private ImageEntity poster;
 	private LocalDateTime[] airtimes;
 	private double audienceScore;
 	private double blazingScore;
 	private Set<File> videos;
-	private Set<File> images;
+	private Set<ImageEntity> images;
 	private Set<MovieCharacter> cast;
 	private Set<Review> reviews;
 	private Set<Quotes> quotes;
+	private Genre genre;
+	
+	
+	@Id
+	@GeneratedValue
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -30,10 +57,13 @@ public abstract class Media {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Image getPoster() {
+	
+	@OneToOne
+	@JoinColumn(name="POSTER")
+	public ImageEntity getPoster() {
 		return poster;
 	}
-	public void setPoster(Image poster) {
+	public void setPoster(ImageEntity poster) {
 		this.poster = poster;
 	}
 	public LocalDateTime[] getAirtimes() {
@@ -54,30 +84,41 @@ public abstract class Media {
 	public void setBlazingScore(double blazingScore) {
 		this.blazingScore = blazingScore;
 	}
+	
+	@Transient
 	public Set<File> getVideos() {
 		return videos;
 	}
 	public void setVideos(Set<File> videos) {
 		this.videos = videos;
 	}
-	public Set<File> getImages() {
+	
+	@OneToMany
+	@JoinColumn(name="IMAGES")
+	public Set<ImageEntity> getImages() {
 		return images;
 	}
-	public void setImages(Set<File> images) {
+	public void setImages(Set<ImageEntity> images) {
 		this.images = images;
 	}
+	
+	@OneToMany(mappedBy="source")
 	public Set<MovieCharacter> getCast() {
 		return cast;
 	}
 	public void setCast(Set<MovieCharacter> cast) {
 		this.cast = cast;
 	}
+	
+	@OneToMany(mappedBy="source")
 	public Set<Review> getReviews() {
 		return reviews;
 	}
 	public void setReviews(Set<Review> reviews) {
 		this.reviews = reviews;
 	}
+	
+	@OneToMany
 	public Set<Quotes> getQuotes() {
 		return quotes;
 	}
@@ -85,14 +126,26 @@ public abstract class Media {
 		this.quotes = quotes;
 	}
 	
+	@Enumerated(EnumType.STRING)
+	public Genre getGenre() {
+		return genre;
+	}
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+	
 	public double calculateBlazingScore()
 	{
 		return 0;
 	}
 	
+
+	@Transient
 	public boolean isBlazing()
 	{
 		return true;
 	}
+	
+	
 	
 }

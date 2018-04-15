@@ -1,34 +1,33 @@
 package com.blazing.controllers;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.blazing.objects.Movie;
-import com.blazing.repositories.MovieRepository;
+import com.blazing.objects.Test1;
+import com.blazing.objects.Test2;
+import com.blazing.repositories.Test2Repository;
+import com.blazing.repositories.TestRepository;
 
 @Controller
 @RequestMapping("/")
 public class IndexController {
 	
-	private MovieRepository movieRepo;
+	private TestRepository testRepo;
+	private Test2Repository test2Repo;
 	
 	@Autowired
-	public IndexController(MovieRepository repo)
+	public IndexController()
 	{
-		movieRepo = repo;
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String home()
 	{
-		Optional<Movie> movie = movieRepo.findById(1L);
-		System.out.println(movie.orElse(null).getName());
-		Optional<Movie> m = movieRepo.findMovieByName("Mission Impossible");
-		System.out.println(m.orElseGet(()-> new Movie()).getName());
 		return "home";
 	}
 	

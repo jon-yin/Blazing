@@ -7,12 +7,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.blazing.controllers.IndexController;
 import com.blazing.objects.Movie;
-import com.blazing.repositories.MovieRepository;
+import com.blazing.repositories.TestRepository;
 
 @SpringBootApplication(scanBasePackageClasses={BlazingApplication.class, IndexController.class,
-		MovieRepository.class})
+		TestRepository.class})
 @EntityScan(basePackageClasses={Movie.class})
-@EnableJpaRepositories(basePackageClasses={MovieRepository.class})
+@EnableJpaRepositories(basePackageClasses={TestRepository.class})
 public class BlazingApplication {
 
 	public static void main(String[] args) {

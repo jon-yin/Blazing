@@ -9,6 +9,6 @@ import com.blazing.objects.Movie;
 
 public interface MovieRepository extends JpaRepository<Movie, Long>{
 	
-	Optional<Movie> findMovieByName(String name);
+	Optional<Movie> findMovieByTitle(String name);
 
 }
