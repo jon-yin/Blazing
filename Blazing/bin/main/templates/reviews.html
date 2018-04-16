@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
+	<title>BLAZING - Team Elm</title>
+	<!-- jquery -->
+	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- slick.js -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<!-- popper.js -->
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- source sans pro -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<link rel="stylesheet" href="/css/styles.css">
+
+<body class="bg-dark">
+	<header></header>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<section class="col">
+					<h3 class="section-header">TITLE</h3>
+					<div class="row">
+						<section class="col-md-auto mx-auto text-center sidebar sticky-top">
+							<a href="/movie-details.html"><img src="/images/black-panther.jpg"></a>
+							<table class="text-left">
+								<tr>
+									<th style="vertical-align: top;">RATING:</th>
+									<td style="vertical-align: top;">PG-13</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">GENRE:</th>
+									<td style="vertical-align: top;">Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">DIRECTED BY:</th>
+									<td style="vertical-align: top;">Ryan Coogler</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">IN THEATERS:</th>
+									<td style="vertical-align: top;">Feb 16, 2018  Wide</td>
+								</tr>
+								<tr>
+									<th style="vertical-align: top;">STUDIO:</th>
+									<td style="vertical-align: top;">Marvel Studios</td>
+								</tr>
+							</table>
+						</section>
+						<section class="col main-content">
+							<div class="dropdown" id="show-num-reviews">
+								<span class="pr-4"> Showing <span>10</span> reviews</span>
+								<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+									Show...
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" id="show-10" href="#">10</a>
+									<a class="dropdown-item" id="show-20" href="#">25</a>
+									<a class="dropdown-item" id="show-50" href="#">50</a>
+								</div>
+							</div>
+							<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+								<li class="nav-item">
+									<a class="nav-item nav-link active" id="show-critics-rvw-all" data-toggle="tab" href="#critic-rvw-all" role="tab" aria-controls="critics-rvw-all" aria-selected="true">All Critics</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-item nav-link" id="show-audience-rvw-all" data-toggle="tab" href="#audience-rvw-all" role="tab" aria-controls="audience-rvw-all" aria-selected="false">All Audience</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="show-main-content">
+								<div class="tab-pane show fade active" id="critic-rvw-all" role="tabpanel" aria-labelledby="show-critic-rvw-all">
+									<div class="reviews">
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+										<div class="review critic">
+											<div class="quote d-flex">
+												<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
+												<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
+												<div>
+													Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
+												</div>
+												<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
+											</div>
+											<div class="results text-right">
+												<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											</div>
+											<div class="reviewer text-right">
+												- <a href="#">Name</a>, <a href="#">Publication</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="audience-rvw-all" role="tabpanel" aria-labelledby="show-audience-rvw-all">
+									<div class="reviews">
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+										<div class="review audience d-flex flex-row">
+											<div class="reviewer">
+												<span>Name</span>
+											</div>
+											<div class="quote">
+												<span>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+												 - 
+												<span>
+													review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-100 d-flex justify-content-center">
+								<button class="btn">Previous...</button>
+								<button class="btn">Next...</button>
+							</div>
+						</section>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+
+<script type="application/javascript" src="/js/main.js"></script>
+
+</html>
