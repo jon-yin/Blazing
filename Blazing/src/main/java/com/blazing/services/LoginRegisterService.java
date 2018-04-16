@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import com.blazing.objects.User;
 import com.blazing.repositories.UserRepository;
 
 @Service
+@Scope("session")
 public class LoginRegisterService {
 
 	@Autowired

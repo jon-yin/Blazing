@@ -1,6 +1,7 @@
 package com.blazing.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,7 @@ import com.blazing.services.LoginRegisterService;
 
 @RestController
 @RequestMapping(path="/login")
-
+@Scope("session")
 public class LoginController {
 	
 	@Autowired
