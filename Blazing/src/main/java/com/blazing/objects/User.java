@@ -7,19 +7,23 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 @Entity
+@Component
+@Scope("session")
 public class User {
 
 	private String firstName;
 	private String lastName;
 	private String emailAddress;
+	private String password;
 	private int id;
 	private int views;
 	private LocalDate joinDate;
@@ -137,6 +141,12 @@ public class User {
 	public void reportReview(int reviewid)
 	{
 		
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
