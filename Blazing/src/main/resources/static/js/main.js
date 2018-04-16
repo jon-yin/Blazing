@@ -17,7 +17,7 @@ $(function() {
 				var password = $("#password-login").val();
 				var status = login(email, password);
 				if (status == 0) {
-					
+					alert("user is logged in!");
 				}else if (status == 1) {
 					$("#inval-user-alert-login").show();
 					$("#inval-pass-alert-login").hide();
@@ -27,7 +27,7 @@ $(function() {
 					$("#inval-user-alert-login").hide();
 					$("#no-pass-alert-login").hide();
 				}else{
-					
+					alert("fail");
 				}
 			});
 			$("#logout-button").on("click",function() {
@@ -39,7 +39,16 @@ $(function() {
 				var lastName = $("#lastname-signup").val();
 				var email = $("#email-signup").val();
 				var password = $("#password-signup").val();
-				var status = signup(firstName, lastName, email, password);
+				signup(firstName, lastName, email, password);
+//				else if (status == 2) {
+//					$("#inval-user-alert-signup").show();
+//					$("#inval-pass-alert-signup").hide();
+//					$("#no-pass-alert-signup").hide();
+//				}else if (status == 5) {
+//					$("#inval-pass-alert-signup").show();
+//					$("#inval-user-alert-signup").hide();
+//					$("#no-pass-alert-signup").hide();
+//				}
 			});
 		});
 		//search

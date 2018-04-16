@@ -16,13 +16,7 @@ function getCookie(cname) {
 }
 
 function checkLogin() {
-	var x = document.cookie;
-	var emailCookie = getCookie("email");
-	if (emailCookie != ""){
-		return true;
-	}else{
-		return false;
-	}
+	return false;
 }
 
 // status codes:
@@ -30,19 +24,13 @@ function checkLogin() {
 // 1: invalid email: email is used
 // 2: invalid email: email is empty
 // 3: invalid email: does not contain @ and .
-// 4: invalid password: password not within range
+// 4: invalid password: password not within character length range
 // 5: invalid password: password is empty
 // 99: error
 function login(email, password) {
-	if (email == null){
-		return 2;
-	}
-	if (password == null){
-		return 5;
-	}
 	var loginCredentials = {};
-	loginCredentials{"email"} = email;
-	loginCredentials{"password"} = password;
+	loginCredentials["email"] = email;
+	loginCredentials["password"] = password;
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
@@ -50,30 +38,46 @@ function login(email, password) {
 		data : JSON.stringify(loginCredentials),
 		cache : false,
 		dataType : 'json',
-		timeout : 100000,
+		timeout : 10000,
 		success : function(data) {
-			if (data == true){
-				return 0;
-			}else{
-				return 1;
-			}
+			return 0;
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
-			display(e);
 			return 99;
 		}
 	});
 }
 
 function logout() {
-	document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+//	document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 }
 
-//status codes:
-//0: success
-//1: invalid email
-//3: error
-function signup(firstName, lastName, email, password){
-
+// status codes:
+// 0: success
+// 1: invalid email: email is used
+// 2: invalid email: email is empty
+// 3: invalid email: does not contain @ and .
+// 4: invalid password: password not within character length range
+// 5: invalid password: password is empty
+// 6: first name empty
+// 7: last name empty
+// 99: error
+function signup(fn, ln, em, pw){
+	var registerCredentials = {"firstName":fn, "lastName":ln, "email":em, "password":pw};
+//	var registerCredentials = {};
+	var jsonString = JSON.stringify(registerCredentials);
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/register",
+		data : jsonString,
+		cache : false,
+		success : function(data) {
+			console.log("success");
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		}
+	});
 }

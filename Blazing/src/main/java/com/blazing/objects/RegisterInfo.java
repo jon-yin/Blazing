@@ -2,10 +2,10 @@ package com.blazing.objects;
 
 public class RegisterInfo {
 
-	private String password;
-	private String email;
 	private String firstName;
 	private String lastName;
+	private String email;
+	private String password;
 	
 	public String getPassword() {
 		return password;
