@@ -42,6 +42,7 @@ public class LoginRegisterService {
 			newUser.setJoinDate(LocalDate.now());
 			newUser.setPassword(encoder.encode(info.getPassword()));
 			repository.save(newUser);
+			this.user = newUser;
 			return true;
 		}
 	}
