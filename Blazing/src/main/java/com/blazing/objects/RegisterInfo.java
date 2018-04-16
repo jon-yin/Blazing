@@ -2,18 +2,11 @@ package com.blazing.objects;
 
 public class RegisterInfo {
 
-	private String username;
 	private String password;
 	private String email;
-	private String firstname;
-	private String lastname;
+	private String firstName;
+	private String lastName;
 	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -26,17 +19,17 @@ public class RegisterInfo {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	

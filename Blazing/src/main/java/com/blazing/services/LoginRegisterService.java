@@ -36,8 +36,8 @@ public class LoginRegisterService {
 		else
 		{
 			User newUser = new User();
-			newUser.setFirstName(info.getFirstname());
-			newUser.setLastName(info.getLastname());
+			newUser.setFirstName(info.getFirstName());
+			newUser.setLastName(info.getLastName());
 			newUser.setEmailAddress(info.getEmail());
 			newUser.setJoinDate(LocalDate.now());
 			newUser.setPassword(encoder.encode(info.getPassword()));
