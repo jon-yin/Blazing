@@ -4,23 +4,23 @@
 	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- slick.js -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 	<!-- popper.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!-- source sans pro -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 
 <body class="bg-dark">
 	<header></header>
@@ -28,10 +28,10 @@
 		<div class="row">
 			<div class="col-12 col-md-auto sidebar" id="left-sidebar">
 				<section>
-					<img class="image profile" src="./images/thumbnail.png">
+					<img class="image profile" src="/images/thumbnail.png">
 				</section>
 				<section>
-					<h4 class="section-header">PROFILE STATS</h4>
+					<h5 class="section-header">PROFILE STATS</h5>
 					<div>
 						<span class="font-weight-bold">Total Views:</span>
 						<span>0</span>
@@ -42,11 +42,31 @@
 					</div>
 				</section>
 				<section>
-					<h4 class="section-header">ABOUT</h4>
+					<h5 class="section-header">ABOUT</h5>
 					<div>
 						<span>No user info supplied</span>
 					</div>
-					<div class="text-right"><a href="#">Edit</a></div>
+					<div class="text-right"><a data-toggle="modal" data-target="#edit-user-info" href="#"href="#">Edit</a></div>
+					<div class="modal fade" id="edit-user-info" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="edit-info-label">Edit User Info</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="w-100">
+											<textarea class="form-control" id="edit-info" style="resize: none;"></textarea>
+										</div>
+										<button class="btn btn-secondary" id="update-info-button">Update</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 				</section>
 			</div>
 			<div class="col-12 col-md-auto main-content">
@@ -63,9 +83,9 @@
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="false">WTS/NI</a>
 					</li>
-					<li class="nav-item">
+<!-- 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-quotes" data-toggle="tab" href="#quotes" role="tab" aria-controls="quotes" aria-selected="false">Quotes</a>
-					</li>
+					</li> -->
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-lists" data-toggle="tab" href="#lists" role="tab" aria-controls="lists" aria-selected="false">Lists</a>
 					</li>
@@ -76,13 +96,13 @@
 				<div class="tab-content" id="show-main-content">
 					<div class="tab-pane show fade active" id="summary" role="tabpanel" aria-labelledby="show-summary">
 						<section>
-							<h4 class="section-header">WANT-TO-SEE MOVIES</h4>
+							<h5 class="section-header">WANT-TO-SEE MOVIES</h5>
 						</section>
 						<section>
-							<h4 class="section-header">WANT-TO-SEE TV</h4>
+							<h5 class="section-header">WANT-TO-SEE TV</h5>
 						</section>
 						<section>
-							<h4 class="section-header">RATING HISTORY</h4>
+							<h5 class="section-header">RATING HISTORY</h5>
 						</section>
 					</div>
 					<div class="tab-pane show fade" id="movie-ratings" role="tabpanel" aria-labelledby="show-movie-ratings">
@@ -91,8 +111,8 @@
 					</div>
 					<div class="tab-pane show fade" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
 					</div>
-					<div class="tab-pane show fade" id="quotes" role="tabpanel" aria-labelledby="show-quotes">
-					</div>
+<!-- 					<div class="tab-pane show fade" id="quotes" role="tabpanel" aria-labelledby="show-quotes">
+					</div> -->
 					<div class="tab-pane show fade" id="lists" role="tabpanel" aria-labelledby="show-lists">
 					</div>
 					<div class="tab-pane show fade" id="my-critics" role="tabpanel" aria-labelledby="show-my-critics">
@@ -104,6 +124,6 @@
 	<footer></footer>
 </body>
 
-<script src="./js/main.js"></script>
+<script type="application/javascript" src="/js/main.js"></script>
 
 </html>

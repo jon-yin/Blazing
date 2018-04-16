@@ -1,3 +1,4 @@
+/*html tags*/
 * {
 	border-radius: 0 !important;
 }
@@ -7,6 +8,7 @@ html {
 }
 body{
 	height: 100%;
+	background: linear-gradient(#343a40, #6c757d);
 	background-attachment: fixed;
 	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 	display: flex;
@@ -18,6 +20,11 @@ body > div.container{
 footer{
 	flex-shrink: 0;
 }
+tr>td, tr>th{
+	padding-bottom: 5px;
+}
+
+/*nav and links*/
 .nav-link {
 	color: #6c757d;
 }
@@ -37,12 +44,22 @@ a:hover{
 .nav-pills a.active:hover{
 	color: #ffffff!important;
 }
-/*.cover-image{
+
+/*celebrity-link*/
+.celebrity-link{
+	min-width: 150px;
+}
+.celebrity-link .celebrity-link-body{
+	padding-left: 10px;
+}
+
+/*images*/
+.cover-image{
 	background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url('https://resizing.flixster.com/RRqugkGjsRsIG361g_cgwE7fIE4=/740x290/v1.bjsxODQ5MTU0O2o7MTc2NjE7MTIwMDsyMDQ4Ozg5MQ');
 	background-size: auto;
 	background-repeat: no-repeat;
 	height: 290px;
-}*/
+}
 .image {
 	max-height: 200px;
 	width: auto;
@@ -55,6 +72,7 @@ a:hover{
 	height: auto;
 }
 
+/*episodes*/
 .episode-list{
 	padding: 15px;
 }
@@ -74,7 +92,6 @@ section .section-header{
 	background-color: #66707a!important;
 	color: white;
 	text-align: center;
-	/*font-size: 20px;*/
 	font-weight: bold;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -102,14 +119,8 @@ section .section-carousel{
 	.container {
 		max-width: 750px;
 	}
-/*	#right-sidebar{
-		width: 300px;
-	}
-	#left-sidebar{
-		width: 300px;
-	}*/
 	.sidebar{
-		width: 300px;
+		width: 275px;
 	}
 }
 @media (min-width: 995px){
@@ -126,9 +137,15 @@ section .section-carousel{
 	}
 }
 
+/*container section stuff*/
 .main-content{
-	width: calc(100% - 300px);
+	width: calc(100% - 275px);
 }
+.sidebar.sticky-top{
+	height: 100vh;
+}
+
+/*slick carousel*/
 .slick-prev:before{
 	color: rgb(100,100,100);
 }
@@ -157,14 +174,14 @@ section .section-carousel{
 	margin-right: 25px;
 	margin-bottom: 10px;
 }
-.review.audience .quote{
+/*.review.audience .quote{
 	 height: 100px;
 	 overflow-y: scroll;
-}
+}*/
 
 /*icon*/
 .icon {
-	background-image: url("./images/blazing-0.svg");
+	background-image: url("/images/blazing-0.svg");
 	display: inline-block;
 }
 .icon.tiny {

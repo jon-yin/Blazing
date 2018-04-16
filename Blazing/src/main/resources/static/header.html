@@ -1,7 +1,7 @@
 <div class="container-fluid px-0">
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 		<div class="container">
-		<a class="navbar-brand" href="./home.html"><span class="icon tiny burning"></span>BLAZING</a>
+		<a class="navbar-brand" href="/home.html"><span class="icon tiny burning"></span>BLAZING</a>
 		<ul class="navbar-nav mr-auto pr-2">
 			<li class="nav-item">
 				<a class="nav-link text-secondary text-nowrap mr-auto" data-toggle="modal" data-target="#about" href="#">WHAT'S BLAZING?</a>
@@ -16,30 +16,16 @@
 					<input class="form-control form-control-dark" id="search-input" type="text" placeholder="Search...">
 					<div class="input-group-append">
 						<button class="btn btn-outline-light" id="search-button" type="submit"><i class="fa fa-search"></i></button>
-						<script>
-							$(function(){
-								$("#search-button").on("click",function(){
-									if ($("#search-input").val() != ""){
-										location.href = "./search.html?keyword=" + $("#search-input").val();
-									}
-								});
-								$("#search-input").keypress(function(e){
-									if (e.which == 13 && $(this).val() != ""){
-										location.href = "./search.html?keyword=" + $(this).val();
-									}
-								});
-							});
-						</script>
 					</div>
 				</div>
 			</div>
 			<ul class="navbar-nav ml-auto text-nowrap small">
-				<li class="nav-item dropdown">
-					<a class="nav-link" href="./browse.html?type=all-movies">MOVIES</a>
+				<li class="nav-item">
+					<a class="nav-link" href="/browse.html?type=all-movies">MOVIES</a>
 				</li>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link" href="./browse.html?type=all-tv">TV</a>
+				<li class="nav-item">
+					<a class="nav-link" href="/browse.html?type=all-tv">TV</a>
 				</li>
 				</li>
 				<li class="nav-item">
@@ -58,19 +44,11 @@
 						<a class="nav-link dropdown-toggle" href="#" id="profile-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fa fa-user" title="profile"></i>
 						</a>
-						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown">
-							<a class="dropdown-item" href="./profile.html">PROFILE</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown" style="z-index: 1000000;">
+							<a class="dropdown-item" href="/profile.html">PROFILE</a>
 							<a class="dropdown-item" href="#">SETTINGS</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" id="logout" href="./home.html">LOGOUT</a>
-							<!-- temporary - remove once login system is implemented -->
-							<script>
-								$(function(){
-									$("#logout").click(function(){
-										document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-									});
-								});
-							</script>
+							<a class="dropdown-item" id="logout-button" href="/home.html">LOGOUT</a>
 						</div>
 					</div>
 				</li>
@@ -112,73 +90,15 @@
 					<div class="form-group">
 						<label for="email-login">Email address</label>
 						<input type="email" class="form-control" id="email-login" placeholder="Enter email">
-						<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+						<small class="text-danger" id="inval-user-alert-login" style="display: none;">Invalid username</small>
 					</div>
 					<div class="form-group">
 						<label for="password-login">Password</label>
 						<input type="password" class="form-control" id="password-login" placeholder="Password">
-						<small class="text-danger no-pass-alert" style="display: none;">Please enter a password</small>
-						<small class="text-danger inval-pass-alert" style="display: none;">Invalid password</small>
+						<small class="text-danger" id="no-pass-alert-login" style="display: none;">Please enter a password</small>
+						<small class="text-danger" id="inval-pass-alert-login" style="display: none;">Invalid password</small>
 					</div>
-					<button type="submit" class="btn btn-secondary" id="login-button">Login</button>
-					<!-- temporary - remove once login system is implemented -->
-					<script>
-						function getCookie(cname) {
-							var name = cname + "=";
-							var decodedCookie = decodeURIComponent(document.cookie);
-							var ca = decodedCookie.split(';');
-							for(var i = 0; i <ca.length; i++) {
-								var c = ca[i];
-								while (c.charAt(0) == ' ') {
-									c = c.substring(1);
-								}
-								if (c.indexOf(name) == 0) {
-									return c.substring(name.length, c.length);
-								}
-							}
-							return "";
-						}
-						$(function(){
-							var x = document.cookie;
-							var emailCookie = getCookie("email");
-							if (emailCookie != ""){
-								account = true;
-								$('#logged-in').show();
-								$('#not-logged-in').hide();
-							}else{
-								account = false;
-								$('#not-logged-in').show();
-								$('#logged-in').hide();
-							}
-							$("#login-button").click(function(e){
-								e.preventDefault();
-								var email = $("#email-login").val();
-								var password = $("#password-login").val();
-								// var date = new Date();
-								// date.setTime(date.getTime() + 25000);
-								// document.cookie = "email="+email+";expires="+date.toUTCString();
-								if (email == "a@a" && password == "a"){
-									document.cookie="email="+email+";password="+password;
-									location.reload();
-								}
-								else if (email != "a@a"){
-									$(".inval-user-alert").show();
-									$(".inval-pass-alert").hide();
-									$(".no-pass-alert").hide();
-								}
-								else if (password == ""){
-									$(".no-pass-alert").show();
-									$(".inval-user-alert").hide();
-									$(".inval-pass-alert").hide();
-								}
-								else if (password != "a"){
-									$(".inval-pass-alert").show();
-									$(".inval-user-alert").hide();
-									$(".no-pass-alert").hide();
-								}
-							});
-						});
-					</script>
+					<button class="btn btn-secondary" id="login-button">Login</button>
 				</form>
 			</div>
 			<div class="modal-footer d-block text-center">
@@ -218,13 +138,13 @@
 					<div class="form-group">
 						<label for="email-signup">Email address</label>
 						<input type="email" class="form-control" id="email-signup" placeholder="Enter email">
-						<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+						<small class="text-danger" id="inval-user-alert-signup" style="display: none;">Invalid username</small>
 					</div>
 					<div class="form-group">
 						<label for="password-signup">Password</label>
 						<input type="password" class="form-control" id="password-signup" placeholder="Password">
-						<small class="text-danger no-pass-alert" style="display: none;">Please enter a password</small>
-						<small class="text-danger inval-pass-alert" style="display: none;">Invalid password</small>
+						<small class="text-danger" id="no-pass-alert-signup" style="display: none;">Please enter a password</small>
+						<small class="text-danger" id="inval-pass-alert-signup" style="display: none;">Invalid password</small>
 					</div>
 					<button type="submit" class="btn btn-secondary" id="signup-button">Sign Up</button>
 				</form>
@@ -255,7 +175,7 @@
 						<input type="email" class="form-control" id="email-forgot" placeholder="Enter email">
 					</div>
 					<button id="get-password" class="btn btn-secondary">Submit</button>
-					<small class="text-danger inval-user-alert" style="display: none;">Invalid username</small>
+					<small class="text-danger" id="inval-user-alert-lost" style="display: none;">Invalid username</small>
 					<script>
 						$(function(){
 							$("#get-password").click(function(e){
