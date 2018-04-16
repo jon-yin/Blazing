@@ -16,7 +16,9 @@ $(function() {
 				var email = $("#email-login").val();
 				var password = $("#password-login").val();
 				var status = login(email, password);
-				if (status == 1) {
+				if (status == 0) {
+					
+				}else if (status == 1) {
 					$("#inval-user-alert-login").show();
 					$("#inval-pass-alert-login").hide();
 					$("#no-pass-alert-login").hide();
@@ -24,6 +26,8 @@ $(function() {
 					$("#inval-pass-alert-login").show();
 					$("#inval-user-alert-login").hide();
 					$("#no-pass-alert-login").hide();
+				}else{
+					
 				}
 			});
 			$("#logout-button").on("click",function() {
