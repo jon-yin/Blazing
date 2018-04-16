@@ -8,9 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.blazing.controllers.IndexController;
 import com.blazing.objects.Movie;
 import com.blazing.repositories.TestRepository;
+import com.blazing.services.LoginRegisterService;
 
 @SpringBootApplication(scanBasePackageClasses={BlazingApplication.class, IndexController.class,
-		TestRepository.class})
+		TestRepository.class,LoginRegisterService.class})
 @EntityScan(basePackageClasses={Movie.class})
 @EnableJpaRepositories(basePackageClasses={TestRepository.class})
 public class BlazingApplication {
