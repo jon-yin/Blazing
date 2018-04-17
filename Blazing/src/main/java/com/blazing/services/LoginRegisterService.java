@@ -17,7 +17,6 @@ import com.blazing.objects.User;
 import com.blazing.repositories.UserRepository;
 
 @Service
-@Scope("session")
 public class LoginRegisterService {
 
 	@Autowired
