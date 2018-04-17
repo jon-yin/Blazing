@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 @Entity
-public class Celebrity {
+public class Celebrity implements Comparable<Celebrity>{
 	private long id;
 	private String name;
 	private LocalDate birthday;
@@ -70,6 +70,31 @@ public class Celebrity {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Celebrity other = (Celebrity) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	@Override
+	public int compareTo(Celebrity other) {
+		return name.compareTo(other.getName());
 	}
 	
 	

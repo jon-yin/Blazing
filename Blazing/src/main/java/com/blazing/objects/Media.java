@@ -20,7 +20,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
-public abstract class Media {
+public abstract class Media implements Comparable<Media>{
 
 	private long id;
 	private String title;
@@ -145,6 +145,7 @@ public abstract class Media {
 	{
 		return true;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -164,6 +165,11 @@ public abstract class Media {
 		return true;
 	}
 	
+	
+	public int compareTo(Media other)
+	{
+		return title.compareTo(other.getTitle());
+	}
 	
 	
 }

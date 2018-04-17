@@ -11,6 +11,6 @@ import com.blazing.objects.Media;
 @NoRepositoryBean
 public interface MediaRepository<T extends Media> extends JpaRepository<T, Long>{
 
-	Optional<T> findByTitle(String name);
-	Optional<Set<T>> findByTitleContainingIgnoreCase(String token);
+	T findByTitle(String name);
+	Set<T> findByTitleContainingIgnoreCase(String token);
 }

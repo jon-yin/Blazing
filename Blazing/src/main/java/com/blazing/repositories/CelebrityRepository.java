@@ -9,7 +9,7 @@ import com.blazing.objects.Celebrity;
 
 public interface CelebrityRepository extends JpaRepository<Celebrity, Long>{
 	
-	Optional<Celebrity> findCelebrityByName(String name);
-	Optional<Set<Celebrity>> findCelebrityByNameContainingIgnoreCase(String token);
+	Celebrity findCelebrityByName(String name);
+	Set<Celebrity> findCelebrityByNameContainingIgnoreCase(String token);
 
 }

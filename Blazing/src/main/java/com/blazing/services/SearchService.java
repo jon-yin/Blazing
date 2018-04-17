@@ -1,9 +1,12 @@
 package com.blazing.services;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,12 +35,11 @@ public class SearchService {
 		Map<Celebrity, Integer> celebRelevance = new HashMap<>();
 		String[] tokens = searchQuery.split("\\s+");
 		for (String token : tokens) {
-			Optional<Set<Movie>> movies = movieRepo.findByTitleContainingIgnoreCase(token);
-			Optional<Set<TV>> tvs = tvRepo.findByTitleContainingIgnoreCase(token);
-			Optional<Set<Celebrity>> celebs = celebRepo.findCelebrityByNameContainingIgnoreCase(token);
-			if (movies.isPresent()) {
-				Set<Movie> presentMovies = movies.get();
-				for (Movie movie : presentMovies) {
+			Set<Movie> movies = movieRepo.findByTitleContainingIgnoreCase(token);
+			Set<TV> tvs = tvRepo.findByTitleContainingIgnoreCase(token);
+			Set<Celebrity> celebs = celebRepo.findCelebrityByNameContainingIgnoreCase(token);
+			if (movies != null) {
+				for (Movie movie : movies) {
 					if (movieRelevance.containsKey(movie)) {
 						int newhits = movieRelevance.get(movie) + 1;
 						movieRelevance.put(movie, newhits);
@@ -45,9 +47,8 @@ public class SearchService {
 						movieRelevance.put(movie, 1);
 					}
 				}
-				if (tvs.isPresent()) {
-					Set<TV> presentTV = tvs.get();
-					for (TV tv : presentTV) {
+				if (tvs != null) {
+					for (TV tv : tvs) {
 						if (tvRelevance.containsKey(tv)) {
 							int newhits = tvRelevance.get(tv) + 1;
 							tvRelevance.put(tv, newhits);
@@ -56,9 +57,8 @@ public class SearchService {
 						}
 					}
 				}
-				if (celebs.isPresent()) {
-					Set<Celebrity> presentCeleb = celebs.get();
-					for (Celebrity celeb : presentCeleb) {
+				if (celebs != null) {
+					for (Celebrity celeb : celebs) {
 						if (celebRelevance.containsKey(celeb)) {
 							int newhits = celebRelevance.get(celeb) + 1;
 							celebRelevance.put(celeb, newhits);
@@ -69,6 +69,13 @@ public class SearchService {
 				}
 			}
 		}
+		
+		
+		Set<Entry<Movie,Integer>> relevantMovies = movieRelevance.entrySet();
+		Set<Entry<TV,Integer>> relevantTv = tvRelevance.entrySet();
+		Set<Entry<Celebrity,Integer>> relevantCelebs = celebRelevance.entrySet();
+		SortedSet sortedMovies = new TreeSet<Entry<Movie,Integer>>(Comparator.comparing(Entry<Movie,Integer>::getValue).thenComparing(Entry<Movie,Integer>::getKey));
+		
 		
 	}
 }
