@@ -13,8 +13,8 @@ import javax.persistence.Transient;
 
 @Entity
 public class Celebrity {
-	private String name;
 	private long id;
+	private String name;
 	private LocalDate birthday;
 	private LocalDate death;
 	private ImageEntity portrait;
