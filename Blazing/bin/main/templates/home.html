@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
 	<!-- popper.js -->
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 	<!-- source sans pro -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
 	<header></header>
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-auto main-content">
-				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-item nav-link active" id="show-movies" data-toggle="tab" href="#movie-main" role="tab" aria-controls="movie-main" aria-selected="true">In Theaters</a>
 					</li>
@@ -49,38 +49,6 @@
 										<span>70</span>%
 									</div>
 								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/game-night.jpg" alt="placeholder image">
-									<div class="name">Game Night</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/peter-rabbit.jpg" alt="placeholder image">
-									<div class="name">Peter Rabbit</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/annihilation.jpg" alt="placeholder image">
-									<div class="name">Annihilation</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/fifty-shades-freed.jpg" alt="placeholder image">
-									<div class="name">Fifty Shades Freed</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
 							</div>
 							<div class="text-right"><a href="/browse.html?type=opening-movies">View All...</a></div>
 						</section>
@@ -95,38 +63,6 @@
 										<span>70</span>%
 									</div>
 								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/game-night.jpg" alt="placeholder image">
-									<div class="name">Game Night</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/peter-rabbit.jpg" alt="placeholder image">
-									<div class="name">Peter Rabbit</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/annihilation.jpg" alt="placeholder image">
-									<div class="name">Annihilation</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/fifty-shades-freed.jpg" alt="placeholder image">
-									<div class="name">Fifty Shades Freed</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
 							</div>
 							<div class="text-right"><a href="/browse.html?type=top-bo">View All...</a></div>
 						</section>
@@ -136,38 +72,6 @@
 								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 									<div class="name">Black Panther</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/game-night.jpg" alt="placeholder image">
-									<div class="name">Game Night</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/peter-rabbit.jpg" alt="placeholder image">
-									<div class="name">Peter Rabbit</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/annihilation.jpg" alt="placeholder image">
-									<div class="name">Annihilation</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-									<img class="image" src="/images/fifty-shades-freed.jpg" alt="placeholder image">
-									<div class="name">Fifty Shades Freed</div>
 									<div>
 										<span class="icon tiny burning"></span>
 										<span>70</span>%
@@ -189,38 +93,6 @@
 										<span>70</span>%
 									</div>
 								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/black-lightning.png" alt="placeholder image">
-									<div class="name">Black Lightning</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/altered-carbon.jpg" alt="placeholder image">
-									<div class="name">Altered Carbon</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/seven-seconds.jpg" alt="placeholder image">
-									<div class="name">Seven Seconds</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/the-end-of-the-fing-world.jpg" alt="placeholder image">
-									<div class="name">The End of The F***ing World</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
 							</div>
 							<div class="text-right"><a href="/browse.html?type=new-tv">View All...</a></div>
 						</section>
@@ -235,38 +107,6 @@
 										<span>70</span>%
 									</div>
 								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/black-lightning.png" alt="placeholder image">
-									<div class="name">Black Lightning</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/altered-carbon.jpg" alt="placeholder image">
-									<div class="name">Altered Carbon</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/seven-seconds.jpg" alt="placeholder image">
-									<div class="name">Seven Seconds</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/the-end-of-the-fing-world.jpg" alt="placeholder image">
-									<div class="name">The End of The F***ing World</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
 							</div>
 							<div class="text-right"><a href="/browse.html?type=popular-tv">View All...</a></div>
 						</section>
@@ -276,38 +116,6 @@
 								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
 									<img class="image" src="/images/counterpart.jpg" alt="placeholder image">
 									<div class="name">Counterpart</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/black-lightning.png" alt="placeholder image">
-									<div class="name">Black Lightning</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/altered-carbon.jpg" alt="placeholder image">
-									<div class="name">Altered Carbon</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/seven-seconds.jpg" alt="placeholder image">
-									<div class="name">Seven Seconds</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
-									</div>
-								</a>
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/the-end-of-the-fing-world.jpg" alt="placeholder image">
-									<div class="name">The End of The F***ing World</div>
 									<div>
 										<span class="icon tiny burning"></span>
 										<span>70</span>%
@@ -338,30 +146,6 @@
 								<span>70</span>%
 							</div>
 						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-							<img class="image" src="/images/game-night.jpg" alt="placeholder image">
-							<div class="name">Game Night</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-							<img class="image" src="/images/peter-rabbit.jpg" alt="placeholder image">
-							<div class="name">Peter Rabbit</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html">
-							<img class="image" src="/images/annihilation.jpg" alt="placeholder image">
-							<div class="name">Annihilation</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
 					</div>
 					<div class="text-right"><a href="/browse.html?type=blazing-movies">View All...</a></div>
 				</section>
@@ -376,68 +160,15 @@
 								<span>70</span>%
 							</div>
 						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-							<img class="image" src="/images/black-lightning.png" alt="placeholder image">
-							<div class="name">Black Lightning</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-							<img class="image" src="/images/altered-carbon.jpg" alt="placeholder image">
-							<div class="name">Altered Carbon</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-							<img class="image" src="/images/seven-seconds.jpg" alt="placeholder image">
-							<div class="name">Seven Seconds</div>
-							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
-							</div>
-						</a>
 					</div>
 					<div class="text-right"><a href="/browse.html?type=blazing-tv">View All...</a></div>
 				</section>
 			</div>
 		</div>
-		<!-- <div class="row">
-			<div class="col">
-				<section>
-					<h5 class="font-weight-bold text-center section-header">NEWEST UPDATES</h5>
-					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
-						<li class="nav-item">
-							<a class="nav-item nav-link active" id="show-new-all" data-toggle="tab" href="#new-all" role="tab" aria-controls="new-all" aria-selected="true">All</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-item nav-link" id="show-new-movies" data-toggle="tab" href="#new-movies" role="tab" aria-controls="new-movies" aria-selected="false">Movies</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-item nav-link" id="show-new-tv" data-toggle="tab" href="#new-tv" role="tab" aria-controls="new-tv" aria-selected="false">TV Series</a>
-						</li>
-					</ul>
-
-					<div class="tab-content" id="show-newest-updates">
-						<div class="tab-pane show fade active section-results" id="new-all" role="tabpanel" aria-labelledby="show-newest-all">
-							<div class="row">
-							</div>
-						</div>
-						<div class="tab-pane show fade" id="new-movies" role="tabpanel" aria-labelledby="show-newest-movies">
-						</div>
-						<div class="tab-pane show fade" id="new-tv" role="tabpanel" aria-labelledby="show-newest-tv">
-						</div>
-					</div>
-				</section>
-			</div>
-		</div> -->
 	</div>
 	<footer></footer>
 </body>
 
-<script type="application/javascript" src="/js/main.js"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
 
 </html>

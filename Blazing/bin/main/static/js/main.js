@@ -16,19 +16,19 @@ $(function() {
 				var email = $("#email-login").val();
 				var password = $("#password-login").val();
 				var status = login(email, password);
-				if (status == 0) {
-					alert("user is logged in!");
-				}else if (status == 1) {
-					$("#inval-user-alert-login").show();
-					$("#inval-pass-alert-login").hide();
-					$("#no-pass-alert-login").hide();
-				}else if (status == 2) {
-					$("#inval-pass-alert-login").show();
-					$("#inval-user-alert-login").hide();
-					$("#no-pass-alert-login").hide();
-				}else{
-					alert("fail");
-				}
+//				if (status == 0) {
+//					alert("user is logged in!");
+//				}else if (status == 1) {
+//					$("#inval-user-alert-login").show();
+//					$("#inval-pass-alert-login").hide();
+//					$("#no-pass-alert-login").hide();
+//				}else if (status == 2) {
+//					$("#inval-pass-alert-login").show();
+//					$("#inval-user-alert-login").hide();
+//					$("#no-pass-alert-login").hide();
+//				}else{
+//					alert("fail");
+//				}
 			});
 			$("#logout-button").on("click",function() {
 				logout();
