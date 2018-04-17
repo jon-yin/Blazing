@@ -42,7 +42,7 @@ function signup(e) {
 	e.preventDefault();
 	// temp - change to display loading
 	$("#signup-button").attr("disabled", true);
-	$("#signup-button").css("background-color","white");
+	$("#signup-button").css("background-color","#aaaaaa");
 	var firstName = $("#firstname-signup").val();
 	var lastName = $("#lastname-signup").val();
 	var email = $("#email-signup").val();
@@ -64,9 +64,6 @@ function signup(e) {
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
-		},
-		complete : function() {
-			// temp - change to display loading
 			$("#signup-button").attr("disabled", false);
 			$("#signup-button").css("background-color","#6c757d");
 		}
@@ -94,32 +91,30 @@ function search(e){
 }
 
 $(function() {
-	// load header and scripts for header
-	$("header").load("header.html", function() {
-		var isLoggedIn = checkLogin();
-		if (isLoggedIn) {
-			$("#logged-in").show();
-			$("#not-logged-in").hide();
-		}else{
-			$("#not-logged-in").show();
-			$("#logged-in").hide();
-		}
-		$("#login-button").on("click", login);
-		$("#logout-button").on("click", logout);
-		$("#signup-button").on("click", signup);
-		$("#search-button").on("click", function(){
-			if ($("#search-input").val() != ""){
-				search($("#search-input").val());
-			}
-		});
-		$("#search-input").keypress(function(e){
-			if (e.which == 13 && $(this).val() != ""){
-				search($(this).val());
-			}
-		});
-	});
-
+	$("header").load("header.html");
 	$("footer").load("footer.html");
+	
+	var isLoggedIn = checkLogin();
+	if (isLoggedIn) {
+		$("#logged-in").show();
+		$("#not-logged-in").hide();
+	}else{
+		$("#not-logged-in").show();
+		$("#logged-in").hide();
+	}
+	$("#login-button").on("click", login);
+	$("#logout-button").on("click", logout);
+	$("#signup-button").on("click", signup);
+	$("#search-button").on("click", function(){
+		if ($("#search-input").val() != ""){
+			search($("#search-input").val());
+		}
+	});
+	$("#search-input").keypress(function(e){
+		if (e.which == 13 && $(this).val() != ""){
+			search($(this).val());
+		}
+	});
 
 	$(".section-carousel").slick({
 		infinite: false,

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-@Scope("session")
 public class User {
 
 	private String firstName;
@@ -32,25 +32,6 @@ public class User {
 	private Set<Critic> favCritics;
 	private ImageEntity profilePic;
 	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
-	
 	@Id
 	@GeneratedValue
 	public int getId() {
@@ -59,12 +40,39 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	@Column(nullable=false)
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	@Column(nullable=false)
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	@Column(nullable=false)
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	
+	
 	public int getViews() {
 		return views;
 	}
 	public void setViews(int views) {
 		this.views = views;
 	}
+	
 	public LocalDate getJoinDate() {
 		return joinDate;
 	}
@@ -77,7 +85,6 @@ public class User {
 	public List<Media> getWishlist() {
 		return wishlist;
 	}
-	
 	public void setWishlist(List<Media> wishlist) {
 		this.wishlist = wishlist;
 	}
@@ -106,6 +113,14 @@ public class User {
 	}
 	public void setProfilePic(ImageEntity profilePic) {
 		this.profilePic = profilePic;
+	}
+	
+	@Column(nullable=false)
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public void addToReviews(Review review)
@@ -141,12 +156,6 @@ public class User {
 	public void reportReview(int reviewid)
 	{
 		
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	
