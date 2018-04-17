@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.blazing.objects.User;
 
 
-public interface UserRepository extends JpaRepository<User, Long>{
+public interface UserRepository<T extends User> extends JpaRepository<T, Long>{
 
-	Optional<User> findUserByEmailAddress(String emailAddress);
+	
+	Long countUsersByEmailAddress(String emailAddress);
+	Optional<T> findUserByEmailAddress(String emailAddress);
 	
 }

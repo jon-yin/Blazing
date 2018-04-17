@@ -14,6 +14,7 @@ import javax.persistence.Transient;
 @Entity
 public class Celebrity {
 	private long id;
+	private String name;
 	private LocalDate birthday;
 	private LocalDate death;
 	private ImageEntity portrait;
@@ -63,6 +64,14 @@ public class Celebrity {
 	public void setCharacters(Set<MovieCharacter> characters) {
 		this.characters = characters;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	
 	
 }

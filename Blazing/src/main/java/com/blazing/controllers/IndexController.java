@@ -17,20 +17,11 @@ import com.blazing.repositories.TestRepository;
 @RequestMapping("/")
 public class IndexController {
 	
-	private TestRepository testRepo;
-	private Test2Repository test2Repo;
-	
-	@Autowired
-	public IndexController()
-	{
-	}
-	
 	@RequestMapping(method=RequestMethod.GET)
 	public String home()
 	{
 		return "home";
 	}
-	
 	
 
 }
