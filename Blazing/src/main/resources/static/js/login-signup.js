@@ -1,20 +1,7 @@
 // login and signup system
-function getCookie(cname) {
-	var name = cname + "=";
-	var decodedCookie = decodeURIComponent(document.cookie);
-	var ca = decodedCookie.split(';');
-	for(var i = 0; i <ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
-		}
-	}
-	return "";
-}
 
+// check if user is in session
+// returns boolean
 function checkLogin() {
 	return false;
 }
@@ -31,26 +18,26 @@ function login(email, password) {
 	var loginCredentials = {};
 	loginCredentials["email"] = email;
 	loginCredentials["password"] = password;
+	var jsonString = JSON.stringify(loginCredentials);
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
 		url : "/login",
-		data : JSON.stringify(loginCredentials),
+		data : jsonString,
 		cache : false,
-		dataType : 'json',
-		timeout : 10000,
 		success : function(data) {
-			return 0;
+			console.log("success");
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
-			return 99;
 		}
 	});
 }
+// send json
+// requestbody as separate variables
 
 function logout() {
-//	document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+	//delete user from session
 }
 
 // status codes:
@@ -63,9 +50,12 @@ function logout() {
 // 6: first name empty
 // 7: last name empty
 // 99: error
-function signup(fn, ln, em, pw){
-	var registerCredentials = {"firstName":fn, "lastName":ln, "email":em, "password":pw};
-//	var registerCredentials = {};
+function signup(firstName, lastName, email, password){
+	var registerCredentials = {}
+	registerCredentials["firstName"] = firstName;
+	registerCredentials["lastName"] = lastName;
+	registerCredentials["email"] = email;
+	registerCredentials["password"] = password;
 	var jsonString = JSON.stringify(registerCredentials);
 	$.ajax({
 		type : "POST",

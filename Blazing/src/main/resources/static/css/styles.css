@@ -38,6 +38,9 @@ a {
 .nav-pills a.active{
 	background-color: #aaaaaa!important;
 }
+.nav-tabs{
+	background-color: white;
+}
 a:hover{
 	color: #aaaaaa!important;
 }
@@ -51,6 +54,10 @@ a:hover{
 }
 .celebrity-link .celebrity-link-body{
 	padding-left: 10px;
+}
+
+#movie-links .score, #tv-links .score{
+	width: 75px;
 }
 
 /*images*/
@@ -105,6 +112,15 @@ section .section-carousel{
 	margin-right: 20px;
 	padding: 0;
 }
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane, .pill-content > .pill-pane {
+    display: block;    /* undo display:none          */
+    height: 0;         /* height:0 is also invisible */ 
+    overflow: hidden;  /* no-overflow                */
+}
+.tab-content > .active, .pill-content > .active {
+    height: auto;      /* let the content decide it  */
+} /* bootstrap hack end */
 
 /*responsiveness of entire screen*/
 @media (min-width: 576px){

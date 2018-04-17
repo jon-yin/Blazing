@@ -13,6 +13,7 @@ import javax.persistence.Transient;
 
 @Entity
 public class Celebrity {
+	private String name;
 	private long id;
 	private String name;
 	private LocalDate birthday;
@@ -20,6 +21,12 @@ public class Celebrity {
 	private ImageEntity portrait;
 	private Set<Media> filmography;
 	private Set<MovieCharacter> characters;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Id
 	@GeneratedValue
 	public long getId() {

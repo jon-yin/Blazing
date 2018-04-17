@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
 	<!-- popper.js -->
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 	<!-- source sans pro -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
 <link rel="stylesheet" href="/css/styles.css">
@@ -36,10 +36,10 @@
 					</a>
 				</div> -->
 				<section class="container-fluid">
-					<h3 class="section-header">TITLE</h3>
+					<h3 class="section-header" th:text="${movie.title}">TITLE</h3>
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
-							<img src="/images/black-panther.jpg">
+							<img src="/images/black-panther.jpg" th:src="@{${movie.poster}}">
 							<table class="text-left">
 								<tr>
 									<th style="vertical-align: top;">RATING:</th>
@@ -118,7 +118,7 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">MOVIE INFO</h5>
-									<div id="description">
+									<div id="description" th:text="${movie.description}">
 										Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
 									</div>
 								</section>
@@ -126,69 +126,14 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">CAST</h5>
-									<div class="celebrity-list row no-gutters">
+									<div class="celebrity-list row no-gutters" th:each="character : ${movie.cast}">
 										<div class="celebrity-link col-6 col-md-4 pb-1">
 											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
+												<img src="/images/thumbnail.png" th:src="${character.actor.portrait}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
+													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
-														 as <span>Character</span>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
-												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
-													<div>
-														 as <span>Character</span>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
-												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
-													<div>
-														 as <span>Character</span>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
-												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
-													<div>
-														 as <span>Character</span>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
-												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
-													<div>
-														 as <span>Character</span>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-												<img src="/images/thumbnail.png" style="max-height: 50px; width: auto;">
-												<div class="celebrity-link-body">
-													<div class="font-weight-bold">Celeb McCelebFace</span></div>
-													<div>
-														 as <span>Character</span>
+														 as <span th:text="${character.name}">Character</span>
 													</div>
 												</div>
 											</a>
@@ -202,7 +147,7 @@
 					<div class="row">
 						<section class="col">
 							<h5 class="section-header">VIDEOS AND PHOTOS</h5>
-							<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+							<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 								<li class="nav-item">
 									<a class="nav-item nav-link active" id="show-videos" data-toggle="tab" href="#videos" role="tab" aria-controls="videos" aria-selected="true">Videos</a>
 								</li>
@@ -216,15 +161,6 @@
 										<div class="section-carousel-item">
 											<img src="/images/v1.jpg">
 										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v2.jpg">
-										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v3.jpg">
-										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v4.jpg">
-										</div>
 									</div>
 									<div class="text-right"><a href="#">View All Videos...</a></div>
 								</div>
@@ -232,15 +168,6 @@
 									<div class="section-carousel">
 										<div class="section-carousel-item">
 											<img src="/images/v1.jpg">
-										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v2.jpg">
-										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v3.jpg">
-										</div>
-										<div class="section-carousel-item">
-											<img src="/images/v4.jpg">
 										</div>
 									</div>
 									<div class="text-right"><a href="#">View All Photos...</a></div>
@@ -252,7 +179,10 @@
 				<section>
 					<h5 class="section-header">REVIEWS</h5>
 					<section class="border">
-						<form id="user-rating">
+						<div th:if="${session.user} == null">
+							<h5>Log In to Add A Review</h5>
+						</div>
+						<form id="user-rating" th:unless="${session.user} == null">
 							<h5 class="section-header">ADD YOUR RATING</h5>
 							<div class="row flex-nowrap align-items-stretch">
 								<div class="col-auto">
@@ -322,38 +252,6 @@
 											- <a href="#">Name</a>, <a href="#">Publication</a>
 										</div>
 									</div>
-									<div class="review critic">
-										<div class="quote d-flex">
-											<div class="icon med ashes mr-4" style="min-width: 64px;"></div>
-											<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
-											<div>
-												Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
-											</div>
-											<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
-										</div>
-										<div class="results text-right">
-											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
-										</div>
-										<div class="reviewer text-right">
-											- <a href="#">Name</a>, <a href="#">Publication</a>
-										</div>
-									</div>
-									<div class="review critic">
-										<div class="quote d-flex">
-											<div class="icon med burning mr-4" style="min-width: 64px;"></div>
-											<div><i class="fa fa-quote-left" style="padding-right: 25px;"></i></div>
-											<div>
-												Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit laboramus conclusionemque pro. Modus perpetua philosophia ut vim, ex invenire omittantur repudiandae duo, usu nisl veniam legimus ne. Illum ubique in est, mel regione gloriatur adversarium id. An natum quando adipisci usu, quod utinam partiendo nec eu, ad duo illud impedit. An vix tempor commune, no est erat fabulas accusata.
-											</div>
-											<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
-										</div>
-										<div class="results text-right">
-											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
-										</div>
-										<div class="reviewer text-right">
-											- <a href="#">Name</a>, <a href="#">Publication</a>
-										</div>
-									</div>
 								</div>
 								<div class="text-right"><a href="/reviews.html">View All Critic Reviews...</a></div>
 							</section>
@@ -369,30 +267,6 @@
 											 - 
 											<span>
 												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
-											</span>
-										</div>
-									</div>
-									<div class="review audience d-flex flex-row">
-										<div class="reviewer">
-											<span>Name</span>
-										</div>
-										<div class="quote">
-											<span>10/10</span>
-											 - 
-											<span>
-												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
-											</span>
-										</div>
-									</div>
-									<div class="review audience d-flex flex-row">
-										<div class="reviewer">
-											<span>Name</span>
-										</div>
-										<div class="quote">
-											<span>10/10</span>
-											 - 
-											<span>
-												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
 											</span>
 										</div>
 									</div>
@@ -418,45 +292,9 @@
 						<h5 class="section-header">OPENING</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>MOVIE</span></div>
 							</a>
@@ -465,45 +303,9 @@
 						<h5 class="section-header">TOP BOX OFFICE</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>MOVIE</span></div>
 							</a>
@@ -512,45 +314,9 @@
 						<h5 class="section-header">COMING SOON</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>MOVIE</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>MOVIE</span></div>
 							</a>
@@ -561,45 +327,9 @@
 						<h5 class="section-header">NEW TV TONIGHT</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>TV</span></div>
 							</a>
@@ -608,45 +338,9 @@
 						<h5 class="section-header">MOST POPULAR TV ON BLAZING</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>TV</span></div>
 							</a>
@@ -655,45 +349,9 @@
 						<h5 class="section-header">CERTIFIED BLAZING TV</h5>
 						<div class="details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
+								<div class="score">
 									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
-								</div>
-								<div class="text-truncate"><span>TV</span></div>
-							</a>
-						</div>
-						<div class="details-link">
-							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
-								<div style="width: 75px;">
-									<span class="icon tiny burning"></span>
-									<span>70%</span>
+									<span>70</span>%
 								</div>
 								<div class="text-truncate"><span>TV</span></div>
 							</a>
@@ -706,13 +364,13 @@
 		<nav class="navbar" style="display: none;">
 			<button type="button" class="btn btn-warning" href="#">Edit Page...</button>
 			<button type="button" class="btn btn-danger" href="#">Delete Page</button>
-		</div>
+		</nav>
 	</div>
 	<footer></footer>
 </body>
 
-<script type="application/javascript" src="/js/main.js"></script>
-<script type="application/javascript" src="/js/review-system.js"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
+<script type="application/javascript" th:src="@{/js/review-system.js}"></script>
 
 </html>
 

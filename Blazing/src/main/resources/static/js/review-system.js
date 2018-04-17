@@ -7,8 +7,29 @@ function toggleNI() {
 
 }
 
-function review(rating, paragraph, media){
-
+// status codes:
+// 0: success
+// 1: no ratings
+// 99: error
+function review(ratings, paragraph, media){
+	var reviewDetails = {};
+	reviewDetails["ratings"] = ratings;
+	reviewDetails["paragraph"] = paragraph;
+	reviewDetails["media"] = media;
+	var jsonString = JSON.stringify(reviewDetails);
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/review",
+		data : jsonString,
+		cache : false,
+		success : function(data) {
+			console.log("success");
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		}
+	});
 }
 
 $(function(){
