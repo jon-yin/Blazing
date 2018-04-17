@@ -25,6 +25,6 @@ public class BlazingApplication {
 	@Bean
 	public BCryptPasswordEncoder getEncoder()
 	{
-		return new BCryptPasswordEncoder(20);
+		return new BCryptPasswordEncoder(10);
 	}
 }
