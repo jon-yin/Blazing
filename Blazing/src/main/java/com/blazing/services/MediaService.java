@@ -12,6 +12,7 @@ import com.blazing.repositories.TVRepository;
 
 @Service
 public class MediaService {
+	
 	@Autowired
 	private MovieRepository movieRepo;
 	@Autowired

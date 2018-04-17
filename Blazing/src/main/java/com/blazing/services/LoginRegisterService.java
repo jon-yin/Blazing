@@ -3,13 +3,12 @@ package com.blazing.services;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import com.blazing.objects.LoginInfo;
 import com.blazing.objects.RegisterInfo;
@@ -26,7 +25,7 @@ public class LoginRegisterService {
 	private BCryptPasswordEncoder encoder;
 
 	@Transactional
-	public boolean registerUser(RegisterInfo info, Model model)
+	public boolean registerUser(RegisterInfo info, HttpSession session)
 	{
 		System.out.println("Registering user");
 		Long conflicts = repository.countUsersByEmailAddress(info.getEmail());
@@ -38,7 +37,7 @@ public class LoginRegisterService {
 			newUser.setEmailAddress(info.getEmail());
 			newUser.setJoinDate(LocalDate.now());
 			newUser.setPassword(encoder.encode(info.getPassword()));
-			model.addAttribute("currentUser", newUser);
+			session.setAttribute("currentUser", newUser);
 			repository.save(newUser);
 			return true;
 		}
@@ -48,15 +47,15 @@ public class LoginRegisterService {
 		}
 	}
 
-	public boolean loginUser(LoginInfo info, Model model) {
+	public boolean loginUser(LoginInfo info, HttpSession model) {
 		String emailAddress = info.getEmail();
-		Optional<User> user = repository.findUserByEmailAddress(emailAddress);
+		User user = repository.findUserByEmailAddress(emailAddress);
 		String password = info.getPassword();
-		if (user.isPresent()) {
-			User validUser = user.get();
+		if (user != null) {
+			User validUser = user;
 			if (encoder.matches(password, validUser.getPassword()))
 			{
-				model.addAttribute("currentUser", validUser);
+				model.setAttribute("currentUser", validUser);
 				return true;
 			}
 			else
