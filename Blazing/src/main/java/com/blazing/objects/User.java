@@ -75,7 +75,6 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 	
-	
 	public int getViews() {
 		return views;
 	}

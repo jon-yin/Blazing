@@ -7,18 +7,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blazing.objects.Movie;
-import com.blazing.repositories.MovieRepository;
+import com.blazing.services.MediaService;
 
 @RestController
 @RequestMapping("/upload_movie")
 public class MediaUploadController {
 
 	@Autowired
-	private MovieRepository mediaRepo;
+	private MediaService mediaService;
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public boolean UploadMovie(Movie movie, @RequestParam("cast") String cast, @RequestParam("runtimes") String[] runtime)
 	{
+		System.out.println(cast);
+		for (String str : runtime)
+		{
+			System.out.println(str);
+		}
 		return true;
 	}
 	
