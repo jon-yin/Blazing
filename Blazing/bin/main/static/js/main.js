@@ -121,25 +121,25 @@ function search(){
 	}else{
 		return;
 	}
-	var search = {};
-	search["searchQuery"] = searchString;
-	var jsonString = JSON.stringify(search);
-	$.ajax({
-		type : "GET",
-		contentType : "application/json",
-		url : "/search",
-		data : jsonString,
-		cache : false,
-		success : function(data) {
-			console.log("success");
-		},
-		error : function(e) {
-			console.log("ERROR: ", e);
-		},
-		complete : function(e) {
+//	var search = {};
+//	search["searchQuery"] = searchString;
+//	var jsonString = JSON.stringify(search);
+//	$.ajax({
+//		type : "GET",
+//		contentType : "application/json",
+//		url : "/search",
+//		data : jsonString,
+//		cache : false,
+//		success : function(data) {
+//			console.log("success");
+//		},
+//		error : function(e) {
+//			console.log("ERROR: ", e);
+//		},
+//		complete : function(e) {
 			location.href = "/search?q="+encodeURIComponent($("#search-input").val());
-		}
-	});
+//		}
+//	});
 }
 
 $(function() {
