@@ -18,8 +18,6 @@ public class Critic extends User{
 		return publication;
 	}
 
-
-
 	public void setPublication(String publication) {
 		this.publication = publication;
 	}

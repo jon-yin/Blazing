@@ -1,6 +1,7 @@
 package com.blazing.objects;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -24,20 +25,29 @@ public class User {
 	private String lastName;
 	private String emailAddress;
 	private String password;
-	private int id;
+	private long id;
 	private int views;
 	private LocalDate joinDate;
 	private List<Media> wishlist;
 	private List<Review> reviews;
-	private Set<Critic> favCritics;
+	private List<Critic> favCritics;
 	private ImageEntity profilePic;
+	
+	
+	public User()
+	{
+		wishlist = new ArrayList<>();
+		reviews = new ArrayList<>();
+		favCritics = new ArrayList<>();
+		
+	}
 	
 	@Id
 	@GeneratedValue
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
@@ -99,10 +109,10 @@ public class User {
 	
 	@ManyToMany
 	@JoinColumn(name="CRITIC_ID")
-	public Set<Critic> getFavCritics() {
+	public List<Critic> getFavCritics() {
 		return favCritics;
 	}
-	public void setFavCritics(Set<Critic> favCritics) {
+	public void setFavCritics(List<Critic> favCritics) {
 		this.favCritics = favCritics;
 	}
 	

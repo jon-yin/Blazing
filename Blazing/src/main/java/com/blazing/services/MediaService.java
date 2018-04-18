@@ -2,6 +2,8 @@ package com.blazing.services;
 
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +52,12 @@ public class MediaService {
 		{
 			return false;
 		}
+	}
+	
+	@Transactional
+	public void addMovie(Movie movie)
+	{
+		movieRepo.save(movie);
 	}
 	
 }

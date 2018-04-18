@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Review {
 	
-	private int id;
+	private long id;
 	private int score;
 	private String body;
 	private User user;
@@ -21,10 +21,10 @@ public class Review {
 	
 	@Id
 	@GeneratedValue
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public int getScore() {
@@ -63,6 +63,29 @@ public class Review {
 	public void setSource(Media source) {
 		this.source = source;
 	}
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Review other = (Review) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
 	
 	
 	
