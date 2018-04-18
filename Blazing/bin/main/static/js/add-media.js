@@ -29,7 +29,7 @@ function addMovie(e){
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : "/upload_movie",
+		url : window.location.hostname+"/upload_movie",
 		data : jsonString,
 		cache : false,
 		success : function(data) {
