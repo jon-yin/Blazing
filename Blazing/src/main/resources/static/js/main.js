@@ -94,6 +94,10 @@ function signup(e) {
 			$("#signup-button").css("background-color","#6c757d");
 		}
 	});
+	var firstName = $("#firstname-signup").val();
+	var lastName = $("#lastname-signup").val();
+	var email = $("#email-signup").val();
+	var password = $("#password-signup").val();
 }
 
 // search
