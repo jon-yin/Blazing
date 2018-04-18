@@ -1,12 +1,11 @@
 package com.blazing.services;
 
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -74,7 +73,13 @@ public class SearchService {
 		Set<Entry<Movie,Integer>> relevantMovies = movieRelevance.entrySet();
 		Set<Entry<TV,Integer>> relevantTv = tvRelevance.entrySet();
 		Set<Entry<Celebrity,Integer>> relevantCelebs = celebRelevance.entrySet();
-		SortedSet sortedMovies = new TreeSet<Entry<Movie,Integer>>(Comparator.comparing(Entry<Movie,Integer>::getValue).thenComparing(Entry<Movie,Integer>::getKey));
+		List<Entry<Movie,Integer>> sortedMovies = new ArrayList<>();
+		List<Entry<TV,Integer>> sortedTvs = new ArrayList<>();
+		List<Entry<Celebrity,Integer>> sortedCelebrities = new ArrayList<>();
+		sortedMovies.addAll(relevantMovies);
+		
+		
+		
 		
 		
 	}
