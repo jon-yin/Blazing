@@ -1,5 +1,6 @@
 package com.blazing.objects;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -32,8 +33,13 @@ public class MovieCharacter {
 		this.name = name;
 	}
 	
+	public MovieCharacter()
+	{
+		quotes = new HashSet<>();
+	}
+	
 	@ManyToOne
-	@JoinColumn(name="CELEBRITY_ID")
+	@JoinColumn(name="CELEBRITY_ID",nullable=false)
 	public Celebrity getActor() {
 		return actor;
 	}
@@ -42,7 +48,7 @@ public class MovieCharacter {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name="MEDIA_ID")
+	@JoinColumn(name="MEDIA_ID",nullable=false)
 	public Media getSource() {
 		return source;
 	}
@@ -52,7 +58,7 @@ public class MovieCharacter {
 	}
 	
 	@OneToMany
-	@JoinColumn(name="QUOTE_ID")
+	@JoinColumn(name="QUOTE_ID", nullable=false)
 	public Set<Quotes> getQuotes() {
 		return quotes;
 	}

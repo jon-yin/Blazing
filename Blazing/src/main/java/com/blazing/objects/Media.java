@@ -1,6 +1,7 @@
 package com.blazing.objects;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,7 +29,7 @@ public abstract class Media implements Comparable<Media>{
 	private String title;
 	private String description;
 	private ImageEntity poster;
-	private LocalDateTime[] airtimes;
+	private LocalDate[] airtimes;
 	private double audienceScore;
 	private double blazingScore;
 	private Set<File> videos;
@@ -84,10 +85,10 @@ public abstract class Media implements Comparable<Media>{
 	}
 	
 	
-	public LocalDateTime[] getAirtimes() {
+	public LocalDate[] getAirtimes() {
 		return airtimes;
 	}
-	public void setAirtimes(LocalDateTime[] airtimes) {
+	public void setAirtimes(LocalDate[] airtimes) {
 		this.airtimes = airtimes;
 	}
 	

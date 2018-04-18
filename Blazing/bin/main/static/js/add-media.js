@@ -29,13 +29,14 @@ function addMovie(e){
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : window.location.hostname+"/upload_movie",
+		url : window.location+"/uploadmovie",
 		data : jsonString,
 		cache : false,
 		success : function(data) {
 			console.log("success");
 		},
 		error : function(e) {
+			console.log(jsonString)
 			console.log("ERROR: ", e);
 		},
 		complete : function() {
