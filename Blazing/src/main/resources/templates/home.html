@@ -41,44 +41,44 @@
 						<section>
 							<h5 class="section-header">OPENING THIS WEEK</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name">Black Panther</div>
+									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
 										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse.html?type=opening-movies">View All...</a></div>
+							<div class="text-right"><a href="/browse.html?type=opening-movies" th:href="@{/browse?type=opening-movies}">View All...</a></div>
 						</section>
 						<section>
 							<h5 class="section-header">TOP BOX OFFICE</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name">Black Panther</div>
+									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
 										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse.html?type=top-bo">View All...</a></div>
+							<div class="text-right"><a href="/browse.html?type=top-bo" th:href="@{/browse?type=top-bo}">View All...</a></div>
 						</section>
 						<section>
 							<h5 class="section-header">COMING SOON TO THEATERS</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name">Black Panther</div>
+									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
 										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse.html?type=coming-soon">View All...</a></div>
+							<div class="text-right"><a href="/browse.html?type=coming-soon" th:href="@{/browse?type=coming-soon}">View All...</a></div>
 						</section>
 					</div>
 					<div class="tab-pane fade" id="tv-main" role="tabpanel" aria-labelledby="show-tvs">
@@ -138,16 +138,16 @@
 				<section id="blazing-movie-picks">
 					<h5 class="section-header">BLAZING MOVIE PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" role="button">
+						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
 							<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-							<div class="name">Black Panther</div>
+							<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
+								<span class="icon tiny burning"></span>
+								<span th:text="${movie.blazingScore}">70</span>%
 							</div>
 						</a>
 					</div>
-					<div class="text-right"><a href="/browse.html?type=blazing-movies">View All...</a></div>
+					<div class="text-right"><a href="/browse.html?type=blazing-movies" th:href="@{/browse?type=blazing-movies}">View All...</a></div>
 				</section>
 				<section id="blazing-tv-picks">
 					<h5 class="section-header">BLAZING TV PICKS</h5>
@@ -169,6 +169,7 @@
 	<footer></footer>
 </body>
 
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 
 </html>

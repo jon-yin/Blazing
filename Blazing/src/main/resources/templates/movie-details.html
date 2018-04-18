@@ -20,7 +20,7 @@
 	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
 	<header></header>
@@ -39,7 +39,7 @@
 					<h3 class="section-header" th:text="${movie.title}">TITLE</h3>
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
-							<img src="/images/black-panther.jpg" th:src="@{${movie.poster}}">
+							<img src="/images/black-panther.jpg">
 							<table class="text-left">
 								<tr>
 									<th style="vertical-align: top;">RATING:</th>
@@ -290,7 +290,7 @@
 				<div class="tab-content" id="show-main-content">
 					<section class="tab-pane fade show active" id="movie-links" role="tabpanel" aria-labelledby="show-movie-links">
 						<h5 class="section-header">OPENING</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -301,7 +301,7 @@
 						</div>
 						<a href="#">View All...</a>
 						<h5 class="section-header">TOP BOX OFFICE</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -312,7 +312,7 @@
 						</div>
 						<a href="#">View All...</a>
 						<h5 class="section-header">COMING SOON</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -325,7 +325,7 @@
 					</section>
 					<section class="tab-pane fade" id="tv-links" role="tabpanel" aria-labelledby="show-tv-links">
 						<h5 class="section-header">NEW TV TONIGHT</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -336,7 +336,7 @@
 						</div>
 						<a href="#">View All...</a>
 						<h5 class="section-header">MOST POPULAR TV ON BLAZING</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -347,7 +347,7 @@
 						</div>
 						<a href="#">View All...</a>
 						<h5 class="section-header">CERTIFIED BLAZING TV</h5>
-						<div class="details-link">
+						<div class="list-item details-link">
 							<a class="w-100 d-flex align-items-center" href="/tv-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span>
@@ -369,6 +369,7 @@
 	<footer></footer>
 </body>
 
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 <script type="application/javascript" th:src="@{/js/review-system.js}"></script>
 

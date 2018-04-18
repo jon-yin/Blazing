@@ -29,25 +29,65 @@
 			<div class="col">
 				<section>
 					<h2>SEARCH RESULTS: <span id="search-title"></span></h2>
-					<div style="display:none;">
-						<div>
-							<h5 class="section-header">Movies</h5>
+					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-item nav-link active" id="show-movie-results" data-toggle="tab" href="#movie-results" role="tab" aria-controls="movie-results" aria-selected="true">Movies</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" id="show-tv-results" data-toggle="tab" href="#tv-results" role="tab" aria-controls="tv-results" aria-selected="false">TV Shows</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" id="show-celeb-results" data-toggle="tab" href="#celeb-results" role="tab" aria-controls="celeb-results" aria-selected="false">Celebrities</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="show-results">
+						<div class="tab-pane show fade active" id="movie-results" role="tabpanel" aria-labelledby="show-movie-results">
+							<div class="movie-results-list">
+								<a class="w-100 m-2 d-flex align-items-center" href="/movie-details.html">
+									<div class="score pr-2">
+										<span class="icon tiny burning"></span>
+										<span>70</span>%
+									</div>
+									<img src="/images/black-panther.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
+									<div>
+										<div class="font-weight-bold">MOVIE</div>
+										<div class="cast">
+											<span>Celeb McCelebface</span>,
+											<span>Celeb McCelebface</span>,
+											<span>Celeb McCelebface</span>
+										</div>
+									</div>
+								</a>
+							</div>
 						</div>
 
-						<div>
-							<h5 class="section-header">TV</h5>
+						
+						<div class="tab-pane show fade" id="tv-results" role="tabpanel" aria-labelledby="show-tv-results">
+							<div class="tv-results-list">
+								<a class="w-100 m-2 d-flex align-items-center" href="/tv-details.html">
+									<div class="score pr-2">
+										<span class="icon tiny burning"></span>
+										<span>70</span>%
+									</div>
+									<img src="/images/counterpart.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
+									<div>
+										<span class="font-weight-bold">TV</span> (<span>year started</span> - <span>year ended</span>)
+									</div>
+								</a>
+							</div>
 						</div>
-
-						<div>
-							<h5 class="section-header">Celebrities</h5>
-						</div>
-
-						<div>
-							<h5 class="section-header">Critics</h5>
+						
+						<div class="tab-pane show fade" id="celeb-results" role="tabpanel" aria-labelledby="show-celeb-results">
+							<div class="celeb-results-list">
+								<a class="w-100 m-2 d-flex align-items-center" href="/celebrity-details.html">
+									<img src="/images/thumbnail.png" class="search-image pr-2" style="width: 100px; height: 100px;">
+									<div class="font-weight-bold">Celeb McCelebface</div>
+								</a>
+							</div>
 						</div>
 					</div>
 
-					<div>
+					<div style="display: none;">
 						No results found!
 					</div>
 				</section>
@@ -57,11 +97,14 @@
 	<footer></footer>
 </body>
 
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" src="/js/main.js"></script>
 <script type="application/javascript" src="/js/get-query-string.js"></script>
 <script type="application/javascript">
+	$(function(){
 		var browseData = getDataFromQueryString();
-		document.getElementById("search-title").textContent = browseData["search"];
+		$("#search-title").val(browseData["search"]);
+	});
 </script>
 
 </html>
