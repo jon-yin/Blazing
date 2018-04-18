@@ -2,8 +2,10 @@ package com.blazing.objects;
 
 import java.io.File;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,7 +21,7 @@ import javax.persistence.Transient;
 
 
 @Entity
-@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
 public abstract class Media implements Comparable<Media>{
 
 	private long id;
@@ -33,9 +35,19 @@ public abstract class Media implements Comparable<Media>{
 	private Set<ImageEntity> images;
 	private Set<MovieCharacter> cast;
 	private Set<Review> reviews;
-	private Set<Quotes> quotes;
 	private Genre genre;
 	
+	public Media()
+	{
+		audienceScore = 0;
+		blazingScore = 0;
+		videos = new HashSet<>();
+		images = new HashSet<>();
+		reviews = new HashSet<>();
+		cast = new HashSet<>();
+		reviews = new HashSet<>();
+		
+	}
 	
 	@Id
 	@GeneratedValue
@@ -45,12 +57,16 @@ public abstract class Media implements Comparable<Media>{
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+	@Column(nullable=false)
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	@Column(nullable=false)
 	public String getDescription() {
 		return description;
 	}
@@ -66,12 +82,15 @@ public abstract class Media implements Comparable<Media>{
 	public void setPoster(ImageEntity poster) {
 		this.poster = poster;
 	}
+	
+	
 	public LocalDateTime[] getAirtimes() {
 		return airtimes;
 	}
 	public void setAirtimes(LocalDateTime[] airtimes) {
 		this.airtimes = airtimes;
 	}
+	
 	public double getAudienceScore() {
 		return audienceScore;
 	}
@@ -103,6 +122,7 @@ public abstract class Media implements Comparable<Media>{
 	}
 	
 	@OneToMany(mappedBy="source")
+	@Column(nullable=false)
 	public Set<MovieCharacter> getCast() {
 		return cast;
 	}
@@ -111,19 +131,12 @@ public abstract class Media implements Comparable<Media>{
 	}
 	
 	@OneToMany(mappedBy="source")
+	@Column(nullable=false)
 	public Set<Review> getReviews() {
 		return reviews;
 	}
 	public void setReviews(Set<Review> reviews) {
 		this.reviews = reviews;
-	}
-	
-	@OneToMany
-	public Set<Quotes> getQuotes() {
-		return quotes;
-	}
-	public void setQuotes(Set<Quotes> quotes) {
-		this.quotes = quotes;
 	}
 	
 	@Enumerated(EnumType.STRING)

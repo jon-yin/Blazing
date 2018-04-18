@@ -12,14 +12,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.blazing.controllers.IndexController;
 import com.blazing.objects.Movie;
 import com.blazing.objects.User;
-import com.blazing.repositories.MediaRepository;
+import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TestRepository;
 import com.blazing.services.LoginRegisterService;
 
 @SpringBootApplication(scanBasePackageClasses={BlazingApplication.class, IndexController.class,
 		TestRepository.class,LoginRegisterService.class, User.class})
 @EntityScan(basePackageClasses={Movie.class})
-@EnableJpaRepositories(basePackageClasses={MediaRepository.class})
+@EnableJpaRepositories(basePackageClasses={ReviewRepository.class})
 @PropertySource("classpath:blazing.props")
 public class BlazingApplication {
 

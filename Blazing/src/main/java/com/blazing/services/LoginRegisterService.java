@@ -27,7 +27,6 @@ public class LoginRegisterService {
 	@Transactional
 	public boolean registerUser(RegisterInfo info, HttpSession session)
 	{
-		System.out.println("Registering user");
 		Long conflicts = repository.countUsersByEmailAddress(info.getEmail());
 		if (conflicts == 0)
 		{

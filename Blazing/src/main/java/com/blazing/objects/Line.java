@@ -1,5 +1,6 @@
 package com.blazing.objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,13 +24,15 @@ public class Line {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name="CHARACTER_ID")
+	@JoinColumn(name="CHARACTER_ID", nullable=false)
 	public MovieCharacter getSpeaker() {
 		return speaker;
 	}
 	public void setSpeaker(MovieCharacter speaker) {
 		this.speaker = speaker;
 	}
+	
+	@Column(nullable=false)
 	public String getLine() {
 		return line;
 	}

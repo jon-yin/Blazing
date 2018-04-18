@@ -3,6 +3,7 @@ package com.blazing.objects;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,18 +30,24 @@ public class Celebrity implements Comparable<Celebrity>{
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+	@Column(nullable=false)
 	public LocalDate getBirthday() {
 		return birthday;
 	}
 	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
+	
+	
 	public LocalDate getDeath() {
 		return death;
 	}
 	public void setDeath(LocalDate death) {
 		this.death = death;
 	}
+	
+	
 	@OneToOne
 	@JoinColumn(name="IMAGE_ID")
 	public ImageEntity getPortrait() {
@@ -58,6 +65,7 @@ public class Celebrity implements Comparable<Celebrity>{
 		this.filmography = filmography;
 	}
 	
+	@Column(nullable=false)
 	@OneToMany(mappedBy="actor")
 	public Set<MovieCharacter> getCharacters() {
 		return characters;
@@ -65,6 +73,8 @@ public class Celebrity implements Comparable<Celebrity>{
 	public void setCharacters(Set<MovieCharacter> characters) {
 		this.characters = characters;
 	}
+	
+	@Column(nullable=false)
 	public String getName() {
 		return name;
 	}
