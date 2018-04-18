@@ -19,6 +19,8 @@ public class MediaUploadController {
 	@RequestMapping(method=RequestMethod.POST)
 	public boolean UploadMovie(Movie movie, @RequestParam("cast") String cast, @RequestParam("runtimes") String[] runtime)
 	{
+		System.out.println("HELLO WORLD");
+		System.out.println(movie.getCast().size());
 		System.out.println(cast);
 		for (String str : runtime)
 		{

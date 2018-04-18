@@ -21,7 +21,6 @@ public class RegisterController {
 	@RequestMapping(method=RequestMethod.POST)
 	public boolean registerUser(@RequestBody RegisterInfo info, HttpSession session)
 	{
-		System.out.println("Hello World");
 		boolean statusCode = service.registerUser(info, session);
 		return statusCode;
 	}
