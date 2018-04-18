@@ -2,7 +2,6 @@ package com.blazing.objects;
 
 import java.io.File;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+
 
 
 
@@ -59,7 +59,7 @@ public abstract class Media implements Comparable<Media>{
 		this.id = id;
 	}
 	
-	@Column(nullable=false)
+	@Column(name="title",nullable=false)
 	public String getTitle() {
 		return title;
 	}
@@ -67,7 +67,7 @@ public abstract class Media implements Comparable<Media>{
 		this.title = title;
 	}
 	
-	@Column(nullable=false)
+	@Column(name="description",nullable=false, columnDefinition="LONGTEXT")
 	public String getDescription() {
 		return description;
 	}
