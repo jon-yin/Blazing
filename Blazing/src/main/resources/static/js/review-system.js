@@ -7,10 +7,6 @@ function toggleNI() {
 
 }
 
-// status codes:
-// 0: success
-// 1: no ratings
-// 99: error
 function review(ratings, paragraph, media){
 	var reviewDetails = {};
 	reviewDetails["ratings"] = ratings;

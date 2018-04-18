@@ -28,10 +28,10 @@
 		<div class="row">
 			<div class="col-12 col-md-auto sidebar" id="left-sidebar">
 				<section>
-					<img class="image profile" src="/images/thumbnail.png" th:src="${user.profilePic}">
+					<img class="image profile" src="/images/thumbnail.png">
 				</section>
 				<section>
-					<h5 class="section-header" th:text="${user.firstName}+${user.lastName}">PROFILE</h5>
+					<h5 class="section-header" th:text="${session.currentUser.firstName}+' '+${session.currentUser.lastName}">PROFILE</h5>
 					<div>
 						<span class="font-weight-bold">Total Views:</span>
 						<span>0</span>
@@ -46,7 +46,7 @@
 					<div>
 						<span>No user info supplied</span>
 					</div>
-					<div class="text-right"><a data-toggle="modal" data-target="#edit-user-info" href="#"href="#">Edit</a></div>
+					<div class="text-right"><a data-toggle="modal" data-target="#edit-user-info" href="#">Edit</a></div>
 					<div class="modal fade" id="edit-user-info" tabindex="-1" role="dialog">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -83,9 +83,6 @@
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="false">WTS/NI</a>
 					</li>
-<!-- 					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-quotes" data-toggle="tab" href="#quotes" role="tab" aria-controls="quotes" aria-selected="false">Quotes</a>
-					</li> -->
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-lists" data-toggle="tab" href="#lists" role="tab" aria-controls="lists" aria-selected="false">Lists</a>
 					</li>
@@ -111,11 +108,82 @@
 					</div>
 					<div class="tab-pane show fade" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
 					</div>
-<!-- 					<div class="tab-pane show fade" id="quotes" role="tabpanel" aria-labelledby="show-quotes">
-					</div> -->
 					<div class="tab-pane show fade" id="lists" role="tabpanel" aria-labelledby="show-lists">
 					</div>
 					<div class="tab-pane show fade" id="my-critics" role="tabpanel" aria-labelledby="show-my-critics">
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar">
+			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-movie">Add Movie...</button>
+		</nav>
+		
+		<div class="modal fade" id="add-movie" tabindex="-1" role="dialog" aria-labelledby="#addMovie" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addMovie">Add a Movie</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="add-movie-title">Title</label>
+								<input class="form-control" id="add-movie-title">
+								<small class="text-danger" id="no-title-alert" style="display: none;">Please enter the title</small>
+							</div>
+							<div class="form-group">
+								<label for="add-movie-genres">Genre</label>
+								<input class="form-control" id="add-movie-genres">
+								<small class="text-danger" id="no-genres-alert" style="display: none;">Please enter genres</small>
+							</div>
+							<div class="d-flex">
+								<div class="form-group">
+									<label for="add-releasedate">Release Date</label>
+									<div class="d-flex">
+										<input class="form-control" id="add-year" placeholder="Year">
+										<input class="form-control" id="add-month" placeholder="Month">
+										<input class="form-control" id="add-day" placeholder="Day">
+									</div>
+									<small class="text-danger" id="no-date-alert" style="display: none;">Please enter the release date</small>
+								</div>
+								<div class="form-group">
+									<label for="add-boxoffice">Box Office</label>
+									<input class="form-control" id="add-boxoffice">
+									<small class="text-danger" id="no-bo-alert" style="display: none;">Please enter the box office</small>
+								</div>
+								<div class="form-group">
+									<label for="add-runtime">Run Time</label>
+									<input class="form-control" id="add-runtime">
+									<small class="text-danger" id="no-runtime-alert" style="display: none;">Please enter the run time</small>
+								</div>
+							</div>
+							<div class="d-flex justify-content-stretch">
+								<div class="form-group">
+									<label for="add-actor-id">Actor ID</label>
+									<input class="form-control" id="add-actor-id">
+									<small class="text-danger" id="no-actor-id-alert" style="display: none;">Please enter Actor ID</small>
+								</div>
+								<div class="form-group">
+									<label for="add-actor-role">Role</label>
+									<input class="form-control" id="add-actor-role">
+									<small class="text-danger" id="no-role-alert" style="display: none;">Please enter Actor Role</small>
+								</div>
+								<button class="btn btn-secondary align-self-center h-50 ml-auto" id="add-actor-button">Add Actor</button>
+							</div>
+							<div class="form-group">
+								<textarea id="added-cast-box" class="form-control" rows=3 style="resize: none;"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="add-movie-desc">Description</label>
+								<textarea id="add-movie-desc" class="form-control" rows=3 style="resize: none;"></textarea>
+								<small class="text-danger" id="no-desc-alert" style="display: none;">Please enter a description</small>
+							</div>
+							<button class="btn btn-secondary" id="add-movie-button">Add</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -124,6 +192,7 @@
 	<footer></footer>
 </body>
 
-<script type="application/javascript" src="/js/main.js"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
+<script type="application/javascript" th:src="@{/js/add-media.js}"></script>
 
 </html>

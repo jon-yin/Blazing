@@ -88,6 +88,8 @@ function signup(e) {
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
+		},
+		complete : function() {
 			$("#signup-button").attr("disabled", false);
 			$("#signup-button").css("background-color","#6c757d");
 		}
@@ -115,7 +117,7 @@ function search(e){
 }
 
 $(function() {
-	$("header").load("header.html", function() {
+	$("header").load("/header.html", function() {
 		var isLoggedIn = checkLogin();
 		if (isLoggedIn) {
 			$("#logged-in").show();
@@ -138,7 +140,7 @@ $(function() {
 			}
 		});
 	});
-	$("footer").load("footer.html");
+	$("footer").load("/footer.html");
 
 	$(".section-carousel").slick({
 		infinite: false,

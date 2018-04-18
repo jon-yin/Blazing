@@ -24,7 +24,7 @@ public class User {
 	private String lastName;
 	private String emailAddress;
 	private String password;
-	private int id;
+	private long id;
 	private int views;
 	private LocalDate joinDate;
 	private List<Media> wishlist;
@@ -34,10 +34,10 @@ public class User {
 	
 	@Id
 	@GeneratedValue
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
