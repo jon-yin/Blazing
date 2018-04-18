@@ -9,18 +9,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.blazing.services.MediaService;
 
 @Controller
-@RequestMapping("/")
-public class IndexController {
-	
+@RequestMapping("/browse")
+public class BrowseReleasesController {
+
 	@Autowired
-	private MediaService mediaService;
+	private MediaService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String home(Model model)
+	public String browse(Model model)
 	{
-		mediaService.getTrendingMovies(model);
-		return "home";
+		service.getAllMovies(model);
+		return "browse";
 	}
 	
-
 }

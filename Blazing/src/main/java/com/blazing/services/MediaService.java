@@ -2,12 +2,14 @@ package com.blazing.services;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.blazing.objects.Celebrity;
 import com.blazing.objects.Movie;
@@ -92,6 +94,18 @@ public class MediaService {
 		}
 		movieRepo.save(movie);
 		return true;
+	}
+	
+	public void getAllMovies(Model model)
+	{
+		List<Movie> movies = movieRepo.findAll();
+		model.addAttribute("browseAllMovies",movies);
+	}
+
+	public void getTrendingMovies(Model model) {
+		List<Movie> movies = movieRepo.findFirst10MoviesById();
+		model.addAttribute("trendingMovies", movies);
+		
 	}
 
 }
