@@ -2,24 +2,11 @@ var properties;
 
 // check login
 function checkLogin() {
-//	$.ajax({
-//		type : "POST",
-//		contentType : "application/json",
-//		url : "/login",
-//		data : jsonString,
-//		cache : false,
-//		success : function(data) {
-//			console.log("success");
-//		},
-//		error : function(e) {
-//			console.log("ERROR: ", e);
-//		},
-//		complete : function() {
-//			$("#login-button").attr("disabled", false);
-//			$("#login-button").css("background-color","#6c757d");	
-//		}
-//	});
-	return false;
+	var loggedIn = window.sessionStorage.getItem("loggedIn");
+	if (loggedIn)
+		return true;
+	else
+		return false;
 }
 
 // login
@@ -57,6 +44,7 @@ function login(e) {
 
 //logout
 function logout(){
+	window.sessionStorage.removeItem("loggedIn");
 }
 
 //sign up
@@ -116,6 +104,7 @@ function signup(e) {
 		complete : function() {
 			$("#signup-button").attr("disabled", false);
 			$("#signup-button").css("background-color","#6c757d");
+			window.sessionStorage.setItem("loggedIn",true);
 		}
 	});
 	var firstName = $("#firstname-signup").val();
@@ -132,9 +121,9 @@ function search(){
 	}else{
 		return;
 	}
-	var search = {};
-	search["searchString"] = searchString;
-	var jsonString = JSON.stringify(search);
+//	var search = {};
+//	search["searchQuery"] = searchString;
+//	var jsonString = JSON.stringify(search);
 //	$.ajax({
 //		type : "GET",
 //		contentType : "application/json",
@@ -146,6 +135,9 @@ function search(){
 //		},
 //		error : function(e) {
 //			console.log("ERROR: ", e);
+//		},
+//		complete : function(e) {
+			location.href = "/search?q="+encodeURIComponent($("#search-input").val());
 //		}
 //	});
 }
@@ -163,12 +155,10 @@ $(function() {
 		$("#login-button").on("click", login);
 		$("#logout-button").on("click", logout);
 		$("#signup-button").on("click", signup);
-		$("#search-button").on("click", function(){
-			console.log($("#search-input").val());
-		});
+		$("#search-button").on("click", search);
 		$("#search-input").keypress(function(e){
 			if (e.which == 13)
-				console.log($("#search-input").val());
+				search();
 		});
 	});
 	$("footer").load("/footer.html");

@@ -41,7 +41,7 @@
 						<section>
 							<h5 class="section-header">OPENING THIS WEEK</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
@@ -55,7 +55,7 @@
 						<section>
 							<h5 class="section-header">TOP BOX OFFICE</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
@@ -69,7 +69,7 @@
 						<section>
 							<h5 class="section-header">COMING SOON TO THEATERS</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
@@ -138,7 +138,7 @@
 				<section id="blazing-movie-picks">
 					<h5 class="section-header">BLAZING MOVIE PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/${movie.id}}" role="button">
+						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 							<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 							<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 							<div>
