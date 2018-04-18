@@ -24,7 +24,7 @@ import com.blazing.services.LoginRegisterService;
 public class BlazingApplication {
 
 	@Value("${bcrypt.strength}")
-	private int bcryptStrength;
+	private int BCRYPT_STRENGTH;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BlazingApplication.class, args);
@@ -33,7 +33,7 @@ public class BlazingApplication {
 	@Bean
 	public BCryptPasswordEncoder getEncoder()
 	{
-		return new BCryptPasswordEncoder(bcryptStrength);
+		return new BCryptPasswordEncoder(BCRYPT_STRENGTH);
 	}
 	
 }

@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -106,7 +107,8 @@ public class MediaService {
 
 	public void getTrendingMovies(Model model) {
 		Pageable page = PageRequest.of(0, 10);
-		List<Movie> movies =movieRepo.findAll();
+		Page<Movie> moviesPage =movieRepo.findAll(page);
+		List<Movie> movies = moviesPage.getContent();
 		model.addAttribute("trendingMovies", movies);
 	}
 

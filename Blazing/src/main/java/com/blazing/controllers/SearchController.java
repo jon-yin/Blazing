@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.blazing.services.SearchService;
 
+@Controller
 @RequestMapping("/search")
 public class SearchController {
 

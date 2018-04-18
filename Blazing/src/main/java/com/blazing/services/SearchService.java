@@ -1,6 +1,7 @@
 package com.blazing.services;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,7 @@ public class SearchService {
 		Map<TV, Integer> tvRelevance = new HashMap<>();
 		Map<Celebrity, Integer> celebRelevance = new HashMap<>();
 		String[] tokens = searchQuery.split("\\s+");
+		tokens = sortOutCommonWords(tokens);
 		for (String token : tokens) {
 			Set<Movie> movies = movieRepo.findByTitleContainingIgnoreCase(token);
 			Set<TV> tvs = tvRepo.findByTitleContainingIgnoreCase(token);
@@ -68,19 +70,31 @@ public class SearchService {
 				}
 			}
 		}
-		
-		
-		Set<Entry<Movie,Integer>> relevantMovies = movieRelevance.entrySet();
-		Set<Entry<TV,Integer>> relevantTv = tvRelevance.entrySet();
-		Set<Entry<Celebrity,Integer>> relevantCelebs = celebRelevance.entrySet();
-		List<Entry<Movie,Integer>> sortedMovies = new ArrayList<>();
-		List<Entry<TV,Integer>> sortedTvs = new ArrayList<>();
-		List<Entry<Celebrity,Integer>> sortedCelebrities = new ArrayList<>();
-		sortedMovies.addAll(relevantMovies);
-		
-		
-		
-		
-		
+
+		Set<Entry<Movie, Integer>> relevantMovies = movieRelevance.entrySet();
+		Set<Entry<TV, Integer>> relevantTv = tvRelevance.entrySet();
+		Set<Entry<Celebrity, Integer>> relevantCelebs = celebRelevance.entrySet();
+		List<Movie> mostRelevantMovies = this.<Movie>getMostRelevant(relevantMovies);
+		List<TV> mostRelevantTVs = this.<TV>getMostRelevant(relevantTv);
+		List<Celebrity> mostRelevantCelebrities = this.<Celebrity>getMostRelevant(relevantCelebs);
+		model.addAttribute("relevantMovies", mostRelevantMovies);
+		model.addAttribute("relevantTV", mostRelevantTVs);
+		model.addAttribute("relevantCelebs", mostRelevantCelebrities);
 	}
+
+	private <T> List<T> getMostRelevant(Set<Entry<T, Integer>> relevantMovies) {
+		List<Entry<T, Integer>> entries = new ArrayList<>();
+		entries.addAll(relevantMovies);
+		entries.sort(Comparator.comparing(Entry<T, Integer>::getValue).reversed());
+		List<T> mostRelevant = new ArrayList<>();
+		for (Entry<T, Integer> elem : entries) {
+			mostRelevant.add(elem.getKey());
+		}
+		return mostRelevant;
+	}
+
+	private String[] sortOutCommonWords(String[] tokens) {
+		return tokens;
+	}
+
 }
