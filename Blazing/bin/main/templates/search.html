@@ -23,7 +23,7 @@
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
-	<header></header>
+	<header th:insert="/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -46,7 +46,7 @@
 								<a class="w-100 m-2 d-flex align-items-center" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 									<div class="score pr-2">
 										<span class="icon tiny burning"></span>
-										<span th:text="${movie.id}">70</span>%
+										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 									<img src="/images/black-panther.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>
