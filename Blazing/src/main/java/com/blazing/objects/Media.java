@@ -36,6 +36,7 @@ public abstract class Media implements Comparable<Media>{
 	private Set<File> videos;
 	private Set<ImageEntity> images;
 	private Set<MovieCharacter> cast;
+	private Set<CriticReview> criticReviews;
 	private Set<Review> reviews;
 	private Genre genre;
 	
@@ -48,6 +49,7 @@ public abstract class Media implements Comparable<Media>{
 		reviews = new HashSet<>();
 		cast = new HashSet<>();
 		reviews = new HashSet<>();
+		criticReviews = new HashSet<>();
 		
 	}
 	
@@ -141,6 +143,16 @@ public abstract class Media implements Comparable<Media>{
 		this.reviews = reviews;
 	}
 	
+	@OneToMany(mappedBy="source")
+	@Column(nullable=false)
+	public Set<CriticReview> getCriticReviews() {
+		return criticReviews;
+	}
+
+	public void setCriticReviews(Set<CriticReview> criticReviews) {
+		this.criticReviews = criticReviews;
+	}
+
 	@Enumerated(EnumType.STRING)
 	public Genre getGenre() {
 		return genre;
@@ -184,6 +196,11 @@ public abstract class Media implements Comparable<Media>{
 	public int compareTo(Media other)
 	{
 		return title.compareTo(other.getTitle());
+	}
+	
+	public void addReview(Review review)
+	{
+		reviews.add(review);
 	}
 	
 	
