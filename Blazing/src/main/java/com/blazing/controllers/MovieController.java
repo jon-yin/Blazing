@@ -15,7 +15,7 @@ import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
 
 @Controller
-@RequestMapping(path={"/viewmovie/{movie}", "/viewtv/{tv}"})
+@RequestMapping(path="/viewmovie/{movie}")
 public class MovieController{
 	
 	@Autowired
