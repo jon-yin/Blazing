@@ -5,14 +5,18 @@ import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Review {
 	
 	private long id;
-	private int score;
+	private double score;
 	private String body;
 	private User user;
 	private LocalDateTime datetime;
@@ -27,10 +31,10 @@ public class Review {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 	public String getBody() {
@@ -62,6 +66,16 @@ public class Review {
 	}
 	public void setSource(Media source) {
 		this.source = source;
+	}
+	
+	@Transient
+	public boolean isValid()
+	{
+		if (body.isEmpty())
+		{
+			return false;
+		}
+		return true;
 	}
 	
 	

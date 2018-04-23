@@ -27,6 +27,7 @@ public class BlazingApplication {
 	private int BCRYPT_STRENGTH;
 	
 	public static void main(String[] args) {
+		
 		SpringApplication.run(BlazingApplication.class, args);
 	}
 	

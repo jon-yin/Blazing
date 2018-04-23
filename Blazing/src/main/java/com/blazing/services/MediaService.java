@@ -1,6 +1,7 @@
 package com.blazing.services;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
@@ -15,18 +16,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.blazing.objects.Celebrity;
+import com.blazing.objects.Media;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.MovieInfo;
+import com.blazing.objects.Review;
+import com.blazing.objects.TV;
 import com.blazing.objects.User;
 import com.blazing.repositories.CelebrityRepository;
+import com.blazing.repositories.MediaRepository;
 import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
+import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TVRepository;
+
 
 @Service
 public class MediaService {
 
+
+	@Autowired
+	private MediaRepository mediaRepo;
 	@Autowired
 	private MovieRepository movieRepo;
 	@Autowired
@@ -35,7 +45,10 @@ public class MediaService {
 	private CelebrityRepository celebRepo;
 	@Autowired
 	private MovieCharacterRepository mcRepo;
-
+	@Autowired
+	private ReviewRepository revRepo;
+	
+	
 	public Movie findMovie(long id) {
 		Optional<Movie> movie = movieRepo.findById(id);
 		if (movie.isPresent()) {
@@ -44,17 +57,45 @@ public class MediaService {
 			return null;
 		}
 	}
+	
+	public TV findTV(long id)
+	{
+		Optional<TV> tv = tvRepo.findById(id);
+		return tv.orElse(null);
+	}
 
 	public boolean addToWishlist(User user, long id) {
-		Optional<Movie> movie = movieRepo.findById(id);
-		if (movie.isPresent()) {
-			if (user.getWishlist().contains(movie.get())) {
+		Optional<Media> media = mediaRepo.findById(id);
+		if (media.isPresent()) {
+			if (user.getWishlist().contains(media.get())) {
 				return false;
 			} else {
-				user.addWishList(movie.get());
+				user.addWishList(media.get());
 				return true;
 			}
 		} else {
+			return false;
+		}
+	}
+	
+	@Transactional
+	public boolean addReview(User user, long id, Review review)
+	{
+		Optional<Media> media = mediaRepo.findById(id);
+		if (media.isPresent() && review.isValid())
+		{
+			Media curMedia = media.get();
+			curMedia.addReview(review);
+			user.addToReviews(review);
+			review.setUser(user);
+			review.setSource(curMedia);
+			review.setDatetime(LocalDateTime.now());
+			review = revRepo.save(review);
+			curMedia = mediaRepo.save(curMedia);
+			return true;
+		}
+		else
+		{
 			return false;
 		}
 	}
