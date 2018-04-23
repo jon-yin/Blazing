@@ -14,7 +14,7 @@ public class LogoutController {
 	public String logout(HttpSession session)
 	{
 		session.setAttribute("currentUser", null);
-		return "home";
+		return "redirect:/";
 	}
 	
 	
