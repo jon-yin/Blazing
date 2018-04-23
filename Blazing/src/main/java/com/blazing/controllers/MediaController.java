@@ -2,6 +2,7 @@ package com.blazing.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
