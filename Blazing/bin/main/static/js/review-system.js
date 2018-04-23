@@ -7,16 +7,15 @@ function toggleNI() {
 
 }
 
-function review(ratings, paragraph, media){
+function review(score, body){
 	var reviewDetails = {};
-	reviewDetails["ratings"] = ratings;
-	reviewDetails["paragraph"] = paragraph;
-	reviewDetails["media"] = media;
+	reviewDetails["score"] = score;
+	reviewDetails["body"] = body;
 	var jsonString = JSON.stringify(reviewDetails);
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : "/review",
+		url : location.href+"/submitreview",
 		data : jsonString,
 		cache : false,
 		success : function(data) {
@@ -66,11 +65,11 @@ $(function(){
 	});
 	$("#submit-rating").on("click",function(e){
 		e.preventDefault();
-		var rating = $("#rating-number").val();
-		if (rating == "0"){
+		var score = $("#rating-number").val();
+		if (score == "0"){
 			$("#submit-fail").show();
 		}else{
-			location.reload();
+			review(score,$("#rvw-desc").val());
 		}
 	});
 });

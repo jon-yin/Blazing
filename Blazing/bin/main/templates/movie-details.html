@@ -40,38 +40,38 @@
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
 							<img src="/images/black-panther.jpg">
-							<table class="text-left">
-								<tr>
-									<th style="vertical-align: top;">RATING:</th>
-									<td style="vertical-align: top;">PG-13 (for prolonged sequences of action violence, and a brief rude gesture)</td>
+							<table class="table text-left">
+								<tr class="align-top">
+									<th>RATING:</th>
+									<td>PG-13 (for prolonged sequences of action violence, and a brief rude gesture)</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">GENRE:</th>
-									<td style="vertical-align: top;">Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
+								<tr class="align-top">
+									<th>GENRE:</th>
+									<td>Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">DIRECTED BY:</th>
-									<td style="vertical-align: top;">Ryan Coogler</td>
+								<tr class="align-top">
+									<th>DIRECTED BY:</th>
+									<td>Ryan Coogler</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">WRITTEN BY:</th>
-									<td style="vertical-align: top;">Joe Robert Cole, Ryan Coogler</td>
+								<tr class="align-top">
+									<th>WRITTEN BY:</th>
+									<td>Joe Robert Cole, Ryan Coogler</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">IN THEATERS:</th>
-									<td style="vertical-align: top;">Feb 16, 2018  Wide</td>
+								<tr class="align-top">
+									<th>IN THEATERS:</th>
+									<td>Feb 16, 2018  Wide</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">BOX OFFICE:</th>
-									<td style="vertical-align: top;">$501,105,037</td>
+								<tr class="align-top">
+									<th>BOX OFFICE:</th>
+									<td>$501,105,037</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">RUNTIME:</th>
-									<td style="vertical-align: top;">135 minutes</td>
+								<tr class="align-top">
+									<th>RUNTIME:</th>
+									<td>135 minutes</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">STUDIO:</th>
-									<td style="vertical-align: top;">Marvel Studios</td>
+								<tr class="align-top">
+									<th>STUDIO:</th>
+									<td>Marvel Studios</td>
 								</tr>
 							</table>
 						</section>
@@ -179,10 +179,10 @@
 				<section>
 					<h5 class="section-header">REVIEWS</h5>
 					<section class="border">
-						<div th:if="${session.user} == null">
+						<div th:unless="${session.currentUser}">
 							<h5>Log In to Add A Review</h5>
 						</div>
-						<form id="user-rating" th:unless="${session.user} == null">
+						<form id="user-rating" th:if="${session.currentUser}">
 							<h5 class="section-header">ADD YOUR RATING</h5>
 							<div class="row flex-nowrap align-items-stretch">
 								<div class="col-auto">
@@ -190,7 +190,6 @@
 								</div>
 								<div class="col d-flex flex-column justify-content-between">
 									<div class="d-flex align-items-center">
-										<!-- <button type="button" class="btn btn-dark dropdown-toggle"> -->
 										<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
 											<option value="0" selected>Rate...</option>
 											<option value="1">1</option>
@@ -214,7 +213,7 @@
 										</div>
 									</div>
 									<div>
-										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;"></textarea>
+										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc"></textarea>
 									</div>
 								</div>
 							</div>
