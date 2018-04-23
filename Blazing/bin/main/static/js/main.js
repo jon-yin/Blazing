@@ -2,11 +2,22 @@ var properties;
 // login
 function login(e) {
 	e.preventDefault();
-	// temp - change to display loading
+	// conditions
 	var email = $("#email-login").val();
 	var password = $("#password-login").val();
-	$("#signup-button").attr("disabled", true);
-	$("#signup-button").css("background-color","aaaaaa");
+	var emailRegex = /\w*@[a-z]+(.[a-z]+)+/;
+	if (email.match(emailRegex) == null){
+		console.log("fail regex");
+		return;
+	}
+	if (email.length == 0){
+		return;
+	}
+	if (password.length == 0){
+		return;
+	}
+	$("#login-button").attr("disabled", true);
+	$("#login-button").css("background-color","#aaaaaa");
 	var loginCredentials = {};
 	loginCredentials["email"] = email;
 	loginCredentials["password"] = password;
@@ -18,6 +29,9 @@ function login(e) {
 		data : jsonString,
 		success : function(data) {
 			console.log("success");
+			$("#email-login").val("");
+			$("#password-login").val("");
+			$("#login").modal("hide");
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
@@ -27,8 +41,6 @@ function login(e) {
 			$("#login-button").css("background-color","#6c757d");	
 		}
 	});
-	$("#email-login").val("");
-	$("#password-login").val("");
 }
 
 //logout
@@ -40,36 +52,28 @@ function logout(){
 function signup(e) {
 	e.preventDefault();
 	// temp - change to display loading
-	$("#signup-button").attr("disabled", true);
-	$("#signup-button").css("background-color","#aaaaaa");
 	var firstName = $("#firstname-signup").val();
 	var lastName = $("#lastname-signup").val();
 	var email = $("#email-signup").val();
 	var password = $("#password-signup").val();
 	if (firstName.length == 0) {
 //		$("#no-fn-alert-signup").show().delay(3000).fadeOut(10);
-		$("#signup-button").attr("disabled", false);
-		$("#signup-button").css("background-color","#6c757d");
 		return;
 	}
 	if (lastName.length == 0) {
 //		$("#no-ln-alert-signup").show().delay(3000).fadeOut(10);
-		$("#signup-button").attr("disabled", false);
-		$("#signup-button").css("background-color","#6c757d");
 		return;
 	}
 	if (email.length == 0) {
 //		$("#no-email-alert-signup").show().delay(3000).fadeOut(10);
-		$("#signup-button").attr("disabled", false);
-		$("#signup-button").css("background-color","#6c757d");
 		return;
 	}
 	if (password.length == 0) {
 //		$("#no-pass-alert-signup").show().delay(3000).fadeOut(10);
-		$("#signup-button").attr("disabled", false);
-		$("#signup-button").css("background-color","#6c757d");
 		return;
 	}
+	$("#signup-button").attr("disabled", true);
+	$("#signup-button").css("background-color","#aaaaaa");
 	var registerCredentials = {}
 	registerCredentials["firstName"] = firstName;
 	registerCredentials["lastName"] = lastName;
@@ -80,12 +84,16 @@ function signup(e) {
 		type : "POST",
 		contentType : "application/json",
 		url : "/register",
+		data : jsonString,
 		success : function(data) {
 			console.log("success");
+			$("#firstname-signup").val("");
+			$("#lastname-signup").val("");
+			$("#email-signup").val("");
+			$("#password-signup").val("");
 			$("#signup").modal("hide");
 			$("#sent-vemail").modal("show");
 		},
-		data : jsonString,
 		error : function(e) {
 			console.log("ERROR: ", e);
 		},
@@ -94,11 +102,11 @@ function signup(e) {
 			$("#signup-button").css("background-color","#6c757d");
 		}
 	});
-	$("#firstname-signup").val("");
-	$("#lastname-signup").val("");
-	$("#email-signup").val("");
-	$("#password-signup").val("");
 }
+
+$("sent-vemail").on("hide.bs.modal",function(){
+	$("header").load("header");
+});
 
 // search
 function search(){
@@ -120,7 +128,6 @@ $(function() {
 		if (e.which == 13)
 			search();
 	});
-
 	$(".section-carousel").slick({
 		infinite: false,
 		variableWidth: true,

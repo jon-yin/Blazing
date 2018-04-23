@@ -26,7 +26,7 @@
 	<header th:insert="/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-auto sidebar" id="left-sidebar">
+			<div class="col-12 col-md-auto sidebar sticky-top" id="left-sidebar">
 				<section>
 					<ul class="nav nav-pills flex-column" id="browse-tabs" role="tablist">
 						<li>
@@ -47,7 +47,7 @@
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="pill" id="all-movies-tab" href="#" role="tab">All Movies</a>
 						</li>
-						<li style="padding-top: 5px;">
+						<li class="pt-2">
 							<h5 class="section-header">TV</h5>
 						</li>
 						<li class="nav-item">
@@ -87,12 +87,12 @@
 							</div>
 						</div>
 					</section>
-					<div id="browse-list">
+					<div class="results-list" id="browse-list">
 						<a class="details-link btn text-center" href="/movie-details.html" th:each="movie : ${browseAllMovies}">
 							<img class="image" src="/images/peter-rabbit.jpg">
 							<div class="name text-truncate" th:text="${movie.title}">Peter Rabbit</div>
 							<div>
-								<span class="icon tiny burni"src/main/resources/static/js/properties.js"ng"></span>
+								<span class="icon tiny burning"></span>
 								<span th:text="${movie.blazingScore}">70</span>%
 							</div>
 						</a>
