@@ -23,7 +23,7 @@
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
-	<header th:insert="/header.html :: header"></header>
+	<header th:insert="/fragments/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-auto main-content">
@@ -166,7 +166,7 @@
 			</div>
 		</div>
 	</div>
-	<footer></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>

@@ -64,6 +64,11 @@ function signup(e) {
 //		$("#no-ln-alert-signup").show().delay(3000).fadeOut(10);
 		return;
 	}
+	var emailRegex = /\w*@[a-z]+(.[a-z]+)+/;
+	if (email.match(emailRegex) == null){
+		console.log("fail regex");
+		return;
+	}
 	if (email.length == 0) {
 //		$("#no-email-alert-signup").show().delay(3000).fadeOut(10);
 		return;
@@ -103,10 +108,6 @@ function signup(e) {
 		}
 	});
 }
-
-$("sent-vemail").on("hide.bs.modal",function(){
-	$("header").load("header");
-});
 
 // search
 function search(){

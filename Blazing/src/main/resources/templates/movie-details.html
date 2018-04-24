@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="https://thymeleaf.org">
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
@@ -23,7 +23,7 @@
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
-	<header th:insert="/header.html :: header"></header>
+	<header th:insert="/fragments/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-auto main-content">
@@ -75,7 +75,7 @@
 								</tr>
 							</table>
 						</section>
-						<div class="col">
+						<div class="col-lg col-12">
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">BLAZING METER</h5>
@@ -83,7 +83,7 @@
 										<div class="col-auto">
 											<div>
 												<span class="icon med burning"></span>
-												<span style="font-size: 64px;"><span>70</span>%</span>
+												<span style="font-size: 64px;"><span th:text="${movie.blazingScore}">70</span>%</span>
 											</div>
 										</div>
 										<div class="col">
@@ -105,7 +105,7 @@
 										<div class="col-auto">
 											<div>
 												<span class="icon med burning"></span>
-												<span style="font-size: 64px;"><span>70</span>%</span>
+												<span style="font-size: 64px;"><span th:text="${movie.audienceScore}">70</span>%</span>
 											</div>
 										</div>
 										<div class="col">
@@ -178,51 +178,7 @@
 				</section>
 				<section>
 					<h5 class="section-header">REVIEWS</h5>
-					<section class="border">
-						<div th:unless="${session.currentUser}">
-							<h5>Log In to Add A Review</h5>
-						</div>
-						<form id="user-rating" th:if="${session.currentUser}">
-							<h5 class="section-header">ADD YOUR RATING</h5>
-							<div class="row flex-nowrap align-items-stretch">
-								<div class="col-auto">
-									<img src="/images/thumbnail.png" style="width: 90px; height: 90px;">
-								</div>
-								<div class="col d-flex flex-column justify-content-between">
-									<div class="d-flex align-items-center">
-										<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
-											<option value="0" selected>Rate...</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-										</select>
-										<div class="btn-group btn-group-toggle" id="wts-ni" data-toggle="buttons">
-											<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 90px;">
-												<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
-											</label>
-											<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;">
-												<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
-											</label>
-										</div>
-									</div>
-									<div>
-										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<span id="submit-fail" style="color: red; display: none; margin-right: 10px;">Please Enter A Rating</span>
-								<button id="submit-rating" type="submit" class="btn btn-outline-dark">Submit</button>
-							</div>
-						</form>
-					</section>
+					<div th:insert="/fragments/review-system.html :: post-review"></div>
 					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
 						<li class="nav-item">
 							<a class="nav-item nav-link active" id="show-critic-reviews" data-toggle="tab" href="#critic-reviews" role="tab" aria-controls="critic-reviews" aria-selected="true">Critic Reviews</a>
@@ -245,7 +201,7 @@
 											<div><i class="fa fa-quote-right" style="padding-left: 25px;"></i></div>
 										</div>
 										<div class="results text-right">
-											<span>January 1, 1970</span><span> - Rating - </span><a href="#">Full Review...</a>
+											<span>January 1, 1970</span> - <span>Rating</span> - <a href="#">Full Review...</a>
 										</div>
 										<div class="reviewer text-right">
 											- <a href="#">Name</a>, <a href="#">Publication</a>
@@ -360,12 +316,12 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar" style="display: none;">
+		<nav class="navbar d-none">
 			<button type="button" class="btn btn-warning" href="#">Edit Page...</button>
 			<button type="button" class="btn btn-danger" href="#">Delete Page</button>
 		</nav>
 	</div>
-	<footer></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>

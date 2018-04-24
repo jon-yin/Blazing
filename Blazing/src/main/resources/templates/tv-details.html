@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://thymeleaf.org">
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
 	<!-- popper.js -->
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 	<!-- source sans pro -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
 <link rel="stylesheet" href="/css/styles.css">
@@ -42,26 +42,26 @@
 								</form>
 							</div>
 							<img src="/images/counterpart.jpg">
-							<table class="text-left">
-								<tr>
-									<th style="vertical-align: top;">GENRE:</th>
-									<td style="vertical-align: top;">Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
+							<table class="table text-left">
+								<tr class="align-top">
+									<th>GENRE:</th>
+									<td>Action &amp; Adventure, Drama, Science Fiction &amp; Fantasy</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">NETWORK:</th>
-									<td style="vertical-align: top;">ijsfeleisflj</td>
+								<tr class="align-top">
+									<th>NETWORK:</th>
+									<td>ijsfeleisflj</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">PREMIERE DATE:</th>
-									<td style="vertical-align: top;">Jan 1, 1111</td>
+								<tr class="align-top">
+									<th>PREMIERE DATE:</th>
+									<td>Jan 1, 1111</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">CREATOR:</th>
-									<td style="vertical-align: top;">esfsefsefse</td>
+								<tr class="align-top">
+									<th>CREATOR:</th>
+									<td>esfsefsefse</td>
 								</tr>
-								<tr>
-									<th style="vertical-align: top;">EXEC. PRODUCERS:</th>
-									<td style="vertical-align: top;">eiuroewur, cvnbmxcvb, hsjdkfhsd</td>
+								<tr class="align-top">
+									<th>EXEC. PRODUCERS:</th>
+									<td>eiuroewur, cvnbmxcvb, hsjdkfhsd</td>
 								</tr>
 							</table>
 						</section>
@@ -300,49 +300,7 @@
 				</section>
 				<section>
 					<h5 class="section-header">REVIEWS</h5>
-					<section class="border">
-						<form id="user-rating">
-							<h5 class="section-header">ADD YOUR RATING</h5>
-							<div class="row flex-nowrap align-items-stretch">
-								<div class="col-auto">
-									<img src="/images/thumbnail.png" style="width: 90px; height: 90px;">
-								</div>
-								<div class="col d-flex flex-column justify-content-between">
-									<div class="d-flex align-items-center">
-										<!-- <button type="button" class="btn btn-dark dropdown-toggle"> -->
-										<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
-											<option value="0" selected>Rate...</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-										</select>
-										<div class="btn-group btn-group-toggle" id="wts-ni" data-toggle="buttons">
-											<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 90px;">
-												<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
-											</label>
-											<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;">
-												<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
-											</label>
-										</div>
-									</div>
-									<div>
-										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="text-right">
-								<span id="submit-fail" style="color: red; display: none; margin-right: 10px;">Please Enter A Rating</span>
-								<button id="submit-rating" type="submit" class="btn btn-outline-dark">Submit</button>
-							</div>
-						</form>
-					</section>
+					<div th:insert="/fragments/review-system.html :: post-review"></div>
 					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
 						<li class="nav-item">
 							<a class="nav-item nav-link active" id="show-critic-reviews" data-toggle="tab" href="#critic-reviews" role="tab" aria-controls="critic-reviews" aria-selected="true">Critic Reviews</a>

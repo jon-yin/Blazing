@@ -23,7 +23,7 @@
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
-	<header th:insert="/header.html :: header"></header>
+	<header th:insert="/fragments/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -60,8 +60,6 @@
 								</a>
 							</div>
 						</div>
-
-						
 						<div class="tab-pane show fade" id="tv-results" role="tabpanel" aria-labelledby="show-tv-results">
 							<div class="tv-results-list">
 								<a class="w-100 m-2 d-flex align-items-center" th:each="tv : ${relevantTV}" th:href="#">
@@ -94,7 +92,7 @@
 			</div>
 		</div>
 	</div>
-	<footer></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>

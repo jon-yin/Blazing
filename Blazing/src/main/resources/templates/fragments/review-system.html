@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymleaf.org">
+<body>
+<div th:fragment="post-review">
+	<section class="border">
+		<div th:unless="${session.currentUser}">
+			<h5 class="text-center w-100">Log In to Add A Review</h5>
+		</div>
+		<form id="user-rating" th:if="${session.currentUser}">
+			<h5 class="section-header">ADD YOUR RATING</h5>
+			<div class="row flex-nowrap align-items-stretch"> <!-- user review block -->
+				<div class="col-auto">
+					<img src="/images/thumbnail.png" style="width: 90px; height: 90px;">
+				</div>
+				<div class="col d-flex flex-column justify-content-between">
+					<div class="d-flex align-items-center">
+						<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
+							<option value="0" selected>Rate...</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<div class="btn-group btn-group-toggle" id="wts-ni" data-toggle="buttons">
+							<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 90px;">
+								<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
+							</label>
+							<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;">
+								<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
+							</label>
+						</div>
+					</div>
+					<div>
+						<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<span id="submit-fail" style="color: red; display: none; margin-right: 10px;">Please Enter A Rating</span>
+				<button id="submit-rating" type="submit" class="btn btn-outline-dark">Submit</button>
+			</div>
+		</form>
+	</section>
+</div>
+</body>
+</html>
