@@ -35,6 +35,23 @@ public class MediaController<T> {
 		}
 	}
 	
+	public boolean addToNotInterested(long id, User user)
+	{
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			boolean status = mediaService.addToNotInterested(user, id);
+			if (status)
+			{
+				userService.saveUserState(user);
+			}
+			return status;
+		}
+	}
+	
 	public boolean addReview(long id, Review review, User user)
 	{
 		if (user == null)

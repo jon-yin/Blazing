@@ -78,6 +78,20 @@ public class MediaService {
 		}
 	}
 	
+	public boolean addToNotInterested(User user, long id) {
+		Optional<Media> media = mediaRepo.findById(id);
+		if (media.isPresent()) {
+			if (user.getNotInterested().contains(media.get())) {
+				return false;
+			} else {
+				user.addNotInterested(media.get());
+				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 	@Transactional
 	public boolean addReview(User user, long id, Review review)
 	{

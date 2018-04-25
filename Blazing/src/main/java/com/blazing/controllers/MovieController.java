@@ -31,6 +31,14 @@ public class MovieController extends MediaController<Movie>{
 	
 	}
 	
+	@RequestMapping(path="/addnotinterested", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean addToNotInterested(@PathVariable("movie") long movie, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.addToNotInterested(movie,currentUser);
+	
+	}
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String getMovieDetails(@PathVariable("movie") long movie, Model model)
 	{

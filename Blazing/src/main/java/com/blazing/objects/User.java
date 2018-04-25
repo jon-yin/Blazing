@@ -28,6 +28,7 @@ public class User {
 	private long id;
 	private LocalDate joinDate;
 	private List<Media> wishlist;
+	private List<Media> notInterested;
 	private List<Review> reviews;
 	private List<Critic> favCritics;
 	private ImageEntity profilePic;
@@ -38,6 +39,7 @@ public class User {
 	public User()
 	{
 		wishlist = new ArrayList<>();
+		notInterested = new ArrayList<>();
 		reviews = new ArrayList<>();
 		favCritics = new ArrayList<>();
 		followers = new HashSet<>();
@@ -147,6 +149,16 @@ public class User {
 		this.password = password;
 	}
 	
+	@ManyToMany
+	@JoinColumn(name="N_MEDIA_ID")
+	public List<Media> getNotInterested() {
+		return notInterested;
+	}
+
+	public void setNotInterested(List<Media> notInterested) {
+		this.notInterested = notInterested;
+	}
+
 	public void addToReviews(Review review)
 	{
 		reviews.add(review);
@@ -175,6 +187,16 @@ public class User {
 	public void removeWishList(Media media)
 	{
 		wishlist.remove(media);
+	}
+	
+	public void addNotInterested(Media media)
+	{
+		notInterested.add(media);
+	}
+	
+	public void removeNotInterested(Media media)
+	{
+		notInterested.remove(media);
 	}
 	
 	public void reportReview(int reviewid)

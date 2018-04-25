@@ -35,6 +35,15 @@ public class TVController extends MediaController<TV>{
 		return "tv-details";
 	}
 	
+	@RequestMapping(path="/addnotinterested", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean addToNotInterested(@PathVariable("tv") long tv, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.addToNotInterested(tv,currentUser);
+	
+	}
+
+	
 	@ResponseBody
 	@RequestMapping(path="/submitreview", method=RequestMethod.POST)
 	public boolean addReview(@PathVariable("tv") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser)
