@@ -16,12 +16,16 @@ import javax.persistence.Transient;
 public class Review {
 	
 	private long id;
-	private double score;
+	private int score;
 	private String body;
 	private User user;
 	private LocalDateTime datetime;
 	private Media source;
 	
+	public Review()
+	{
+		score = -1;
+	}
 	
 	@Id
 	@GeneratedValue
@@ -31,10 +35,10 @@ public class Review {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public double getScore() {
+	public int getScore() {
 		return score;
 	}
-	public void setScore(double score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 	public String getBody() {
@@ -71,8 +75,7 @@ public class Review {
 	@Transient
 	public boolean isValid()
 	{
-		if (body.isEmpty())
-		{
+		if (score == -1){
 			return false;
 		}
 		return true;
@@ -98,6 +101,11 @@ public class Review {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+	
+	public String toString()
+	{
+		return "Rating: " + score + "\n" + "Body: " + body;
 	}
 	
 	
