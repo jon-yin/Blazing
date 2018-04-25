@@ -2,6 +2,7 @@ package com.blazing.objects;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -14,7 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -26,12 +26,13 @@ public class User {
 	private String emailAddress;
 	private String password;
 	private long id;
-	private int views;
 	private LocalDate joinDate;
 	private List<Media> wishlist;
 	private List<Review> reviews;
 	private List<Critic> favCritics;
 	private ImageEntity profilePic;
+	private Set<User> followers;
+	private Set<User> following;
 	
 	
 	public User()
@@ -39,9 +40,30 @@ public class User {
 		wishlist = new ArrayList<>();
 		reviews = new ArrayList<>();
 		favCritics = new ArrayList<>();
-		
+		followers = new HashSet<>();
+		following = new HashSet<>();
 	}
 	
+	@OneToMany
+	@JoinColumn(name="FOLLOWERS_IDS")
+	public Set<User> getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(Set<User> followers) {
+		this.followers = followers;
+	}
+	
+	@OneToMany
+	@JoinColumn(name="FOLLOWING_IDS")
+	public Set<User> getFollowing() {
+		return following;
+	}
+
+	public void setFollowing(Set<User> following) {
+		this.following = following;
+	}
+
 	@Id
 	@GeneratedValue
 	public long getId() {
@@ -73,13 +95,6 @@ public class User {
 	}
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
-	}
-	
-	public int getViews() {
-		return views;
-	}
-	public void setViews(int views) {
-		this.views = views;
 	}
 	
 	public LocalDate getJoinDate() {
@@ -166,6 +181,28 @@ public class User {
 	{
 		
 	}
+	
+	public void addFollower(User user)
+	{
+		followers.add(user);
+	}
+	
+	public void removeFollower(User user)
+	{
+		followers.remove(user);
+	}
+	
+	public void addFollowing(User user)
+	{
+		following.add(user);
+	}
+	
+	public void removeFollowing(User user)
+	{
+		following.remove(user);
+	}
+	
+	
 	
 	
 	
