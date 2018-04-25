@@ -1,44 +1,79 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html>
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
-	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
-	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
+	<link rel="stylesheet" type="text/css" href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 	<!-- popper.js -->
-	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
+	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
-	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!-- source sans pro -->
-	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" th:href="@{/css/styles.css}">
+<link rel="stylesheet" href="/css/styles.css">
 
 <body class="bg-dark">
-	<header th:insert="/header.html :: header"></header>
 	<div class="container">
-		<div class="col main-content">
-			<section>
-			</section>
-		</div>
-		<div class="col-12 col-md-auto sidebar sticky-top">
-			<section>
-				test
-			</section>
+		<div class="row">
+			<div class="col-12 col-md-auto sidebar sticky-top">
+				<section>
+					<ul class="nav nav-pills flex-column" id="browse-tabs" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="blazing-movies-tab" href="/critics-home.html" role="tab">Critics Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="opening-movies-tab" href="/critics-list.html" role="tab">Critics List</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="top-bo-tab" href="/critics-group.html" role="tab">Critics Groups</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="coming-soon-tab" href="latest-crvws-list.html" role="tab">Latest Film Reviews</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="all-movies-tab" href="#" role="tab">Critics Criteria</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="col main-content">
+				<section>
+					<h4 class="section-header">TOP BLAZING CRITICS</h4>
+					<div class="row" id="top-critics-list">
+						<!-- list of top critics -->
+						<div class="col-4 mb-2">
+							<div class="name font-weight-bold">Critic McCriticFace</div>
+							<div class="publication">Publication McPublicationFace</div>
+							<div class="num-reviews"><span>9001</span> Films Reviewed</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4 class="section-header">LATEST REVIEWS</h4>
+					<div class="row" id="latest-rvw-list">
+						<div class="col-6 mb-2">
+							<div class="font-weight-bold"><a href="#">Media Title</a></div>
+							<div class="mb-2"><span class="icon tiny ashes"></span><span>this is a review. Amazing, isn't it? This is just a placeholder before we implement thymeleaf into it</span></div>
+							<div>- <a href="#">Critic McCriticFace</a>, <span>Publication McPublicationFace</span></div>
+						</div>
+					</div>
+				</section>
+			</div>
 		</div>
 	</div>
-	<footer></footer>
 </body>
 
-<script type="application/javascript" th:src="@{/js/properties.js}"></script>
-<script type="application/javascript" th:src="@{/js/main.js}"></script>
+<script type="application/javascript" src="/js/properties.js"></script>
+<script type="application/javascript" src="/js/main.js"></script>
 
 </html>

@@ -29,43 +29,55 @@
 				<section>
 					<ul class="nav nav-pills flex-column" id="browse-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="blazing-movies-tab" href="/critics-home.html" role="tab">Critics Home</a>
+							<a class="nav-link" id="blazing-movies-tab" href="/critics-home.html">Critics Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="opening-movies-tab" href="/critics-list.html" role="tab">Critics List</a>
+							<a class="nav-link" id="opening-movies-tab" href="/critics-list.html">Critics List</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="top-bo-tab" href="/critics-group.html" role="tab">Critics Groups</a>
+							<a class="nav-link" id="top-bo-tab" href="/critics-group.html">Critics Groups</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="coming-soon-tab" href="latest-crvws-list.html" role="tab">Latest Film Reviews</a>
+							<a class="nav-link active" id="coming-soon-tab" href="latest-crvws-list.html">Latest Film Reviews</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="all-movies-tab" href="#" role="tab">Critics Criteria</a>
+							<a class="nav-link" id="all-movies-tab" href="#">Critics Criteria</a>
 						</li>
 					</ul>
 				</section>
 			</div>
 			<div class="col main-content">
 				<section>
-					<h4 class="section-header">TOP BLAZING CRITICS</h4>
-					<div class="row" id="top-critics-list">
-						<!-- list of top critics -->
-						<div class="col-4 mb-2">
-							<div class="name font-weight-bold">Critic McCriticFace</div>
-							<div class="publication">Publication McPublicationFace</div>
-							<div class="num-reviews"><span>9001</span> Films Reviewed</div>
-						</div>
-					</div>
-				</section>
-				<section>
-					<h4 class="section-header">LATEST REVIEWS</h4>
-					<div class="row" id="latest-rvw-list">
-						<div class="col-6 mb-2">
-							<div class="font-weight-bold"><a href="#">Media Title</a></div>
-							<div class="mb-2"><span class="icon tiny ashes"></span><span>this is a review. Amazing, isn't it? This is just a placeholder before we implement thymeleaf into it</span></div>
-							<div>- <a href="#">Critic McCriticFace</a>, <span>Publication McPublicationFace</span></div>
-						</div>
+					<h4 class="section-header">LATEST FILM REVIEWS</h4>
+					<div>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Rating</th>
+									<th scope="col">Movie</th>
+									<th scope="col">Review</th>
+									<th scope="col">Critic</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="align-middle" style="width: 75px;"><span class="icon tiny ashes"></span> <span>Score</span></td>
+									<td class="align-middle" style="width: 175px;"><span>Movie McMovieFace</span></td>
+									<td class="align-middle">
+										<div>
+											"<a href="#">Amazing!</a>"
+										</div>
+										<div>
+											Posted <span>datetime</span>
+										</div>
+									</td>
+									<td class="align-middle" style="width: 175px;">
+										<a href="#">Critic McCriticFace</a>
+										<a href="#">Publication</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</section>
 			</div>
