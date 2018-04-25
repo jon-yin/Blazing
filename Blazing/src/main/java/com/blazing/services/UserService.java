@@ -34,6 +34,46 @@ public class UserService {
 	{
 		userRepo.save(user);
 	}
+
+	public boolean followUser(User curUser, Long id) {
+		Optional<User>followTarget =  userRepo.findById(id);
+		User target = followTarget.orElse(null);
+		if (curUser == null || target == null)
+		{
+			return false;
+		}
+		if (target.addFollower(curUser) && curUser.addFollowing(target))
+		{
+			saveUserState(curUser);
+			saveUserState(target);
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+		
+	}
+
+	public boolean unfollowUser(User curUser, Long id) {
+		Optional<User>followTarget =  userRepo.findById(id);
+		User target = followTarget.orElse(null);
+		if (curUser == null || target == null)
+		{
+			return false;
+		}
+		if (target.removeFollower(curUser) && curUser.removeFollowing(target))
+		{
+			saveUserState(curUser);
+			saveUserState(target);
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+		
+	}
 	
 	
 }

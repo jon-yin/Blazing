@@ -182,27 +182,25 @@ public class User {
 		
 	}
 	
-	public void addFollower(User user)
+	public boolean addFollower(User user)
 	{
-		followers.add(user);
+		return followers.add(user);
 	}
 	
-	public void removeFollower(User user)
+	public boolean removeFollower(User user)
 	{
-		followers.remove(user);
+		return followers.remove(user);
 	}
 	
-	public void addFollowing(User user)
+	public boolean addFollowing(User user)
 	{
-		following.add(user);
+		return following.add(user);
 	}
 	
-	public void removeFollowing(User user)
+	public boolean removeFollowing(User user)
 	{
-		following.remove(user);
+		return following.remove(user);
 	}
-	
-	
 	
 	
 	
