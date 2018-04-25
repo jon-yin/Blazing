@@ -1,8 +1,13 @@
 package com.blazing.services;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -22,6 +27,7 @@ import com.blazing.repositories.TVRepository;
 @Service
 public class SearchService {
 
+	private Set<String> commonWords;
 	@Autowired
 	private MovieRepository movieRepo;
 	@Autowired
@@ -29,6 +35,21 @@ public class SearchService {
 	@Autowired
 	private CelebrityRepository celebRepo;
 
+	public SearchService()
+	{
+		commonWords = new HashSet<String>();
+		InputStream stream = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+		String line;
+		try {
+			while ((line = reader.readLine()) != null)
+			{
+				commonWords.add(line);
+			}
+		} catch (IOException e) {
+		}
+	}
+	
 	public void searchMedia(String searchQuery, Model model) {
 		Map<Movie, Integer> movieRelevance = new HashMap<>();
 		Map<TV, Integer> tvRelevance = new HashMap<>();
@@ -94,7 +115,24 @@ public class SearchService {
 	}
 
 	private String[] sortOutCommonWords(String[] tokens) {
-		return tokens;
+		Set<String> words = new HashSet<>();
+		for (String token : tokens)
+		{
+			if (!commonWords.contains(token))
+			{
+				words.add(token);
+			}
+		}
+		String[] filteredTokens = new String[words.size()];
+		filteredTokens = words.toArray(filteredTokens);
+		if (filteredTokens.length == 0)
+		{
+			return tokens;
+		}
+		else
+		{
+			return filteredTokens;
+		}
 	}
 
 }

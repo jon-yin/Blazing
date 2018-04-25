@@ -41,9 +41,8 @@ public class MovieController extends MediaController<Movie>{
 	
 	@ResponseBody
 	@RequestMapping(path="/submitreview", method=RequestMethod.POST)
-	public boolean addReview(@PathVariable("movie") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser, Model model)
+	public boolean addReview(@PathVariable("movie") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser)
 	{
-		System.out.println();
 		return mediaService.addReview(currentUser, id, review);
 	}
 	
