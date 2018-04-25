@@ -167,4 +167,17 @@ public class MediaService {
 		model.addAttribute("trendingMovies", movies);
 	}
 
+	public boolean reportReview(long reviewID) {
+
+		Optional<Review> target = revRepo.findById(reviewID);
+		if (target.isPresent())
+		{
+			Review review = target.get();
+			review.setFlagged(true);
+			revRepo.save(review);
+			return true;
+		}
+		return false;
+	}
+
 }

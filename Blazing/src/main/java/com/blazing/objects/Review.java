@@ -21,10 +21,12 @@ public class Review {
 	private User user;
 	private LocalDateTime datetime;
 	private Media source;
+	private boolean isFlagged;
 	
 	public Review()
 	{
 		score = -1;
+		isFlagged = false;
 	}
 	
 	@Id
@@ -106,6 +108,14 @@ public class Review {
 	public String toString()
 	{
 		return "Rating: " + score + "\n" + "Body: " + body;
+	}
+
+	public boolean isFlagged() {
+		return isFlagged;
+	}
+
+	public void setFlagged(boolean isFlagged) {
+		this.isFlagged = isFlagged;
 	}
 	
 	

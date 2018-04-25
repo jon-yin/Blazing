@@ -35,7 +35,6 @@ public class User {
 	private Set<User> followers;
 	private Set<User> following;
 	
-	
 	public User()
 	{
 		wishlist = new ArrayList<>();
@@ -45,7 +44,8 @@ public class User {
 		followers = new HashSet<>();
 		following = new HashSet<>();
 	}
-	
+
+
 	@OneToMany
 	@JoinColumn(name="FOLLOWERS_IDS")
 	public Set<User> getFollowers() {

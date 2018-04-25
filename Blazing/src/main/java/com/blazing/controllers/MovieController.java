@@ -54,5 +54,12 @@ public class MovieController extends MediaController<Movie>{
 		return mediaService.addReview(currentUser, id, review);
 	}
 	
+	@ResponseBody
+	@RequestMapping(path="/report", method=RequestMethod.POST)
+	public boolean reportReview(@RequestBody Long id, @SessionAttribute("currentUser") User user)
+	{
+		return super.reportReview(id, user);
+	}
+	
 
 }

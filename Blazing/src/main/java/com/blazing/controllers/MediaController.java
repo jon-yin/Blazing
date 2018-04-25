@@ -1,10 +1,13 @@
 package com.blazing.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
+import com.blazing.repositories.MediaRepository;
 import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
 
@@ -67,6 +70,15 @@ public class MediaController<T> {
 			}
 			return status;
 		}
+	}
+	
+	public boolean reportReview(long reviewID, User currentUser)
+	{
+		if (currentUser == null)
+		{
+			return false;
+		}
+		return mediaService.reportReview(reviewID);
 	}
 	
 	
