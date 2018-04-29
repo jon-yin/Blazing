@@ -1,7 +1,5 @@
 package com.blazing.controllers;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +17,9 @@ public class RegisterController {
 	private LoginRegisterService service;
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public boolean registerUser(@RequestBody RegisterInfo info, HttpSession session)
+	public boolean registerUser(@RequestBody RegisterInfo info)
 	{
-		boolean statusCode = service.registerUser(info, session);
+		boolean statusCode = service.registerUser(info);
 		return statusCode;
 	}
-	
 }

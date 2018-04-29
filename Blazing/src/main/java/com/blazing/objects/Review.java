@@ -2,6 +2,7 @@ package com.blazing.objects;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -43,6 +44,8 @@ public class Review {
 	public void setScore(int score) {
 		this.score = score;
 	}
+	
+	@Column(columnDefinition="LONGTEXT")
 	public String getBody() {
 		return body;
 	}

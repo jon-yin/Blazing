@@ -34,6 +34,7 @@ public class User {
 	private ImageEntity profilePic;
 	private Set<User> followers;
 	private Set<User> following;
+	private boolean enabled;
 	
 	public User()
 	{
@@ -43,6 +44,7 @@ public class User {
 		favCritics = new ArrayList<>();
 		followers = new HashSet<>();
 		following = new HashSet<>();
+		enabled = false;
 	}
 
 
@@ -222,6 +224,16 @@ public class User {
 	public boolean removeFollowing(User user)
 	{
 		return following.remove(user);
+	}
+
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	
