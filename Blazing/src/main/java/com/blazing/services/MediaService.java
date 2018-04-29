@@ -78,6 +78,27 @@ public class MediaService {
 		}
 	}
 	
+	public boolean removeFromWishlist(User user, long id)
+	{
+		Optional<Media> media = mediaRepo.findById(id);
+		if (media.isPresent())
+		{
+			if (user.getWishlist().contains(media.get()))
+			{
+				user.removeWishList(media.get());
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	public boolean addToNotInterested(User user, long id) {
 		Optional<Media> media = mediaRepo.findById(id);
 		if (media.isPresent()) {
@@ -86,6 +107,20 @@ public class MediaService {
 			} else {
 				user.addNotInterested(media.get());
 				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean removeFromNotInterested(User user, long id) {
+		Optional<Media> media = mediaRepo.findById(id);
+		if (media.isPresent()) {
+			if (user.getNotInterested().contains(media.get())) {
+				user.getNotInterested().remove(media.get());
+				return true;
+			} else {
+				return false;
 			}
 		} else {
 			return false;

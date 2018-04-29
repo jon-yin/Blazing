@@ -1,13 +1,10 @@
 package com.blazing.controllers;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
-import com.blazing.repositories.MediaRepository;
 import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
 
@@ -38,6 +35,23 @@ public class MediaController<T> {
 		}
 	}
 	
+	public boolean removeFromWishList(long id, User user)
+	{
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			boolean status = mediaService.removeFromWishlist(user, id);
+			if (status)
+			{
+				userService.saveUserState(user);
+			}
+			return status;
+		}
+	}
+	
 	public boolean addToNotInterested(long id, User user)
 	{
 		if (user == null)
@@ -47,6 +61,23 @@ public class MediaController<T> {
 		else
 		{
 			boolean status = mediaService.addToNotInterested(user, id);
+			if (status)
+			{
+				userService.saveUserState(user);
+			}
+			return status;
+		}
+	}
+	
+	public boolean removeFromNotInterested(long id, User user)
+	{
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			boolean status = mediaService.removeFromNotInterested(user, id);
 			if (status)
 			{
 				userService.saveUserState(user);

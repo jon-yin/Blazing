@@ -22,9 +22,16 @@ public class TVController extends MediaController<TV>{
 	
 	@RequestMapping(path="/addwishlist", method = RequestMethod.POST)
 	@ResponseBody
-	public boolean addToWishList(@PathVariable("movie") long movie, 
+	public boolean addToWishList(@PathVariable("tv") long tv, 
 			@SessionAttribute("currentUser") User currentUser){
-		return super.addToWishList(movie,currentUser);
+		return super.addToWishList(tv,currentUser);
+	}
+	
+	@RequestMapping(path="/removewishlist", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean removeFromWishlist(@PathVariable("tv") long tv, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.removeFromWishList(tv,currentUser);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
@@ -42,6 +49,15 @@ public class TVController extends MediaController<TV>{
 		return super.addToNotInterested(tv,currentUser);
 	
 	}
+	
+	@RequestMapping(path="/removenotinterested", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean removeFromNotInterested(@PathVariable("tv") long tv, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.removeFromNotInterested(tv,currentUser);
+	}
+	
+	
 
 	
 	@ResponseBody

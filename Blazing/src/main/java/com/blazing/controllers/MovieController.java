@@ -39,6 +39,22 @@ public class MovieController extends MediaController<Movie>{
 	
 	}
 	
+	@RequestMapping(path="/removewishlist", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean removefromWishList(@PathVariable("movie") long movie, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.removeFromWishList(movie,currentUser);
+	
+	}
+	
+	@RequestMapping(path="/removenotinterested", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean removeFromNotInterested(@PathVariable("movie") long movie, 
+			@SessionAttribute("currentUser") User currentUser){
+		return super.removeFromNotInterested(movie,currentUser);
+	
+	}
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String getMovieDetails(@PathVariable("movie") long movie, Model model)
 	{
