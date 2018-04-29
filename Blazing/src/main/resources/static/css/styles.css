@@ -47,6 +47,18 @@ a:hover{
 .nav-pills a.active:hover{
 	color: #ffffff!important;
 }
+.pagination .page-item.active .page-link{
+	background-color: #aaaaaa;
+	border-color:  #aaaaaa;
+}
+.pagination .page-link{
+	color: #6c757d;
+}
+.pagination .page-link:hover{
+	color: white!important;
+	background-color: #666666!important;
+	border-color: #666666!important;
+}
 
 /*celebrity-link*/
 .celebrity-link{

@@ -7,14 +7,17 @@ function toggleWTS() {
 	$("#want-to-see").css("background-color","#aaaaaa");
 	$("#want-to-see").css('border-color','#aaaaaa');
 	if($("#not-interested").hasClass("active")){
+		// remove from not interested
 		$("#not-interested").removeClass("active");
 		$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');
 	}
 	if ($("#want-to-see").hasClass("active")){
+		// remove from want to see
 		$("#want-to-see").css('background-color','#343a40');
 		$("#want-to-see").css('border-color','#343a40');
 		$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');
 	}else{
+		// add to want to see
 		$("#want-to-see").css('background-color','#28a745');
 		$("#want-to-see").css('border-color','#28a745');
 		$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-check"></i> Will See!</span>');
@@ -31,14 +34,17 @@ function toggleNI() {
 	$("#want-to-see").attr("disabled", true);
 	$("#want-to-see").css("background-color","#aaaaaa");
 	if($("#want-to-see").hasClass("active")){
+		// remove from want to see
 		$("#want-to-see").removeClass("active");
 		$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');
 	}
 	if ($("#not-interested").hasClass("active")){
+		// remove from not interested
 		$("#not-interested").css('background-color','#343a40');
 		$("#not-interested").css('border-color','#343a40');
 		$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');
 	}else{
+		// add to not interested
 		$("#not-interested").css('background-color','#dc3545');
 		$("#not-interested").css('border-color','#dc3545');
 		$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-times"></i> Pass...</span>');

@@ -1,79 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://thymeleaf.org">
 <head>
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" type="text/css" th:href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
 	<!-- popper.js -->
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 	<!-- source sans pro -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
+	<header th:insert="/fragments/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-auto sidebar sticky-top">
 				<section>
-					<ul class="nav nav-pills flex-column" id="browse-tabs" role="tablist">
+					<ul class="nav nav-pills flex-column" id="critics-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="blazing-movies-tab" href="/critics-home.html" role="tab">Critics Home</a>
+							<a class="nav-link active" data-toggle="tab" id="critics-home-tab" href="#critics-home" role="tab">Critics Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="opening-movies-tab" href="/critics-list.html" role="tab">Critics List</a>
+							<a class="nav-link" data-toggle="tab" id="critics-list-tab" href="#critics-list" role="tab">Critics List</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="top-bo-tab" href="/critics-group.html" role="tab">Critics Groups</a>
+							<a class="nav-link" data-toggle="tab" id="critics-groups-tab" href="#critics-groups" role="tab">Critics Groups</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="coming-soon-tab" href="latest-crvws-list.html" role="tab">Latest Film Reviews</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="all-movies-tab" href="#" role="tab">Critics Criteria</a>
+							<a class="nav-link" data-toggle="tab" id="critics-reviews-tab" href="#critics-reviews" role="tab">Latest Film Reviews</a>
 						</li>
 					</ul>
 				</section>
 			</div>
-			<div class="col main-content">
-				<section>
-					<h4 class="section-header">TOP BLAZING CRITICS</h4>
-					<div class="row" id="top-critics-list">
-						<!-- list of top critics -->
-						<div class="col-4 mb-2">
-							<div class="name font-weight-bold">Critic McCriticFace</div>
-							<div class="publication">Publication McPublicationFace</div>
-							<div class="num-reviews"><span>9001</span> Films Reviewed</div>
+			<div class="col main-content tab-content" id="critics-content">
+				<div class="tab-pane fade show active" id="critics-home" role="tabpanel" aria-labelledby="critics-home-tab">
+					<section>
+						<h5 class="section-header">TOP BLAZING CRITICS</h5>
+						<div class="row" id="top-critics-list">
+							<!-- list of top critics -->
+							<div class="col-4 mb-2">
+								<div class="name font-weight-bold">Critic McCriticFace</div>
+								<div class="publication">Publication McPublicationFace</div>
+								<div class="num-reviews"><span>9001</span> Films Reviewed</div>
+							</div>
 						</div>
-					</div>
-				</section>
-				<section>
-					<h4 class="section-header">LATEST REVIEWS</h4>
-					<div class="row" id="latest-rvw-list">
-						<div class="col-6 mb-2">
-							<div class="font-weight-bold"><a href="#">Media Title</a></div>
-							<div class="mb-2"><span class="icon tiny ashes"></span><span>this is a review. Amazing, isn't it? This is just a placeholder before we implement thymeleaf into it</span></div>
-							<div>- <a href="#">Critic McCriticFace</a>, <span>Publication McPublicationFace</span></div>
+					</section>
+					<section>
+						<h5 class="section-header">LATEST REVIEWS</h5>
+						<div class="row" id="latest-rvw-list">
+							<div class="col-6 mb-2">
+								<div class="font-weight-bold"><a href="#">Media Title</a></div>
+								<div class="mb-2"><span class="icon tiny ashes"></span><span>this is a review. Amazing, isn't it? This is just a placeholder before we implement thymeleaf into it</span></div>
+								<div>- <a href="#">Critic McCriticFace</a>, <span>Publication McPublicationFace</span></div>
+							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
+				<div class="tab-pane fade show" id="critics-list" role="tabpanel" aria-labelledby="critics-list-tab">
+					<section>
+						<h5 class="section-header">CRITICS LIST</h5>
+						<div class="w-100 d-flex justify-content-center">
+							<ul class="pagination">
+								<li class="page-item active"><a class="page-link" href="#">A</a></li>
+								<li class="page-item"><a class="page-link" href="#">B</a></li>
+								<li class="page-item"><a class="page-link" href="#">C</a></li>
+								<li class="page-item"><a class="page-link" href="#">D</a></li>
+								<li class="page-item"><a class="page-link" href="#">E</a></li>
+								<li class="page-item"><a class="page-link" href="#">F</a></li>
+								<li class="page-item"><a class="page-link" href="#">G</a></li>
+								<li class="page-item"><a class="page-link" href="#">H</a></li>
+								<li class="page-item"><a class="page-link" href="#">I</a></li>
+								<li class="page-item"><a class="page-link" href="#">J</a></li>
+								<li class="page-item"><a class="page-link" href="#">K</a></li>
+								<li class="page-item"><a class="page-link" href="#">L</a></li>
+								<li class="page-item"><a class="page-link" href="#">M</a></li>
+								<li class="page-item"><a class="page-link" href="#">N</a></li>
+								<li class="page-item"><a class="page-link" href="#">O</a></li>
+								<li class="page-item"><a class="page-link" href="#">P</a></li>
+								<li class="page-item"><a class="page-link" href="#">Q</a></li>
+								<li class="page-item"><a class="page-link" href="#">R</a></li>
+								<li class="page-item"><a class="page-link" href="#">S</a></li>
+								<li class="page-item"><a class="page-link" href="#">T</a></li>
+								<li class="page-item"><a class="page-link" href="#">U</a></li>
+								<li class="page-item"><a class="page-link" href="#">V</a></li>
+								<li class="page-item"><a class="page-link" href="#">W</a></li>
+								<li class="page-item"><a class="page-link" href="#">X</a></li>
+								<li class="page-item"><a class="page-link" href="#">Y</a></li>
+								<li class="page-item"><a class="page-link" href="#">Z</a></li>
+							</ul>
+						</div>
+						<div>
+							<ul class="list-group">
+								<li class="list-group-item"><a href="#">Celeb McCelebface</a></li>
+							</ul>
+						</div>
+					</section>
+				</div>
+				<div class="tab-pane fade show" id="critics-groups" role="tabpanel" aria-labelledby="critics-groups-tab">
+					<section>
+						<h5 class="section-header">CRITICS GROUP</h5>
+						<div>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+								<li class="list-group-item"><span>Group McGroupFace</span></li>
+							</ul>
+						</div>
+					</section>
+				</div>
+				<div class="tab-pane fade show" id="critics-reviews" role="tabpanel" aria-labelledby="critics-reviews-tab">
+					<section>
+						<h5 class="section-header">LATEST FILM REVIEWS</h5>
+						<div>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Rating</th>
+										<th scope="col">Movie</th>
+										<th scope="col">Review</th>
+										<th scope="col">Critic</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="align-middle" style="width: 75px;"><span class="icon tiny ashes"></span> <span>Score</span></td>
+										<td class="align-middle" style="width: 175px;"><span>Movie McMovieFace</span></td>
+										<td class="align-middle">
+											<div>
+												"<a href="#">Amazing!</a>"
+											</div>
+											<div>
+												Posted <span>datetime</span>
+											</div>
+										</td>
+										<td class="align-middle" style="width: 175px;">
+											<a href="#">Critic McCriticFace</a>
+											<a href="#">Publication</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
 	</div>
+	<footer xmlns:th="/fragments/footer.html : footer"></footer>
 </body>
 
-<script type="application/javascript" src="/js/properties.js"></script>
-<script type="application/javascript" src="/js/main.js"></script>
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
 
 </html>

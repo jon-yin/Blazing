@@ -211,22 +211,27 @@
 								<div class="text-right"><a href="/reviews.html">View All Critic Reviews...</a></div>
 							</section>
 						</div>
-						<div class="tab-pane fade" id="audience-reviews" role="tabpanel" aria-labelledby="audience-reviews">	<section class="px-0 pb-0 mb-0">
-								<div class="reviews">
+						<div class="tab-pane fade" id="audience-reviews" role="tabpanel" aria-labelledby="audience-reviews">
+							<section class="px-0 pb-0 mb-0" th:if="${movie.getReviews().size()}">
+								<div class="reviews" th:each="review : ${movie.reviews}">
 									<div class="review audience d-flex flex-row">
-										<div class="reviewer">
-											<span>Name</span>
+										<div class="reviewer" style="width: 100px;">
+											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
 										<div class="quote">
-											<span>10/10</span>
+											<span th:text="${review.score}">10</span>/10
 											 - 
-											<span>
-												review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review 
-											</span>
+											"<span th:text="${review.body}">body</span>"
+										</div>
+										<div class="date font-weight-bold ml-auto">
+											<span th:text="${review.datetime.getMonthValue()}">Month</span>/<span th:text="${review.datetime.getDayOfMonth()}">Day</span>/<span th:text="${review.datetime.getYear()}">Year</span>
 										</div>
 									</div>
 								</div>
 								<div class="text-right"><a href="/reviews.html">View All Audience Reviews...</a></div>
+							</section>
+							<section class="px-0 pb-0 mb-0" th:unless="${movie.getReviews().size()}">
+								<h5 class="text-center w-100">No Reviews!</h5>
 							</section>
 						</div>
 					</div>
@@ -234,7 +239,7 @@
 			</div>
 
 			<div class="col-12 col-md-auto sidebar sticky-top" id="right-sidebar">
-				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist" style="background-color: white;">
+				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-item nav-link active" id="show-movie-links" data-toggle="tab" href="#movie-links" role="tab" aria-controls="movie-links" aria-selected="true">In Theaters</a>
 					</li>
