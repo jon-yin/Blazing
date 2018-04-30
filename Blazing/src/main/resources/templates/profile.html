@@ -30,8 +30,8 @@
 				<section> 
 					<img class="image profile" src="/images/thumbnail.png">
 					<div class="text-center mt-1" th:if="${session.currentUser} and ${foundUser.id != session.currentUser.id}">
-						<button type="button" class="btn btn-secondary" id="follow-button" th:unless="${#sets.contains(session.currentUser.following, foundUser)}">Follow</button>
-						<button type="button" class="btn btn-secondary" id="unfollow-button" th:if="${#sets.contains(session.currentUser.following, foundUser)}">UnFollow</button>
+						<button type="button" class="btn btn-secondary" id="follow-button" th:unless="${#sets.contains(foundUser.followers, session.currentUser)}">Follow</button>
+						<button type="button" class="btn btn-secondary" id="unfollow-button" th:if="${#sets.contains(foundUser.followers, session.currentUser)}">UnFollow</button>
 						<script th:inline="javascript">
 						/*<![CDATA[*/
 							function follow(e){
