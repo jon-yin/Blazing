@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -48,7 +49,7 @@ public class User {
 	}
 
 
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="FOLLOWERS_IDS")
 	public Set<User> getFollowers() {
 		return followers;
@@ -58,7 +59,7 @@ public class User {
 		this.followers = followers;
 	}
 	
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="FOLLOWING_IDS")
 	public Set<User> getFollowing() {
 		return following;
