@@ -8,7 +8,7 @@
 		<a class="navbar-brand" th:href="@{/}"><span class="icon tiny burning"></span>BLAZING</a>
 		<ul class="navbar-nav mr-auto pr-2">
 			<li class="nav-item">
-				<a class="nav-link text-secondary text-nowrap mr-auto" data-toggle="modal" data-target="#about" href="#">WHAT'S BLAZING?</a>
+				<a class="nav-link text-secondary text-nowrap mr-auto" th:href="@{/about}">WHAT'S BLAZING?</a>
 			</li>
 		</ul>
 		<button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false">
@@ -58,23 +58,6 @@
 		</div>
 	</div>
 	</nav>
-</div>
-
-<!-- ABOUT Modal -->
-<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="#aboutLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="aboutLabel">What's Blazing?</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				The BLAZING score — based on the opinions of hundreds of film and television critics — is a trusted measurement of critical recommendation for millions of fans. It represents the percentage of professional critic reviews that are positive for a given film or television show.
-			</div>
-		</div>
-	</div>
 </div>
 
 <!-- LOGIN Modal -->

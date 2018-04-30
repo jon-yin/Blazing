@@ -24,11 +24,39 @@
 
 <body class="bg-dark">
 	<header th:insert="/fragments/header.html :: header"></header>
-	<div class="container">
+	<div class="container" th:if="${foundUser}">
 		<div class="row">
 			<div class="col-12 col-md-auto sidebar" id="left-sidebar">
-				<section>
+				<section> <!-- #sets.isEmpty(session.currentUser.following) -->
 					<img class="image profile" src="/images/thumbnail.png">
+					<div class="text-center mt-1" th:if="${session.currentUser} and ${foundUser.id != session.currentUser.id}">
+						<button type="button" class="btn btn-secondary" id="follow-button">Follow</button>
+						<button type="button" class="btn btn-secondary" id="unfollow-button">UnFollow</button>
+						<script th:inline="javascript">
+						/*<![CDATA[*/
+							function follow(e){
+								e.preventDefault();
+								var firstName = /*[[${session.currentUser.firstName}]]*/ 'test';
+								console.log(firstName);
+							//	$.ajax({
+							//		url: "/follow"
+							//	});
+							}
+							function unfollow(e){
+								e.preventDefault();
+								var lastName = /*[[${session.currentUser.lastName}]]*/ 'test';
+								console.log(lastName);
+							//	$.ajax({
+							//		url: "/unfollow"
+							//	});
+							}
+							$(function(){
+								$("#follow-button").on("click", follow);
+								$("#unfollow-button").on("click", unfollow);
+							});
+						/*]]>*/
+						</script>
+					</div>
 				</section>
 				<section>
 					<h5 class="section-header" th:text="${foundUser.firstName}+' '+${foundUser.lastName}">PROFILE</h5>
@@ -183,6 +211,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="h-100" th:unless="${foundUser}">
+		<section>
+			User not found
+		</section>
 	</div>
 	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>

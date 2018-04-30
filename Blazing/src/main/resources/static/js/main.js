@@ -1,19 +1,20 @@
-var properties;
+var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 // login
 function login(e) {
 	e.preventDefault();
 	// conditions
 	var email = $("#email-login").val();
 	var password = $("#password-login").val();
-	var emailRegex = /\w*@[a-z]+(.[a-z]+)+/;
 	if (email.match(emailRegex) == null){
 		console.log("fail regex");
 		return;
 	}
 	if (email.length == 0){
+		console.log("fail no email");
 		return;
 	}
 	if (password.length == 0){
+		console.log("fail no password");
 		return;
 	}
 	$("#login-button").attr("disabled", true);
@@ -28,10 +29,12 @@ function login(e) {
 		url : "/login",
 		data : jsonString,
 		success : function(data) {
-			console.log("success");
-			$("#email-login").val("");
-			$("#password-login").val("");
-			$("#login").modal("hide");
+			if (data == true){
+				$("#email-login").val("");
+				$("#password-login").val("");
+				location.reload();
+			}else{
+			}
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
@@ -41,11 +44,6 @@ function login(e) {
 			$("#login-button").css("background-color","#6c757d");	
 		}
 	});
-}
-
-//logout
-function logout(){
-	//remove user from session
 }
 
 //sign up
@@ -64,7 +62,6 @@ function signup(e) {
 //		$("#no-ln-alert-signup").show().delay(3000).fadeOut(10);
 		return;
 	}
-	var emailRegex = /\w*@[a-z]+(.[a-z]+)+/;
 	if (email.match(emailRegex) == null){
 		console.log("fail regex");
 		return;
@@ -91,13 +88,15 @@ function signup(e) {
 		url : "/register",
 		data : jsonString,
 		success : function(data) {
-			console.log("success");
-			$("#firstname-signup").val("");
-			$("#lastname-signup").val("");
-			$("#email-signup").val("");
-			$("#password-signup").val("");
-			$("#signup").modal("hide");
-			$("#sent-vemail").modal("show");
+			if (data == true){
+				$("#firstname-signup").val("");
+				$("#lastname-signup").val("");
+				$("#email-signup").val("");
+				$("#password-signup").val("");
+				$("#signup").modal("hide");
+				$("#sent-vemail").modal("show");
+			}else{
+			}
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
@@ -122,7 +121,6 @@ function search(){
 
 $(function() {
 	$("#login-button").on("click", login);
-	$("#logout-button").on("click", logout);
 	$("#signup-button").on("click", signup);
 	$("#search-button").on("click", search);
 	$("#search-input").keypress(function(e){

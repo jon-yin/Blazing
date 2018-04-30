@@ -42,7 +42,7 @@
 					</ul>
 					<div class="tab-content" id="show-results">
 						<div class="tab-pane show fade active" id="movie-results" role="tabpanel" aria-labelledby="show-movie-results">
-							<div class="movie-results-list">
+							<div class="movie-results-list" th:if="${relevantMovies.size()}">
 								<a class="w-100 m-2 d-flex align-items-center" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 									<div class="score pr-2">
 										<span class="icon tiny burning"></span>
@@ -59,9 +59,12 @@
 									</div>
 								</a>
 							</div>
+							<div class="movie-results-list" th:unless="${relevantMovies.size()}">
+								<h3 class="text-center w-100">No results found!</h3>
+							</div>
 						</div>
 						<div class="tab-pane show fade" id="tv-results" role="tabpanel" aria-labelledby="show-tv-results">
-							<div class="tv-results-list">
+							<div class="tv-results-list" th:if="${relevantTV.size()}">
 								<a class="w-100 m-2 d-flex align-items-center" th:each="tv : ${relevantTV}" th:href="#">
 									<div class="score pr-2">
 										<span class="icon tiny burning"></span>
@@ -72,6 +75,9 @@
 										<span class="font-weight-bold" th:text="${tv.title}">TV</span> (<span>year started</span> - <span>year ended</span>)
 									</div>
 								</a>
+							</div>
+							<div class="movie-results-list" th:unless="${relevantTV.size()}">
+								<h3 class="text-center w-100">No results found!</h3>
 							</div>
 						</div>
 						

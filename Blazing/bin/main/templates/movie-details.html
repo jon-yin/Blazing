@@ -213,8 +213,8 @@
 						</div>
 						<div class="tab-pane fade" id="audience-reviews" role="tabpanel" aria-labelledby="audience-reviews">
 							<section class="px-0 pb-0 mb-0" th:if="${movie.getReviews().size()}">
-								<div class="reviews" th:each="review : ${movie.reviews}">
-									<div class="review audience d-flex flex-row">
+								<div class="reviews">
+									<div class="review audience d-flex flex-row" th:each="review : ${movie.reviews}">
 										<div class="reviewer" style="width: 100px;">
 											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
