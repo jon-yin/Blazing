@@ -6,7 +6,7 @@
 		<div th:unless="${session.currentUser}">
 			<h5 class="text-center w-100">Log In to Add A Review</h5>
 		</div>
-		<form id="user-rating" th:if="${session.currentUser}">
+		<div id="user-rating" th:if="${session.currentUser}">
 			<h5 class="section-header">ADD YOUR RATING</h5>
 			<div class="row flex-nowrap align-items-stretch"> <!-- user review block -->
 				<div class="col-auto">
@@ -28,12 +28,140 @@
 							<option value="10">10</option>
 						</select>
 						<div class="btn-group btn-group-toggle" id="wts-ni" data-toggle="buttons">
-							<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 90px;">
-								<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
+							<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 100px;">
+								<input type="checkbox" checked autocomplete="off"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span>
 							</label>
 							<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;">
-								<input type="checkbox" autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
+								<input type="checkbox" checked autocomplete="off"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>
 							</label>
+							<script th:inline="javascript">
+							/*<![CDATA[*/
+								var movieID = /*[[${movie.id}]]*/ 0;
+								var wts_ni = {};
+								var jsonString = "";
+
+								function addWTS(){
+									$.ajax({
+										type : "POST",
+										contentType : "application/json",
+										url : location.href+"/addwishlist",
+										data : jsonString,
+										success : function(data) {
+											return data;
+										},
+										error : function(e) {
+											console.log("ERROR: ", e);
+											return false;
+										}
+									});
+								}
+	
+								function removeWTS(){
+									$.ajax({
+										type : "POST",
+										contentType : "application/json",
+										url : location.href+"/removewishlist",
+										data : jsonString,
+										success : function(data) {
+											return data;
+										},
+										error : function(e) {
+											console.log("ERROR: ", e);
+											return false;
+										}
+									});
+								}
+	
+								function addNI(){
+									$.ajax({
+										type : "POST",
+										contentType : "application/json",
+										url : location.href+"/addnotinterested",
+										data : jsonString,
+										success : function(data) {
+											return data;
+										},
+										error : function(e) {
+											console.log("ERROR: ", e);
+											return false;
+										}
+									});
+								}
+	
+								function removeNI(){
+									$.ajax({
+										type : "POST",
+										contentType : "application/json",
+										url : location.href+"/removenotinterested",
+										data : jsonString,
+										success : function(data) {
+											return data;
+										},
+										error : function(e) {
+											console.log("ERROR: ", e);
+											return false;
+										}
+									});
+								}
+	
+								function toggleWTS(e) {
+									e.preventDefault();
+									if($("#not-interested").hasClass("active")){
+										if (removeNI()){
+											$("#not-interested").removeClass("active");
+	 										$("#not-interested").css('background-color','#343a40');
+											$("#not-interested").css('border-color','#343a40');
+											$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');	
+										}
+									}
+									if ($("#want-to-see").hasClass("active")){
+										if (removeWTS()){
+	 										$("#want-to-see").css('background-color','#343a40');
+											$("#want-to-see").css('border-color','#343a40');
+											$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');	
+										}
+									}else if (!$("#want-to-see").hasClass("active")}){
+										if (addWTS()){
+	 										$("#want-to-see").css('background-color','#28a745');
+											$("#want-to-see").css('border-color','#28a745');
+											$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-check"></i> Will See!</span>');
+										}
+									}
+								}
+	
+								function toggleNI(e) {
+									e.preventDefault();
+									if($("#want-to-see").hasClass("active")){
+										if (removeWTS()){
+											$("#want-to-see").removeClass("active");
+	 										$("#want-to-see").css('background-color','#343a40');
+											$("#want-to-see").css('border-color','#343a40');
+											$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');	
+										}
+									}
+									if ($("#not-interested").hasClass("active")){
+										if (removeNI()){
+	 										$("#not-interested").css('background-color','#343a40');
+											$("#not-interested").css('border-color','#343a40');
+											$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');	
+										}
+									}else if (!$("#not-interested").hasClass("active")}){
+										if (addNI()){
+	 										$("#not-interested").css('background-color','#dc3545');
+											$("#not-interested").css('border-color','#dc3545');
+											$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-times"></i> Pass...</span>');	
+										}
+									}
+								}
+	
+								$(function(){
+									wts_ni["movie"] = movieID;
+									jsonString = JSON.stringify(wts_ni);
+									$("#want-to-see").on("click",toggleWTS);
+									$("#not-interested").on("click",toggleNI);
+								});
+							/*]]>*/
+							</script>
 						</div>
 					</div>
 					<div>
@@ -45,7 +173,7 @@
 				<span id="submit-fail" style="color: red; display: none; margin-right: 10px;">Please Enter A Rating</span>
 				<button id="submit-rating" type="submit" class="btn btn-outline-dark">Submit</button>
 			</div>
-		</form>
+		</div>
 	</section>
 </div>
 </body>
