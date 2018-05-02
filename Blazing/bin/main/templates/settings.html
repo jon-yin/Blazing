@@ -24,7 +24,7 @@
 
 <body class="bg-dark">
 	<header th:insert="/fragments/header.html :: header"></header>
-	<div class="container" th:if="${session.currentUser} and ${foundUser.id == session.currentUser.id}">
+	<div class="container" th:if="${session.currentUser}">
 		<div class="row">
 			<section class="col">
 				<h3 th:text="${session.currentUser.firstName+' '+session.currentUser.lastName}">first and last name</h3>
@@ -38,7 +38,7 @@
 			</section>
 		</div>
 	</div>
-	<div class="h-100" th:unless="${session.currentUser} and ${foundUser.id == session.currentUser.id}">
+	<div class="h-100" th:unless="${session.currentUser}">
 		<section>
 			FORBIDDEN
 		</section>
