@@ -1,17 +1,18 @@
 package com.blazing.code;
 
-import com.blazing.objects.Movie;
-import com.blazing.repositories.MovieRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.blazing.objects.Movie;
+import com.blazing.repositories.MovieRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class DatasourceInitializer implements ApplicationListener<ApplicationReadyEvent> {

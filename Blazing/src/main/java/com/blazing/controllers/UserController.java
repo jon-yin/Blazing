@@ -55,5 +55,17 @@ public class UserController {
 		return userService.unfollowUser(curUser, id);
 	}
 	
+	@RequestMapping(path="/settings", method = RequestMethod.GET)
+	public String settingsView(@SessionAttribute("currentUser") User curUser, @PathVariable("userid") long id)
+	{
+		if (curUser.getId() != id)
+		{
+			return "redirect:/home";
+		}
+		else
+		{
+			return "settings";
+		}
+	}
 	
 }
