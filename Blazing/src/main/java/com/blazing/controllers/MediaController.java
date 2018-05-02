@@ -1,5 +1,7 @@
 package com.blazing.controllers;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -17,7 +19,7 @@ public class MediaController<T> {
 	@Autowired
 	private UserService userService;
 	
-	
+	@Transactional
 	public boolean addToWishList(long id, User user)
 	{
 		if (user == null)
@@ -35,6 +37,7 @@ public class MediaController<T> {
 		}
 	}
 	
+	@Transactional
 	public boolean removeFromWishList(long id, User user)
 	{
 		if (user == null)
@@ -52,6 +55,7 @@ public class MediaController<T> {
 		}
 	}
 	
+	@Transactional
 	public boolean addToNotInterested(long id, User user)
 	{
 		if (user == null)
@@ -69,6 +73,7 @@ public class MediaController<T> {
 		}
 	}
 	
+	@Transactional
 	public boolean removeFromNotInterested(long id, User user)
 	{
 		if (user == null)

@@ -1,11 +1,13 @@
 package com.blazing.services;
 
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -60,7 +62,8 @@ public class LoginRegisterService {
 	private void sendVerificationEmail(String email, VerificationToken token) {
 		emailService.sendEmail(email, token);
 	}
-
+	
+	@Transactional
 	public SuccessStatus verifyUser(String verify, HttpSession session)
 	{
 		SuccessStatus status = new SuccessStatus();
@@ -72,9 +75,16 @@ public class LoginRegisterService {
 		}
 		else{
 			User foundUser = token.getUser();
+			Optional<User> undetachedUser = repository.findById(foundUser.getId());
+			foundUser = undetachedUser.get();
 			foundUser.setEnabled(true);
 			tokenRepo.delete(token);
 			User verified = repository.save(foundUser);
+			Hibernate.initialize(verified.getFollowers());
+			Hibernate.initialize(verified.getWishlist());
+			Hibernate.initialize(verified.getNotInterested());
+			Hibernate.initialize(verified.getFollowing());
+			Hibernate.initialize(verified.getFavCritics());
 			session.setAttribute("currentUser", verified);
 			status.setSuccess(true);
 			status.setUser(verified);
@@ -88,6 +98,11 @@ public class LoginRegisterService {
 		String password = info.getPassword();
 		if (user != null) {
 			User validUser = user;
+			Hibernate.initialize(validUser.getFollowers());
+			Hibernate.initialize(validUser.getWishlist());
+			Hibernate.initialize(validUser.getNotInterested());
+			Hibernate.initialize(validUser.getFollowing());
+			Hibernate.initialize(validUser.getFavCritics());
 			if (encoder.matches(password, validUser.getPassword()))
 			{
 				model.setAttribute("currentUser", validUser);

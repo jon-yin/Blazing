@@ -30,10 +30,8 @@ import com.blazing.repositories.MovieRepository;
 import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TVRepository;
 
-
 @Service
 public class MediaService {
-
 
 	@Autowired
 	private MediaRepository mediaRepo;
@@ -47,8 +45,10 @@ public class MediaService {
 	private MovieCharacterRepository mcRepo;
 	@Autowired
 	private ReviewRepository revRepo;
-	
-	
+	@Autowired
+	private SessionService sesService;
+
+	@Transactional
 	public Movie findMovie(long id) {
 		Optional<Movie> movie = movieRepo.findById(id);
 		if (movie.isPresent()) {
@@ -57,39 +57,66 @@ public class MediaService {
 			return null;
 		}
 	}
-	
-	public TV findTV(long id)
-	{
+
+	@Transactional
+	public TV findTV(long id) {
 		Optional<TV> tv = tvRepo.findById(id);
 		return tv.orElse(null);
 	}
 
+	@Transactional
 	public boolean addToWishlist(User user, long id) {
-		Optional<Media> media = mediaRepo.findById(id);
-		if (media.isPresent()) {
-			if (user.getWishlist().contains(media.get())) {
-				return false;
+		//user = sesService.retrieveDatabaseUser(user);
+		if (user != null) {
+			Optional<Media> media = mediaRepo.findById(id);
+			if (media.isPresent()) {
+				if (user.getWishlist().contains(media.get())) {
+					return false;
+				} else {
+					user.addWishList(media.get());
+					return true;
+				}
 			} else {
-				user.addWishList(media.get());
-				return true;
+				return false;
 			}
 		} else {
 			return false;
 		}
 	}
-	
-	public boolean removeFromWishlist(User user, long id)
-	{
-		Optional<Media> media = mediaRepo.findById(id);
-		if (media.isPresent())
-		{
-			if (user.getWishlist().contains(media.get()))
-			{
-				user.removeWishList(media.get());
-				return true;
+
+	@Transactional
+	public boolean removeFromWishlist(User user, long id) {
+		//user = sesService.retrieveDatabaseUser(user);
+		if (user != null) {
+			Optional<Media> media = mediaRepo.findById(id);
+			if (media.isPresent()) {
+				if (user.getWishlist().contains(media.get())) {
+					user.removeWishList(media.get());
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
 			}
-			else
-			{
+		} else {
+			return false;
+		}
+	}
+
+	@Transactional
+	public boolean addToNotInterested(User user, long id) {
+		//user = sesService.retrieveDatabaseUser(user);
+		if (user != null) {
+			Optional<Media> media = mediaRepo.findById(id);
+			if (media.isPresent()) {
+				if (user.getNotInterested().contains(media.get())) {
+					return false;
+				} else {
+					user.addNotInterested(media.get());
+					return true;
+				}
+			} else {
 				return false;
 			}
 		}
@@ -98,21 +125,8 @@ public class MediaService {
 			return false;
 		}
 	}
-	
-	public boolean addToNotInterested(User user, long id) {
-		Optional<Media> media = mediaRepo.findById(id);
-		if (media.isPresent()) {
-			if (user.getNotInterested().contains(media.get())) {
-				return false;
-			} else {
-				user.addNotInterested(media.get());
-				return true;
-			}
-		} else {
-			return false;
-		}
-	}
-	
+
+	@Transactional
 	public boolean removeFromNotInterested(User user, long id) {
 		Optional<Media> media = mediaRepo.findById(id);
 		if (media.isPresent()) {
@@ -126,13 +140,12 @@ public class MediaService {
 			return false;
 		}
 	}
-	
+
 	@Transactional
-	public boolean addReview(User user, long id, Review review)
-	{
+	public boolean addReview(User user, long id, Review review) {
+		//user = sesService.retrieveDatabaseUser(user);
 		Optional<Media> media = mediaRepo.findById(id);
-		if (media.isPresent() && review.isValid())
-		{
+		if (media.isPresent() && review.isValid()) {
 			Media curMedia = media.get();
 			curMedia.addReview(review);
 			user.addToReviews(review);
@@ -142,18 +155,17 @@ public class MediaService {
 			review = revRepo.save(review);
 			curMedia = mediaRepo.save(curMedia);
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
 
-	@Transactional
+
 	public void addMovie(Movie movie) {
 		movieRepo.save(movie);
 	}
 
+	@Transactional
 	public boolean uploadMovie(MovieInfo info) {
 		Movie movie = new Movie();
 		String[] airtimes = info.getAirtimes();
@@ -188,25 +200,24 @@ public class MediaService {
 		movieRepo.save(movie);
 		return true;
 	}
-	
-	public void getAllMovies(Model model)
-	{
+
+	public void getAllMovies(Model model) {
 		List<Movie> movies = movieRepo.findAll();
-		model.addAttribute("browseAllMovies",movies);
+		model.addAttribute("browseAllMovies", movies);
 	}
 
 	public void getTrendingMovies(Model model) {
 		Pageable page = PageRequest.of(0, 10);
-		Page<Movie> moviesPage =movieRepo.findAll(page);
+		Page<Movie> moviesPage = movieRepo.findAll(page);
 		List<Movie> movies = moviesPage.getContent();
 		model.addAttribute("trendingMovies", movies);
 	}
 
+	@Transactional
 	public boolean reportReview(long reviewID) {
 
 		Optional<Review> target = revRepo.findById(reviewID);
-		if (target.isPresent())
-		{
+		if (target.isPresent()) {
 			Review review = target.get();
 			review.setFlagged(true);
 			revRepo.save(review);
