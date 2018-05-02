@@ -8,6 +8,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -36,6 +38,7 @@ public class User {
 	private Set<User> followers;
 	private Set<User> following;
 	private boolean enabled;
+	private Roles role;
 	
 	public User()
 	{
@@ -46,6 +49,7 @@ public class User {
 		followers = new HashSet<>();
 		following = new HashSet<>();
 		enabled = false;
+		role = Roles.USER;
 	}
 
 
@@ -59,6 +63,18 @@ public class User {
 		this.followers = followers;
 	}
 	
+	
+	@Enumerated(EnumType.STRING)
+	public Roles getRole() {
+		return role;
+	}
+
+
+	public void setRole(Roles role) {
+		this.role = role;
+	}
+
+
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="FOLLOWING_IDS")
 	public Set<User> getFollowing() {

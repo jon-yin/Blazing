@@ -12,6 +12,7 @@ public class Critic extends User{
 	public Critic(String publication) {
 		super();
 		this.publication = publication;
+		setRole( Roles.CRITIC);
 	}
 	
 	public String getPublication() {

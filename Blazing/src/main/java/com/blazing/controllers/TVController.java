@@ -67,5 +67,12 @@ public class TVController extends MediaController<TV>{
 		return mediaService.addReview(currentUser, id, review);
 	}
 	
+	@ResponseBody
+	@RequestMapping(path="/removereview", method = RequestMethod.POST)
+	public boolean removeReview(@RequestBody long id)
+	{
+		return super.removeReview(id);
+	}
+	
 	
 }

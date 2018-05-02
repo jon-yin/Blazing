@@ -203,5 +203,10 @@ public abstract class Media implements Comparable<Media>{
 		reviews.add(review);
 	}
 	
+	public void removeReview(Review review)
+	{
+		reviews.remove(review);
+	}
+	
 	
 }

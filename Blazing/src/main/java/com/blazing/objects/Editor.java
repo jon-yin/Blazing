@@ -5,6 +5,12 @@ import javax.persistence.Entity;
 @Entity
 public class Editor extends User{
 
+	public Editor()
+	{
+		super();
+		setRole( Roles.EDITOR);
+	}
+	
 	public void editMovie(Movie editedMovie)
 	{
 		
