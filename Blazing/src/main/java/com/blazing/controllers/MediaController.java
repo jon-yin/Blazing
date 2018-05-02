@@ -24,7 +24,7 @@ public class MediaController<T> {
 	private UserService userService;
 	
 	
-	@Transactional
+
 	public boolean addToWishList(long id, User user)
 	{
 		if (user == null)
@@ -42,7 +42,7 @@ public class MediaController<T> {
 		}
 	}
 	
-	@Transactional
+
 	public boolean removeFromWishList(long id, User user)
 	{
 		if (user == null)
@@ -60,7 +60,7 @@ public class MediaController<T> {
 		}
 	}
 	
-	@Transactional
+
 	public boolean addToNotInterested(long id, User user)
 	{
 		if (user == null)
@@ -78,7 +78,6 @@ public class MediaController<T> {
 		}
 	}
 	
-	@Transactional
 	public boolean removeFromNotInterested(long id, User user)
 	{
 		if (user == null)

@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,14 +15,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.springframework.stereotype.Component;
+import org.hibernate.annotations.Cascade;
 
 @Entity
-@Component
 public class User {
 
 	private String firstName;
@@ -52,8 +51,8 @@ public class User {
 		role = Roles.USER;
 	}
 
-
-	@OneToMany(fetch=FetchType.EAGER)
+	
+	@OneToMany(cascade = CascadeType.ALL,orphanRemoval=true)
 	@JoinColumn(name="FOLLOWERS_IDS")
 	public Set<User> getFollowers() {
 		return followers;
@@ -125,7 +124,7 @@ public class User {
 		this.joinDate = joinDate;
 	}
 	
-	@ManyToMany
+	@OneToMany(cascade=CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name="MEDIA_ID")
 	public List<Media> getWishlist() {
 		return wishlist;
@@ -142,7 +141,7 @@ public class User {
 		this.reviews = reviews;
 	}
 	
-	@ManyToMany
+	@OneToMany
 	@JoinColumn(name="CRITIC_ID")
 	public List<Critic> getFavCritics() {
 		return favCritics;
@@ -168,7 +167,7 @@ public class User {
 		this.password = password;
 	}
 	
-	@ManyToMany
+	@OneToMany
 	@JoinColumn(name="N_MEDIA_ID")
 	public List<Media> getNotInterested() {
 		return notInterested;

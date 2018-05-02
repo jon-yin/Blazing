@@ -29,6 +29,7 @@ import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
 import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TVRepository;
+import com.blazing.repositories.UserRepository;
 
 @Service
 public class MediaService {
@@ -46,7 +47,7 @@ public class MediaService {
 	@Autowired
 	private ReviewRepository revRepo;
 	@Autowired
-	private SessionService sesService;
+	private UserRepository<User> userRepo;
 
 	@Transactional
 	public Movie findMovie(long id) {
