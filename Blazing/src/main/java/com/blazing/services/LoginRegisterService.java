@@ -36,6 +36,37 @@ public class LoginRegisterService {
 	private BCryptPasswordEncoder encoder;
 
 	@Transactional
+	public boolean reverifyUser(long id)
+	{
+		Optional<User> user= repository.findById(id);
+		if (user.isPresent())
+		{
+			User foundUser =user.get();
+			if (foundUser.isEnabled())
+			{
+				return false;
+			}
+			else
+			{
+				VerificationToken old = tokenRepo.getVerificationTokenByUser(foundUser);
+				if (old != null)
+				{
+					tokenRepo.delete(old);
+				}
+				VerificationToken token = new VerificationToken(foundUser,UUID.randomUUID().toString());
+				tokenRepo.save(token);
+				String email = foundUser.getEmailAddress();
+				sendVerificationEmail(email, token);
+				return true;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	@Transactional
 	public boolean registerUser(RegisterInfo info)
 	{
 		Long conflicts = repository.countUsersByEmailAddress(info.getEmail());

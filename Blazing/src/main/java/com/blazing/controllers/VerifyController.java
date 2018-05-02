@@ -5,8 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.blazing.objects.SuccessStatus;
@@ -19,6 +21,13 @@ public class VerifyController {
 	@Autowired
 	private LoginRegisterService service;
 
+	@ResponseBody
+	@RequestMapping(path="/reverify", method=RequestMethod.POST)
+	public boolean reverifyUser(@RequestBody long id)
+	{
+		return service.reverifyUser(id);
+	}
+	
 	@RequestMapping(path="/{verification}",method=RequestMethod.GET)
 	public String verifyUser(@PathVariable("verification") String verificationString, HttpSession session, RedirectAttributes model)
 	{
