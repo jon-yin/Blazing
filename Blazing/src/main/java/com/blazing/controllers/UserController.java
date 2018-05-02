@@ -1,5 +1,7 @@
 package com.blazing.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
@@ -68,4 +71,14 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping(path="/delete", method = RequestMethod.POST)
+	public String deleteAccount(@RequestParam("reviews")boolean deleteReviews, @SessionAttribute("currentUser")User user, HttpSession session)
+	{
+		if (user != null)
+		{
+			session.setAttribute("currentUser", null);
+			userService.removeUser(user, deleteReviews);
+		}
+		return "redirect:/home";
+	}
 }

@@ -21,6 +21,7 @@ public class UserService {
 	@Autowired
 	private ReviewRepository revRepo;
 	
+	@Transactional
 	public User findUser(long id)
 	{
 		Optional<User> user = userRepo.findById(id);
