@@ -95,30 +95,18 @@
 				<div class="tab-content" id="show-main-content">
 					<div class="tab-pane show fade active" id="summary" role="tabpanel" aria-labelledby="show-summary">
 						<section>
-							<h5 class="section-header">WANT-TO-SEE MOVIES</h5>
-							<div class="section-carousel">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+							<h5 class="section-header">WANT-TO-SEE MEDIA</h5>
+							<!-- <div class="section-carousel"> -->
+								<div th:text="${foundUser.getWishlist().size()}">-1</div>
+								<!-- <a class="section-carousel-item details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
 									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
+									<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 									<div>
 										<span class="icon tiny burning"></span>
-										<span th:text="${movie.blazingScore}">70</span>%
+										<span th:text="${media.blazingScore}">70</span>%
 									</div>
-								</a>
-							</div>
-						</section>
-						<section>
-							<h5 class="section-header">WANT-TO-SEE TV</h5>
-							<div class="section-carousel">
-								<a class="section-carousel-item details-link btn text-center" th:each="tv : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${tv.id})}" role="button">
-									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name text-truncate" th:text="${tv.title}">Black Panther</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span th:text="${tv.blazingScore}">70</span>%
-									</div>
-								</a>
-							</div>
+								</a> -->
+							<!-- </div> -->
 						</section>
 						<section>
 							<h5 class="section-header">RATING HISTORY</h5>
