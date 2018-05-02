@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
+	<title>BLAZING - Team Elm</title>
+	<!-- jquery -->
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+	<!-- slick.js -->
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
+	<!-- popper.js -->
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+	<!-- source sans pro -->
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<link rel="stylesheet" href="/css/styles.css">
+
+<body class="bg-dark">
+	<header th:insert="/fragments/header.html :: header"></header>
+	<div class="container" th:if="${session.currentUser} and ${foundUser.id == session.currentUser.id}">
+		<div class="row">
+			<section class="col">
+				<h3 th:text="${session.currentUser.firstName+' '+session.currentUser.lastName}">first and last name</h3>
+				<br>
+				<h5>Change Profile</h5>
+				<form>
+				</form>
+				<h5>Change Password</h5>
+				<form>
+				</form>
+			</section>
+		</div>
+	</div>
+	<div class="h-100" th:unless="${session.currentUser} and ${foundUser.id == session.currentUser.id}">
+		<section>
+			FORBIDDEN
+		</section>
+	</div>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
+</body>
+
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
+<script type="application/javascript" th:src="@{/js/add-media.js}"></script>
+
+</html>

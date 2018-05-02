@@ -27,35 +27,12 @@
 	<div class="container" th:if="${foundUser}">
 		<div class="row">
 			<div class="col-12 col-md-auto sidebar" id="left-sidebar">
-				<section> 
+				<section class="text-center">
+					<button type="button" class="btn btn-secondary mb-1" id="re-verify" th:if="${session.currentUser} and not ${session.currentUser.enabled}">Re-send Verification</button>
 					<img class="image profile" src="/images/thumbnail.png">
-					<div class="text-center mt-1" th:if="${session.currentUser} and ${foundUser.id != session.currentUser.id}">
+					<div class="mt-1" th:if="${session.currentUser} and ${foundUser.id != session.currentUser.id}">
 						<button type="button" class="btn btn-secondary" id="follow-button" th:unless="${#sets.contains(foundUser.followers, session.currentUser)}">Follow</button>
 						<button type="button" class="btn btn-secondary" id="unfollow-button" th:if="${#sets.contains(foundUser.followers, session.currentUser)}">UnFollow</button>
-						<script th:inline="javascript">
-						/*<![CDATA[*/
-							function follow(e){
-								e.preventDefault();
-								var firstName = /*[[${session.currentUser.firstName}]]*/ 'test';
-								console.log(firstName);
-							//	$.ajax({
-							//		url: "/follow"
-							//	});
-							}
-							function unfollow(e){
-								e.preventDefault();
-								var lastName = /*[[${session.currentUser.lastName}]]*/ 'test';
-								console.log(lastName);
-							//	$.ajax({
-							//		url: "/unfollow"
-							//	});
-							}
-							$(function(){
-								$("#follow-button").on("click", follow);
-								$("#unfollow-button").on("click", unfollow);
-							});
-						/*]]>*/
-						</script>
 					</div>
 				</section>
 				<section>
@@ -119,12 +96,34 @@
 					<div class="tab-pane show fade active" id="summary" role="tabpanel" aria-labelledby="show-summary">
 						<section>
 							<h5 class="section-header">WANT-TO-SEE MOVIES</h5>
+							<div class="section-carousel">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
+									<div>
+										<span class="icon tiny burning"></span>
+										<span th:text="${movie.blazingScore}">70</span>%
+									</div>
+								</a>
+							</div>
 						</section>
 						<section>
 							<h5 class="section-header">WANT-TO-SEE TV</h5>
+							<div class="section-carousel">
+								<a class="section-carousel-item details-link btn text-center" th:each="tv : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${tv.id})}" role="button">
+									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+									<div class="name text-truncate" th:text="${tv.title}">Black Panther</div>
+									<div>
+										<span class="icon tiny burning"></span>
+										<span th:text="${tv.blazingScore}">70</span>%
+									</div>
+								</a>
+							</div>
 						</section>
 						<section>
 							<h5 class="section-header">RATING HISTORY</h5>
+							<div class="latest-reviews">
+							</div>
 						</section>
 					</div>
 					<div class="tab-pane show fade" id="movie-ratings" role="tabpanel" aria-labelledby="show-movie-ratings">
@@ -223,5 +222,78 @@
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 <script type="application/javascript" th:src="@{/js/add-media.js}"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+	function reverify(e){
+		e.preventDefault();
+		$("#re-verify").css("background-color","#aaaaaa");
+		$("#re-verify").attr("disabled",true);
+		$("#re-verify").text("Sending...");
+		var userID = /*[[${session.currentUser.id}]]*/ 0;
+		/* var user = {};
+		user["id"] = userID;
+		var jsonString = JSON.stringify(user); */
+		$.ajax({
+			type: "POST",
+			contentType : "application/json",
+			data: ""+userID,
+			url: "/verify/reverify",
+			success: function(data){
+				console.log(data);
+				$("#re-verify").text("Sent!");
+			},
+			fail: function(e){
+				$("#re-verify").text("Re-send Verification");
+				$("#re-verify").css("background-color","#6c757d");
+				$("#re-verify").attr("disabled",false);
+				console.log(e);
+			},
+			/* complete: function(e){
+				$("#re-verify").css("background-color","#6c757d");
+				$("#re-verify").attr("disabled",false);
+			} */
+		});
+	}
+
+	function follow(e){
+		e.preventDefault();
+		var id = /*[[${foundUser.id}]]*/ 0;
+		var user = {};
+		user["id"] = id;
+		var jsonString = JSON.stringify(user);
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			data: jsonString,
+			url: "/follow",
+			success: function(){
+				location.reload();
+			}
+		});
+	}
+	
+	function unfollow(e){
+		e.preventDefault();
+		var id = /*[[${foundUser.id}]]*/ 0;
+		var user = {};
+		user["id"] = id;
+		var jsonString = JSON.stringify(user);
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			data: jsonString,
+			url: "/unfollow",
+			success: function(){
+				location.reload();
+			}
+		});
+	}
+	$(function(){
+		$("#re-verify").on("click", reverify);
+		$("#follow-button").on("click", follow);
+		$("#unfollow-button").on("click", unfollow);
+	});
+/*]]>*/
+</script>
 
 </html>
