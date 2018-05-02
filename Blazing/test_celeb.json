@@ -1,0 +1,970 @@
+{
+  "celebrityName": "Bryan Cranston",
+  "celebrityUrl": "/celebrity/bryan_cranston",
+  "celebrityBirthdate": {
+    "birthdate": "Mar 7, 1956"
+  },
+  "celebrityBirthplace": {
+    "birthplace": "Los Angeles, California, USA"
+  },
+  "celebritySummary": {
+    "summary": "A familiar face to a nation of television viewers thanks to his role as the more-than-slightly demented father on the popular FOX sitcom Malcolm in the Middle, longtime stage and screen actor Bryan Cranston has had a rich and varied career, lending his talents to everything from anime voice work (Armitage III and Macross Plus) to daytime television (as an original cast member of Loving). His commanding but off-kilter presence and quirky charm have easily provided Cranston with the necessary range to essay such diverse roles, and the longtime actor can always be counted on to inject a healthy dose of personality into his performances, no matter how large or small the role may be. Though the San Fernando Valley native made his television debut as a commercial actor at the age of eight, it wasn't until college that Cranston truly realized his calling as an actor. Following college graduation, Cranston's passion eventually drew him to Daytona Beach, FL, where the burgeoning actor appeared in such community-theater productions as Barefoot in the Park and Death of a Salesman. In 1982, he joined the cast of the then-new soap opera Loving, and though he would only remain with the daytime drama for a short time, appearances in Airwolf and Hill Street Blues, among various other series, found the actor maintaining a notable presence on television. Following a series of supporting feature performances, Cranston moved back to the small screen with a regular role in the 1988 sitcom Raising Miranda. In the years that followed, he would frequently shift between film (Clean Slate) and television (The Louie Show) while supplementing his income with voice-over work for such popular anime series as Armitage III. Supporting performances in such high-profile features as That Thing You Do! and Saving Private Ryan helped to increase the busy actor's recognition factor, and in 1999, Cranston wrote, produced, directed, and starred in his first feature film, a low-key drama entitled Last Chance. Though the film failed to gain much attention, Cranston was soon receiving numerous positive notices for his Emmy-nominated role as the hapless father in the breakout television hit Malcolm in the Middle. His performance alternately eccentric and endearing, Cranston injected the role with the perfect balance of fatherly weirdness and down-to-earth charm, and the series embarked on a healthy run. In the years that followed, Cranston became an increasingly familiar face to television and film viewers, and in addition to offering vocal work for the short-lived animated television series Clerks, he would contribute to such family-friendly fare as 'Twas the Night and The Santa Claus Brothers. After taking the lead in the 2003 made-for-television feature Thanksgiving Family Reunion, Cranston could be spotted opposite screen legend Kirk Douglas in the 2004 drama The Illusion. He appeared in the 2006 miniseries Fallen, and had a bit part in the Oscar nominated Little Miss Sunshine.However, in 2008 his career entered a whole new phase when he began work on the AMC series Breaking Bad, playing a chemistry teacher who becomes a meth dealer. His work on the critically lauded program would earn him four Emmys for Best Actor in a Drama Series (plus another two as a producer on the series). It also made him an in-demand character actor for movies and he worked steadily appearing in projects as radically different as Drive, Larry Crowne, Red Tails, John Carter, and Rock of Ages among many others.In 2014, Cranston made his Broadway debut in the play All The Way, playing President Lyndon Baines Johnson. The role earned him a Tony Award, and he committed to reprising the role for a TV movie. The following year, he played blacklisted screenwriter Dalton Trumbo in the film Trumbo (2015), nabbing Cranston his first Academy Award nomination."
+  },
+  "celebrityMovieFilmography": {
+    "movieFilmography": [
+      {
+        "filmUrl": "/m/isle_of_dogs_2018",
+        "filmName": "Isle of Dogs",
+        "roles": [
+          "Chief"
+        ],
+        "boxoffice": "—",
+        "year": "2018"
+      },
+      {
+        "filmUrl": "/m/the_upside",
+        "filmName": "The Upside",
+        "roles": [
+          "Phil"
+        ],
+        "boxoffice": "—",
+        "year": "2018"
+      },
+      {
+        "filmUrl": "/m/last_flag_flying",
+        "filmName": "Last Flag Flying",
+        "roles": [
+          "Sal Nealon"
+        ],
+        "boxoffice": "$0.5M",
+        "year": "2017"
+      },
+      {
+        "filmUrl": "/m/wakefield",
+        "filmName": "Wakefield",
+        "roles": [
+          "Howard Wakefield"
+        ],
+        "boxoffice": "—",
+        "year": "2017"
+      },
+      {
+        "filmUrl": "/m/sabans_power_rangers",
+        "filmName": "Saban's Power Rangers",
+        "roles": [
+          "Zordon"
+        ],
+        "boxoffice": "$85.3M",
+        "year": "2017"
+      },
+      {
+        "filmUrl": "/m/in_dubious_battle",
+        "filmName": "In Dubious Battle",
+        "roles": [
+          "Sheriff"
+        ],
+        "boxoffice": "—",
+        "year": "2017"
+      },
+      {
+        "filmUrl": "/m/the_words_that_built_america",
+        "filmName": "The Words That Built America",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "2017"
+      },
+      {
+        "filmUrl": "/m/why_him",
+        "filmName": "Why Him?",
+        "roles": [
+          "Ned Fleming"
+        ],
+        "boxoffice": "$60.4M",
+        "year": "2016"
+      },
+      {
+        "filmUrl": "/m/the_infiltrator",
+        "filmName": "The Infiltrator",
+        "roles": [
+          "Robert Mazur",
+          "Executive Producer"
+        ],
+        "boxoffice": "$15.5M",
+        "year": "2016"
+      },
+      {
+        "filmUrl": "/m/all_the_way_2016",
+        "filmName": "All the Way",
+        "roles": [
+          "Lyndon Johnson",
+          "Executive Producer"
+        ],
+        "boxoffice": "—",
+        "year": "2016"
+      },
+      {
+        "filmUrl": "/m/get_a_job_2016",
+        "filmName": "Get a Job",
+        "roles": [
+          "Roger Davis"
+        ],
+        "boxoffice": "—",
+        "year": "2016"
+      },
+      {
+        "filmUrl": "/m/kung_fu_panda_3",
+        "filmName": "Kung Fu Panda 3",
+        "roles": [
+          "Li"
+        ],
+        "boxoffice": "$128.4M",
+        "year": "2016"
+      },
+      {
+        "filmUrl": "/m/trumbo",
+        "filmName": "Trumbo",
+        "roles": [
+          "Dalton Trumbo"
+        ],
+        "boxoffice": "—",
+        "year": "2015"
+      },
+      {
+        "filmUrl": "/m/godzilla_2014",
+        "filmName": "Godzilla",
+        "roles": [
+          "Joe Brody"
+        ],
+        "boxoffice": "$173M",
+        "year": "2014"
+      },
+      {
+        "filmUrl": "/m/cold_comes_the_night_2013",
+        "filmName": "Cold Comes The Night",
+        "roles": [
+          "Topo"
+        ],
+        "boxoffice": "—",
+        "year": "2014"
+      },
+      {
+        "filmUrl": "/m/world-war-z",
+        "filmName": "World War Z",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "$202.4M",
+        "year": "2013"
+      },
+      {
+        "filmUrl": "/m/argo_2012",
+        "filmName": "Argo",
+        "roles": [
+          "Jack O'Donnell"
+        ],
+        "boxoffice": "$136.1M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/total_recall_2012",
+        "filmName": "Total Recall",
+        "roles": [
+          "Cohaagen"
+        ],
+        "boxoffice": "$58.9M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/rock_of_ages_2012",
+        "filmName": "Rock of Ages",
+        "roles": [
+          "Mike Whitmore"
+        ],
+        "boxoffice": "$38.6M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/madagascar_3_europes_most_wanted_2012",
+        "filmName": "Madagascar 3: Europe's Most Wanted",
+        "roles": [
+          "Vitaly"
+        ],
+        "boxoffice": "$216.4M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/detachment",
+        "filmName": "Detachment",
+        "roles": [
+          "Mr. Dearden"
+        ],
+        "boxoffice": "$49.4k",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/john_carter",
+        "filmName": "John Carter",
+        "roles": [
+          "Powell"
+        ],
+        "boxoffice": "$73.1M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/red-tails",
+        "filmName": "Red Tails",
+        "roles": [
+          "Colonel William Mortamus"
+        ],
+        "boxoffice": "$49.5M",
+        "year": "2012"
+      },
+      {
+        "filmUrl": "/m/drive_2011",
+        "filmName": "Drive",
+        "roles": [
+          "Shannon"
+        ],
+        "boxoffice": "$34.4M",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/contagion_2011",
+        "filmName": "Contagion",
+        "roles": [
+          "RADM Lyle Haggerty"
+        ],
+        "boxoffice": "$75.7M",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/larry_crowne",
+        "filmName": "Larry Crowne",
+        "roles": [
+          "Dean Tainot"
+        ],
+        "boxoffice": "$35.6M",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/lincoln_lawyer",
+        "filmName": "The Lincoln Lawyer",
+        "roles": [
+          "Detective Lankford"
+        ],
+        "boxoffice": "$58M",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/leave",
+        "filmName": "Leave",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/batman_year_one",
+        "filmName": "Batman: Year One",
+        "roles": [
+          "James Gordon"
+        ],
+        "boxoffice": "—",
+        "year": "2011"
+      },
+      {
+        "filmUrl": "/m/hard_four",
+        "filmName": "Hard Four",
+        "roles": [
+          "Lt. Bryce Baxter"
+        ],
+        "boxoffice": "—",
+        "year": "2010"
+      },
+      {
+        "filmUrl": "/m/love_ranch",
+        "filmName": "Love Ranch",
+        "roles": [
+          "James Pettis"
+        ],
+        "boxoffice": "$0.2M",
+        "year": "2010"
+      },
+      {
+        "filmUrl": "/m/little_miss_sunshine",
+        "filmName": "Little Miss Sunshine",
+        "roles": [
+          "Stan Grossman"
+        ],
+        "boxoffice": "$59.9M",
+        "year": "2006"
+      },
+      {
+        "filmUrl": "/m/fallen-2006",
+        "filmName": "Fallen",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "2006"
+      },
+      {
+        "filmUrl": "/m/illusion_2006",
+        "filmName": "Illusion",
+        "roles": [
+          "David Bennett"
+        ],
+        "boxoffice": "—",
+        "year": "2006"
+      },
+      {
+        "filmUrl": "/m/magnificent_desolation",
+        "filmName": "Magnificent Desolation: Walking on the Moon 3D",
+        "roles": [
+          "Buzz Aldrin"
+        ],
+        "boxoffice": "$32.6M",
+        "year": "2005"
+      },
+      {
+        "filmUrl": "/m/hard-four",
+        "filmName": "Hard Four",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "2005"
+      },
+      {
+        "filmUrl": "/m/thanksgiving_family_reunion",
+        "filmName": "National Lampoon's Thanksgiving Family Reunion (National Lampoon's Holiday Reunion)",
+        "roles": [
+          "Woodrow Snider"
+        ],
+        "boxoffice": "—",
+        "year": "2004"
+      },
+      {
+        "filmUrl": "/m/seeing_other_people",
+        "filmName": "Seeing Other People",
+        "roles": [
+          "Peter"
+        ],
+        "boxoffice": "—",
+        "year": "2004"
+      },
+      {
+        "filmUrl": "/m/santa_claus_brothers",
+        "filmName": "The Santa Claus Brothers",
+        "roles": [
+          "Santa Claus"
+        ],
+        "boxoffice": "—",
+        "year": "2001"
+      },
+      {
+        "filmUrl": "/m/twas-the-night",
+        "filmName": "'Twas the Night",
+        "roles": [
+          "Nick Wrigley"
+        ],
+        "boxoffice": "—",
+        "year": "2001"
+      },
+      {
+        "filmUrl": "/m/terror_tract",
+        "filmName": "Terror Tract",
+        "roles": [
+          "Ron Gatley"
+        ],
+        "boxoffice": "—",
+        "year": "2000"
+      },
+      {
+        "filmUrl": "/m/the-big-thing",
+        "filmName": "The Big Thing",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "2000"
+      },
+      {
+        "filmUrl": "/m/micke_and_veronica",
+        "filmName": "Last Chance",
+        "roles": [
+          "Screenwriter",
+          "Producer",
+          "Director",
+          "Lance"
+        ],
+        "boxoffice": "—",
+        "year": "1999"
+      },
+      {
+        "filmUrl": "/m/beneath_the_bermuda_triangle",
+        "filmName": "Beneath the Bermuda Triangle",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "1999"
+      },
+      {
+        "filmUrl": "/m/saving_private_ryan",
+        "filmName": "Saving Private Ryan",
+        "roles": [
+          "War Department Colonel"
+        ],
+        "boxoffice": "—",
+        "year": "1998"
+      },
+      {
+        "filmUrl": "/m/armitage_iii_poly_matrix_1997",
+        "filmName": "Armitage III: Poly Matrix",
+        "roles": [
+          "Eddie"
+        ],
+        "boxoffice": "—",
+        "year": "1997"
+      },
+      {
+        "filmUrl": "/m/that_thing_you_do",
+        "filmName": "That Thing You Do!",
+        "roles": [
+          "Virgil `Gus' Grissom"
+        ],
+        "boxoffice": "—",
+        "year": "1996"
+      },
+      {
+        "filmUrl": "/m/macross-plus",
+        "filmName": "Macross Plus",
+        "roles": [
+          "Actor",
+          "Director"
+        ],
+        "boxoffice": "—",
+        "year": "1994"
+      },
+      {
+        "filmUrl": "/m/1050560-clean_slate",
+        "filmName": "Clean Slate",
+        "roles": [
+          "Club Official"
+        ],
+        "boxoffice": "—",
+        "year": "1994"
+      },
+      {
+        "filmUrl": "/m/the_companion_1994",
+        "filmName": "The Companion",
+        "roles": [
+          "Alan"
+        ],
+        "boxoffice": "—",
+        "year": "1994"
+      },
+      {
+        "filmUrl": "/m/erotique",
+        "filmName": "Erotique",
+        "roles": [
+          "Dr. Stern"
+        ],
+        "boxoffice": "—",
+        "year": "1994"
+      },
+      {
+        "filmUrl": "/m/armitage-iii",
+        "filmName": "Armitage III",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "1994"
+      },
+      {
+        "filmUrl": "/m/high-stakes1993",
+        "filmName": "High Stakes",
+        "roles": [
+          "Actor"
+        ],
+        "boxoffice": "—",
+        "year": "1993"
+      },
+      {
+        "filmUrl": "/m/the_disappearance_of_nora",
+        "filmName": "The Disappearance of Nora",
+        "roles": [
+          "Wilson"
+        ],
+        "boxoffice": "—",
+        "year": "1993"
+      },
+      {
+        "filmUrl": "/m/corporate_affairs",
+        "filmName": "Corporate Affairs",
+        "roles": [
+          "Darren"
+        ],
+        "boxoffice": "—",
+        "year": "1990"
+      },
+      {
+        "filmUrl": "/m/dead_space",
+        "filmName": "Dead Space",
+        "roles": [
+          "Dr. Frank Darden"
+        ],
+        "boxoffice": "—",
+        "year": "1990"
+      },
+      {
+        "filmUrl": "/m/i_know_my_first_name_is_steven_1989",
+        "filmName": "I Know My First Name Is Steven",
+        "roles": [
+          "Officer Dickenson"
+        ],
+        "boxoffice": "—",
+        "year": "1989"
+      },
+      {
+        "filmUrl": "/m/amazon_women_on_the_moon",
+        "filmName": "Amazon Women on the Moon",
+        "roles": [
+          "\"Roast Your Loved One\" - Paramedic #1"
+        ],
+        "boxoffice": "$0.6M",
+        "year": "1987"
+      },
+      {
+        "filmUrl": "/m/oritsu_uchugun_oneamisu_no_tsubasa",
+        "filmName": "Ôritsu uchûgun Oneamisu no tsubasa (Royal Space Force - Wings of Honneamise)",
+        "roles": [
+          "Matti"
+        ],
+        "boxoffice": "—",
+        "year": "1987"
+      }
+    ]
+  },
+  "celebrityTvShowsFilmography": {
+    "tvshowFilmography": [
+      {
+        "tvshowUrl": "/tv/philip_k_dick_s_electric_dreams",
+        "tvshowName": "Philip K. Dick's Electric Dreams",
+        "roles": [
+          "Executive Producer"
+        ],
+        "year": "2018"
+      },
+      {
+        "tvshowUrl": "/tv/the_dangerous_book_for_boys",
+        "tvshowName": "The Dangerous Book for Boys",
+        "roles": [
+          "Executive Producer",
+          "Creator"
+        ],
+        "year": "2018"
+      },
+      {
+        "tvshowUrl": "/tv/sneaky_pete",
+        "tvshowName": "Sneaky Pete",
+        "roles": [
+          "Executive Producer",
+          "Co-creator",
+          "Creator",
+          "Vince"
+        ],
+        "year": "2018"
+      },
+      {
+        "tvshowUrl": "/tv/late_show_with_stephen_colbert",
+        "tvshowName": "The Late Show With Stephen Colbert",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2018"
+      },
+      {
+        "tvshowUrl": "/tv/tavis_smiley",
+        "tvshowName": "Tavis Smiley",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/the_ellen_degeneres_show",
+        "tvshowName": "The Ellen DeGeneres Show",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/today",
+        "tvshowName": "Today",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/late-night-with-seth-meyers",
+        "tvshowName": "Late Night With Seth Meyers",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/supermansion",
+        "tvshowName": "SuperMansion",
+        "roles": [
+          "Executive Producer",
+          "Voice",
+          "Titanium Rex"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/the_late_late_show_with_james_corden",
+        "tvshowName": "The Late Late Show With James Corden",
+        "roles": [
+          "Host",
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/the-tonight-show-starring-jimmy-fallon",
+        "tvshowName": "The Tonight Show Starring Jimmy Fallon",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/cbs-this-morning",
+        "tvshowName": "CBS This Morning",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/conan",
+        "tvshowName": "Conan",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/jimmy-kimmel-live",
+        "tvshowName": "Jimmy Kimmel Live",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2017"
+      },
+      {
+        "tvshowUrl": "/tv/60_minutes",
+        "tvshowName": "60 Minutes",
+        "roles": [
+          "Appearing"
+        ],
+        "year": "2016"
+      },
+      {
+        "tvshowUrl": "/tv/real-time-with-bill-maher",
+        "tvshowName": "Real Time With Bill Maher",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2016"
+      },
+      {
+        "tvshowUrl": "/tv/inside_comedy",
+        "tvshowName": "Inside Comedy",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2015"
+      },
+      {
+        "tvshowUrl": "/tv/who_do_you_think_you_are_",
+        "tvshowName": "Who Do You Think You Are?",
+        "roles": [
+          "Appearing"
+        ],
+        "year": "2015"
+      },
+      {
+        "tvshowUrl": "/tv/charlie_rose",
+        "tvshowName": "Charlie Rose",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2015"
+      },
+      {
+        "tvshowUrl": "/tv/pbs_newshour_weekend",
+        "tvshowName": "PBS NewsHour Weekend",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/sunday_morning",
+        "tvshowName": "Sunday Morning",
+        "roles": [
+          "Appearing"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/the-view",
+        "tvshowName": "The View",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/late_show_with_david_letterman",
+        "tvshowName": "Late Show With David Letterman",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/breaking_bad",
+        "tvshowName": "Breaking Bad",
+        "roles": [
+          "Director",
+          "Walter White"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/family_guy",
+        "tvshowName": "Family Guy",
+        "roles": [
+          "Voice"
+        ],
+        "year": "2014"
+      },
+      {
+        "tvshowUrl": "/tv/big_history",
+        "tvshowName": "Big History",
+        "roles": [
+          "Narrator"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/colbert_report",
+        "tvshowName": "Colbert Report",
+        "roles": [
+          "Appearing",
+          "Guest"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/modern_family",
+        "tvshowName": "Modern Family",
+        "roles": [
+          "Director"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/the_cleveland_show",
+        "tvshowName": "The Cleveland Show",
+        "roles": [
+          "Voice"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/the_tonight_show_with_jay_leno",
+        "tvshowName": "The Tonight Show With Jay Leno",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/late_night_with_jimmy_fallon",
+        "tvshowName": "Late Night With Jimmy Fallon",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/comment_je_l_ai_rencontr_e",
+        "tvshowName": "Comment je l'ai rencontrée",
+        "roles": [
+          "Hammond Druthers, Druthers"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/how_i_met_your_mother",
+        "tvshowName": "How I Met Your Mother",
+        "roles": [
+          "Hammond Druthers, Druthers"
+        ],
+        "year": "2013"
+      },
+      {
+        "tvshowUrl": "/tv/30-rock",
+        "tvshowName": "30 Rock",
+        "roles": [
+          "Actor"
+        ],
+        "year": "2012"
+      },
+      {
+        "tvshowUrl": "/tv/archer",
+        "tvshowName": "Archer",
+        "roles": [
+          "Voice",
+          "Actor"
+        ],
+        "year": "2012"
+      },
+      {
+        "tvshowUrl": "/tv/the_office",
+        "tvshowName": "The Office",
+        "roles": [
+          "Director"
+        ],
+        "year": "2012"
+      },
+      {
+        "tvshowUrl": "/tv/the_simpsons",
+        "tvshowName": "The Simpsons",
+        "roles": [
+          "Voice"
+        ],
+        "year": "2012"
+      },
+      {
+        "tvshowUrl": "/tv/saturday_night_live",
+        "tvshowName": "Saturday Night Live",
+        "roles": [
+          "Host"
+        ],
+        "year": "2010"
+      },
+      {
+        "tvshowUrl": "/tv/the_daily_show_with_jon_stewart",
+        "tvshowName": "The Daily Show With Jon Stewart",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2010"
+      },
+      {
+        "tvshowUrl": "/tv/last_call_with_carson_daly",
+        "tvshowName": "Last Call With Carson Daly",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2010"
+      },
+      {
+        "tvshowUrl": "/tv/american_dad_target_for_inaccurate_feed_data_",
+        "tvshowName": "American Dad (target for inaccurate feed data)",
+        "roles": [
+          "Voice"
+        ],
+        "year": "2008"
+      },
+      {
+        "tvshowUrl": "/tv/malcolm_in_the_middle",
+        "tvshowName": "Malcolm in the Middle",
+        "roles": [
+          "Director",
+          "Hal, Hal Wilkerson"
+        ],
+        "year": "2006"
+      },
+      {
+        "tvshowUrl": "/tv/madtv",
+        "tvshowName": "MADtv",
+        "roles": [
+          "Guest"
+        ],
+        "year": "2002"
+      },
+      {
+        "tvshowUrl": "/tv/the_pretender",
+        "tvshowName": "The Pretender",
+        "roles": [
+          "Neil Roberts"
+        ],
+        "year": "1999"
+      },
+      {
+        "tvshowUrl": "/tv/the_x_files",
+        "tvshowName": "The X-Files",
+        "roles": [
+          "Mr.Crump"
+        ],
+        "year": "1998"
+      },
+      {
+        "tvshowUrl": "/tv/seinfeld",
+        "tvshowName": "Seinfeld",
+        "roles": [
+          "Guest",
+          "Tim Whatley, Dr.Tim Whatley, Tim"
+        ],
+        "year": "1998"
+      },
+      {
+        "tvshowUrl": "/tv/babylon-5",
+        "tvshowName": "Babylon 5",
+        "roles": [
+          "Ericsson"
+        ],
+        "year": "1997"
+      },
+      {
+        "tvshowUrl": "/tv/baywatch",
+        "tvshowName": "Baywatch",
+        "roles": [
+          "Tom Logan"
+        ],
+        "year": "1989"
+      },
+      {
+        "tvshowUrl": "/tv/chips",
+        "tvshowName": "CHiPs",
+        "roles": [
+          "Billy Joe"
+        ],
+        "year": "1982"
+      },
+      {
+        "tvshowUrl": "/tv/breaking_bad-AMC",
+        "tvshowName": "Breaking Bad",
+        "roles": [
+          "Director",
+          "Walter White"
+        ]
+      }
+    ]
+  }
+}
