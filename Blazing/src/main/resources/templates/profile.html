@@ -30,13 +30,17 @@
 				<section class="text-center">
 					<button type="button" class="btn btn-secondary mb-1" id="re-verify" th:if="${session.currentUser} and not ${session.currentUser.enabled}">Re-send Verification</button>
 					<img class="image profile" src="/images/thumbnail.png">
-					<div class="mt-1" th:if="${session.currentUser} and ${foundUser.id != session.currentUser.id}">
+					<div class="mt-1" th:if="${session.currentUser} and not ${foundUser.equals(session.currentUser)}">
 						<button type="button" class="btn btn-secondary" id="follow-button" th:unless="${#sets.contains(foundUser.followers, session.currentUser)}">Follow</button>
 						<button type="button" class="btn btn-secondary" id="unfollow-button" th:if="${#sets.contains(foundUser.followers, session.currentUser)}">UnFollow</button>
 					</div>
 				</section>
 				<section>
 					<h5 class="section-header" th:text="${foundUser.firstName}+' '+${foundUser.lastName}">PROFILE</h5>
+					<div>
+						<span class="font-weight-bold">Role:</span>
+						<span>User</span>
+					</div>
 					<div>
 						<span class="font-weight-bold">Total Views:</span>
 						<span>0</span>
@@ -51,85 +55,127 @@
 					<div>
 						<span>No user info supplied</span>
 					</div>
-					<div class="text-right"><a data-toggle="modal" data-target="#edit-user-info" href="#">Edit</a></div>
-					<div class="modal fade" id="edit-user-info" tabindex="-1" role="dialog">
-						<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="edit-info-label">Edit User Info</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<form>
-										<div class="w-100">
-											<textarea class="form-control" id="edit-info" style="resize: none;"></textarea>
-										</div>
-										<button class="btn btn-secondary" id="update-info-button">Update</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
 				</section>
 			</div>
 			<div class="col-12 col-md-auto main-content">
 				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-item nav-link active" id="show-summary" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Summary</a>
+						<a class="nav-item nav-link" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="true">Media Interests</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-movie-ratings" data-toggle="tab" href="#movie-ratings" role="tab" aria-controls="movie-ratings" aria-selected="false">Movie Ratings</a>
+						<a class="nav-item nav-link" id="show-ratings" data-toggle="tab" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">Ratings History</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-tv-ratings" data-toggle="tab" href="#tv-ratings" role="tab" aria-controls="tv-ratings" aria-selected="false">TV Ratings</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="false">WTS/NI</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-following" data-toggle="tab" href="#following" role="tab" aria-controls="following" aria-selected="false">Following</a>
+						<a class="nav-item nav-link" id="show-following-followers" data-toggle="tab" href="#following-followers" role="tab" aria-controls="following-followers" aria-selected="false">Following and Followers</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="show-main-content">
-					<div class="tab-pane show fade active" id="summary" role="tabpanel" aria-labelledby="show-summary">
+					<div class="tab-pane show fade active" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
 						<section>
-							<h5 class="section-header">WANT-TO-SEE MEDIA</h5>
-							<!-- <div class="section-carousel"> -->
+							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
 								<div th:text="${foundUser.getWishlist().size()}">-1</div>
-								<!-- <a class="section-carousel-item details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
-									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span th:text="${media.blazingScore}">70</span>%
-									</div>
-								</a> -->
-							<!-- </div> -->
+							<!-- <a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
+								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
+								<div>
+									<span class="icon tiny burning"></span>
+									<span th:text="${media.blazingScore}">70</span>%
+								</div>
+							</a> -->
 						</section>
 						<section>
-							<h5 class="section-header">RATING HISTORY</h5>
-							<div class="latest-reviews">
+							<h5 class="section-header">NOT-INTERESTED MOVIES &amp; TV</h5>
+								<div th:text="${foundUser.getNotInterested().size()}">-1</div>
+							<!-- <a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
+								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
+								<div>
+									<span class="icon tiny burning"></span>
+									<span th:text="${media.blazingScore}">70</span>%
+								</div>
+							</a> -->
+						</section>
+					</div>
+					<div class="tab-pane show fade" id="ratings" role="tabpanel" aria-labelledby="show-ratings">
+						<section>
+							<h5 class="section-header">RATINGS HISTORY</h5>
+							<div class="w-100 p-1 my-1 border">
+								<span>test</span>
+								<span>test</span>
+								<span>test</span>
 							</div>
 						</section>
 					</div>
-					<div class="tab-pane show fade" id="movie-ratings" role="tabpanel" aria-labelledby="show-movie-ratings">
-					</div>
-					<div class="tab-pane show fade" id="tv-ratings" role="tabpanel" aria-labelledby="show-tv-ratings">
-					</div>
-					<div class="tab-pane show fade" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
-					</div>
-					<div class="tab-pane show fade" id="following" role="tabpanel" aria-labelledby="show-following">
+					<div class="tab-pane show fade" id="following-followers" role="tabpanel" aria-labelledby="show-following-followers">
+						<section>
+							<h5 class="section-header">FOLLOWERS</h5>
+						</section>
+						<section>
+							<h5 class="section-header">FOLLOWING</h5>
+						</section>
 					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="navbar">
-			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-movie">Add Movie...</button>
+			<div class="mr-auto">
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#edit">Edit</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie">Add a Movie</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv">Add a TV Show</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity">Add a Celebrity</button>
+			</div>
+			<div class="ml-auto">
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ban-user">Ban</button>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-account">Delete</button>
+			</div>
 		</nav>
+		<section>
+			<h5 class="section-header">REPORTS</h5>
+			<div class="w-100 p-1 my-1 d-flex">
+				<div class="pr-2" style="width: 100px;">Reported User</div>
+				<div class="pr-2" style="width: 100px;">Media</div>
+				<div class="pr-2" style="width: 200px;">Reported Review</div>
+				<div class="pr-2">Reason</div>
+			</div>
+			<div class="w-100 p-1 my-1 border d-flex">
+				<div class="pr-2" style="width: 100px;">User</div>
+				<div class="pr-2" style="width: 100px;">Movie</div>
+				<div class="pr-2" style="width: 200px;">Review</div>
+				<div class="pr-2">Reason</div>
+				<div class="ml-auto d-flex">
+					<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
+					<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
+				</div>
+			</div>
+		</section>
 		
-		<div class="modal fade" id="add-movie" tabindex="-1" role="dialog" aria-labelledby="#addMovie" aria-hidden="true">
+		<!-- MODALS -->
+		<!-- DELETE ACCOUNT -->
+		<div class="modal fade" id="delete-account" tabindex="-1" role="dialog" aria-labelledby="#delete-account" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addMovie">DELETE ACCOUNT?</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="text-center">
+							<div>Are you sure you want to delete this account?</div>
+							<div>This cannot be undone.</div>
+							<form>
+								<input type="checkbox" id="remove-account-reviews" checked>Remove this account's reviews as well
+							</form>
+						</div>
+						<div class="mt-2 text-center">
+							<button class="btn btn-danger btn-lg" id="delete-account-button">DELETE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="modal fade" id="add-movie" tabindex="-1" role="dialog" aria-labelledby="#addMovie" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -197,7 +243,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="h-100" th:unless="${foundUser}">
 		<section>
@@ -210,7 +256,7 @@
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 <script type="application/javascript" th:src="@{/js/add-media.js}"></script>
-<script th:inline="javascript">
+<script th:inline="javascript" th:if="${foundUser}">
 /*<![CDATA[*/
 	function reverify(e){
 		e.preventDefault();
@@ -235,11 +281,7 @@
 				$("#re-verify").css("background-color","#6c757d");
 				$("#re-verify").attr("disabled",false);
 				console.log(e);
-			},
-			/* complete: function(e){
-				$("#re-verify").css("background-color","#6c757d");
-				$("#re-verify").attr("disabled",false);
-			} */
+			}
 		});
 	}
 
@@ -253,7 +295,7 @@
 			type : "POST",
 			contentType : "application/json",
 			data: jsonString,
-			url: "/follow",
+			url: location.href + "/follow",
 			success: function(){
 				location.reload();
 			}
@@ -270,16 +312,31 @@
 			type : "POST",
 			contentType : "application/json",
 			data: jsonString,
-			url: "/unfollow",
+			url: location.href + "/unfollow",
 			success: function(){
 				location.reload();
 			}
 		});
 	}
+	
+	function deleteAccount(e){
+		e.preventDefault();
+		var r = $("#remove-account-reviews").is(":checked");
+		$.ajax({
+			type : "POST",
+			data: {reviews: r},
+			url: location.href+"/delete",
+			fail: function(e){
+				console.log("ERROR: "+e);
+			}
+		});
+	}
+	
 	$(function(){
 		$("#re-verify").on("click", reverify);
 		$("#follow-button").on("click", follow);
 		$("#unfollow-button").on("click", unfollow);
+		$("#delete-account").on("click", deleteAccount);
 	});
 /*]]>*/
 </script>
