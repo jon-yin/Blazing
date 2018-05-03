@@ -1,5 +1,7 @@
 package com.blazing.controllers;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,7 @@ import com.blazing.objects.Movie;
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
+import com.blazing.services.UserService;
 
 @Controller
 @RequestMapping(path="/viewmovie/{movie}")
@@ -21,12 +24,17 @@ public class MovieController extends MediaController<Movie>{
 	
 	@Autowired
 	private MediaService mediaService;
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private EntityManager em;
 	
 	
 	@RequestMapping(path="/addwishlist", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean addToWishList(@PathVariable("movie") long movie, 
 			@SessionAttribute("currentUser") User currentUser){
+		System.out.println(em.contains(currentUser));
 		return super.addToWishList(movie,currentUser);
 	
 	}
@@ -43,7 +51,8 @@ public class MovieController extends MediaController<Movie>{
 	@ResponseBody
 	public boolean removefromWishList(@PathVariable("movie") long movie, 
 			@SessionAttribute("currentUser") User currentUser){
-		return super.removeFromWishList(movie,currentUser);
+		boolean status =  super.removeFromWishList(movie,currentUser);
+		return status;
 	
 	}
 	

@@ -15,10 +15,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.hibernate.annotations.Cascade;
 
 @Entity
 public class User {
@@ -52,8 +53,8 @@ public class User {
 	}
 
 	
-	@OneToMany(cascade = CascadeType.ALL,orphanRemoval=true)
-	@JoinColumn(name="FOLLOWERS_IDS")
+	@OneToMany
+	@JoinColumn(name="FOLLOWING_ID", referencedColumnName="ID")
 	public Set<User> getFollowers() {
 		return followers;
 	}
@@ -124,8 +125,8 @@ public class User {
 		this.joinDate = joinDate;
 	}
 	
-	@OneToMany(cascade=CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name="MEDIA_ID")
+	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinTable(name="USER_MEDIA_WISHLIST", joinColumns=@JoinColumn(name="USER_ID",referencedColumnName="ID"), inverseJoinColumns=@JoinColumn(name="MEDIA_ID",referencedColumnName="ID"))
 	public List<Media> getWishlist() {
 		return wishlist;
 	}
@@ -142,7 +143,6 @@ public class User {
 	}
 	
 	@OneToMany
-	@JoinColumn(name="CRITIC_ID")
 	public List<Critic> getFavCritics() {
 		return favCritics;
 	}
@@ -168,7 +168,6 @@ public class User {
 	}
 	
 	@OneToMany
-	@JoinColumn(name="N_MEDIA_ID")
 	public List<Media> getNotInterested() {
 		return notInterested;
 	}
@@ -199,12 +198,12 @@ public class User {
 	
 	public void addWishList(Media media)
 	{
-		wishlist.add(media);
+		this.getWishlist().add(media);
 	}
 	
 	public void removeWishList(Media media)
 	{
-		wishlist.remove(media);
+		this.getWishlist().remove(media);
 	}
 	
 	public void addNotInterested(Media media)
@@ -252,13 +251,25 @@ public class User {
 		this.enabled = enabled;
 	}
 
+	
+	@Override
+	public String toString()
+	{
+		return "ID: " + id + "\n" + "email: " + emailAddress; 
+	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
+		result = prime * result + (enabled ? 1231 : 1237);
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((joinDate == null) ? 0 : joinDate.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
 
@@ -277,10 +288,33 @@ public class User {
 				return false;
 		} else if (!emailAddress.equals(other.emailAddress))
 			return false;
+		if (enabled != other.enabled)
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
 		if (id != other.id)
+			return false;
+		if (joinDate == null) {
+			if (other.joinDate != null)
+				return false;
+		} else if (!joinDate.equals(other.joinDate))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		return true;
 	}
+
 	
 	
 	

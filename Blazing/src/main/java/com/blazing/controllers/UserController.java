@@ -31,7 +31,10 @@ public class UserController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String displayProfile(@PathVariable("userid") long userid, Model model)
 	{
+		System.out.println("Viewing profile with id " +userid);
 		User foundUser = userService.findUser(userid);
+		System.out.println("foundUser: " + foundUser.getId());
+		System.out.println("WishList: " + foundUser.getWishlist().size());
 		model.addAttribute("foundUser", foundUser);
 		return "profile";
 	}

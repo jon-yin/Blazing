@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
@@ -35,6 +36,9 @@ public class LoginRegisterService {
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
+	@Autowired
+	private EntityManager em;
+	
 	@Transactional
 	public boolean reverifyUser(long id)
 	{
@@ -110,33 +114,37 @@ public class LoginRegisterService {
 			foundUser = undetachedUser.get();
 			foundUser.setEnabled(true);
 			tokenRepo.delete(token);
+			System.out.println(em.contains(foundUser));
 			User verified = repository.save(foundUser);
 			Hibernate.initialize(verified.getFollowers());
 			Hibernate.initialize(verified.getWishlist());
 			Hibernate.initialize(verified.getNotInterested());
 			Hibernate.initialize(verified.getFollowing());
 			Hibernate.initialize(verified.getFavCritics());
+			verified = repository.save(verified);
 			session.setAttribute("currentUser", verified);
 			status.setSuccess(true);
 			status.setUser(verified);
+			User detached = (User)session.getAttribute("currentUser");
 			return status;
 		}
 	}
 	
-	public boolean loginUser(LoginInfo info, HttpSession model) {
+	@Transactional
+	public boolean loginUser(LoginInfo info, HttpSession session) {
 		String emailAddress = info.getEmail();
 		User user = repository.findUserByEmailAddress(emailAddress);
 		String password = info.getPassword();
 		if (user != null) {
-			User validUser = user;
-			Hibernate.initialize(validUser.getFollowers());
-			Hibernate.initialize(validUser.getWishlist());
-			Hibernate.initialize(validUser.getNotInterested());
-			Hibernate.initialize(validUser.getFollowing());
-			Hibernate.initialize(validUser.getFavCritics());
-			if (encoder.matches(password, validUser.getPassword()))
+			Hibernate.initialize(user.getFollowers());
+			Hibernate.initialize(user.getWishlist());
+			Hibernate.initialize(user.getNotInterested());
+			Hibernate.initialize(user.getFollowing());
+			Hibernate.initialize(user.getFavCritics());
+			user = repository.saveAndFlush(user);
+			if (encoder.matches(password, user.getPassword()))
 			{
-				model.setAttribute("currentUser", validUser);
+				session.setAttribute("currentUser", user);
 				return true;
 			}
 			else

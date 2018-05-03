@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,6 +32,7 @@ import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TVRepository;
 import com.blazing.repositories.UserRepository;
 
+
 @Service
 public class MediaService {
 
@@ -47,7 +49,7 @@ public class MediaService {
 	@Autowired
 	private ReviewRepository revRepo;
 	@Autowired
-	private UserRepository<User> userRepo;
+	private UserService service;
 
 	@Transactional
 	public Movie findMovie(long id) {
@@ -87,12 +89,11 @@ public class MediaService {
 
 	@Transactional
 	public boolean removeFromWishlist(User user, long id) {
-		//user = sesService.retrieveDatabaseUser(user);
 		if (user != null) {
 			Optional<Media> media = mediaRepo.findById(id);
 			if (media.isPresent()) {
 				if (user.getWishlist().contains(media.get())) {
-					user.removeWishList(media.get());
+					user.getWishlist().remove(media.get());
 					return true;
 				} else {
 					return false;

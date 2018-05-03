@@ -1,28 +1,21 @@
 package com.blazing.services;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.blazing.objects.User;
-import com.blazing.repositories.UserRepository;
 
 @Service
 public class SessionService {
 
 	@Autowired
-	private UserRepository<User> userRepo;
-
+	private HttpSession session;
 	
-	public User retrieveDatabaseUser(User user)
+	public void updateCurrentUser(User user)
 	{
-		if (user == null)
-		{
-			return null;
-		}
-		else
-		{
-			return userRepo.findById(user.getId()).get();
-		}
+		session.setAttribute("currentUser", user);
 	}
 
 }

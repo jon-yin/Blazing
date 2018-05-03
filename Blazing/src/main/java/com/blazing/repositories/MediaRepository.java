@@ -1,7 +1,9 @@
 package com.blazing.repositories;
 
-import com.blazing.objects.Media;
+import org.springframework.stereotype.Repository;
 
+import com.blazing.objects.Media;
+@Repository
 public interface MediaRepository extends GeneralMediaRepository<Media>{
 
 }

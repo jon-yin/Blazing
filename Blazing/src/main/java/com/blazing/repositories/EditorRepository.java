@@ -1,7 +1,9 @@
 package com.blazing.repositories;
 
-import com.blazing.objects.Editor;
+import org.springframework.stereotype.Repository;
 
+import com.blazing.objects.Editor;
+@Repository
 public interface EditorRepository extends UserRepository<Editor>{
 
 }

@@ -1,5 +1,6 @@
 package com.blazing.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import com.blazing.objects.Review;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
 import com.blazing.services.ReviewService;
+import com.blazing.services.SessionService;
 import com.blazing.services.UserService;
 
 @Controller
@@ -23,6 +25,8 @@ public class MediaController<T> {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private SessionService sesService;
 	
 
 	public boolean addToWishList(long id, User user)
@@ -36,7 +40,8 @@ public class MediaController<T> {
 			boolean status = mediaService.addToWishlist(user, id);
 			if (status)
 			{
-				userService.saveUserState(user);
+				User updatedUser = userService.saveUserState(user);
+				sesService.updateCurrentUser(updatedUser);
 			}
 			return status;
 		}
@@ -54,7 +59,8 @@ public class MediaController<T> {
 			boolean status = mediaService.removeFromWishlist(user, id);
 			if (status)
 			{
-				userService.saveUserState(user);
+				User updated = userService.saveUserState(user);
+				sesService.updateCurrentUser(updated);
 			}
 			return status;
 		}
@@ -72,7 +78,8 @@ public class MediaController<T> {
 			boolean status = mediaService.addToNotInterested(user, id);
 			if (status)
 			{
-				userService.saveUserState(user);
+				User updated = userService.saveUserState(user);
+				sesService.updateCurrentUser(updated);
 			}
 			return status;
 		}
@@ -89,7 +96,8 @@ public class MediaController<T> {
 			boolean status = mediaService.removeFromNotInterested(user, id);
 			if (status)
 			{
-				userService.saveUserState(user);
+				User updated = userService.saveUserState(user);
+				sesService.updateCurrentUser(updated);
 			}
 			return status;
 		}
@@ -107,7 +115,9 @@ public class MediaController<T> {
 			boolean status = mediaService.addReview(user, id, review);
 			if (status)
 			{
-				userService.saveUserState(user);
+				
+				User updated = userService.saveUserState(user);
+				sesService.updateCurrentUser(updated);
 			}
 			return status;
 		}
