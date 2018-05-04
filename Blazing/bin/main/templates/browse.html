@@ -33,34 +33,34 @@
 							<h5 class="section-header">IN THEATERS</h5>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="blazing-movies-tab" href="#" role="tab">Blazing Movie Picks</a>
+							<a class="nav-link" id="blazing-movies-tab" href="#" th:href="@{/browse?type=blazing-movies}">Blazing Movie Picks</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="opening-movies-tab" href="#" role="tab">Opening This Week</a>
+							<a class="nav-link" id="opening-movies-tab" href="#" th:href="@{/browse?type=opening-movies}">Opening This Week</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="top-bo-tab" href="#" role="tab">Top Box Office</a>
+							<a class="nav-link" id="top-bo-tab" href="#" th:href="@{/browse?type=top-bo}">Top Box Office</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="coming-soon-tab" href="#" role="tab">Coming Soon</a>
+							<a class="nav-link" id="coming-soon-tab" href="#" th:href="@{/browse?type=coming-soon}">Coming Soon</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="all-movies-tab" href="#" role="tab">All Movies</a>
+							<a class="nav-link" id="all-movies-tab" href="#" th:href="@{/browse?type=all-movies}">All Movies</a>
 						</li>
 						<li class="pt-2">
 							<h5 class="section-header">TV</h5>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="blazing-tv-tab" href="#" role="tab">Blazing TV Picks</a>
+							<a class="nav-link" id="blazing-tv-tab" href="#" th:href="@{/browse?type=blazing-tv}">Blazing TV Picks</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="new-tv-tab" href="#" role="tab">New TV Tonight</a>
+							<a class="nav-link" id="new-tv-tab" href="#" th:href="@{/browse?type=new-tv}">New TV Tonight</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="popular-tv-tab" href="#" role="tab">Most Popular TV</a>
+							<a class="nav-link" id="popular-tv-tab" href="#" th:href="@{/browse?type=popular-tv}">Most Popular TV</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="pill" id="all-tv-tab" href="#" role="tab">All TV</a>
+							<a class="nav-link" id="all-tv-tab" href="#" th:href="@{/browse?type=all-tv}">All TV</a>
 						</li>
 					</ul>
 				</section>
@@ -156,13 +156,13 @@
 	$(function(){
 		getBrowseType();
 
-		$("#browse-tabs > .nav-item > .nav-link").on('click',function(){
+		/* $("#browse-tabs > .nav-item > .nav-link").on('click',function(){
 			$("#browse-tabs > .nav-item > .nav-link").removeClass("active");
 			var browseType = $(this).attr("id");
 			var stateObj = {};
 			history.pushState(stateObj,"","/browse?type="+browseType.substring(0,browseType.length-4));
 			getBrowseType();
-		});
+		}); */
 	});
 </script>
 

@@ -133,7 +133,7 @@ public class Review {
 		return userReports;
 	}
 
-	public void setUserReports(HashMap<Long, String> userReports) {
+	public void setUserReports(Map<Long, String> userReports) {
 		this.userReports = userReports;
 	}
 	
