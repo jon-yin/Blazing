@@ -167,7 +167,8 @@ public class User {
 		this.password = password;
 	}
 	
-	@OneToMany
+	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinTable(name="USER_MEDIA_NOT_INTERESTED", joinColumns=@JoinColumn(name="USER_ID",referencedColumnName="ID"), inverseJoinColumns=@JoinColumn(name="MEDIA_ID",referencedColumnName="ID"))
 	public List<Media> getNotInterested() {
 		return notInterested;
 	}
