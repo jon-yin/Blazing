@@ -73,27 +73,27 @@
 					<div class="tab-pane show fade active" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
 						<section>
 							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
-								<div th:text="${foundUser.getWishlist().size()}">-1</div>
-							<!-- <a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
+								<!-- <div th:text="${foundUser.getWishlist().size()}">-1</div> -->
+							<a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
 								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
 									<span class="icon tiny burning"></span>
 									<span th:text="${media.blazingScore}">70</span>%
 								</div>
-							</a> -->
+							</a>
 						</section>
 						<section>
 							<h5 class="section-header">NOT-INTERESTED MOVIES &amp; TV</h5>
-								<div th:text="${foundUser.getNotInterested().size()}">-1</div>
-							<!-- <a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
+								<!-- <div th:text="${foundUser.getNotInterested().size()}">-1</div> -->
+							<a class="details-link btn text-center" th:each="media : ${foundUser.getNotInterested()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
 								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
 									<span class="icon tiny burning"></span>
 									<span th:text="${media.blazingScore}">70</span>%
 								</div>
-							</a> -->
+							</a>
 						</section>
 					</div>
 					<div class="tab-pane show fade" id="ratings" role="tabpanel" aria-labelledby="show-ratings">
@@ -119,7 +119,7 @@
 		</div>
 		<nav class="navbar">
 			<div class="mr-auto">
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#edit">Edit</button>
+				<button type="button" class="btn btn-light" id="acc-settings">Account Settings</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie">Add a Movie</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv">Add a TV Show</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity">Add a Celebrity</button>
@@ -133,15 +133,13 @@
 			<h5 class="section-header">REPORTS</h5>
 			<div class="w-100 p-1 my-1 d-flex">
 				<div class="pr-2" style="width: 100px;">Reported User</div>
-				<div class="pr-2" style="width: 100px;">Media</div>
-				<div class="pr-2" style="width: 200px;">Reported Review</div>
-				<div class="pr-2">Reason</div>
+				<div class="pr-2" style="width: 150px;">Media</div>
+				<div class="pr-2">Reported Review</div>
 			</div>
 			<div class="w-100 p-1 my-1 border d-flex">
 				<div class="pr-2" style="width: 100px;">User</div>
-				<div class="pr-2" style="width: 100px;">Movie</div>
-				<div class="pr-2" style="width: 200px;">Review</div>
-				<div class="pr-2">Reason</div>
+				<div class="pr-2" style="width: 150px;">Movie</div>
+				<div class="pr-2">Review</div>
 				<div class="ml-auto d-flex">
 					<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
 					<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
@@ -150,6 +148,33 @@
 		</section>
 		
 		<!-- MODALS -->
+		<!-- EDIT ACCOUNT? -->
+		<!-- <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="#edit" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addMovie">EDIT ACCOUNT</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="d-flex">
+								<div class="form-group w-50 mr-1">
+									<label for="change-first">Change First Name</label>
+									<input type="text" class="form-control" id="change-first" aria-describedby="change-first">
+								</div>
+								<div class="form-group w-50 ml-1">
+									<label for="change-last">Change Last Name</label>
+									<input type="text" class="form-control" id="change-last" aria-describedby="change-last">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> -->
 		<!-- DELETE ACCOUNT -->
 		<div class="modal fade" id="delete-account" tabindex="-1" role="dialog" aria-labelledby="#delete-account" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
@@ -161,20 +186,21 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="text-center">
+						<form class="text-center">
 							<div>Are you sure you want to delete this account?</div>
-							<div>This cannot be undone.</div>
-							<form>
-								<input type="checkbox" id="remove-account-reviews" checked>Remove this account's reviews as well
-							</form>
-						</div>
+							<div class="font-weight-bold">This cannot be undone.</div>
+						</form>
 						<div class="mt-2 text-center">
-							<button class="btn btn-danger btn-lg" id="delete-account-button">DELETE</button>
+							<form action="#" th:action="@{/viewprofile/{id}/delete(id=${foundUser.id})}" th:method="post">
+								<input type="hidden" id="userid" name="userid" th:value="${foundUser.id}">
+								<button type="submit" class="btn btn-danger btn-lg" id="delete-account-button">DELETE</button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- ADD MOVIE MODAL -->
 		<!-- <div class="modal fade" id="add-movie" tabindex="-1" role="dialog" aria-labelledby="#addMovie" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -319,7 +345,7 @@
 		});
 	}
 	
-	function deleteAccount(e){
+	/* function deleteAccount(e){
 		e.preventDefault();
 		var r = $("#remove-account-reviews").is(":checked");
 		$.ajax({
@@ -330,13 +356,16 @@
 				console.log("ERROR: "+e);
 			}
 		});
-	}
+	} */
 	
 	$(function(){
 		$("#re-verify").on("click", reverify);
 		$("#follow-button").on("click", follow);
 		$("#unfollow-button").on("click", unfollow);
-		$("#delete-account").on("click", deleteAccount);
+		/* $("#delete-account").on("click", deleteAccount); */
+		$("#acc-settings").on("click", function(){
+			location.href += "/settings";
+		});
 	});
 /*]]>*/
 </script>

@@ -136,15 +136,7 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">MOVIE INFO</h5>
-									<div id="description" th:text="${movie.description}">
-										Lorem ipsum dolor sit amet, pri ne dolore tacimates corrumpit.
-										Quod dolor soleat cu vim, ut detraxit laboramus
-										conclusionemque pro. Modus perpetua philosophia ut vim, ex
-										invenire omittantur repudiandae duo, usu nisl veniam legimus
-										ne. Illum ubique in est, mel regione gloriatur adversarium id.
-										An natum quando adipisci usu, quod utinam partiendo nec eu, ad
-										duo illud impedit. An vix tempor commune, no est erat fabulas
-										accusata.</div>
+									<div id="description" th:text="${movie.description}">description</div>
 								</section>
 							</div>
 							<div class="row">
@@ -158,8 +150,7 @@
 												th:src="${character.actor.portrait}"
 												style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
-													<div class="font-weight-bold"
-														th:text="${character.actor.name}">Celeb McCelebFace</div>
+													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
 														as <span th:text="${character.name}">Character</span>
 													</div>
@@ -245,9 +236,9 @@
 										</select>
 										<div class="btn-group" id="wts-ni">
 											<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 100px;" th:unless="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span></label>
-											<label class="btn btn-sm btn-dark active" id="want-to-see" style="width: 100px; background-color: #28a745; border-color: #28a745" th:if="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-check"></i> Will See!</span></label> 
+											<label class="btn btn-sm btn-success active" id="want-to-see" style="width: 100px;" th:if="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-check"></i> Will See!</span></label>
 											<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;" th:unless="${#sets.contains(session.currentUser.getNotInterested(),movie)}"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span></label>
-											<label class="btn btn-sm btn-dark active" id="not-interested" style="width: 100px; background-color: #dc3545; border-color: #dc3545" th:if="${#sets.contains(session.currentUser.getNotInterested(),movie)}"><span class="button-text"><i class="fa fa-times"></i> Not Interested</span></label>
+											<label class="btn btn-sm btn-danger active" id="not-interested" style="width: 100px;" th:if="${#sets.contains(session.currentUser.getNotInterested(),movie)}"><span class="button-text"><i class="fa fa-times"></i> Pass...</span></label>
 										</div>
 									</div>
 									<div>
@@ -289,14 +280,7 @@
 											<div>
 												<i class="fa fa-quote-left" style="padding-right: 25px;"></i>
 											</div>
-											<div>Lorem ipsum dolor sit amet, pri ne dolore
-												tacimates corrumpit. Quod dolor soleat cu vim, ut detraxit
-												laboramus conclusionemque pro. Modus perpetua philosophia ut
-												vim, ex invenire omittantur repudiandae duo, usu nisl veniam
-												legimus ne. Illum ubique in est, mel regione gloriatur
-												adversarium id. An natum quando adipisci usu, quod utinam
-												partiendo nec eu, ad duo illud impedit. An vix tempor
-												commune, no est erat fabulas accusata.</div>
+											<div>critic review</div>
 											<div>
 												<i class="fa fa-quote-right" style="padding-left: 25px;"></i>
 											</div>
@@ -366,8 +350,7 @@
 						role="tabpanel" aria-labelledby="show-movie-links">
 						<h5 class="section-header">OPENING</h5>
 						<div class="list-item details-link">
-							<a class="w-100 d-flex align-items-center"
-								href="/movie-details.html">
+							<a class="w-100 d-flex align-items-center" href="/movie-details.html">
 								<div class="score">
 									<span class="icon tiny burning"></span> <span>70</span>%
 								</div>
@@ -463,17 +446,23 @@
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 <script type="application/javascript" th:src="@{/js/review-system.js}"></script>
 <script th:inline="javascript">
-	/*<![CDATA[*/
+/*<![CDATA[*/
+	/* TODO: fix wts-ni css */
 	function addWTS() {
+		var niColor = $("#not-interested").css("background-color");
 		$("#want-to-see").attr("disabled",true);
 		$("#not-interested").attr("disabled",true);
+		$("#want-to-see").css("background-color","#aaaaaa");
+		$("#not-interested").css("background-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/addwishlist",
 			success : function(data) {
-				$("#want-to-see").addClass("active");
+				$("#want-to-see").css("background-color","#343a40");
+				$("#not-interested").css("background-color","#343a40");
 				$("#want-to-see").css('background-color', '#28a745');
-				$("#want-to-see").css('border-color', '#28a745');
+				$("#not-interested").css('background-color', niColor);
+				$("#want-to-see").addClass("active");
 				$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-check"></i> Will See!</span>');
 				console.log(data);
 			},
@@ -488,15 +477,20 @@
 	}
 
 	function removeWTS() {
+		var niColor = $("#not-interested").css("background-color");
 		$("#want-to-see").attr("disabled",true);
 		$("#not-interested").attr("disabled",true);
+		$("#want-to-see").css("background-color","#aaaaaa");
+		$("#not-interested").css("background-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/removewishlist",
 			success : function(data) {
+				$("#want-to-see").css("background-color","#343a40");
+				$("#not-interested").css("background-color","#343a40");
+ 				$("#want-to-see").css('background-color', '#343a40');
+ 				$("#not-interested").css('background-color', niColor);
 				$("#want-to-see").removeClass("active");
-				$("#want-to-see").css('background-color', '#343a40');
-				$("#want-to-see").css('border-color', '#343a40');
 				$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');
 				console.log(data);
 			},
@@ -511,15 +505,20 @@
 	}
 
 	function addNI() {
+		var wtsColor = $("#want-to-see").css("background-color");
 		$("#want-to-see").attr("disabled",true);
 		$("#not-interested").attr("disabled",true);
+		$("#want-to-see").css("background-color","#aaaaaa");
+		$("#not-interested").css("background-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/addnotinterested",
 			success : function(data) {
+				$("#want-to-see").css("background-color","#343a40");
+				$("#not-interested").css("background-color","#343a40");
+ 				$("#not-interested").css('background-color', '#dc3545');
+ 				$("#want-to-see").css('background-color', wtsColor);
 				$("#not-interested").addClass("active");
-				$("#not-interested").css('background-color', '#dc3545');
-				$("#not-interested").css('border-color', '#dc3545');
 				$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-times"></i> Pass...</span>');
 				console.log(data);
 			},
@@ -534,15 +533,20 @@
 	}
 
 	function removeNI() {
+		var wtsColor = $("#want-to-see").css("background-color");
 		$("#want-to-see").attr("disabled",true);
 		$("#not-interested").attr("disabled",true);
+		$("#want-to-see").css("background-color","#aaaaaa");
+		$("#not-interested").css("background-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/removenotinterested",
 			success : function(data) {
+				$("#want-to-see").css("background-color","#343a40");
+				$("#not-interested").css("background-color","#343a40");
+ 				$("#not-interested").css('background-color', '#343a40');
+ 				$("#want-to-see").css('background-color', wtsColor);
 				$("#not-interested").removeClass("active");
-				$("#not-interested").css('background-color', '#343a40');
-				$("#not-interested").css('border-color', '#343a40');
 				$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');
 				console.log(data);
 			},
@@ -558,9 +562,9 @@
 
 	function toggleWTS(e) {
 		e.preventDefault();
-		if ($("#not-interested").hasClass("active")) {
+/* 		if ($("#not-interested").hasClass("active")) {
 			removeNI();
-		}
+		} */
 		if ($("#want-to-see").hasClass("active")) {
 			removeWTS();
 		} else {
@@ -570,9 +574,9 @@
 
 	function toggleNI(e) {
 		e.preventDefault();
-		if ($("#want-to-see").hasClass("active")) {
+/* 		if ($("#want-to-see").hasClass("active")) {
 			removeWTS();
-		}
+		} */
 		if ($("#not-interested").hasClass("active")) {
 			removeNI();
 		} else {
