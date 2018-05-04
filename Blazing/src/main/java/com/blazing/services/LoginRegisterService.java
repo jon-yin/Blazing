@@ -121,6 +121,7 @@ public class LoginRegisterService {
 			Hibernate.initialize(verified.getNotInterested());
 			Hibernate.initialize(verified.getFollowing());
 			Hibernate.initialize(verified.getFavCritics());
+			Hibernate.initialize(verified.getReviews());
 			verified = repository.save(verified);
 			session.setAttribute("currentUser", verified);
 			status.setSuccess(true);
@@ -136,6 +137,7 @@ public class LoginRegisterService {
 		User user = repository.findUserByEmailAddress(emailAddress);
 		String password = info.getPassword();
 		if (user != null) {
+			Hibernate.initialize(user.getReviews());
 			Hibernate.initialize(user.getFollowers());
 			Hibernate.initialize(user.getWishlist());
 			Hibernate.initialize(user.getNotInterested());

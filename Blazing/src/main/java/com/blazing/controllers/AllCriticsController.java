@@ -13,4 +13,6 @@ public class AllCriticsController {
 	{
 		return "critics-home";
 	}
+	
+	
 }
