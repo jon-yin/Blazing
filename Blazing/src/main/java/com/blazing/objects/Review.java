@@ -117,7 +117,7 @@ public class Review {
 	{
 		return "Rating: " + score + "\n" + "Body: " + body;
 	}
-
+	
 	public int getFlagCount() {
 		return flagCount;
 	}
@@ -125,7 +125,6 @@ public class Review {
 	public void setFlagCount(int flagCount) {
 		this.flagCount = flagCount;
 	}
-
 	
 	@ElementCollection
 	@Column(columnDefinition = "LONGTEXT")
@@ -137,6 +136,7 @@ public class Review {
 		this.userReports = userReports;
 	}
 	
+	@Transient
 	public boolean addReport(long id, String body)
 	{
 		if (userReports.containsKey(id))

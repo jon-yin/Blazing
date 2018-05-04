@@ -158,6 +158,7 @@ public class MediaService {
 			return true;
 		} else {
 			return false;
+			
 		}
 	}
 
@@ -219,9 +220,9 @@ public class MediaService {
 		Optional<Review> target = revRepo.findById(reportData.getId());
 		if (target.isPresent()) {
 			Review review = target.get();
-			review.addReport(userId, reportData.getBody());
+			boolean status = review.addReport(userId, reportData.getBody());
 			revRepo.save(review);
-			return true;
+			return status;
 		}
 		return false;
 	}

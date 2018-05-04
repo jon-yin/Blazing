@@ -69,7 +69,7 @@ public class TVController extends MediaController<TV>{
 	}
 	
 	@ResponseBody
-	@RequestMapping(path="/reportreview", method = RequestMethod.POST)
+	@RequestMapping(path="/report", method = RequestMethod.POST)
 	public boolean reportReview(@RequestBody ReportInfo info, @SessionAttribute("currentUser") User currentUser)
 	{
 		return super.reportReview(info, currentUser);
