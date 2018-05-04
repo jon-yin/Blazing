@@ -1,11 +1,11 @@
 package com.blazing.objects;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +13,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -27,13 +26,13 @@ public class Review {
 	private LocalDateTime datetime;
 	private Media source;
 	private int flagCount;
-	private List<ReportReason> reasons;
+	private Map<Long, String> userReports;
 	
 	
 	public Review()
 	{
+		userReports = new HashMap<>();
 		score = -1;
-		reasons = new ArrayList<>();
 	}
 	
 	@Id
@@ -128,18 +127,29 @@ public class Review {
 	}
 
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn()
-	public List<ReportReason> getReasons() {
-		return reasons;
+	@ElementCollection
+	@Column(columnDefinition = "LONGTEXT")
+	public Map<Long, String> getUserReports() {
+		return userReports;
 	}
 
-	public void setReasons(List<ReportReason> reasons) {
-		this.reasons = reasons;
+	public void setUserReports(HashMap<Long, String> userReports) {
+		this.userReports = userReports;
 	}
-
 	
-	
+	public boolean addReport(long id, String body)
+	{
+		if (userReports.containsKey(id))
+		{
+			return false;
+		}
+		else
+		{
+			userReports.put(id,body);
+			flagCount++;
+			return true;
+		}
+	}
 	
 	
 }

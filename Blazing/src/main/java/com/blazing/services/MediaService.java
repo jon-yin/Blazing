@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
-import javax.transaction.Transactional.TxType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,6 +20,7 @@ import com.blazing.objects.Media;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.MovieInfo;
+import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.TV;
 import com.blazing.objects.User;
@@ -30,7 +30,6 @@ import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
 import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TVRepository;
-import com.blazing.repositories.UserRepository;
 
 
 @Service
@@ -216,12 +215,11 @@ public class MediaService {
 	}
 
 	@Transactional
-	public boolean reportReview(long reviewID) {
-
-		Optional<Review> target = revRepo.findById(reviewID);
+	public boolean reportReview(ReportInfo reportData, long userId) {
+		Optional<Review> target = revRepo.findById(reportData.getId());
 		if (target.isPresent()) {
 			Review review = target.get();
-			review.setFlagged(true);
+			review.addReport(userId, reportData.getBody());
 			revRepo.save(review);
 			return true;
 		}

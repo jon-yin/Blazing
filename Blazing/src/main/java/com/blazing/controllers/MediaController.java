@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
@@ -129,13 +130,13 @@ public class MediaController<T> {
 	}
 	
 	@Transactional
-	public boolean reportReview(long reviewID, User currentUser)
+	public boolean reportReview(ReportInfo reportData, User currentUser)
 	{
 		if (currentUser == null)
 		{
 			return false;
 		}
-		return mediaService.reportReview(reviewID);
+		return mediaService.reportReview(reportData, currentUser.getId());
 	}
 	
 	

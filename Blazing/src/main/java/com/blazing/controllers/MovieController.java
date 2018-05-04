@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.blazing.objects.Movie;
+import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
@@ -81,9 +82,9 @@ public class MovieController extends MediaController<Movie>{
 	
 	@ResponseBody
 	@RequestMapping(path="/report", method=RequestMethod.POST)
-	public boolean reportReview(@RequestBody Long id, @SessionAttribute("currentUser") User user)
+	public boolean reportReview(@RequestBody ReportInfo data, @SessionAttribute("currentUser") User user)
 	{
-		return super.reportReview(id, user);
+		return super.reportReview(data, user);
 	}
 	
 	@ResponseBody

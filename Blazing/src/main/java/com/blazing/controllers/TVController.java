@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.TV;
 import com.blazing.objects.User;
@@ -65,6 +66,13 @@ public class TVController extends MediaController<TV>{
 	public boolean addReview(@PathVariable("tv") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser)
 	{
 		return mediaService.addReview(currentUser, id, review);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path="/reportreview", method = RequestMethod.POST)
+	public boolean reportReview(@RequestBody ReportInfo info, @SessionAttribute("currentUser") User currentUser)
+	{
+		return super.reportReview(info, currentUser);
 	}
 	
 	@ResponseBody
