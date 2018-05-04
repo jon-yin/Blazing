@@ -75,13 +75,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/delete", method = RequestMethod.POST)
-	public String deleteAccount(@RequestParam("reviews")boolean deleteReviews, @SessionAttribute("currentUser")User user, HttpSession session)
+	public String deleteAccount(@RequestParam("userid")long id, HttpSession session)
 	{
-		if (user != null)
+		User foundUser = userService.findUser(id);
+		if (foundUser != null)
 		{
-			session.setAttribute("currentUser", null);
-			userService.removeUser(user, deleteReviews);
+			User currentUser= (User)session.getAttribute("currentUser");
+			if (currentUser.equals(foundUser))
+			{
+				session.setAttribute("currentUser", null);
+			}
+			userService.removeUser(foundUser);
 		}
 		return "redirect:/home";
 	}
+	
+	
 }

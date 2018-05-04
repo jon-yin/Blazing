@@ -30,7 +30,7 @@ public class UserService {
 	@Transactional
 	public User findUser(long id) {
 		Optional<User> user = userRepo.findById(id);
-		//System.out.println("WISHLIST: " + user.get().getWishlist().size());
+		// System.out.println("WISHLIST: " + user.get().getWishlist().size());
 		if (user.isPresent()) {
 			return user.get();
 		} else {
@@ -77,12 +77,10 @@ public class UserService {
 	}
 
 	@Transactional
-	public boolean removeUser(User target, boolean removeReviews) {
+	public boolean removeUser(User target) {
 		List<Review> reviews = target.getReviews();
 		userRepo.deleteById(target.getId());
-		if (removeReviews) {
-			revRepo.deleteAll(reviews);
-		}
+		revRepo.deleteAll(reviews);
 		return true;
 	}
 
