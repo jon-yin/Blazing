@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.blazing.services.MediaService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping(path={"/","/home","/index"})
 public class IndexController {
 	
 	@Autowired

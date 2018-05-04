@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class VerificationToken {
@@ -41,7 +41,7 @@ public class VerificationToken {
 		this.token = token;
 	}
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="USER_ID")
 	public User getUser() {
 		return user;

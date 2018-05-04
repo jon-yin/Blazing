@@ -4,17 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
-import javax.transaction.Transactional.TxType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
-import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
+import com.blazing.objects.VerificationToken;
 import com.blazing.repositories.ReviewRepository;
+import com.blazing.repositories.TokenRepository;
 import com.blazing.repositories.UserRepository;
 
 @Service
@@ -25,12 +23,13 @@ public class UserService {
 	@Autowired
 	private ReviewRepository revRepo;
 	@Autowired
+	private TokenRepository tokenRepo;
+	@Autowired
 	private SessionService sesService;
 
 	@Transactional
 	public User findUser(long id) {
 		Optional<User> user = userRepo.findById(id);
-		// System.out.println("WISHLIST: " + user.get().getWishlist().size());
 		if (user.isPresent()) {
 			return user.get();
 		} else {
@@ -79,6 +78,12 @@ public class UserService {
 	@Transactional
 	public boolean removeUser(User target) {
 		List<Review> reviews = target.getReviews();
+		if (!target.isEnabled())
+		{
+			VerificationToken token = tokenRepo.getVerificationTokenByUser(target);
+			if (token != null)
+				tokenRepo.delete(token);
+		}
 		userRepo.deleteById(target.getId());
 		revRepo.deleteAll(reviews);
 		return true;

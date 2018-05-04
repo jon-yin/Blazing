@@ -31,10 +31,7 @@ public class UserController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String displayProfile(@PathVariable("userid") long userid, Model model)
 	{
-		System.out.println("Viewing profile with id " +userid);
 		User foundUser = userService.findUser(userid);
-		System.out.println("foundUser: " + foundUser.getId());
-		System.out.println("WishList: " + foundUser.getWishlist().size());
 		model.addAttribute("foundUser", foundUser);
 		return "profile";
 	}
@@ -64,7 +61,8 @@ public class UserController {
 	@RequestMapping(path="/settings", method = RequestMethod.GET)
 	public String settingsView(@SessionAttribute("currentUser") User curUser, @PathVariable("userid") long id)
 	{
-		if (curUser.getId() != id)
+		
+		if (curUser == null || curUser.getId() != id)
 		{
 			return "redirect:/home";
 		}
@@ -87,7 +85,7 @@ public class UserController {
 			}
 			userService.removeUser(foundUser);
 		}
-		return "redirect:/home";
+		return "redirect:/";
 	}
 	
 	
