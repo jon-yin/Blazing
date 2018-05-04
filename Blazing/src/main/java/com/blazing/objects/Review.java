@@ -1,7 +1,10 @@
 package com.blazing.objects;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +13,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -22,12 +26,14 @@ public class Review {
 	private User user;
 	private LocalDateTime datetime;
 	private Media source;
-	private boolean isFlagged;
+	private int flagCount;
+	private List<ReportReason> reasons;
+	
 	
 	public Review()
 	{
 		score = -1;
-		isFlagged = false;
+		reasons = new ArrayList<>();
 	}
 	
 	@Id
@@ -113,13 +119,25 @@ public class Review {
 		return "Rating: " + score + "\n" + "Body: " + body;
 	}
 
-	public boolean isFlagged() {
-		return isFlagged;
+	public int getFlagCount() {
+		return flagCount;
 	}
 
-	public void setFlagged(boolean isFlagged) {
-		this.isFlagged = isFlagged;
+	public void setFlagCount(int flagCount) {
+		this.flagCount = flagCount;
 	}
+
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn()
+	public List<ReportReason> getReasons() {
+		return reasons;
+	}
+
+	public void setReasons(List<ReportReason> reasons) {
+		this.reasons = reasons;
+	}
+
 	
 	
 	

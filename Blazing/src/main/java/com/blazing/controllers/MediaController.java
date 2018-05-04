@@ -105,7 +105,7 @@ public class MediaController<T> {
 	@Transactional
 	public boolean addReview(long id, Review review, User user)
 	{
-		if (user == null)
+		if (user == null || !user.isEnabled())
 		{
 			return false;
 		}
