@@ -1,5 +1,7 @@
 package com.blazing.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,5 +107,11 @@ public class UserController {
 		userService.removeApplication(application);
 	}
 	
+	@RequestMapping(path="/viewapplications", method = RequestMethod.POST)
+	@ResponseBody
+	public List<CriticApplication> getApplications()
+	{
+		return userService.retrieveApplications();
+	}
 	
 }

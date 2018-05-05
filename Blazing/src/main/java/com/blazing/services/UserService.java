@@ -122,5 +122,11 @@ public class UserService {
 		appRepo.delete(application);
 	}
 	
+	@Transactional
+	public List<CriticApplication> retrieveApplications()
+	{
+		return appRepo.findAll();
+	}
+	
 
 }
