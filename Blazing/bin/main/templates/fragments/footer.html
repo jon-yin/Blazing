@@ -2,30 +2,20 @@
 <html xmlns:th="https://thymleaf.org">
 <body>
 <div th:fragment="footer">
-<div class="container-fluid bg-dark" style="height: 100px;">
+<div class="container-fluid bg-dark">
 	<div class="container">
-		<div class="row">
-			<div class="col">
-				<a href="#">Help</a>
-				<a href="#">About Blazing</a>
-				<a href="#">What's Blazing?</a>
-				<a href="#">Feedback</a>
+		<div class="row" style="height: 100px;">
+			<div class="col-auto">
+				<div><a th:href="@{/help}">Help</a></div>
+				<div><a th:href="@{/about}">About</a></div>
+				<div><a th:href="@{/tos}">Terms of Service</a></div>
+				<div><a class="font-weight-bold" th:href="@{/contactus}">Contact Us</a></div>
 			</div>
-			<div class="col">
-				<a href="#">Critic Submission</a>
-				<a href="#">Licensing</a>
-				<a href="#">Advertise</a>
-				<a href="#">Career</a>
-			</div>
-			<div class="col">
-				<a href="#">Join the Newsletter</a>
-			</div>
-			<div class="col">
-				<a href="#">Facebook</a>
-				<a href="#">Twitter</a>
-				<a href="#">Instagram</a>
-				<a href="#">Snapchat</a>
-				<a href="#">Youtube</a>
+			<div class="col-auto ml-auto" style="font-size: 32px;">
+				<span style="">Social Media: </span>
+				<a href="#"><i class="fa fa-facebook-square"></i></a>
+				<a href="#"><i class="fa fa-twitter-square"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
 			</div>
 		</div>
 	</div>

@@ -32,8 +32,8 @@ a {
 	color: #6c757d;
 	text-decoration: none!important;
 }
-.navbar .nav-link{
-	color: white!important;
+header *, footer *{
+	color: #ffffff!important;
 }
 .nav-pills a.active{
 	background-color: #aaaaaa!important;
