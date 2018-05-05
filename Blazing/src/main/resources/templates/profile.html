@@ -134,12 +134,14 @@
 			<div class="w-100 p-1 my-1 d-flex">
 				<div class="pr-2" style="width: 100px;">Reported User</div>
 				<div class="pr-2" style="width: 150px;">Media</div>
-				<div class="pr-2">Reported Review</div>
+				<div class="pr-2" style="width: 200px;">Reported Review</div>
+				<div class="pr-2">Reason</div>
 			</div>
 			<div class="w-100 p-1 my-1 border d-flex">
 				<div class="pr-2" style="width: 100px;">User</div>
 				<div class="pr-2" style="width: 150px;">Movie</div>
-				<div class="pr-2">Review</div>
+				<div class="pr-2" style="width: 200px;">Review</div>
+				<div class="pr-2">Reason</div>
 				<div class="ml-auto d-flex">
 					<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
 					<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
@@ -186,16 +188,12 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form class="text-center">
+						<form class="text-center" th:action="@{/viewprofile/{id}/delete(id=${foundUser.id})}" th:method="post">
 							<div>Are you sure you want to delete this account?</div>
-							<div class="font-weight-bold">This cannot be undone.</div>
+							<div class="font-weight-bold py-4">This cannot be undone.</div>
+							<input type="hidden" id="userid" name="userid" th:value="${foundUser.id}">
+							<button type="submit" class="btn btn-danger btn-lg" id="delete-account-button">DELETE</button>
 						</form>
-						<div class="mt-2 text-center">
-							<form action="#" th:action="@{/viewprofile/{id}/delete(id=${foundUser.id})}" th:method="post">
-								<input type="hidden" id="userid" name="userid" th:value="${foundUser.id}">
-								<button type="submit" class="btn btn-danger btn-lg" id="delete-account-button">DELETE</button>
-							</form>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -314,13 +312,10 @@
 	function follow(e){
 		e.preventDefault();
 		var id = /*[[${foundUser.id}]]*/ 0;
-		var user = {};
-		user["id"] = id;
-		var jsonString = JSON.stringify(user);
 		$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			data: jsonString,
+			data: ""+id,
 			url: location.href + "/follow",
 			success: function(){
 				location.reload();
@@ -331,13 +326,10 @@
 	function unfollow(e){
 		e.preventDefault();
 		var id = /*[[${foundUser.id}]]*/ 0;
-		var user = {};
-		user["id"] = id;
-		var jsonString = JSON.stringify(user);
 		$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			data: jsonString,
+			data: ""+id,
 			url: location.href + "/unfollow",
 			success: function(){
 				location.reload();
@@ -345,24 +337,10 @@
 		});
 	}
 	
-	/* function deleteAccount(e){
-		e.preventDefault();
-		var r = $("#remove-account-reviews").is(":checked");
-		$.ajax({
-			type : "POST",
-			data: {reviews: r},
-			url: location.href+"/delete",
-			fail: function(e){
-				console.log("ERROR: "+e);
-			}
-		});
-	} */
-	
 	$(function(){
 		$("#re-verify").on("click", reverify);
 		$("#follow-button").on("click", follow);
 		$("#unfollow-button").on("click", unfollow);
-		/* $("#delete-account").on("click", deleteAccount); */
 		$("#acc-settings").on("click", function(){
 			location.href += "/settings";
 		});
