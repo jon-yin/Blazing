@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.User;
@@ -137,6 +138,16 @@ public class MediaController<T> {
 			return false;
 		}
 		return mediaService.reportReview(reportData, currentUser.getId());
+	}
+	
+	@Transactional
+	public boolean editReview(User user, EditedReviewInfo newBody)
+	{
+		if (user == null)
+		{
+			return false;
+		}
+		return mediaService.editReview(newBody,user);
 	}
 	
 	

@@ -128,5 +128,10 @@ public class UserService {
 		return appRepo.findAll();
 	}
 	
+	public void updateSessionUser(User newUser)
+	{
+		sesService.updateCurrentUser(newUser);
+	}
+	
 
 }

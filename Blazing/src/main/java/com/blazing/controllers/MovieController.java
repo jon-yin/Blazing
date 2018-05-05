@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.Movie;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
@@ -78,6 +79,13 @@ public class MovieController extends MediaController<Movie>{
 	public boolean addReview(@PathVariable("movie") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser)
 	{
 		return mediaService.addReview(currentUser, id, review);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path="/editreview")
+	public boolean editReview(@RequestBody EditedReviewInfo newInfo, @SessionAttribute("currentUser") User currentUser)
+	{
+		return mediaService.editReview(newInfo,currentUser);
 	}
 	
 	@ResponseBody

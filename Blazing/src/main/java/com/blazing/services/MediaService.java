@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.blazing.objects.Celebrity;
+import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.Media;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
@@ -237,6 +238,42 @@ public class MediaService {
 			return status;
 		}
 		return false;
+	}
+	
+	public void updateMovieScore(Review newRating)
+	{
+		
+	}
+	
+	@Transactional
+	public boolean editReview(EditedReviewInfo newReview, User user)
+	{
+		long reviewId = newReview.getReviewId();
+		Optional<Review> review = revRepo.findById(reviewId);
+		if (review.isPresent())
+		{
+			Review foundReview = review.get();
+			if (foundReview.getUser().equals(user))
+			{
+				foundReview.setBody(newReview.getNewBody());
+				foundReview.setDatetime(LocalDateTime.now());
+				foundReview.setScore(newReview.getRating());
+				Review savedRev = revRepo.save(foundReview);
+				User updatedUser = service.saveUserState(user);
+				service.updateSessionUser(updatedUser);
+				updateMovieScore(savedRev);
+				return true;
+				
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }
