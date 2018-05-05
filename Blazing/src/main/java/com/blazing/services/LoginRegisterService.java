@@ -120,7 +120,6 @@ public class LoginRegisterService {
 			Hibernate.initialize(verified.getWishlist());
 			Hibernate.initialize(verified.getNotInterested());
 			Hibernate.initialize(verified.getFollowing());
-			Hibernate.initialize(verified.getFavCritics());
 			Hibernate.initialize(verified.getReviews());
 			verified = repository.save(verified);
 			session.setAttribute("currentUser", verified);
@@ -142,7 +141,6 @@ public class LoginRegisterService {
 			Hibernate.initialize(user.getWishlist());
 			Hibernate.initialize(user.getNotInterested());
 			Hibernate.initialize(user.getFollowing());
-			Hibernate.initialize(user.getFavCritics());
 			user = repository.saveAndFlush(user);
 			if (encoder.matches(password, user.getPassword()))
 			{

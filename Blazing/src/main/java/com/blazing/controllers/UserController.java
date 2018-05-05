@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.blazing.objects.CriticApplication;
 import com.blazing.objects.MovieInfo;
+import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
@@ -86,6 +88,21 @@ public class UserController {
 			userService.removeUser(foundUser);
 		}
 		return "redirect:/";
+	}
+	
+	@RequestMapping(path="/approvecritic", method = RequestMethod.POST)
+	@ResponseBody
+	public void approveCritic(@RequestBody CriticApplication application)
+	{
+		userService.upgradeUser(application.getUserId(), Roles.CRITIC);
+		userService.removeApplication(application);
+	}
+	
+	@RequestMapping(path="/denycritic", method = RequestMethod.POST)
+	@ResponseBody
+	public void denyCritic(@RequestBody CriticApplication application)
+	{
+		userService.removeApplication(application);
 	}
 	
 	

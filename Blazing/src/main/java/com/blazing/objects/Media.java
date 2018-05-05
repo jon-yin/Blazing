@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -40,6 +41,8 @@ public abstract class Media implements Comparable<Media>{
 	private Set<CriticReview> criticReviews;
 	private Set<Review> reviews;
 	private Genre genre;
+	private Set<User> u_Wishlist;
+	private Set<User> u_NotInterested;
 	
 	public Media()
 	{
@@ -51,7 +54,8 @@ public abstract class Media implements Comparable<Media>{
 		cast = new HashSet<>();
 		reviews = new HashSet<>();
 		criticReviews = new HashSet<>();
-		
+		u_Wishlist = new HashSet<>();
+		u_NotInterested = new HashSet<>();
 	}
 	
 	@Id
@@ -162,6 +166,25 @@ public abstract class Media implements Comparable<Media>{
 		this.genre = genre;
 	}
 	
+	
+	@ManyToMany(mappedBy = "wishlist")
+	public Set<User> getU_Wishlist() {
+		return u_Wishlist;
+	}
+
+	public void setU_Wishlist(Set<User> u_Wishlist) {
+		this.u_Wishlist = u_Wishlist;
+	}
+
+	@ManyToMany(mappedBy = "notInterested")
+	public Set<User> getU_NotInterested() {
+		return u_NotInterested;
+	}
+
+	public void setU_NotInterested(Set<User> u_NotInterested) {
+		this.u_NotInterested = u_NotInterested;
+	}
+
 	public double calculateBlazingScore()
 	{
 		return 0;
@@ -173,9 +196,6 @@ public abstract class Media implements Comparable<Media>{
 	{
 		return true;
 	}
-	
-	
-	
 	
 	@Override
 	public int hashCode() {

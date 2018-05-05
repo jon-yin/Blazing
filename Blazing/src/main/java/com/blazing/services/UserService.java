@@ -8,9 +8,12 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.blazing.objects.CriticApplication;
 import com.blazing.objects.Review;
+import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.objects.VerificationToken;
+import com.blazing.repositories.CriticApplicationRepository;
 import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TokenRepository;
 import com.blazing.repositories.UserRepository;
@@ -26,6 +29,8 @@ public class UserService {
 	private TokenRepository tokenRepo;
 	@Autowired
 	private SessionService sesService;
+	@Autowired
+	private CriticApplicationRepository appRepo;
 
 	@Transactional
 	public User findUser(long id) {
@@ -88,5 +93,34 @@ public class UserService {
 		revRepo.deleteAll(reviews);
 		return true;
 	}
+	
+	@Transactional
+	public void addApplication(CriticApplication ca)
+	{
+		User user = findUser(ca.getUserId());
+		if (user.getRole() == Roles.USER)
+		{
+			appRepo.save(ca);
+	
+		}
+	}
+	
+	@Transactional
+	public void upgradeUser(long userId, Roles newRole)
+	{
+		User user = findUser(userId);
+		if (user != null)
+		{
+			user.setRole(newRole);
+			saveUserState(user);
+		}
+	}
+	
+	@Transactional
+	public void removeApplication(CriticApplication application)
+	{
+		appRepo.delete(application);
+	}
+	
 
 }

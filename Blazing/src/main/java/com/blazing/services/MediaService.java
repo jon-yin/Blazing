@@ -76,6 +76,9 @@ public class MediaService {
 					return false;
 				} else {
 					user.addWishList(media.get());
+					Media foundMedia = media.get();
+					foundMedia.getU_Wishlist().add(user);
+					mediaRepo.save(foundMedia);
 					return true;
 				}
 			} else {
@@ -93,6 +96,9 @@ public class MediaService {
 			if (media.isPresent()) {
 				if (user.getWishlist().contains(media.get())) {
 					user.getWishlist().remove(media.get());
+					Media foundMedia = media.get();
+					foundMedia.getU_Wishlist().remove(user);
+					mediaRepo.save(foundMedia);
 					return true;
 				} else {
 					return false;
@@ -115,6 +121,9 @@ public class MediaService {
 					return false;
 				} else {
 					user.addNotInterested(media.get());
+					Media foundMedia = media.get();
+					foundMedia.getU_NotInterested().add(user);
+					mediaRepo.save(foundMedia);
 					return true;
 				}
 			} else {
@@ -133,6 +142,9 @@ public class MediaService {
 		if (media.isPresent()) {
 			if (user.getNotInterested().contains(media.get())) {
 				user.getNotInterested().remove(media.get());
+				Media foundMedia = media.get();
+				foundMedia.getU_NotInterested().remove(user);
+				mediaRepo.save(foundMedia);
 				return true;
 			} else {
 				return false;

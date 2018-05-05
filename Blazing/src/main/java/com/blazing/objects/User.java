@@ -28,12 +28,12 @@ public class User {
 	private String lastName;
 	private String emailAddress;
 	private String password;
+	private String publications;
 	private long id;
 	private LocalDate joinDate;
 	private List<Media> wishlist;
 	private List<Media> notInterested;
 	private List<Review> reviews;
-	private List<Critic> favCritics;
 	private ImageEntity profilePic;
 	private Set<User> followers;
 	private Set<User> following;
@@ -45,7 +45,6 @@ public class User {
 		wishlist = new ArrayList<>();
 		notInterested = new ArrayList<>();
 		reviews = new ArrayList<>();
-		favCritics = new ArrayList<>();
 		followers = new HashSet<>();
 		following = new HashSet<>();
 		enabled = false;
@@ -54,7 +53,7 @@ public class User {
 
 	
 	@OneToMany
-	@JoinColumn(name="FOLLOWING_ID", referencedColumnName="ID")
+	@JoinColumn(name="FOLLOWER_ID")
 	public Set<User> getFollowers() {
 		return followers;
 	}
@@ -63,7 +62,26 @@ public class User {
 		this.followers = followers;
 	}
 	
+	@OneToMany
+	@JoinColumn(name="FOLLOWING_IDS")
+	public Set<User> getFollowing() {
+		return following;
+	}
+
+	public void setFollowing(Set<User> following) {
+		this.following = following;
+	}
 	
+	public String getPublications() {
+		return publications;
+	}
+
+
+	public void setPublications(String publications) {
+		this.publications = publications;
+	}
+
+
 	@Enumerated(EnumType.STRING)
 	public Roles getRole() {
 		return role;
@@ -72,17 +90,6 @@ public class User {
 
 	public void setRole(Roles role) {
 		this.role = role;
-	}
-
-
-	@OneToMany(fetch=FetchType.EAGER)
-	@JoinColumn(name="FOLLOWING_IDS")
-	public Set<User> getFollowing() {
-		return following;
-	}
-
-	public void setFollowing(Set<User> following) {
-		this.following = following;
 	}
 
 	@Id
@@ -142,14 +149,6 @@ public class User {
 		this.reviews = reviews;
 	}
 	
-	@OneToMany
-	public List<Critic> getFavCritics() {
-		return favCritics;
-	}
-	public void setFavCritics(List<Critic> favCritics) {
-		this.favCritics = favCritics;
-	}
-	
 	@OneToOne
 	@JoinColumn(name="IMAGE_ID")
 	public ImageEntity getProfilePic() {
@@ -167,7 +166,7 @@ public class User {
 		this.password = password;
 	}
 	
-	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@ManyToMany
 	@JoinTable(name="USER_MEDIA_NOT_INTERESTED", joinColumns=@JoinColumn(name="USER_ID",referencedColumnName="ID"), inverseJoinColumns=@JoinColumn(name="MEDIA_ID",referencedColumnName="ID"))
 	public List<Media> getNotInterested() {
 		return notInterested;
@@ -185,16 +184,6 @@ public class User {
 	public void removeFromReviews(Review review)
 	{
 		reviews.remove(review);
-	}
-	
-	public void favCritic(Critic critic)
-	{
-		favCritics.add(critic);
-	}
-	
-	public void unfavCritic(Critic critic)
-	{
-		favCritics.remove(critic);
 	}
 	
 	public void addWishList(Media media)
