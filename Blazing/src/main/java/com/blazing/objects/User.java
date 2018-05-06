@@ -36,6 +36,7 @@ public class User {
 	private ImageEntity profilePic;
 	private Set<User> followers;
 	private Set<User> following;
+	private Set<User> blockList;
 	private boolean enabled;
 	private Roles role;
 	private CriticApplication application;
@@ -47,6 +48,7 @@ public class User {
 		reviews = new ArrayList<>();
 		followers = new HashSet<>();
 		following = new HashSet<>();
+		blockList = new HashSet<>();
 		enabled = false;
 		role = Roles.USER;
 	}
@@ -315,6 +317,17 @@ public class User {
 
 	public void setApplication(CriticApplication application) {
 		this.application = application;
+	}
+
+
+	@OneToMany
+	public Set<User> getBlockList() {
+		return blockList;
+	}
+
+
+	public void setBlockList(Set<User> blockList) {
+		this.blockList = blockList;
 	}
 
 	

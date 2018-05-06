@@ -1,6 +1,7 @@
 package com.blazing.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -68,6 +69,25 @@ public class ReviewService {
 	public List<Review> retrieveReportedReviews()
 	{
 		return reviewRepo.findByFlagCountGreaterThanOrderByFlagCountDesc(0);
+	}
+	
+	@Transactional
+	public boolean dismissFlag(long reviewID)
+	{
+		Optional<Review> review = reviewRepo.findById(reviewID);
+		if (review.isPresent())
+		{
+			Review foundReview = review.get();
+			foundReview.setFlagCount(0);
+			Map<Long,String> flags = foundReview.getUserReports();
+			flags.clear();
+			reviewRepo.save(foundReview);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 }

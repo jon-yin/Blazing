@@ -102,5 +102,12 @@ public class UserController {
 		}
 		return "redirect:/";
 	}
-
+	
+	@ResponseBody
+	@RequestMapping(path = "/block", method = RequestMethod.POST)
+	public boolean blockUser(@PathVariable("userid") long id, @SessionAttribute("currentUser") User user)
+	{
+		User target = userService.findUser(id);
+		return userService.blockUser(target, user);
+	}
 }
