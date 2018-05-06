@@ -299,6 +299,7 @@
 											<label class="btn btn-sm btn-dark" id="not-interested" style="width: 100px;" th:unless="${#sets.contains(session.currentUser.getNotInterested(),movie)}"><span class="button-text"><i class="fa fa-minus"></i> Not Interested</span></label>
 											<label class="btn btn-sm btn-danger active" id="not-interested" style="width: 100px;" th:if="${#sets.contains(session.currentUser.getNotInterested(),movie)}"><span class="button-text"><i class="fa fa-times"></i> Pass...</span></label>
 										</div>
+										<div class="ml-auto"><button id="del-rating" type="submit" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></div>
 									</div>
 									<div>
 										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc" th:text="${currentReview.body}"></textarea>
@@ -330,6 +331,22 @@
 										}
 									});
 								}
+							
+								function deleteReview(id){
+									$.ajax({
+										type : "POST",
+										contentType : "application/json",
+										url : location.href+"/removereview",
+										data : ""+id,
+										success : function(data) {
+											console.log(data);
+										},
+										error : function(e) {
+											console.log("ERROR: ", e);
+										}
+									});
+								}
+							
 								$(function(){
 									$("#edit-rating").on("click",function(e){
 										e.preventDefault();
@@ -341,6 +358,10 @@
 										}else{
 											editReview(score,$("#rvw-desc").val(), rvwID);
 										}
+									});
+									$("#del-rating").on("click", function(e){
+										e.preventDefault();
+										deleteReview(rvwID);
 									});
 								});
 							/*]]>*/
