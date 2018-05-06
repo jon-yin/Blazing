@@ -2,13 +2,13 @@ const fs = require('fs');
 const { MediaScraper } = require('./MediaScraper.js');
 const criticReviewOptions = require('./input/critic-options');
 
-const inputfile = './output/parsedMovies/pmovies00.json';
+// const inputfile = './output/parsedMovies/pmovies00.json';
 
 // parses critic reviews for a movie url
 
 try {
-  // var json = JSON.parse(fs.readFileSync(process.argv[2]));
-  var json = JSON.parse(fs.readFileSync(inputfile));
+  var json = JSON.parse(fs.readFileSync(process.argv[2]));
+  // var json = JSON.parse(fs.readFileSync(inputfile));
 
   // filter out season urls. we want show urls
   let criticReview = [];
@@ -20,14 +20,6 @@ try {
 
   ms.bigSearch()
     .then(result => {
-
-      // let resultCriticsReviews = [];
-
-      // result.forEach(criticReviews => {
-      //   resultCriticsReviews.push(criticReviews.url);
-      // });
-
-      // result = resultCriticsReviews;
 
       let checkProperties = function (obj) {
         for (var key in obj) {
@@ -55,8 +47,8 @@ try {
       console.log(`Parsed ${result.length} urls, after clean up, got ${cleanedResults.length} results`)
 
       let f = JSON.stringify(cleanedResults, null, 4);
-      // fs.writeFileSync(process.argv[3], f);
-      fs.writeFileSync('jkjkjkjk.json', f);
+      fs.writeFileSync(process.argv[3], f);
+      // fs.writeFileSync('jkjkjkjk.json', f);
     });
 
 }
