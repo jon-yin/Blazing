@@ -7,6 +7,18 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "yearandabove",
+      "program": "${workspaceFolder}/1950andAbove.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "omdbparser",
+      "program": "${workspaceFolder}/OMDBParserImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "criticscraper",
       "program": "${workspaceFolder}/CriticReviewScraperImpl.js"
     },
@@ -14,12 +26,19 @@
       "type": "node",
       "request": "launch",
       "name": "celebscraper",
-      "program": "${workspaceFolder}/CelebrityScraper.js"
-    },{
+      "program": "${workspaceFolder}/CelebrityScraperImpl.js"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "tvshowscraper",
       "program": "${workspaceFolder}/SeasonScraperImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "moviescraper",
+      "program": "${workspaceFolder}/MovieScraperImpl.js"
     },
     {
       "type": "node",

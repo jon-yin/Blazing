@@ -1,12 +1,13 @@
 const fs = require('fs');
 const { MediaScraper } = require('./MediaScraper.js');
-const movieOptions = require('./input/movie-options');
+const movieOptions = require('./options/movie-options');
 
-// const inputfile = './searchResults/done/movies00.json';
+const inputfile = './searchResults/done/movies00.json';
 
 try {
-  var json = JSON.parse(fs.readFileSync(process.argv[2]));
-  var ms = new MediaScraper(json.movies, movieOptions);
+  // var json = JSON.parse(fs.readFileSync(process.argv[2]));
+  var json = JSON.parse(fs.readFileSync(inputfile));
+  var ms = new MediaScraper(json.movies.slice(0,40), movieOptions);
 
   // iterate over all entries, scrape info and return
   ms.bigSearch()
@@ -41,7 +42,8 @@ try {
       console.log(`Parsed ${result.length} urls, after clean up, got ${cleanedResults.length} results`)
 
       let f = JSON.stringify(cleanedResults, null, 4);
-      fs.writeFileSync(process.argv[3], f);
+      // fs.writeFileSync(process.argv[3], f);
+      fs.writeFileSync('pmoviesgood.json', f);
     });
 }
 catch (e) {
