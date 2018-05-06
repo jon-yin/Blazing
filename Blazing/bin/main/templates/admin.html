@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>BLAZING - Team Elm</title>
+	<!-- jquery -->
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+	<!-- slick.js -->
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
+	<!-- popper.js -->
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+	<!-- source sans pro -->
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+
+<body class="bg-dark">
+	<header th:insert="/fragments/header.html :: header"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-item nav-link active" id="show-reports" data-toggle="tab" href="#reports" role="tab" aria-controls="reports" aria-selected="true">Reports</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-item nav-link" id="show-apps" data-toggle="tab" href="#apps" role="tab" aria-controls="apps" aria-selected="false">Applications</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="show-main-content">
+					<div class="tab-pane show fade active" id="reports" role="tabpanel" aria-labelledby="show-reports">
+						<section>
+							<h5 class="section-header">REPORTS</h5>
+							<div class="w-100 p-1 my-1 d-flex">
+								<div class="pr-2" style="width: 100px;">Reported User</div>
+								<div class="pr-2" style="width: 150px;">Media</div>
+								<div class="pr-2" style="width: 200px;">Reported Review</div>
+								<div class="pr-2">Reason</div>
+							</div>
+							<div class="w-100 p-1 my-1 border d-flex">
+								<div class="pr-2" style="width: 100px;">User</div>
+								<div class="pr-2" style="width: 150px;">Movie</div>
+								<div class="pr-2" style="width: 200px;">Review</div>
+								<div class="pr-2">Reason</div>
+								<div class="ml-auto d-flex">
+									<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
+									<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="tab-pane show fade active" id="apps" role="tabpanel" aria-labelledby="show-apps">
+						<section>
+							<h5 class="section-header">PENDING APPLICATIONS</h5>
+							<div class="w-100 p-1 my-1 d-flex">
+								<div class="pr-2" style="width: 100px;">User</div>
+								<div class="pr-2">Application</div>
+							</div>
+							<div class="w-100 p-1 my-1 d-flex">
+								<div class="pr-2" style="width: 100px;">User</div>
+								<div class="pr-2">Application</div>
+								<div class="ml-auto d-flex">
+									<div class="pr-2"><a href="#"><i class="fa fa-check"></i></a></div>
+									<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
+</body>
+
+<script type="application/javascript" th:src="@{/js/properties.js}"></script>
+<script type="application/javascript" th:src="@{/js/main.js}"></script>
+
+</html>

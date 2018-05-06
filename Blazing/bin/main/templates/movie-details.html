@@ -241,18 +241,13 @@
 										</div>
 									</div>
 									<div>
-										<textarea class="form-control"
-											placeholder="Add A Review (Optional)" style="resize: none;"
-											id="rvw-desc"></textarea>
+										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc"></textarea>
 									</div>
 								</div>
 							</div>
 							<div class="text-right">
-								<span id="submit-fail"
-									style="color: red; display: none; margin-right: 10px;">Please
-									Enter A Rating</span>
-								<button id="submit-rating" type="submit"
-									class="btn btn-outline-dark">Submit</button>
+								<span class="text-danger mr-2" id="submit-fail" style="display: none;">Please Enter A Rating</span>
+								<button id="submit-rating" type="submit" class="btn btn-outline-dark">Submit</button>
 							</div>
 						</div>
 					</section>
@@ -511,14 +506,16 @@
 		$("#not-interested").attr("disabled",true);
 		$("#want-to-see").css("background-color","#aaaaaa");
 		$("#not-interested").css("background-color","#aaaaaa");
+		$("#want-to-see").css("border-color","#aaaaaa");
+		$("#not-interested").css("border-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/addwishlist",
 			success : function(data) {
-				$("#want-to-see").css("background-color","#343a40");
-				$("#not-interested").css("background-color","#343a40");
 				$("#want-to-see").css('background-color', '#28a745');
 				$("#not-interested").css('background-color', niColor);
+				$("#want-to-see").css('border-color', '#28a745');
+				$("#not-interested").css('border-color', niColor);
 				$("#want-to-see").addClass("active");
 				$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-check"></i> Will See!</span>');
 				console.log(data);
@@ -539,14 +536,16 @@
 		$("#not-interested").attr("disabled",true);
 		$("#want-to-see").css("background-color","#aaaaaa");
 		$("#not-interested").css("background-color","#aaaaaa");
+		$("#want-to-see").css("border-color","#aaaaaa");
+		$("#not-interested").css("border-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/removewishlist",
 			success : function(data) {
-				$("#want-to-see").css("background-color","#343a40");
-				$("#not-interested").css("background-color","#343a40");
  				$("#want-to-see").css('background-color', '#343a40');
  				$("#not-interested").css('background-color', niColor);
+ 				$("#want-to-see").css('border-color', '#343a40');
+ 				$("#not-interested").css('border-color', niColor);
 				$("#want-to-see").removeClass("active");
 				$("#want-to-see .button-text").replaceWith('<span class="button-text"><i class="fa fa-plus"></i> Want To See</span>');
 				console.log(data);
@@ -567,14 +566,16 @@
 		$("#not-interested").attr("disabled",true);
 		$("#want-to-see").css("background-color","#aaaaaa");
 		$("#not-interested").css("background-color","#aaaaaa");
+		$("#want-to-see").css("border-color","#aaaaaa");
+		$("#not-interested").css("border-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/addnotinterested",
 			success : function(data) {
-				$("#want-to-see").css("background-color","#343a40");
-				$("#not-interested").css("background-color","#343a40");
  				$("#not-interested").css('background-color', '#dc3545');
  				$("#want-to-see").css('background-color', wtsColor);
+ 				$("#not-interested").css('border-color', '#dc3545');
+ 				$("#want-to-see").css('border-color', wtsColor);
 				$("#not-interested").addClass("active");
 				$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-times"></i> Pass...</span>');
 				console.log(data);
@@ -595,14 +596,16 @@
 		$("#not-interested").attr("disabled",true);
 		$("#want-to-see").css("background-color","#aaaaaa");
 		$("#not-interested").css("background-color","#aaaaaa");
+		$("#want-to-see").css("border-color","#aaaaaa");
+		$("#not-interested").css("border-color","#aaaaaa");
 		$.ajax({
 			type : "POST",
 			url : location.href + "/removenotinterested",
 			success : function(data) {
-				$("#want-to-see").css("background-color","#343a40");
-				$("#not-interested").css("background-color","#343a40");
  				$("#not-interested").css('background-color', '#343a40');
  				$("#want-to-see").css('background-color', wtsColor);
+ 				$("#not-interested").css('border-color', '#343a40');
+ 				$("#want-to-see").css('border-color', wtsColor);
 				$("#not-interested").removeClass("active");
 				$("#not-interested .button-text").replaceWith('<span class="button-text"><i class="fa fa-minus"></i> Not Interested</span>');
 				console.log(data);
@@ -619,26 +622,26 @@
 
 	function toggleWTS(e) {
 		e.preventDefault();
-/* 		if ($("#not-interested").hasClass("active")) {
-			removeNI();
-		} */
 		if ($("#want-to-see").hasClass("active")) {
 			removeWTS();
 		} else {
 			addWTS();
-		}
+		}/* 
+ 		if ($("#not-interested").hasClass("active")) {
+			removeNI();
+		} */
 	}
 
 	function toggleNI(e) {
 		e.preventDefault();
-/* 		if ($("#want-to-see").hasClass("active")) {
-			removeWTS();
-		} */
 		if ($("#not-interested").hasClass("active")) {
 			removeNI();
 		} else {
 			addNI();
-		}
+		}/* 
+ 		if ($("#want-to-see").hasClass("active")) {
+			removeWTS();
+		} */
 	}
 
 	$(function() {

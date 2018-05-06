@@ -75,14 +75,14 @@
 					<div class="form-group">
 						<label for="email-login">Email address</label>
 						<input type="email" class="form-control" id="email-login" placeholder="Enter email">
-						<small class="text-danger" id="inval-user-alert-login" style="display: none;">Invalid email</small>
-						<small class="text-danger" id="used-email-alert-login" style="display: none;">Email is already taken!</small>
+						<small class="text-danger" id="no-em-login" style="display: none;">Please enter your email</small>
+						<small class="text-danger" id="inv-em-login" style="display: none;">Invalid email</small>
 					</div>
 					<div class="form-group">
 						<label for="password-login">Password</label>
 						<input type="password" class="form-control" id="password-login" placeholder="Password">
-						<small class="text-danger" id="no-pass-alert-login" style="display: none;">Please enter a password</small>
-						<small class="text-danger" id="inval-pass-alert-login" style="display: none;">Invalid password</small>
+ 						<small class="text-danger" id="no-pw-login" style="display: none;">Please enter your password</small>
+						<small class="text-danger" id="inv-pw-login" style="display: none;">Invalid password</small>
 					</div>
 					<button class="btn btn-secondary" id="login-button">Login</button>
 				</form>
@@ -115,25 +115,26 @@
 						<div class="form-group w-50 mr-1">
 							<label for="firstname-signup">First Name</label>
 							<input class="form-control" id="firstname-signup" placeholder="Enter first name">
-							<small class="text-danger" id="no-fn-alert-signup" style="display: none;">Please enter your first name</small>
+							<small class="text-danger" id="no-fn-signup" style="display: none;">Please enter your first name</small>
 						</div>
 						<div class="form-group w-50 ml-1">
 							<label for="lastname-signup">Last Name</label>
 							<input class="form-control" id="lastname-signup" placeholder="Enter last name">
-							<small class="text-danger" id="no-ln-alert-signup" style="display: none;">Please enter your last name</small>
+							<small class="text-danger" id="no-ln-signup" style="display: none;">Please enter your last name</small>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="email-signup">Email address</label>
 						<input type="email" class="form-control" id="email-signup" placeholder="Enter email">
-						<small class="text-danger" id="no-email-alert-signup" style="display: none;">Please enter an email</small>
-						<small class="text-danger" id="inval-email-alert-signup" style="display: none;">Invalid email</small>
-						<small class="text-danger" id="used-email-alert-signup" style="display: none;">Email is already taken!</small>
+						<small class="text-danger" id="no-em-signup" style="display: none;">Please enter your email</small>
+						<small class="text-danger" id="inv-em-signup" style="display: none;">Email is invalid</small>
+						<small class="text-danger" id="used-em-signup" style="display: none;">Email is already taken</small>
 					</div>
 					<div class="form-group">
 						<label for="password-signup">Password</label>
 						<input type="password" class="form-control" id="password-signup" placeholder="Password">
-						<small class="text-danger" id="no-pass-alert-signup" style="display: none;">Please enter a password</small>
+						<small class="text-danger" id="no-pw-signup" style="display: none;">Please enter your password</small>
+						<small class="text-danger" id="inv-pw-signup" style="display: none;">Password is invalid</small>
 					</div>
 					<button class="btn btn-secondary" id="signup-button">Sign Up</button>
 				</form>

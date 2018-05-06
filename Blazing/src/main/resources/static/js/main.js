@@ -5,18 +5,24 @@ function login(e) {
 	// conditions
 	var email = $("#email-login").val();
 	var password = $("#password-login").val();
-	if (email.match(emailRegex) == null){
-		console.log("fail regex");
-		return;
+	var fail = false;
+	$("#inv-em-login").hide();
+	$("#no-em-login").hide();
+	$("#no-pw-login").hide();
+	$("#inv-pw-login").hide();
+	if (email.match(emailRegex) == null && email.length != 0){
+		$("#inv-em-login").show();
+		fail = true;
 	}
 	if (email.length == 0){
-		console.log("fail no email");
-		return;
+		$("#no-em-login").show();
+		fail = true;
 	}
 	if (password.length == 0){
-		console.log("fail no password");
-		return;
+		$("#no-pw-login").show();
+		fail = true;
 	}
+	if (fail) return;
 	$("#login-button").attr("disabled", true);
 	$("#login-button").css("background-color","#aaaaaa");
 	var loginCredentials = {};
@@ -34,6 +40,8 @@ function login(e) {
 				$("#password-login").val("");
 				location.reload();
 			}else{
+				$("#inv-em-login").show();
+				$("#inv-pw-login").show();
 			}
 		},
 		error : function(e) {
@@ -49,29 +57,39 @@ function login(e) {
 //sign up
 function signup(e) {
 	e.preventDefault();
-	// temp - change to display loading
 	var firstName = $("#firstname-signup").val();
 	var lastName = $("#lastname-signup").val();
 	var email = $("#email-signup").val();
 	var password = $("#password-signup").val();
+	var fail = false;
+	$("#no-fn-signup").hide();
+	$("#no-ln-signup").hide();
+	$("#inv-em-signup").hide();
+	$("#used-em-signup").hide();
+	$("#no-em-signup").hide();
+	$("#no-pw-signup").hide();
+	$("#inv-pw-signup").hide();
 	if (firstName.length == 0) {
-//		$("#no-fn-alert-signup").show().delay(3000).fadeOut(10);
-		return;
+		$("#no-fn-signup").show();
+		fail = true;
 	}
 	if (lastName.length == 0) {
-//		$("#no-ln-alert-signup").show().delay(3000).fadeOut(10);
-		return;
+		$("#no-ln-signup").show();
+		fail = true;
 	}
-	if (email.match(emailRegex) == null){
-		console.log("fail regex");
-		return;
+	if (email.match(emailRegex) == null && email.length != 0){
+		$("#inv-em-signup").show();
+		fail = true;
 	}
-	if (email.length == 0) {
-//		$("#no-email-alert-signup").show().delay(3000).fadeOut(10);
-		return;
+	if (email.length == 0){
+		$("#no-em-signup").show();
+		fail = true;
 	}
 	if (password.length == 0) {
-//		$("#no-pass-alert-signup").show().delay(3000).fadeOut(10);
+		$("#no-pw-signup").show();
+		fail = true;
+	}
+	if (fail) {
 		return;
 	}
 	$("#signup-button").attr("disabled", true);
@@ -96,6 +114,7 @@ function signup(e) {
 				$("#signup").modal("hide");
 				$("#sent-vemail").modal("show");
 			}else{
+				$("#used-em-signup").show();
 			}
 		},
 		error : function(e) {

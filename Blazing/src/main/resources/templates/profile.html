@@ -20,7 +20,7 @@
 	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
 	<header th:insert="/fragments/header.html :: header"></header>
@@ -60,7 +60,7 @@
 			<div class="col-12 col-md-auto main-content">
 				<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-item nav-link" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="true">Media Interests</a>
+						<a class="nav-item nav-link active" id="show-wts-ni" data-toggle="tab" href="#wts-ni" role="tab" aria-controls="wts-ni" aria-selected="true">Media Interests</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-ratings" data-toggle="tab" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">Ratings History</a>
@@ -71,9 +71,8 @@
 				</ul>
 				<div class="tab-content" id="show-main-content">
 					<div class="tab-pane show fade active" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
-						<section>
+						<section th:if="${foundUser.getWishlist().size()} != 0">
 							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
-								<!-- <div th:text="${foundUser.getWishlist().size()}">-1</div> -->
 							<a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
 								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
@@ -83,9 +82,12 @@
 								</div>
 							</a>
 						</section>
-						<section>
+						<section th:if="${foundUser.getWishlist().size()} == 0">
+							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
+							<h4 class="h-100 text-center">No Want-To-See Media!</h4>
+						</section>
+						<section th:if="${foundUser.getNotInterested().size()} != 0">
 							<h5 class="section-header">NOT-INTERESTED MOVIES &amp; TV</h5>
-								<!-- <div th:text="${foundUser.getNotInterested().size()}">-1</div> -->
 							<a class="details-link btn text-center" th:each="media : ${foundUser.getNotInterested()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
 								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
@@ -94,6 +96,10 @@
 									<span th:text="${media.blazingScore}">70</span>%
 								</div>
 							</a>
+						</section>
+						<section th:if="${foundUser.getNotInterested().size()} == 0">
+							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
+							<h4 class="h-100 text-center">No Not-Interested Media!</h4>
 						</section>
 					</div>
 					<div class="tab-pane show fade" id="ratings" role="tabpanel" aria-labelledby="show-ratings">
@@ -129,25 +135,6 @@
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-account">Delete</button>
 			</div>
 		</nav>
-		<section>
-			<h5 class="section-header">REPORTS</h5>
-			<div class="w-100 p-1 my-1 d-flex">
-				<div class="pr-2" style="width: 100px;">Reported User</div>
-				<div class="pr-2" style="width: 150px;">Media</div>
-				<div class="pr-2" style="width: 200px;">Reported Review</div>
-				<div class="pr-2">Reason</div>
-			</div>
-			<div class="w-100 p-1 my-1 border d-flex">
-				<div class="pr-2" style="width: 100px;">User</div>
-				<div class="pr-2" style="width: 150px;">Movie</div>
-				<div class="pr-2" style="width: 200px;">Review</div>
-				<div class="pr-2">Reason</div>
-				<div class="ml-auto d-flex">
-					<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
-					<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
-				</div>
-			</div>
-		</section>
 		
 		<!-- MODALS -->
 		<!-- EDIT ACCOUNT? -->
@@ -288,9 +275,6 @@
 		$("#re-verify").attr("disabled",true);
 		$("#re-verify").text("Sending...");
 		var userID = /*[[${session.currentUser.id}]]*/ 0;
-		/* var user = {};
-		user["id"] = userID;
-		var jsonString = JSON.stringify(user); */
 		$.ajax({
 			type: "POST",
 			contentType : "application/json",
