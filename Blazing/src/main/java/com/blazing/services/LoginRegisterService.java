@@ -5,7 +5,6 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
 
-import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
@@ -171,7 +170,7 @@ public class LoginRegisterService {
 		{
 			StringBuilder password = new StringBuilder();
 			int length = 6 + random.nextInt(6);
-			int upperbound = 27;
+			int upperbound = 26;
 			for (int i = 0; i < length; i++)
 			{
 				boolean uppercase = random.nextBoolean();
