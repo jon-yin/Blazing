@@ -3,8 +3,11 @@ package com.blazing.services;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -231,6 +234,12 @@ public class MediaService {
 	public void getAllMovies(Model model) {
 		List<Movie> movies = movieRepo.findAll();
 		model.addAttribute("browseAllMovies", movies);
+		LocalDate thisWeek = LocalDate.now().minusDays(7);
+		List<Movie> recent = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0)).collect(Collectors.toList());
+		System.out.println(recent.size());
+		model.addAttribute("thisWeek", recent);
+		List<Movie> future = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(LocalDate.now()) > 0)).collect(Collectors.toList());
+		model.addAttribute("upcoming", future);
 	}
 
 	public void getTrendingMovies(Model model) {
