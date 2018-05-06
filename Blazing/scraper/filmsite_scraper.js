@@ -19,6 +19,11 @@ var endYear = process.argv[3] || year;
 var outfile = process.argv[4];
 var canWrite = true;
 
+if (process.argv.length < 2){
+    // print usage
+    process.exit();
+}
+
 if (endYear < year) {
     console.error('End Year %d cannot be before start Year %d', year, endYear);
     process.exit();
