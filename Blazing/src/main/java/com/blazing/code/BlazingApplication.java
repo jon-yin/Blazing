@@ -17,6 +17,7 @@ import com.blazing.objects.User;
 import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.TestRepository;
 import com.blazing.services.LoginRegisterService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootApplication(scanBasePackageClasses={BlazingApplication.class, IndexController.class,
 		TestRepository.class,LoginRegisterService.class, User.class})
@@ -43,6 +44,12 @@ public class BlazingApplication {
 	public Random getRandom()
 	{
 		return new Random();
+	}
+	
+	@Bean
+	public ObjectMapper getObjectMapper()
+	{
+		return new ObjectMapper();
 	}
 	
 }

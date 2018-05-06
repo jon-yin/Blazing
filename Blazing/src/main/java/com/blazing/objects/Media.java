@@ -186,16 +186,38 @@ public abstract class Media implements Comparable<Media>{
 		this.u_NotInterested = u_NotInterested;
 	}
 
-	public double calculateBlazingScore()
+	public void calculateBlazingScore(CriticReview review, boolean remove)
 	{
-		return 0;
+		double blazingTotal = blazingScore * criticReviews.size();
+		int reviewScore = review.isBlazing() ? 1 : 0;
+		if (remove)
+		{
+			blazingTotal -= reviewScore;
+			criticReviews.remove(review);
+		}
+		else
+		{
+			blazingTotal += reviewScore;
+			criticReviews.add(review);
+		}
+		blazingScore = blazingTotal / criticReviews.size();
+		
 	}
 	
-
-	@Transient
-	public boolean isBlazing()
+	private void calculateAudienceScore(Review review, boolean remove)
 	{
-		return true;
+		double totalScore = audienceScore * reviews.size();
+		if (remove)
+		{
+			totalScore -= review.getScore();
+			reviews.remove(review);
+		}
+		else
+		{
+			totalScore += review.getScore();
+			reviews.add(review);
+		}
+		audienceScore = totalScore / reviews.size();
 	}
 	
 	@Override
@@ -237,15 +259,26 @@ public abstract class Media implements Comparable<Media>{
 		return title.compareTo(other.getTitle());
 	}
 	
+	public void addCriticReview(CriticReview review)
+	{
+		calculateBlazingScore(review,false);
+	}
+	
+	public void removeCriticReview(CriticReview review)
+	{
+		calculateBlazingScore(review,true);
+	}
+	
 	public void addReview(Review review)
 	{
-		reviews.add(review);
+		calculateAudienceScore(review,false);
+		
 	}
 	
 	public void removeReview(Review review)
 	{
-		reviews.remove(review);
+		calculateAudienceScore(review,true);
 	}
-	
+
 	
 }

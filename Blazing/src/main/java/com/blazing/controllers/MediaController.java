@@ -7,14 +7,17 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.blazing.objects.CriticReview;
 import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
+import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
 import com.blazing.services.ReviewService;
 import com.blazing.services.SessionService;
 import com.blazing.services.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class MediaController<T> {
@@ -30,6 +33,7 @@ public class MediaController<T> {
 
 	@Autowired
 	private SessionService sesService;
+	
 
 	public boolean addToWishList(long id, User user) {
 		if (user == null) {
@@ -101,13 +105,21 @@ public class MediaController<T> {
 	}
 
 	@Transactional
-	public boolean addReview(long id, Review review, User user) {
+	public boolean addReview(long id, CriticReview review, User user) {
 		if (user == null || !user.isEnabled()) {
 			return false;
 		} else {
-			boolean status = mediaService.addReview(user, id, review);
+			boolean status = false;
+			if (user.getRole() == Roles.CRITIC)
+			{
+				status = mediaService.addReview(user, id, review);
+			}
+			else
+			{
+				Review castedReview = (Review) review;
+				status = mediaService.addReview(user, id, castedReview);
+			}
 			if (status) {
-
 				User updated = userService.saveUserState(user);
 				sesService.updateCurrentUser(updated);
 			}

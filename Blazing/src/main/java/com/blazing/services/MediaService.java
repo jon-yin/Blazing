@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.blazing.objects.Celebrity;
+import com.blazing.objects.CriticReview;
 import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.Media;
 import com.blazing.objects.Movie;
@@ -23,6 +24,7 @@ import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.MovieInfo;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
+import com.blazing.objects.Roles;
 import com.blazing.objects.TV;
 import com.blazing.objects.User;
 import com.blazing.repositories.CelebrityRepository;
@@ -164,7 +166,14 @@ public class MediaService {
 		Optional<Media> media = mediaRepo.findById(id);
 		if (media.isPresent() && review.isValid()) {
 			Media curMedia = media.get();
-			curMedia.addReview(review);
+			if (user.getRole() == Roles.CRITIC)
+			{
+				curMedia.addReview(review);
+			}
+			else
+			{
+				curMedia.addCriticReview((CriticReview)review);
+			}
 			user.addToReviews(review);
 			review.setUser(user);
 			review.setSource(curMedia);
@@ -256,15 +265,35 @@ public class MediaService {
 		if (review.isPresent())
 		{
 			Review foundReview = review.get();
-			if (foundReview.getUser().equals(user))
+			User source = foundReview.getUser();
+			Media media = foundReview.getSource();
+			if (source.equals(user))
 			{
+				if (source.getRole() == Roles.CRITIC)
+				{
+					media.removeCriticReview((CriticReview)foundReview);
+				}
+				else
+				{
+					media.removeReview(foundReview);
+				}
 				foundReview.setBody(newReview.getNewBody());
 				foundReview.setDatetime(LocalDateTime.now());
 				foundReview.setScore(newReview.getRating());
+				if (source.getRole() == Roles.CRITIC)
+				{
+					CriticReview cReview = (CriticReview) foundReview;
+					cReview.setBlazing(newReview.isBlazing());
+					media.addCriticReview(cReview);
+				}
+				else
+				{
+					media.addReview(foundReview);
+				}
 				Review savedRev = revRepo.save(foundReview);
+				mediaRepo.save(media);
 				User updated = service.findUser(user.getId());
 				sesService.updateCurrentUser(updated);
-				updateMovieScore(savedRev);
 				return true;
 				
 			}

@@ -110,4 +110,12 @@ public class UserController {
 		User target = userService.findUser(id);
 		return userService.blockUser(target, user);
 	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/unblock", method = RequestMethod.POST)
+	public boolean unblockUser(@PathVariable("userid") long id, @SessionAttribute("currentUser") User user)
+	{
+		User target = userService.findUser(id);
+		return userService.unblockUser(target, user);
+	}
 }

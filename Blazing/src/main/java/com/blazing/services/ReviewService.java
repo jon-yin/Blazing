@@ -9,8 +9,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.blazing.objects.CriticReview;
 import com.blazing.objects.Media;
 import com.blazing.objects.Review;
+import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.repositories.MediaRepository;
 import com.blazing.repositories.ReviewRepository;
@@ -34,10 +36,6 @@ public class ReviewService {
 	
 	@Autowired
 	private SessionService sesService;
-	public boolean addReview(Review review, long mediaID)
-	{
-		return true;
-	}
 	
 	@Transactional
 	public boolean removeReview(long id, boolean isSession)
@@ -49,7 +47,14 @@ public class ReviewService {
 			Media source = review.getSource();
 			User reviewer = review.getUser();
 			reviewer.removeFromReviews(review);
-			source.removeReview(review);
+			if (reviewer.getRole() == Roles.CRITIC)
+			{
+				source.removeCriticReview((CriticReview)review);
+			}
+			else
+			{
+				source.removeReview((CriticReview)review);
+			}
 			mediaRepo.save(source);
 			User updated = userRepo.save(reviewer);
 			reviewRepo.delete(review);

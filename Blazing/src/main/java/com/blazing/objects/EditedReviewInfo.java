@@ -5,6 +5,7 @@ public class EditedReviewInfo {
 	private long reviewId;
 	private String newBody;
 	private int rating;
+	private boolean blazing;
 	
 	public long getReviewId() {
 		return reviewId;
@@ -23,6 +24,12 @@ public class EditedReviewInfo {
 	}
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+	public boolean isBlazing() {
+		return blazing;
+	}
+	public void setBlazing(boolean blazing) {
+		this.blazing = blazing;
 	}
 	
 	

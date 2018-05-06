@@ -9,6 +9,17 @@ public class CriticReview extends Review {
 	private String customScore;
 	private String publication;
 	
+	public CriticReview()
+	{
+		super();
+	}
+	
+	public CriticReview(Review review)
+	{
+		setBody(review.getBody());
+		setScore(review.getScore());
+	}
+	
 	public boolean isBlazing() {
 		return isBlazing;
 	}
