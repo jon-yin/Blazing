@@ -22,5 +22,15 @@ public class EmailService {
 		message.setText(body);
 		sender.send(message);
 	}
+
+	public void sendNewPassword(String emailAddress, String newPass) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(emailAddress);
+		message.setSubject("Your new email is");
+		String body = "Your new password is " + newPass + ". It is recommended that you change it as soon as possible";
+		message.setText(body);
+		sender.send(message);
+		
+	}
 	
 }

@@ -1,5 +1,7 @@
 package com.blazing.code;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,6 +37,12 @@ public class BlazingApplication {
 	public BCryptPasswordEncoder getEncoder()
 	{
 		return new BCryptPasswordEncoder(BCRYPT_STRENGTH);
+	}
+	
+	@Bean
+	public Random getRandom()
+	{
+		return new Random();
 	}
 	
 }

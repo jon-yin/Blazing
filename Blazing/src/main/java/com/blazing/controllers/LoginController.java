@@ -12,7 +12,6 @@ import com.blazing.objects.LoginInfo;
 import com.blazing.services.LoginRegisterService;
 
 @RestController
-@RequestMapping(path="/login")
 
 public class LoginController {
 	
@@ -20,12 +19,18 @@ public class LoginController {
 	private LoginRegisterService service;
 	
 	
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(path ="/login",method=RequestMethod.POST)
 	public boolean login (@RequestBody LoginInfo info, HttpSession session)
 	{
 		boolean statusCode = service.loginUser(info, session);
 		return statusCode;
 	}
 	
+	@RequestMapping(path="/forgotpass", method=RequestMethod.POST)
+	public boolean resetPass(@RequestBody String email)
+	{
+		boolean statusCode = service.resetPass(email);
+		return statusCode;
+	}
 	
 }

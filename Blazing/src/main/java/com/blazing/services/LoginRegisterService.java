@@ -2,6 +2,7 @@ package com.blazing.services;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 import javax.persistence.EntityManager;
@@ -24,6 +25,9 @@ import com.blazing.repositories.UserRepository;
 @Service
 public class LoginRegisterService {
 
+	@Autowired
+	private Random random;
+	
 	@Autowired
 	private UserRepository repository;
 	
@@ -153,6 +157,40 @@ public class LoginRegisterService {
 			}
 		}
 		return false;
+	}
+	
+	@Transactional
+	public boolean resetPass(String email)
+	{
+		User user = repository.findUserByEmailAddress(email);
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			StringBuilder password = new StringBuilder();
+			int length = 6 + random.nextInt(6);
+			int upperbound = 27;
+			for (int i = 0; i < length; i++)
+			{
+				boolean uppercase = random.nextBoolean();
+				int nextChar = random.nextInt(upperbound);
+				if (uppercase)
+				{
+					password.append((char)(nextChar+'A'));
+				}
+				else
+				{
+					password.append((char)(nextChar+'a'));
+				}
+			}
+			String encoded = encoder.encode(password);
+			user.setPassword(encoded);
+			repository.save(user);
+			emailService.sendNewPassword(user.getEmailAddress(), password.toString());
+			return true;
+		}
 	}
 
 }
