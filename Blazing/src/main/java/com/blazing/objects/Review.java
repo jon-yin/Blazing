@@ -2,9 +2,10 @@ package com.blazing.objects;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -150,6 +151,14 @@ public class Review {
 			flagCount++;
 			return true;
 		}
+	}
+	
+	@Transient
+	public Set<String> getReasons()
+	{
+		HashSet<String> set = new HashSet<>();
+		set.addAll(userReports.values());
+		return set;
 	}
 	
 	

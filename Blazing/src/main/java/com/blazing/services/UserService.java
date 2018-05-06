@@ -100,11 +100,11 @@ public class UserService {
 	@Transactional
 	public void addApplication(CriticApplication ca)
 	{
-		User user = findUser(ca.getUserId());
+		User user = findUser(ca.getUser().getId());
 		if (user.getRole() == Roles.USER)
 		{
+			ca.setUser(user);
 			appRepo.save(ca);
-	
 		}
 	}
 	

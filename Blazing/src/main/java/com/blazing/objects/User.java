@@ -11,7 +11,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -39,6 +38,7 @@ public class User {
 	private Set<User> following;
 	private boolean enabled;
 	private Roles role;
+	private CriticApplication application;
 	
 	public User()
 	{
@@ -303,6 +303,18 @@ public class User {
 		} else if (!password.equals(other.password))
 			return false;
 		return true;
+	}
+
+
+	@OneToOne(cascade=CascadeType.REMOVE)
+	@JoinColumn(name="ApplicationID")
+	public CriticApplication getApplication() {
+		return application;
+	}
+
+
+	public void setApplication(CriticApplication application) {
+		this.application = application;
 	}
 
 	

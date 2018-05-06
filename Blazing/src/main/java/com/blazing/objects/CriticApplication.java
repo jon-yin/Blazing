@@ -3,6 +3,7 @@ package com.blazing.objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CriticApplication {
@@ -10,6 +11,7 @@ public class CriticApplication {
 	private long id;
 	private String body;
 	private long userId;
+	private User user;
 	
 	@Id
 	@GeneratedValue
@@ -25,12 +27,16 @@ public class CriticApplication {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	public long getUserId() {
-		return userId;
+	
+	@OneToOne(mappedBy="application")
+	public User getUser() {
+		return user;
 	}
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+	
 	
 	
 	
