@@ -259,8 +259,6 @@ public class MediaService {
 				foundReview.setDatetime(LocalDateTime.now());
 				foundReview.setScore(newReview.getRating());
 				Review savedRev = revRepo.save(foundReview);
-				User updatedUser = service.saveUserState(user);
-				service.updateSessionUser(updatedUser);
 				updateMovieScore(savedRev);
 				return true;
 				
