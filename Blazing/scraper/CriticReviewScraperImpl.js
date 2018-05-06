@@ -16,7 +16,7 @@ try {
     criticReview.push({ url: review.url + criticReviewOptions.appendToUrlEnd });
   });
 
-  var ms = new MediaScraper(criticReview.slice(0, 4), criticReviewOptions);
+  var ms = new MediaScraper(criticReview, criticReviewOptions);
 
   ms.bigSearch()
     .then(result => {
