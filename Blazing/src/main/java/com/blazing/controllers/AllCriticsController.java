@@ -23,7 +23,7 @@ public class AllCriticsController {
 		return "critics-home";
 	}
 	
-	@RequestMapping(path="apply",method=RequestMethod.POST)
+	@RequestMapping(path="/apply",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean submitApplication(@RequestBody CriticApplication application)
 	{
