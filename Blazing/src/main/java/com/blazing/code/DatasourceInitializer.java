@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -53,6 +55,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 	private HashMap<String, Long> movieURLtoID = new HashMap<>(); 
 
     @Override
+    @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // load json file, add to my sql db
         try {
@@ -76,7 +79,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoCelebrities("data/celebs/pcelebs17.json");
             mapJSONtoCelebrities("data/celebs/pcelebs18.json"); 
             mapJSONtoCelebrities("data/celebs/pcelebs19.json"); */
-            //mapJSONtoMovie("data/movies/pmovies00.json");
+            mapJSONtoMovie("data/movies/pmovies00.json");
             User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
@@ -162,22 +165,33 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			movie.getAirtimes()[0] = airtime2;
 			
+			movie = movieRepo.save(movie);
+			
 			JsonNode Cast = tree.get("cast");
 			Iterator<JsonNode> Iteratorcast = Cast.iterator();
 			while(Iteratorcast.hasNext()) {
 				JsonNode castmember = Iteratorcast.next();
 				String celeburl = castmember.get("celebrityURL").textValue();
 				Long id = celebURLtoID.get(celeburl);
-				Optional<Celebrity> opceleb = celebrityRepo.findById(id);
-				if (opceleb.isPresent()) {
-					Celebrity celeb = opceleb.get();
-					MovieCharacter moviechar = new MovieCharacter();
-					moviechar.setSource(movie);
-					moviechar.setActor(celeb);
-					moviechar.setName(castmember.get("character").textValue());
-					celeb.getCharacters().add(moviechar);
-					celebrityRepo.save(celeb);
-					moviecharRepo.save(moviechar);
+				if (id != null) {
+					Optional<Celebrity> opceleb = celebrityRepo.findById(id);
+					if (opceleb.isPresent()) {
+						Celebrity celeb = opceleb.get();
+						MovieCharacter moviechar = new MovieCharacter();
+						moviechar.setSource(movie);
+						moviechar.setActor(celeb);
+						String charactername = "";
+						try {
+							charactername = castmember.get("character").textValue();
+						}
+						catch(NullPointerException e){
+							charactername = "";
+						}
+						moviechar.setName(charactername);
+						moviecharRepo.save(moviechar);
+						celeb.getCharacters().add(moviechar);
+						celebrityRepo.save(celeb);
+					}
 				}
 			}
 			
