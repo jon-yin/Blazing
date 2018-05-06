@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://thymeleaf.org">
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, shrink-to-fit=no">
 	<title>BLAZING - Team Elm</title>
 	<!-- jquery -->
-	<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="application/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
 	<!-- slick.js -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css}">
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css}">
 	<!-- popper.js -->
-	<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="application/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
 	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+	<script type="application/javascript" th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 	<!-- source sans pro -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link th:href='@{https://fonts.googleapis.com/css?family=Source+Sans+Pro}' rel='stylesheet' type='text/css'>
 	<!-- font awesome -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
 	<header></header>
@@ -28,7 +28,7 @@
 		<div class="row no-gutters">
 			<div class="col-12">
 				<section class="container-fluid">
-					<h3 class="section-header">NAME</h3>
+					<h3 class="section-header" th:text="${celebrity.name}">NAME</h3>
 					<div class="row">
 						<section class="col-md-auto mx-auto text-center sidebar">
 							<img src="/images/thumbnail.png">
@@ -51,25 +51,8 @@
 						</section>
 						<div class="col border-left border-right">
 							<div class="row flex-nowrap">
-								<div class="col" style="min-width: 350px;">Lorem ipsum dolor sit amet, sea nibh augue labitur an. Agam mnesarchum ea eum, vis habeo congue vocent at. Ne vel postea suscipiantur consectetuer. Dolores adipisci concludaturque ad his, id dolore prompta minimum vim. Mel an suas alienum.
-
-Vis ea tollit splendide, mutat mediocrem intellegam vis ne. Sit suas assum eloquentiam ut, odio wisi ius te, utamur periculis omittantur ut mel. Nominati democritum appellantur no sea. Ex laudem urbanitas vel, simul mediocrem eu qui, quot utroque et eam. Ut eligendi hendrerit nam. Harum munere no usu.
-
-In facete elaboraret nam. Eam imperdiet abhorreant at, has cu alia erat. Sit ne doming verear delectus, ex ignota constituam sed. Volumus scaevola dissentiunt ius id, altera putent usu no, vel dolor appellantur vituperatoribus ex.
-
-Et vis wisi graece vocibus, te cum dicant animal vivendo, ne erat principes nam. Postea graecis corrumpit at his. Semper aliquam denique usu ei. Pro inimicus similique cu, autem lobortis democritum vis no, et fugit detracto eum. Id dicat commune sit, in cum minim regione, alii ferri discere ius eu. In decore alienum sed, te eum erat semper inciderint.
-
-Everti docendi ea sit, et eam dicta deserunt hendrerit. Eam ad possim fastidii petentium, mel posse impedit fabellas ut. Ne percipit insolens eos, in altera dolorum denique his. In modo oporteat pertinacia vis, id per vivendo tibique insolens, vivendum instructior ius et.
-
-Sed ex unum omnis malorum, mel oratio putent omittantur et, reprimique delicatissimi his eu. Meis minim ne nam. Eu pri similique abhorreant. In aeque qualisque eam, ei eam nibh delicata. Sit nominavi delicatissimi an. Ut ludus detraxit laboramus vix, per tantas iriure vituperatoribus ne, eum an dictas fierent.
-
-Harum pericula neglegentur ea usu, inani tritani mel an. Error impetus eripuit sit et, mel case ignota id. Cum vitae epicurei id, vis omnes antiopam accusamus ea, accusam democritum persequeris ex vim. Oratio delectus concludaturque te pro.
-
-Magna audire id pri. Eam id habeo ancillae philosophia. Et copiosae percipitur est, ne diam viris disputando quo. Possit possim torquatos in quo, ne quis dolor vituperata usu. Ei verear graecis copiosae sea, ea illud appellantur vim, cum et libris aeterno patrioque. Elaboraret temporibus mel id, quas maluisset mel no.
-
-Ocurreret scriptorem dissentiunt an vel. Ad cum rationibus definitionem, an vis error elitr graeco, labitur luptatum definitionem no has. Cu vel natum tation assueverit, cu mel suas facete, exerci phaedrum id ius. Iudico suscipit intellegebat no ius, sed ei complectitur signiferumque.
-
-At cum phaedrum maiestatis deterruisset. Quo ei equidem evertitur, quod exerci ignota te eos. Ei vel dicat doctus repudiare. Prima vulputate his eu. Oblique recteque ut has, prima populo graecis no vim. An doming apeirian eum, mazim legere iuvaret vim te.
+								<div class="col" style="min-width: 350px;">
+									bio
 								</div>
 							</div>
 						</div>
@@ -105,30 +88,6 @@ At cum phaedrum maiestatis deterruisset. Quo ei equidem evertitur, quod exerci i
 								<span>70</span>%
 							</div>
 						</a>
-						<a class="details-link btn text-center" href="/details.html">
-							<img class="image" src="/images/game-night.jpg" alt="placeholder image">
-							<div class="name">Game Night</div>
-							<div>
-								<span class="icon tiny burning"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="details-link btn text-center" href="/details.html">
-							<img class="image" src="/images/peter-rabbit.jpg" alt="placeholder image">
-							<div class="name">Peter Rabbit</div>
-							<div>
-								<span class="icon tiny burning"></span>
-								<span>70</span>%
-							</div>
-						</a>
-						<a class="details-link btn text-center" href="/details.html">
-							<img class="image" src="/images/annihilation.jpg" alt="placeholder image">
-							<div class="name">Annihilation</div>
-							<div>
-								<span class="icon tiny burning"></span>
-								<span>70</span>%
-							</div>
-						</a>
 					</div>
 				</section>
 				<section>
@@ -156,54 +115,6 @@ At cum phaedrum maiestatis deterruisset. Quo ei equidem evertitur, quod exerci i
 										<div style="width: 50px;"><span>YEAR</span></div>
 									</a>
 								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/movie-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>MOVIE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-										<div style="width: 50px;"><span>YEAR</span></div>
-									</a>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/movie-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>MOVIE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-										<div style="width: 50px;"><span>YEAR</span></div>
-									</a>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/movie-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>MOVIE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-										<div style="width: 50px;"><span>YEAR</span></div>
-									</a>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/movie-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>MOVIE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-										<div style="width: 50px;"><span>YEAR</span></div>
-									</a>
-								</div>
 							</div>
 						</div>
 						<div class="col">
@@ -214,51 +125,6 @@ At cum phaedrum maiestatis deterruisset. Quo ei equidem evertitur, quod exerci i
 									<div class="col text-truncate"><span>TITLE</span></div>
 									<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
 									<div style="width: 50px;"><span>YEAR</span></div>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/tv-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>TV</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div style="width: 50px;">
-											<span>YEAR</span>
-											<span>YEAR</span>
-											<span>YEAR</span>
-										</div>
-									</a>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/tv-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>TV</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div style="width: 50px;">
-											<span>YEAR</span>
-											<span>YEAR</span>
-											<span>YEAR</span>
-										</div>
-									</a>
-								</div>
-								<div class="details-link border-top border-bottom">
-									<a class="w-100 d-flex align-items-start" href="/tv-details.html">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70%</span>
-										</div>
-										<div class="col text-truncate"><span>TV</span></div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-										<div style="width: 50px;">
-											<span>YEAR</span>
-											<span>YEAR</span>
-											<span>YEAR</span>
-										</div>
-									</a>
 								</div>
 								<div class="details-link border-top border-bottom">
 									<a class="w-100 d-flex align-items-start" href="/tv-details.html">

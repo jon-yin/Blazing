@@ -108,6 +108,7 @@ public class UserService {
 		if (user.getRole() == Roles.USER)
 		{
 			ca.setUser(user);
+			user.setApplication(ca);
 			appRepo.save(ca);
 			return true;
 		}

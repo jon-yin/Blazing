@@ -88,7 +88,7 @@
 						</div>
 					</section>
 					<div class="results-list" id="browse-list">
-						<a class="details-link btn text-center" href="/movie-details.html" th:each="movie : ${browseAllMovies}">
+						<a class="details-link btn text-center" th:each="movie : ${browseAllMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 							<img class="image" src="/images/peter-rabbit.jpg">
 							<div class="name text-truncate" th:text="${movie.title}">Peter Rabbit</div>
 							<div>
@@ -98,7 +98,7 @@
 						</a>
 					</div>
 					<div class="w-100 d-flex justify-content-center">
-						<ul class="pagination">
+						<ul class="pagination pagination-sm">
 						</ul>
 					</div>
 				</section>
