@@ -39,7 +39,7 @@
 					<h5 class="section-header" th:text="${foundUser.firstName}+' '+${foundUser.lastName}">PROFILE</h5>
 					<div>
 						<span class="font-weight-bold">Role:</span>
-						<span>User</span>
+						<span th:text="${foundUser.role}">User</span>
 					</div>
 					<div>
 						<span class="font-weight-bold">Total Views:</span>
@@ -132,6 +132,7 @@
 		<nav class="navbar">
 			<div class="mr-auto">
 				<button type="button" class="btn btn-light" id="acc-settings">Account Settings</button>
+				<button type="button" class="btn btn-light" id="admin-page" th:if="${session.currentUser} and ${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Admin Page</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie">Add a Movie</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv">Add a TV Show</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity">Add a Celebrity</button>
@@ -253,7 +254,7 @@
 		$("#re-verify").css("background-color","#aaaaaa");
 		$("#re-verify").attr("disabled",true);
 		$("#re-verify").text("Sending...");
-		var userID = /*[[${session.currentUser.id}]]*/ 0;
+		var userID = /*[[${foundUser.id}]]*/ 0;
 		$.ajax({
 			type: "POST",
 			contentType : "application/json",
@@ -306,6 +307,9 @@
 		$("#unfollow-button").on("click", unfollow);
 		$("#acc-settings").on("click", function(){
 			location.href += "/settings";
+		});
+		$("#admin-page").on("click",function(){
+			location.href = "/admin";
 		});
 	});
 /*]]>*/

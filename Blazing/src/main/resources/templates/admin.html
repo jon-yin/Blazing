@@ -45,10 +45,10 @@
 								<div class="pr-2" style="width: 200px;">Reported Review</div>
 								<div class="pr-2">Reason</div>
 							</div>
-							<div class="w-100 p-1 my-1 border d-flex">
-								<div class="pr-2" style="width: 100px;">User</div>
-								<div class="pr-2" style="width: 150px;">Movie</div>
-								<div class="pr-2" style="width: 200px;">Review</div>
+							<div class="w-100 p-1 my-1 border d-flex" th:each="report : ${reported}">
+								<div class="pr-2" style="width: 100px;" th:text="|${report.user.firstName} ${report.user.lastName}|">User</div>
+								<div class="pr-2" style="width: 150px;" th:text="${report.source.title}">Movie</div>
+								<div class="pr-2" style="width: 200px;" th:text="${report.body}">Review</div>
 								<div class="pr-2">Reason</div>
 								<div class="ml-auto d-flex">
 									<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
@@ -57,16 +57,16 @@
 							</div>
 						</section>
 					</div>
-					<div class="tab-pane show fade active" id="apps" role="tabpanel" aria-labelledby="show-apps">
+					<div class="tab-pane fade" id="apps" role="tabpanel" aria-labelledby="show-apps">
 						<section>
 							<h5 class="section-header">PENDING APPLICATIONS</h5>
 							<div class="w-100 p-1 my-1 d-flex">
 								<div class="pr-2" style="width: 100px;">User</div>
 								<div class="pr-2">Application</div>
 							</div>
-							<div class="w-100 p-1 my-1 d-flex">
-								<div class="pr-2" style="width: 100px;">User</div>
-								<div class="pr-2">Application</div>
+							<div class="w-100 p-1 my-1 d-flex" th:each="application : ${applications}">
+								<div class="pr-2" style="width: 100px;" th:text="${application.userId}">User</div>
+								<div class="pr-2" th:text="${application.body}">Application</div>
 								<div class="ml-auto d-flex">
 									<div class="pr-2"><a href="#"><i class="fa fa-check"></i></a></div>
 									<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
