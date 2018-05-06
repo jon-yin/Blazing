@@ -21,6 +21,8 @@ public class Celebrity implements Comparable<Celebrity>{
 	private ImageEntity portrait;
 	private Set<Media> filmography;
 	private Set<MovieCharacter> characters;
+	private String description;
+	
 	
 	@Id
 	@GeneratedValue
@@ -102,6 +104,12 @@ public class Celebrity implements Comparable<Celebrity>{
 	@Override
 	public int compareTo(Celebrity other) {
 		return name.compareTo(other.getName());
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	
