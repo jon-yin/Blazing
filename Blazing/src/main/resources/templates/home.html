@@ -38,6 +38,9 @@
 					<li class="nav-item">
 						<a class="nav-item nav-link" id="show-tvs" data-toggle="tab" href="#tv-main" role="tab" aria-controls="tv-main" aria-selected="false">What's On TV</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-item nav-link" id="show-videos" data-toggle="tab" href="#videos-main" role="tab" aria-controls="videos-main" aria-selected="false">Trailers</a>
+					</li>
 				</ul>
 
 				<div class="tab-content" id="show-main-content">
@@ -114,20 +117,22 @@
 							</div>
 							<div class="text-right"><a href="/browse.html?type=popular-tv">View All...</a></div>
 						</section>
-						<!-- <section>
-							<h5 class="section-header">TOP DVD &amp; STREAMING MOVIES</h5>
+					</div>
+					<div class="tab-pane show fade active" id="videos-main" role="tabpanel" aria-labelledby="show-videos">
+						<section>
+							<h5 class="section-header">NEWEST TRAILERS</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/counterpart.jpg" alt="placeholder image">
-									<div class="name">Counterpart</div>
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
 										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse.html">View All...</a></div>
-						</section> -->
+							<div class="text-right"><a href="/browse.html?type=opening-movies" th:href="@{/browse?type=opening-movies}">View All...</a></div>
+						</section>
 					</div>
 				</div>
 			</div>
