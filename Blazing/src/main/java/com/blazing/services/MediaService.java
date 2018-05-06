@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -57,7 +58,8 @@ public class MediaService {
 	private UserService service;
 	@Autowired
 	private SessionService sesService;
-	
+	@Value("${media.trending}")
+	private int numMovies;
 	
 	@Transactional
 	public Movie findMovie(long id) {
@@ -235,7 +237,7 @@ public class MediaService {
 		List<Movie> movies = movieRepo.findAll();
 		model.addAttribute("browseAllMovies", movies);
 		LocalDate thisWeek = LocalDate.now().minusDays(7);
-		List<Movie> recent = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0)).collect(Collectors.toList());
+		List<Movie> recent = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0 && m.getAirtimes()[0].compareTo(LocalDate.now())<=0)).collect(Collectors.toList());
 		System.out.println(recent.size());
 		model.addAttribute("thisWeek", recent);
 		List<Movie> future = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(LocalDate.now()) > 0)).collect(Collectors.toList());
@@ -243,10 +245,15 @@ public class MediaService {
 	}
 
 	public void getTrendingMovies(Model model) {
-		Pageable page = PageRequest.of(0, 10);
-		Page<Movie> moviesPage = movieRepo.findAll(page);
-		List<Movie> movies = moviesPage.getContent();
+		List<Movie> movies = movieRepo.findAll();
+		List<Movie> trending = movies.subList(0, numMovies);
 		model.addAttribute("trendingMovies", movies);
+		LocalDate thisWeek = LocalDate.now().minusDays(7);
+		LocalDate today = LocalDate.now();
+		List<Movie> weeklyMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0 && m.getAirtimes()[0].compareTo(today)<=0)).collect(Collectors.toList());
+		model.addAttribute("thisWeek", weeklyMovies.subList(0, numMovies));
+		List<Movie> upcomingMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(today) > 0)).collect(Collectors.toList());
+		model.addAttribute("upcoming", weeklyMovies.subList(0, numMovies));
 	}
 
 	@Transactional
