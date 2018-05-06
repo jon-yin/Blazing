@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import com.blazing.objects.ChangePassword;
 import com.blazing.objects.MovieInfo;
 import com.blazing.objects.User;
+import com.blazing.services.LoginRegisterService;
 import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
 
@@ -28,6 +29,9 @@ public class UserController {
 
 	@Autowired
 	private MediaService mediaService;
+	
+	@Autowired
+	private LoginRegisterService loginService;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String displayProfile(@PathVariable("userid") long userid, Model model)
@@ -81,6 +85,13 @@ public class UserController {
 		String newPass = info.getNewPass();
 		String confirm = info.getConfirmNewPass();
 		return userService.changePassword(password,newPass,confirm,user);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path="/changeemail", method = RequestMethod.POST)
+	public boolean changeEmail(@RequestBody String newEmail, @SessionAttribute(value = "currentUser", required=false) User user)
+	{
+		return loginService.changeEmail(newEmail, user);
 	}
 	
 	@RequestMapping(path="/delete", method = RequestMethod.POST)
