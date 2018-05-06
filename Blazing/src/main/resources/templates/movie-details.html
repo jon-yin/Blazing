@@ -325,6 +325,7 @@
 										data : jsonString,
 										success : function(data) {
 											console.log(data);
+											location.reload();
 										},
 										error : function(e) {
 											console.log("ERROR: ", e);
@@ -340,6 +341,7 @@
 										data : ""+id,
 										success : function(data) {
 											console.log(data);
+											location.reload();
 										},
 										error : function(e) {
 											console.log("ERROR: ", e);
