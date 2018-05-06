@@ -35,13 +35,14 @@ public class LoginRegisterService {
 	private TokenRepository tokenRepo;
 	
 	@Autowired
+	private SessionService sesService;
+	
+	@Autowired
 	private EmailService emailService;
 	
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
-	@Autowired
-	private EntityManager em;
 	
 	@Transactional
 	public boolean reverifyUser(long id)
@@ -118,7 +119,6 @@ public class LoginRegisterService {
 			foundUser = undetachedUser.get();
 			foundUser.setEnabled(true);
 			tokenRepo.delete(token);
-			System.out.println(em.contains(foundUser));
 			User verified = repository.save(foundUser);
 			Hibernate.initialize(verified.getFollowers());
 			Hibernate.initialize(verified.getWishlist());
@@ -190,6 +190,22 @@ public class LoginRegisterService {
 			repository.save(user);
 			emailService.sendNewPassword(user.getEmailAddress(), password.toString());
 			return true;
+		}
+	}
+
+	@Transactional
+	public boolean changeEmail(String newEmail, User user) {
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			user.setEmailAddress(newEmail);
+			user.setEnabled(false);
+			repository.save(user);
+			sesService.updateCurrentUser(user);
+			return reverifyUser(user.getId());
 		}
 	}
 
