@@ -153,24 +153,7 @@ module.exports.MediaScraper = class MediaScraper {
       }
 
       Object.keys(options.mediaSelectors).forEach(key => {
-        // if (options.mediaSelectors[key].childUrlHandled === false) {
-        //   options.mediaSelectors[key].childUrlHandled = true;
-        //   // nested request
-        //   let nestedObj = {
-        //     host: query.url + options.mediaSelectors[key].childUrl,
-        //     reqDelay: options.reqDelay,
-        //     mediaSelectors: {}
-        //   };
-        //   nestedObj.mediaSelectors[key] = options.mediaSelectors[key];
-        //   return this.search(nestedObj).then((reviews) => {
-        //     options.mediaSelectors[key].childUrlHandled = false;
-        //     console.log('got reviews for', query.url);
-        //     o[key] = reviews[key];
-        //     return Promise.resolve();
-        //   });
-        // } else {
         o[key] = tryPattern($, options.mediaSelectors[key])[key];
-        // }
       });
       return new Promise((resolve) => {
         resolve(o);

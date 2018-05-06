@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { MediaScraper } = require('./MediaScraper.js');
-const criticReviewOptions = require('./input/critic-options');
+const criticReviewOptions = require('./options/critic-options');
 
 // const inputfile = './output/parsedMovies/pmovies00.json';
 
@@ -16,6 +16,7 @@ try {
     criticReview.push({ url: review.url + criticReviewOptions.appendToUrlEnd });
   });
 
+  // var ms = new MediaScraper(criticReview.slice(0,4), criticReviewOptions);
   var ms = new MediaScraper(criticReview, criticReviewOptions);
 
   ms.bigSearch()
