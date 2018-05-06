@@ -48,6 +48,7 @@ public abstract class Media implements Comparable<Media>{
 	{
 		audienceScore = 0;
 		blazingScore = 0;
+		airtimes = new LocalDate[2];
 		videos = new HashSet<>();
 		images = new HashSet<>();
 		reviews = new HashSet<>();

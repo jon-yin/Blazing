@@ -5,7 +5,7 @@ public class MovieInfo {
 	private String title;
 	private String description;
 	private String cast;
-	private int runTime;
+	private String runTime;
 	private int boxOffice;
 	private String[] airtimes;
 	public String getTitle() {
@@ -26,10 +26,10 @@ public class MovieInfo {
 	public void setCast(String cast) {
 		this.cast = cast;
 	}
-	public int getRunTime() {
+	public String getRunTime() {
 		return runTime;
 	}
-	public void setRunTime(int runTime) {
+	public void setRunTime(String runTime) {
 		this.runTime = runTime;
 	}
 	public int getBoxOffice() {

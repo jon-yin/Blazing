@@ -105,6 +105,8 @@ public class Celebrity implements Comparable<Celebrity>{
 	public int compareTo(Celebrity other) {
 		return name.compareTo(other.getName());
 	}
+	
+	@Column(nullable=false, columnDefinition="LONGTEXT")
 	public String getDescription() {
 		return description;
 	}

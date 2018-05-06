@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 public class Movie extends Media{
 
 	private int boxOffice;
-	private int runTime;
+	private String runTime;
 
 	public int getBoxOffice() {
 		return boxOffice;
@@ -16,11 +16,11 @@ public class Movie extends Media{
 		this.boxOffice = boxOffice;
 	}
 
-	public int getRunTime() {
+	public String getRunTime() {
 		return runTime;
 	}
 
-	public void setRunTime(int runTime) {
+	public void setRunTime(String runTime) {
 		this.runTime = runTime;
 	}
 	
