@@ -1,5 +1,6 @@
 package com.blazing.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -55,6 +56,12 @@ public class ReviewService {
 		{
 			return false;
 		}
+	}
+	
+	@Transactional
+	public List<Review> retrieveReportedReviews()
+	{
+		return reviewRepo.findByFlagCountGreaterThanOrderByFlagCountDesc(0);
 	}
 	
 }

@@ -92,26 +92,4 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(path="/approvecritic", method = RequestMethod.POST)
-	@ResponseBody
-	public void approveCritic(@RequestBody CriticApplication application)
-	{
-		userService.upgradeUser(application.getUserId(), Roles.CRITIC);
-		userService.removeApplication(application);
-	}
-	
-	@RequestMapping(path="/denycritic", method = RequestMethod.POST)
-	@ResponseBody
-	public void denyCritic(@RequestBody CriticApplication application)
-	{
-		userService.removeApplication(application);
-	}
-	
-	@RequestMapping(path="/viewapplications", method = RequestMethod.POST)
-	@ResponseBody
-	public List<CriticApplication> getApplications()
-	{
-		return userService.retrieveApplications();
-	}
-	
 }
