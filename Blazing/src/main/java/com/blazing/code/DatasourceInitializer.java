@@ -98,7 +98,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		while (Iterator.hasNext()) {
 			JsonNode tree = Iterator.next();
 			Celebrity celeb = new Celebrity();
-			
 			String name = tree.get("name").textValue();
 			celeb.setName(name);
 			String birthdate = tree.get("birthdate").textValue();
