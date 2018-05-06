@@ -22,7 +22,7 @@ public class ReviewService {
 	private ReviewRepository reviewRepo;
 	
 	@Autowired
-	private UserRepository<User> userRepo;
+	private UserRepository userRepo;
 	
 	@Autowired
 	private MediaRepository mediaRepo;

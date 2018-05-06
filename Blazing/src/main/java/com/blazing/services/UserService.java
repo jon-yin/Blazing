@@ -22,7 +22,7 @@ import com.blazing.repositories.UserRepository;
 public class UserService {
 
 	@Autowired
-	private UserRepository<User> userRepo;
+	private UserRepository userRepo;
 	@Autowired
 	private ReviewRepository revRepo;
 	@Autowired
