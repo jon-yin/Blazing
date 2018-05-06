@@ -117,7 +117,7 @@ public class MediaController<T> {
 
 	@Transactional
 	public boolean removeReview(long reviewID) {
-		return revService.removeReview(reviewID);
+		return revService.removeReview(reviewID,true);
 	}
 
 	@Transactional

@@ -31,13 +31,15 @@ public class ReviewService {
 	@Autowired
 	private TVRepository tvRepo;
 	
+	@Autowired
+	private SessionService sesService;
 	public boolean addReview(Review review, long mediaID)
 	{
 		return true;
 	}
 	
 	@Transactional
-	public boolean removeReview(long id)
+	public boolean removeReview(long id, boolean isSession)
 	{
 		Optional<Review> foundReview = reviewRepo.findById(id);
 		if (foundReview.isPresent())
@@ -48,8 +50,12 @@ public class ReviewService {
 			reviewer.removeFromReviews(review);
 			source.removeReview(review);
 			mediaRepo.save(source);
-			userRepo.save(reviewer);
+			User updated = userRepo.save(reviewer);
 			reviewRepo.delete(review);
+			if (isSession)
+			{
+				sesService.updateCurrentUser(updated);
+			}
 			return true;
 		}
 		else

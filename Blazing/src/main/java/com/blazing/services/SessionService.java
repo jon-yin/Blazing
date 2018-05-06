@@ -2,6 +2,7 @@ package com.blazing.services;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,11 @@ public class SessionService {
 	
 	public void updateCurrentUser(User user)
 	{
+		Hibernate.initialize(user.getFollowers());
+		Hibernate.initialize(user.getWishlist());
+		Hibernate.initialize(user.getNotInterested());
+		Hibernate.initialize(user.getFollowing());
+		Hibernate.initialize(user.getReviews());
 		session.setAttribute("currentUser", user);
 	}
 
