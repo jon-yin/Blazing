@@ -118,18 +118,16 @@
 							<div class="text-right"><a href="/browse.html?type=popular-tv">View All...</a></div>
 						</section>
 					</div>
-					<div class="tab-pane show fade active" id="videos-main" role="tabpanel" aria-labelledby="show-videos">
+					<div class="tab-pane fade" id="videos-main" role="tabpanel" aria-labelledby="show-videos">
 						<section>
-							<h5 class="section-header">NEWEST TRAILERS</h5>
-							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${trendingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
-									<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
-									<div>
-										<span class="icon tiny burning"></span>
-										<span th:text="${movie.blazingScore}">70</span>%
-									</div>
-								</a>
+							<h5 class="section-header">LATEST TRAILERS</h5>
+							<div class="section-carousel">
+								<video id="vid-thumb1" preload="metadata" data-toggle="modal" data-target="#vid-modal1">
+									<source src="/videos/black-panther-trailer-1.mp4#t=10" type="video/mp4">
+								</video>
+								<video id="vid-thumb2" preload="metadata" data-toggle="modal" data-target="#vid-modal2">
+									<source src="/videos/black-panther-trailer-1.mp4#t=10" type="video/mp4">
+								</video>
 							</div>
 							<div class="text-right"><a href="/browse.html?type=opening-movies" th:href="@{/browse?type=opening-movies}">View All...</a></div>
 						</section>
@@ -175,6 +173,68 @@
 			</div>
 		</div>
 	</div>
+									<!-- video modals -->
+									<div>
+										<div class="modal fade" id="vid-modal1" tabindex="-1" role="dialog" aria-labelledby="videoTitle" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered" style="max-width: 90%!important;" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<video id="video1" controls="controls">
+															<source src="/videos/black-panther-trailer-1.mp4" type="video/mp4">
+														</video>
+													</div>
+												</div>
+											</div>
+										</div>
+										<script th:inline="javascript">
+										/*<![CDATA[*/
+										$(function(){
+											$("#video1").css("width","100%");
+											$("#video1").css("height","auto");
+	 										$("#vid-modal1").on("hidden.bs.modal",function(){
+												$("#video1").get(0).pause();
+												$("#video1").get(0).currentTime = 0;
+											});
+										});
+										/*]]>*/
+										</script>
+									</div>
+									<div>
+										<div class="modal fade" id="vid-modal2" tabindex="-1" role="dialog" aria-labelledby="videoTitle" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered" style="max-width: 90%!important;" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<video id="video2" controls="controls">
+															<source src="/videos/black-panther-trailer-1.mp4" type="video/mp4">
+														</video>
+													</div>
+												</div>
+											</div>
+										</div>
+										<script th:inline="javascript">
+										/*<![CDATA[*/
+										$(function(){
+											$("#video2").css("width","100%");
+											$("#video2").css("height","auto");
+	 										$("#vid-modal2").on("hidden.bs.modal",function(){
+												$("#video2").get(0).pause();
+												$("#video2").get(0).currentTime = 0;
+											});
+										});
+										/*]]>*/
+										</script>
+									</div>
+	
 	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 

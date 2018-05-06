@@ -115,9 +115,15 @@
 					<div class="tab-pane show fade" id="following-followers" role="tabpanel" aria-labelledby="show-following-followers">
 						<section>
 							<h5 class="section-header">FOLLOWERS</h5>
+							<div th:each="follower : ${foundUser.followers}">
+								<a th:href="@{/viewprofile/{id}(id=${follower.id})}" th:text="|${follower.firstName} ${follower.lastName}|">name</a>
+							</div>
 						</section>
 						<section>
 							<h5 class="section-header">FOLLOWING</h5>
+							<div th:each="following : ${foundUser.following}">
+								<a th:href="@{/viewprofile/{id}(id=${following.id})}" th:text="|${following.firstName} ${following.lastName}|">name</a>
+							</div>
 						</section>
 					</div>
 				</div>
@@ -137,33 +143,6 @@
 		</nav>
 		
 		<!-- MODALS -->
-		<!-- EDIT ACCOUNT? -->
-		<!-- <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="#edit" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="addMovie">EDIT ACCOUNT</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<div class="d-flex">
-								<div class="form-group w-50 mr-1">
-									<label for="change-first">Change First Name</label>
-									<input type="text" class="form-control" id="change-first" aria-describedby="change-first">
-								</div>
-								<div class="form-group w-50 ml-1">
-									<label for="change-last">Change Last Name</label>
-									<input type="text" class="form-control" id="change-last" aria-describedby="change-last">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div> -->
 		<!-- DELETE ACCOUNT -->
 		<div class="modal fade" id="delete-account" tabindex="-1" role="dialog" aria-labelledby="#delete-account" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">

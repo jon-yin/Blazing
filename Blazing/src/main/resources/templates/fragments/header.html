@@ -89,7 +89,7 @@
 			</div>
 			<div class="modal-footer d-block text-center">
 				<div>
-					<a data-toggle="modal" data-dismiss="modal" href="#forgot-password">Forget your password?</a>
+					<a data-toggle="modal" data-dismiss="modal" href="#forgot-password">Forgot your password?</a>
 				</div>
 				<div>
 					Want to sign up? Then <a data-toggle="modal" data-dismiss="modal" href="#signup">sign up</a>.
@@ -157,15 +157,15 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				Please enter your email address and we will email you a new password.
-				<!-- the rotten tomatoes forgot-your-password form accepts any argument. make sure to include a check whether an email address exists -->
+				<div class="mb-2">Please enter your email address and we will email you a new password.</div>
 				<form>
 					<div class="form-group">
 						<label for="email-forgot">Email address</label>
 						<input type="email" class="form-control" id="email-forgot" placeholder="Enter email">
 					</div>
-					<button id="get-password" class="btn btn-secondary">Submit</button>
-					<small class="text-danger" id="inval-user-alert-lost" style="display: none;">Invalid email</small>
+					<button id="forgot-pw-button" class="btn btn-secondary">Submit</button>
+					<small class="text-danger" id="no-em-lost" style="display: none;">Please enter your email</small>
+					<small class="text-danger" id="inv-em-lost" style="display: none;">Invalid email</small>
 				</form>
 			</div>
 		</div>
@@ -184,6 +184,25 @@
 			</div>
 			<div class="modal-body">
 				We sent a verification email to you. Please check your email.
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- SENT PASSWORD Modal -->
+<div class="modal fade" id="sent-pemail" tabindex="-1" role="dialog" aria-labelledby="#sentPEmailLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="sentPEmailLabel">Success!</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="location.reload()">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				We sent a new temporary password to the email you provided. Please check your email and change it as soon as possible.
 			</div>
 		</div>
 	</div>

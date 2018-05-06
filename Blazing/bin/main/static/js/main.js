@@ -127,6 +127,48 @@ function signup(e) {
 	});
 }
 
+function forgotPassword(e){
+	e.preventDefault();
+	// conditions
+	var email = $("#email-forgot").val();
+	var fail = false;
+	$("#no-em-forgot").hide();
+	$("#inv-em-forgot").hide();
+	if (email.match(emailRegex) == null && email.length != 0){
+		$("#inv-em-forgot").show();
+		fail = true;
+	}
+	if (email.length == 0){
+		$("#no-em-forgot").show();
+		fail = true;
+	}
+	if (fail) return;
+	$("#forgot-pw-button").attr("disabled", true);
+	$("#forgot-pw-button").css("background-color","#aaaaaa");
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/forgotpass",
+		data : email,
+		success : function(data) {
+			if (data == true){
+				$("#email-forgot").val("");
+				$("#forgot-password").modal("hide");
+				$("#sent-pemail").modal("show");
+			}else{
+				$("#inv-em-forgot").show();
+			}
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		},
+		complete : function() {
+			$("#forgot-pw-button").attr("disabled", false);
+			$("#forgot-pw-button").css("background-color","#6c757d");	
+		}
+	});
+}
+
 // search
 function search(){
 	var searchString;
@@ -142,6 +184,7 @@ $(function() {
 	$("#login-button").on("click", login);
 	$("#signup-button").on("click", signup);
 	$("#search-button").on("click", search);
+	$("#forgot-pw-button").on("click", forgotPassword);
 	$("#search-input").keypress(function(e){
 		if (e.which == 13)
 			search();

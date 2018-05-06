@@ -157,9 +157,6 @@ section .section-carousel{
 	.container {
 		max-width: 1200px;
 	}
-	.cover-image{
-		background-position: right;
-	}
 }
 
 /*container section stuff*/
@@ -176,18 +173,6 @@ section .section-carousel{
 }
 .slick-next:before{
 	color: rgb(100,100,100);
-}
-.play-button{
-	position: absolute;
-	font-size: 128px;
-	opacity: 0.5;
-	color: white;
-	left: 10px;
-	top: 48px;
-	padding-left: 25px;
-}
-.play-button:hover{
-	opacity: 1;
 }
 
 /*reviews*/
