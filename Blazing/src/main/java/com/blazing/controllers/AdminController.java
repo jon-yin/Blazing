@@ -60,4 +60,18 @@ public class AdminController {
 		userService.removeApplication(application);
 	}
 	
+	@RequestMapping(path="/removereview", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean removeReview(@RequestBody long reviewId)
+	{
+		return reviewService.removeReview(reviewId, false);
+	}
+	
+	@RequestMapping(path="/dismissreview", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean dismissReview(@RequestBody long reviewId)
+	{
+		return reviewService.removeReview(reviewId, false);
+	}
+	
 }

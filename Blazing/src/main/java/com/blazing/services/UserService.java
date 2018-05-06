@@ -173,6 +173,19 @@ public class UserService {
 		return false;
 	}
 
+	public boolean blockUser(User target, User user) {
+		if (user == null || target == null){
+			return false;
+		}
+		else
+		{
+			user.getBlockList().add(target);
+			user = userRepo.save(user);
+			sesService.updateCurrentUser(user);
+			return true;
+		}
+	}
+
 	
 
 }
