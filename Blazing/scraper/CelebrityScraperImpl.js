@@ -2,7 +2,7 @@ const fs = require('fs');
 const { MediaScraper } = require('./MediaScraper.js');
 const celebrityOptions = require('./input/celebrity-options');
 
-const inputfile = './searchResults/done/movies07.json';
+const inputfile = './searchResults/done/movies00.json';
 
 try {
   var json = JSON.parse(fs.readFileSync(inputfile));

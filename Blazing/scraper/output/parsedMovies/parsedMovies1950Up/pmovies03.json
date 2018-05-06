@@ -1,0 +1,4548 @@
+[
+    {
+        "title": "Guilty by Suspicion",
+        "description": "The directorial debut of producer Irwin Winkler, Guilty by Suspicion is a sobering account of one movie executive's woes in dealing with the political fallout from the McCarthy Era Hollywood blacklist. Robert De Niro stars as David Merrill, a film director in the 1950s whose obsession with his burgeoning career has estranged him from his wife Ruth (Annette Bening) and their son. When he returns from a trip to Paris, Merrill is surprised when told by his boss, Darryl F. Zanuck (Ben Piazza) that he's been summoned to appear before the House Un-American Activities Committee, which is investigating Communist ties to Hollywood. Although Merrill once attended a meeting years before, he's not a Communist, and he refuses to help the committee wreck the career of his friend Bunny Baxter (George Wendt). Merrill becomes blacklisted, unable to find work even in menial positions or under assumed names as the editor of a B-movie or the director of a low-budget Western. Reconciled with his family, Merrill caves in and agrees to testify, but as he prepares to \"name names,\" his conscience plagues him.",
+        "rating": "PG-13",
+        "genres": [
+            "Drama"
+        ],
+        "directors": [
+            "Irwin Winkler"
+        ],
+        "writers": [
+            "Irwin Winkler"
+        ],
+        "premiered": "Jan 1, 1991",
+        "runtime": "105 minutes",
+        "studio": "Warner Home Video",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/robert_deniro",
+                "celebrityName": "Robert De Niro",
+                "character": "David Merrill"
+            },
+            {
+                "celebrityURL": "/celebrity/annette_bening",
+                "celebrityName": "Annette Bening",
+                "character": "Ruth Merrill"
+            },
+            {
+                "celebrityURL": "/celebrity/george_wendt",
+                "celebrityName": "George Wendt",
+                "character": "Baxter"
+            },
+            {
+                "celebrityURL": "/celebrity/patricia_wettig",
+                "celebrityName": "Patricia Wettig",
+                "character": "Dorothy"
+            },
+            {
+                "celebrityURL": "/celebrity/sam_wanamaker",
+                "celebrityName": "Sam Wanamaker",
+                "character": "Graff"
+            },
+            {
+                "celebrityURL": "/celebrity/chris_cooper",
+                "celebrityName": "Chris Cooper",
+                "character": "Nolan"
+            },
+            {
+                "celebrityURL": "/celebrity/martin_scorsese",
+                "celebrityName": "Martin Scorsese",
+                "character": "Lesser"
+            },
+            {
+                "celebrityURL": "/celebrity/1023538-luke_edwards",
+                "celebrityName": "Luke Edwards",
+                "character": "Paulie Merrill"
+            },
+            {
+                "celebrityURL": "/celebrity/ben_piazza",
+                "celebrityName": "Ben Piazza",
+                "character": "Darryl Zanuck"
+            },
+            {
+                "celebrityURL": "/celebrity/barry_primus",
+                "celebrityName": "Barry Primus",
+                "character": "Bert Alan"
+            },
+            {
+                "celebrityURL": "/celebrity/gailard_sartain",
+                "celebrityName": "Gailard Sartain",
+                "character": "Chairman Wood"
+            },
+            {
+                "celebrityURL": "/celebrity/robin_gammell",
+                "celebrityName": "Robin Gammell",
+                "character": "Congressman Tavenner"
+            },
+            {
+                "celebrityURL": "/celebrity/brad_sullivan",
+                "celebrityName": "Brad Sullivan",
+                "character": "Congressman Velde"
+            },
+            {
+                "celebrityURL": "/celebrity/tom_sizemore",
+                "celebrityName": "Tom Sizemore",
+                "character": "Ray Karlin"
+            },
+            {
+                "celebrityURL": "/celebrity/roxann_biggs",
+                "celebrityName": "Roxann Biggs",
+                "character": "Felicia Barron"
+            },
+            {
+                "celebrityURL": "/celebrity/stuart_margolin",
+                "celebrityName": "Stuart Margolin",
+                "character": "Abe Barron"
+            },
+            {
+                "celebrityURL": "/celebrity/barry_tubb",
+                "celebrityName": "Barry Tubb",
+                "character": "Jerry Cooper"
+            },
+            {
+                "celebrityURL": "/celebrity/gene-kirkwood",
+                "celebrityName": "Gene Kirkwood",
+                "character": "Gene Woods"
+            },
+            {
+                "celebrityURL": "/celebrity/margo_winkler",
+                "celebrityName": "Margo Winkler",
+                "character": "Leta Rosen"
+            },
+            {
+                "celebrityURL": "/celebrity/allan-rich",
+                "celebrityName": "Allan Rich",
+                "character": "Leonard Marks"
+            },
+            {
+                "celebrityURL": "/celebrity/illeana_douglas",
+                "celebrityName": "Illeana Douglas",
+                "character": "Nan"
+            },
+            {
+                "celebrityURL": "/celebrity/marion_dougherty",
+                "celebrityName": "Marion Dougherty",
+                "character": "Ben Saltman"
+            },
+            {
+                "celebrityURL": "/celebrity/al_ruscio",
+                "celebrityName": "Al Ruscio",
+                "character": "Fox Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/bill_bailey",
+                "celebrityName": "Bill Bailey",
+                "character": "FBI Man"
+            },
+            {
+                "celebrityURL": "/celebrity/adam_baldwin",
+                "celebrityName": "Adam Baldwin",
+                "character": "Matt Nolan"
+            },
+            {
+                "celebrityURL": "/celebrity/nicholas_cilic",
+                "celebrityName": "Nicholas Cilic",
+                "character": "Claude Rowan"
+            },
+            {
+                "celebrityURL": "/celebrity/claude_rauvier",
+                "celebrityName": "Claude Rauvier",
+                "character": "RKO Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/stephen-root",
+                "celebrityName": "Stephen Root",
+                "character": "Mike Rainey"
+            },
+            {
+                "celebrityURL": "/celebrity/john_horn",
+                "celebrityName": "John Horn",
+                "character": "Man Shopper"
+            },
+            {
+                "celebrityURL": "/celebrity/jon_tenney",
+                "celebrityName": "Jon Tenney",
+                "character": "Wife Shopper"
+            },
+            {
+                "celebrityURL": "/celebrity/cecile_callan",
+                "celebrityName": "Cecile Callan",
+                "character": "Norman"
+            },
+            {
+                "celebrityURL": "/celebrity/tom_rosqui",
+                "celebrityName": "Tom Rosqui",
+                "character": "Nelly Lesser"
+            },
+            {
+                "celebrityURL": "/celebrity/monica_carrico",
+                "celebrityName": "Monica Carrico",
+                "character": "Cabbie"
+            },
+            {
+                "celebrityURL": "/celebrity/jonathan_ames",
+                "celebrityName": "Jonathan Ames",
+                "character": "Stanley"
+            },
+            {
+                "celebrityURL": "/celebrity/brant_von_hoffman",
+                "celebrityName": "Brant von Hoffman",
+                "character": "Ad Agency Executive"
+            },
+            {
+                "celebrityURL": "/celebrity/fj_oneil",
+                "celebrityName": "F.J. O'Neil",
+                "character": "Teacher"
+            },
+            {
+                "celebrityURL": "/celebrity/joan_scott",
+                "celebrityName": "Joan Scott",
+                "character": "Singer"
+            },
+            {
+                "celebrityURL": "/celebrity/dianne_e_reeves",
+                "celebrityName": "Dianne E. Reeves",
+                "character": "Singer"
+            },
+            {
+                "celebrityURL": "/celebrity/diane_reeves",
+                "celebrityName": "Dianne Reeves",
+                "character": "Bernard"
+            },
+            {
+                "celebrityURL": "/celebrity/paul_collins",
+                "celebrityName": "Paul Collins",
+                "character": "Director"
+            },
+            {
+                "celebrityURL": "/celebrity/james_mathers",
+                "celebrityName": "James Mathers",
+                "character": "2nd FBI Man"
+            },
+            {
+                "celebrityURL": "/celebrity/kevin_page",
+                "celebrityName": "Kevin Page",
+                "character": "Choreographer"
+            },
+            {
+                "celebrityURL": "/celebrity/joe_bennett",
+                "celebrityName": "Joe Bennett",
+                "character": "Assistant Director"
+            },
+            {
+                "celebrityURL": "/celebrity/robert-chimento",
+                "celebrityName": "Robert Chimento",
+                "character": "Director of Photography"
+            },
+            {
+                "celebrityURL": "/celebrity/",
+                "celebrityName": "Craig Smith",
+                "character": "Costume Designer"
+            },
+            {
+                "celebrityURL": "/celebrity/maurice_marciano",
+                "celebrityName": "Maurice Marciano",
+                "character": "Waiter"
+            },
+            {
+                "celebrityURL": "/celebrity/martin_arsenault",
+                "celebrityName": "Martin Arsenault",
+                "character": "Maurice"
+            },
+            {
+                "celebrityURL": "/celebrity/ben_dinsdale",
+                "celebrityName": "Ben Dinsdale",
+                "character": "Propmaster"
+            },
+            {
+                "celebrityURL": "/celebrity/russell_bobbitt",
+                "celebrityName": "Russell Bobbitt",
+                "character": "Party Guest"
+            },
+            {
+                "celebrityURL": "/celebrity/cindy_carey",
+                "celebrityName": "Cindy Carey",
+                "character": "1st Assistant Director"
+            },
+            {
+                "celebrityURL": "/celebrity/ivor_leslie_dilley",
+                "celebrityName": "Ivor Leslie Dilley",
+                "character": "Woman on Buckboard"
+            },
+            {
+                "celebrityURL": "/celebrity/natalie_zimmerman",
+                "celebrityName": "Natalie Zimmerman"
+            }
+        ],
+        "url": "/m/1100197-under_suspicion",
+        "criticReviews": [
+            {
+                "criticName": "Willie Waffle",
+                "criticOrganization": "WaffleMovies.com",
+                "criticReviewDate": "April 3, 2004",
+                "criticPost": "Irwin Winkler brilliantly captures the madness that overtook Hollywood in the early 1950's",
+                "criticScore": "5/5"
+            },
+            {
+                "criticName": "Pablo Villa�a",
+                "criticOrganization": "Cinema em Cena",
+                "criticReviewDate": "August 17, 2003",
+                "criticPost": "Mesmo se tornando ocasionalmente manique�sta em seu nobre prop�sito de denunciar os absurdos do McCarthismo, o filme cumpre seu objetivo de maneira eficaz e traz, como protagonista, um her�i involunt�rio e falho - mas ainda assim her�i.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "July 26, 2002",
+                "criticPost": "Surprisingly thoughtful account of the Red Scare. De Niro does some great work here.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Owen Gleiberman",
+                "criticOrganization": "Entertainment Weekly",
+                "criticReviewDate": "September 7, 2011",
+                "criticPost": "",
+                "criticScore": "C-"
+            },
+            {
+                "criticName": "Cole Smithey",
+                "criticOrganization": "ColeSmithey.com",
+                "criticReviewDate": "November 7, 2005",
+                "criticPost": "",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "June 27, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  2/5"
+            },
+            {
+                "criticName": "Frank Swietek",
+                "criticOrganization": "One Guy's Opinion",
+                "criticReviewDate": "June 1, 2005",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Linda Cook",
+                "criticOrganization": "Quad City Times (Davenport, IA)",
+                "criticReviewDate": "August 4, 2004",
+                "criticPost": "",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Nell Minow",
+                "criticOrganization": "Movie Mom",
+                "criticReviewDate": "December 16, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Mike McGranaghan",
+                "criticOrganization": "Aisle Seat",
+                "criticReviewDate": "October 28, 2003",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Rich Cline",
+                "criticOrganization": "Shadows on the Wall",
+                "criticReviewDate": "October 15, 2003",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Carol Cling",
+                "criticOrganization": "Las Vegas Review-Journal",
+                "criticReviewDate": "September 5, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "January 7, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Laura Clifford",
+                "criticOrganization": "Reeling Reviews",
+                "criticReviewDate": "December 14, 2002",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Roger Ebert",
+                "criticOrganization": "Chicago Sun-Times",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "",
+                "criticScore": "3.5/4"
+            },
+            {
+                "criticName": "Mark R. Leeper",
+                "criticOrganization": "rec.arts.movies.reviews",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "",
+                "criticScore": "+1 out of -4..+4"
+            }
+        ]
+    },
+    {
+        "title": "Under Suspicion",
+        "description": "Simon Moore's directorial debut (his also wrote the screenplay) is a brooding thriller that takes place in the melancholy British resort town of Brighton in the 1950s. Liam Neeson stars as Tony Aaron, a disreputable ex-cop who now makes a living as a sleazy private eye. With his wife Hazel (Maggie O'Neill) as bait, he arranges compromising photographs of errant husbands whose wives require proof of marital infidelities in order to obtain divorces. But one day, Aaron bursts into a hotel room to find Hazel and her client, a famed American painter, murdered; the painter's body has been mutilated, and his thumb, with which he signed his paintings, is cut off and missing. With an old crony of Aaron's, Frank (Kenneth Cranham), leading the investigation, two lead suspects are brought to the fore --Selina (Alphonsia Emmanuel), the painter's widow; and Angeline (Laura San Giacomo), the painter's mistress. And it is with Angeline, the person most likely to have killed the painter, that Aaron falls in love. But soon the tables are turned. When the victims were found to have been killed with Aaron's gunm and a neighbor leaves a suicide note claiming that Aaron is the killer, Aaron is arrested and found guilty of the killings. But right before Aaron's execution, a surprising piece of new evidence is discovered that changes everything. ~ Paul Brenner, Rovi",
+        "rating": "R",
+        "genres": [
+            "Art House & International",
+            "Drama",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Simon Moore"
+        ],
+        "writers": [
+            "Simon Moore"
+        ],
+        "premiered": "Jun 1, 1991",
+        "runtime": "99 minutes",
+        "studio": "Sony Pictures Home Entertainment",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/liam_neeson",
+                "celebrityName": "Liam Neeson",
+                "character": "Tony"
+            },
+            {
+                "celebrityURL": "/celebrity/laura_san_giacomo",
+                "celebrityName": "Laura San Giacomo",
+                "character": "Angeline"
+            },
+            {
+                "celebrityURL": "/celebrity/alphonsia-emmanuel",
+                "celebrityName": "Alphonsia Emmanuel",
+                "character": "Selina"
+            },
+            {
+                "celebrityURL": "/celebrity/kenneth_cranham",
+                "celebrityName": "Kenneth Cranham",
+                "character": "Frank"
+            },
+            {
+                "celebrityURL": "/celebrity/1092193-maggie_oneill",
+                "celebrityName": "Maggie O'Neill",
+                "character": "Hazel"
+            },
+            {
+                "celebrityURL": "/celebrity/alan_talbot",
+                "celebrityName": "Alan Talbot",
+                "character": "Powers"
+            },
+            {
+                "celebrityURL": "/celebrity/malcolm_storry",
+                "celebrityName": "Malcolm Storry",
+                "character": "Waterston"
+            },
+            {
+                "celebrityURL": "/celebrity/martin_grace",
+                "celebrityName": "Martin Grace",
+                "character": "Colin"
+            },
+            {
+                "celebrityURL": "/celebrity/kevin-moore",
+                "celebrityName": "Kevin Moore",
+                "character": "Barrister"
+            },
+            {
+                "celebrityURL": "/celebrity/stephen_oxley",
+                "celebrityName": "Stephen Oxley",
+                "character": "Hotel Deskman"
+            },
+            {
+                "celebrityURL": "/celebrity/colin_dudley",
+                "celebrityName": "Colin Dudley",
+                "character": "Hotel Waiter"
+            },
+            {
+                "celebrityURL": "/celebrity/mike_fenton",
+                "celebrityName": "Mike Fenton",
+                "character": "Denny"
+            },
+            {
+                "celebrityURL": "/celebrity/richard-graham",
+                "celebrityName": "Richard Graham",
+                "character": "1st Chambermaid"
+            },
+            {
+                "celebrityURL": "/celebrity/alison_ruffelle",
+                "celebrityName": "Alison Ruffelle",
+                "character": "Simon Stasio"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_almaz",
+                "celebrityName": "Michael Almaz",
+                "character": "2nd Chambermaid"
+            },
+            {
+                "celebrityURL": "/celebrity/victoria_alcock",
+                "celebrityName": "Victoria Alcock",
+                "character": "Undertaker"
+            },
+            {
+                "celebrityURL": "/celebrity/tony_hughes",
+                "celebrityName": "Tony Hughes",
+                "character": "Housekeeper"
+            },
+            {
+                "celebrityURL": "/celebrity/pamela_sholto",
+                "celebrityName": "Pamela Sholto",
+                "character": "Roscoe"
+            },
+            {
+                "celebrityURL": "/celebrity/stephen-moore",
+                "celebrityName": "Stephen Moore",
+                "character": "Paul"
+            },
+            {
+                "celebrityURL": "/celebrity/alan_stocks",
+                "celebrityName": "Alan Stocks",
+                "character": "Mrs. Roscoe"
+            },
+            {
+                "celebrityURL": "/celebrity/nicolette_mckenzie",
+                "celebrityName": "Nicolette McKenzie",
+                "character": "Hotel Janitor"
+            },
+            {
+                "celebrityURL": "/celebrity/tommy_wright",
+                "celebrityName": "Tommy Wright",
+                "character": "Ben"
+            },
+            {
+                "celebrityURL": "/celebrity/lee_whitlock",
+                "celebrityName": "Lee Whitlock",
+                "character": "Prosecuting Lawyer"
+            },
+            {
+                "celebrityURL": "/celebrity/alex-norton",
+                "celebrityName": "Alex Norton",
+                "character": "Judge"
+            },
+            {
+                "celebrityURL": "/celebrity/noel_coleman",
+                "celebrityName": "Noel Coleman",
+                "character": "Forensic Scientist"
+            },
+            {
+                "celebrityURL": "/celebrity/kenneth_hadley",
+                "celebrityName": "Kenneth Hadley",
+                "character": "Defence Lawyer"
+            },
+            {
+                "celebrityURL": "/celebrity/danny_schiller",
+                "celebrityName": "Danny Schiller",
+                "character": "Travel Agent"
+            },
+            {
+                "celebrityURL": "/celebrity/joanna_brookes",
+                "celebrityName": "Joanna Brookes",
+                "character": "Clerk of the Court"
+            },
+            {
+                "celebrityURL": "/celebrity/andrew-dunford",
+                "celebrityName": "Andrew Dunford",
+                "character": "Foreman of the Jury"
+            },
+            {
+                "celebrityURL": "/celebrity/roy_sampson",
+                "celebrityName": "Roy Sampson",
+                "character": "Executioner"
+            },
+            {
+                "celebrityURL": "/celebrity/pj_davidson",
+                "celebrityName": "P.J. Davidson",
+                "character": "Executioner's Assistant"
+            },
+            {
+                "celebrityURL": "/celebrity/1140283-steve_murray",
+                "celebrityName": "Steve Murray",
+                "character": "Prison Warder"
+            },
+            {
+                "celebrityURL": "/celebrity/christopher_whittingham",
+                "celebrityName": "Christopher Whittingham",
+                "character": "Switchboard Operator"
+            },
+            {
+                "celebrityURL": "/celebrity/terry_john",
+                "celebrityName": "Terry John",
+                "character": "Switchboard Operator"
+            },
+            {
+                "celebrityURL": "/celebrity/max_cane",
+                "celebrityName": "Max Cane",
+                "character": "Prison Governor"
+            },
+            {
+                "celebrityURL": "/celebrity/gordon_salkilld",
+                "celebrityName": "Gordon Salkilld"
+            },
+            {
+                "celebrityURL": "/celebrity/christopher_gunning",
+                "celebrityName": "Christopher Gunning"
+            }
+        ],
+        "url": "/m/above_suspicion_1995",
+        "criticReviews": [
+            {
+                "criticName": "Rob Thomas",
+                "criticOrganization": "Capital Times (Madison, WI)",
+                "criticReviewDate": "October 29, 2004",
+                "criticPost": "Pretty silly and familiar mystery.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 30, 2004",
+                "criticPost": "...a handful of unexpected surprises keep Under Suspicion moving along quite serviceably.",
+                "criticScore": "3.5/5"
+            },
+            {
+                "criticName": "Dan Lybarger",
+                "criticOrganization": "Nitrate Online",
+                "criticReviewDate": "March 13, 2004",
+                "criticPost": "The plot twists itself out of coherence.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Ken Hanke",
+                "criticOrganization": "Mountain Xpress (Asheville, NC)",
+                "criticReviewDate": "January 29, 2004",
+                "criticPost": "Fair mystery with interesting locations familiar to fans of The Prisoner.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Chuck Rudolph",
+                "criticOrganization": "Matinee Magazine",
+                "criticReviewDate": "July 25, 2002",
+                "criticPost": "A solid conclusion and the always-interesting Liam Neeson can't save a familiar mystery.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "June 12, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  2/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "May 13, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  2/5"
+            }
+        ]
+    },
+    {
+        "title": "Bambi II",
+        "description": "Bambi knows his mother is gone. His stoic father, the Great Prince of the Forest, has little choice but to raise Bambi on his own. He has no experience caring for a fawn, but as wise friend Owl suggests, who better to raise the young prince than the Great Prince himself? Bambi is sent off to play with his friends Thumper and Flower, who are going to the yearly ritual of the Groundhog emerging from its hole. Thumper is trying to avoid his adorable but nosy little sisters, and Flower is hoping for more winter so he can get back to hibernating. Bambi also reconnects with the sweet doe Faline, who makes Bambi blush and stumble. But Ronno, a bully with budding antlers, targets the young prince as his enemy. Bambi learns valuable life lessons and the ways of the forest as a new season begins. But there are many adventures and obstacles that both Bambi and the Great Prince must overcome together as they realize they have much to teach each other. Together, they can look forward to a bright future.",
+        "rating": "G",
+        "genres": [
+            "Animation",
+            "Kids & Family"
+        ],
+        "directors": [
+            "Jim Ballantine",
+            "Brian Pimental"
+        ],
+        "writers": [
+            "Brian Pimental",
+            "Alicia Kirk"
+        ],
+        "premiered": "Jan 1, 2006",
+        "runtime": "72 minutes",
+        "studio": "DisneyToon Studios",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/patrick_stewart",
+                "celebrityName": "Patrick Stewart",
+                "character": "Great Prince of the Forest"
+            },
+            {
+                "celebrityURL": "/celebrity/alexander_gould",
+                "celebrityName": "Alexander Gould",
+                "character": "Bambi"
+            },
+            {
+                "celebrityURL": "/celebrity/keith_ferguson",
+                "celebrityName": "Keith Ferguson",
+                "character": "Friend Owl"
+            },
+            {
+                "celebrityURL": "/celebrity/brendon-baerg",
+                "celebrityName": "Brendon Baerg",
+                "character": "Thumper"
+            },
+            {
+                "celebrityURL": "/celebrity/nicky_jones",
+                "celebrityName": "Nicky Jones",
+                "character": "Flower"
+            },
+            {
+                "celebrityURL": "/celebrity/andrea_bowen",
+                "celebrityName": "Andrea Bowen",
+                "character": "Faline"
+            }
+        ],
+        "url": "/m/children_are_watching_us",
+        "criticReviews": [
+            {
+                "criticName": "Tim Brayton",
+                "criticOrganization": "Antagony & Ecstasy",
+                "criticReviewDate": "April 30, 2013",
+                "criticPost": "Even if we're going to concede that the narrative space filled by Bambi II needed the filling... surely there was a better story than this one.",
+                "criticScore": "2/10"
+            },
+            {
+                "criticName": "R. L. Shaffer",
+                "criticOrganization": "IGN DVD",
+                "criticReviewDate": "January 29, 2012",
+                "criticPost": "Certainly not perfect, but Bambi II isn't a bad DTV midquel.",
+                "criticScore": "7/10"
+            },
+            {
+                "criticName": "James Plath",
+                "criticOrganization": "Movie Metropolis",
+                "criticReviewDate": "December 29, 2011",
+                "criticPost": "Maybe Bambi II is II much Bambi.",
+                "criticScore": "6/10"
+            },
+            {
+                "criticName": "David Nusair",
+                "criticOrganization": "Reel Film Reviews",
+                "criticReviewDate": "March 11, 2006",
+                "criticPost": "...Bambi II never quite comes off as anything more than a needless sequel.",
+                "criticScore": "2.5/4"
+            },
+            {
+                "criticName": "Jeffrey Chen",
+                "criticOrganization": "Window to the Movies",
+                "criticReviewDate": "March 2, 2006",
+                "criticPost": "Playing it safe renders it mediocre, unaligned with its predecessor in spirit, though its thoughtful efforts in visual and musical homage shouldn't go unnoticed.",
+                "criticScore": "6/10"
+            },
+            {
+                "criticName": "Rory L. Aronsky",
+                "criticOrganization": "Film Threat",
+                "criticReviewDate": "February 20, 2006",
+                "criticPost": "This is solid proof that in times of such dire straits, like the direct to video Disney sequels, hope still exists. The endless patience has been worth it.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Kevin Carr",
+                "criticOrganization": "7M Pictures",
+                "criticReviewDate": "February 19, 2006",
+                "criticPost": "Bambi II doesn't entirely live up to the original, but how could it?",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Staci Layne Wilson",
+                "criticOrganization": "Buzzine Magazine",
+                "criticReviewDate": "February 7, 2006",
+                "criticPost": "While it might have been interesting to see Bambi truly updated for the 21st century with up-to-date computer animation techniques, I rather liked the route they took.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Joe Leydon",
+                "criticOrganization": "Variety",
+                "criticReviewDate": "February 1, 2006",
+                "criticPost": "Lightly amusing but unremarkable.",
+                "criticScore": "Read More"
+            },
+            {
+                "criticName": "John J. Puccio",
+                "criticOrganization": "Movie Metropolis",
+                "criticReviewDate": "January 24, 2006",
+                "criticPost": "I can't deny the movie is a delight to the eye and may be playful enough to entertain young children. For me, however, the original is enough.",
+                "criticScore": "5/10"
+            }
+        ]
+    },
+    {
+        "title": "Qui a tué Bambi? (Who Killed Bambi?)",
+        "description": "Gilles Marchand, who co-wrote the scripts for Human Resources and With a Friend Like Harry..., makes his directorial debut with Who Killed Bambi?, which he co-wrote with Vincent Dietschy. Isabelle (Sophie Quinton) is a student nurse. One night while leaving the hospital, she hears a ringing in her ear and loses her balance, passing out. When she awakens, the handsome young Dr. Philipp (Laurent Lucas of With a Friend Like Harry...) is standing over her. Amused by the young woman's seeming inability to stand on her own feet, he nicknames her \"Bambi.\" Isabelle is not amused. Their relationship becomes adversarial when Isabelle notices that someone has been diluting the hospital's supply of general anesthetic. She suspects that the doctor is drugging female patients so that he can have sex with them. Before long, it's not just medicine, but patients who are going missing. Isabelle's boyfriend, Sami (Yasmine Belmadi), an intern, begins to think that she's having an affair with Dr. Philipp, and no one believes her accusations, not even her cousin, Véronique (Catherine Jacob), a more experienced nurse. Isabelle finds herself in danger, and her recurring fainting spells create a situation in which she may soon find herself on Dr. Philipp's operating table. Who Killed Bambi? was shown at the 2003 Cannes Film Festival and at the Walter Reade Theater in New York as part of the Film Society of Lincoln Center's 2004 Rendez-Vous With French Cinema.",
+        "rating": "NR",
+        "genres": [
+            "Art House & International",
+            "Drama",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Gilles Marchand"
+        ],
+        "writers": [
+            "Vincent Dietschy",
+            "Gilles Marchand"
+        ],
+        "premiered": "Apr 14, 2004",
+        "runtime": "126 minutes",
+        "studio": "Strand Releasing",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/sophie-quinton",
+                "celebrityName": "Sophie Quinton",
+                "character": "Isabelle \"Bambi\""
+            },
+            {
+                "celebrityURL": "/celebrity/laurent_lucas",
+                "celebrityName": "Laurent Lucas",
+                "character": "Docteur Philipp"
+            },
+            {
+                "celebrityURL": "/celebrity/catherine_jacob",
+                "celebrityName": "Catherine Jacob",
+                "character": "Veronique"
+            },
+            {
+                "celebrityURL": "/celebrity/yasmine_belmadi",
+                "celebrityName": "Yasmine Belmadi",
+                "character": "Sami"
+            },
+            {
+                "celebrityURL": "/celebrity/michele_moretti",
+                "celebrityName": "Michèle Moretti",
+                "character": "Madame Vachon"
+            },
+            {
+                "celebrityURL": "/celebrity/1196311-anne_caillon",
+                "celebrityName": "Anne Caillon",
+                "character": "Nathalie"
+            },
+            {
+                "celebrityURL": "/celebrity/valerie-donzelli",
+                "celebrityName": "Valérie Donzelli"
+            },
+            {
+                "celebrityURL": "/celebrity/sophie_guillemin",
+                "celebrityName": "Sophie Guillemin"
+            },
+            {
+                "celebrityURL": "/celebrity/francoise_pinkwasser",
+                "celebrityName": "Francoise Pinkwasser"
+            },
+            {
+                "celebrityURL": "/celebrity/lucia-sanchez",
+                "celebrityName": "Lucia Sanchez"
+            },
+            {
+                "celebrityURL": "/celebrity/aladin_reibel",
+                "celebrityName": "Aladin Reibel"
+            },
+            {
+                "celebrityURL": "/celebrity/catherine_salvini",
+                "celebrityName": "Catherine Salvini"
+            },
+            {
+                "celebrityURL": "/celebrity/fily_keita",
+                "celebrityName": "Fily Keita"
+            },
+            {
+                "celebrityURL": "/celebrity/jeanclaude_jay",
+                "celebrityName": "Jean-Claude Jay"
+            },
+            {
+                "celebrityURL": "/celebrity/josephine_de_meaux",
+                "celebrityName": "Joséphine de Meaux"
+            },
+            {
+                "celebrityURL": "/celebrity/lucienne_moreau",
+                "celebrityName": "Lucienne Moreau"
+            },
+            {
+                "celebrityURL": "/celebrity/sophie_medina",
+                "celebrityName": "Sophie Medina"
+            },
+            {
+                "celebrityURL": "/celebrity/thierry_bosc",
+                "celebrityName": "Thierry Bosc"
+            }
+        ],
+        "url": "/m/bambi-meets-godzilla",
+        "criticReviews": [
+            {
+                "criticName": "Dennis Schwartz",
+                "criticOrganization": "Ozus' World Movie Reviews",
+                "criticReviewDate": "April 28, 2007",
+                "criticPost": "The melodrama acts as an anaesthetic, as it's hard to stay awake while it operates merely as a gruesome style over substance film.",
+                "criticScore": "C"
+            },
+            {
+                "criticName": "Rich Cline",
+                "criticOrganization": "Shadows on the Wall",
+                "criticReviewDate": "June 28, 2005",
+                "criticPost": "A sleek and cool thriller that never quite boils over into all-out suspense, which feels enticing but also a bit dull and overlong.",
+                "criticScore": "3.5/5"
+            },
+            {
+                "criticName": "Frank Swietek",
+                "criticOrganization": "One Guy's Opinion",
+                "criticReviewDate": "January 25, 2005",
+                "criticPost": "Its lack of sense is exceeded only by the absence of chills.",
+                "criticScore": "C-"
+            },
+            {
+                "criticName": "Moira MacDonald",
+                "criticOrganization": "Seattle Times",
+                "criticReviewDate": "January 14, 2005",
+                "criticPost": "Competent but ultimately disappointing.",
+                "criticScore": "Read More  2/4"
+            },
+            {
+                "criticName": "Rex Roberts",
+                "criticOrganization": "Film Journal International",
+                "criticReviewDate": "December 8, 2004",
+                "criticPost": "Who Killed Bambi? is fun to watch, and newcomer Quinton has big, beautiful eyes, but the movie's contrived plot, forced conclusion and sentimental denouement rob it of real suspense and meaning.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Mick LaSalle",
+                "criticOrganization": "San Francisco Chronicle",
+                "criticReviewDate": "December 3, 2004",
+                "criticPost": "Who Killed Bambi? does for doctors what Psycho did for showers.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Luke Y. Thompson",
+                "criticOrganization": "New Times",
+                "criticReviewDate": "December 1, 2004",
+                "criticPost": "you eventually get that it's supposed to be suspenseful, but it's ... near impossible to actually feel it.",
+                "criticScore": "Read More"
+            },
+            {
+                "criticName": "Jurgen Fauth",
+                "criticOrganization": "About.com",
+                "criticReviewDate": "November 19, 2004",
+                "criticPost": "The forced parallel with the Disney classic proves silly and pretentious, but the dull characters and lethal plot contrivances are what really do Bambi in.",
+                "criticScore": "C-"
+            },
+            {
+                "criticName": "Maitland McDonagh",
+                "criticOrganization": "TV Guide",
+                "criticReviewDate": "November 19, 2004",
+                "criticPost": "Kept me squirming in my seat for its entire running time.",
+                "criticScore": "3.5/5"
+            },
+            {
+                "criticName": "Jack Mathews",
+                "criticOrganization": "New York Daily News",
+                "criticReviewDate": "November 18, 2004",
+                "criticPost": "A cool, dry spin on the hospital horror story, steeps the classic woman-in-peril scenario in allusions to Disney's uber-innocent.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "V.A. Musetto",
+                "criticOrganization": "New York Post",
+                "criticReviewDate": "November 12, 2004",
+                "criticPost": "A long and uneventful snooze.",
+                "criticScore": "Read More  2/4"
+            },
+            {
+                "criticName": "Ed Scheid",
+                "criticOrganization": "Boxoffice Magazine",
+                "criticReviewDate": "November 12, 2004",
+                "criticPost": "Marchand capably builds suspense, thanks to a twisty script and nervy performances by Lucas and Quinton.",
+                "criticScore": "Read More  3/4"
+            },
+            {
+                "criticName": "Stephen Holden",
+                "criticOrganization": "New York Times",
+                "criticReviewDate": "November 11, 2004",
+                "criticPost": "This film is more successful in mood and setting (white hallways with stylized lighting and shadows gives a disorientating sense of dread and tension) than in the conventional screenplay.",
+                "criticScore": "2.5/5"
+            },
+            {
+                "criticName": "Kent Turner",
+                "criticOrganization": "Film-Forward.com",
+                "criticReviewDate": "November 11, 2004",
+                "criticPost": "So skillful at sustaining a chilly antiseptic atmosphere in which death stalks every gleaming corridor that it comes as a sharp disappointment to find its hygienic imagery wasted on a clunking cat-and-mouse game.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "David Ng",
+                "criticOrganization": "Village Voice",
+                "criticReviewDate": "November 11, 2004",
+                "criticPost": "Perhaps not since 1978's Coma has a hospital stay been scarier.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Todd McCarthy",
+                "criticOrganization": "Variety",
+                "criticReviewDate": "November 9, 2004",
+                "criticPost": "A sustained atmosphere of bleached-out horror.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Frank Scheck",
+                "criticOrganization": "Hollywood Reporter",
+                "criticReviewDate": "October 5, 2004",
+                "criticPost": "Tries like mad to get under the viewer's skin in its portrayal of gross medical malfescence, but never gets beyond recycling stale genre tricks and obvious characters.",
+                "criticScore": "Read More"
+            },
+            {
+                "criticName": "Ed Gonzalez",
+                "criticOrganization": "Slant Magazine",
+                "criticReviewDate": "October 5, 2004",
+                "criticPost": "Effectively creates a menacing atmosphere within the gleaming white halls of the hospital in which it is set, but its story line and characterizations lack the sufficient originality to lift the film above its many better predecessors.",
+                "criticScore": "Read More"
+            }
+        ]
+    },
+    {
+        "title": "Cat People",
+        "description": "In this loose adaptation of the 1942 horror classic of the same name, a 2001-style opening montage establishes some sort of sacrificial, mystical union between panthers and an ancient tribe of humans. Flash forward to 1980's New Orleans, where waifish Irina (Natassja Kinski) meets her older brother, Paul (Malcolm McDowell), a minister, for the first time since their animal trainer parents died and she was sent to a series of foster homes. Paul's Creole housekeeper, Female (Ruby Dee), helps Irina settle into her brother's home, but Paul himself disappears. Cut to a fleabag motel where a blasé prostitute finds an angry panther instead of a client; after mauling her, the cat is captured by police and a team of zoologists: Oliver (John Heard), Alice (Annette O'Toole), and Joe (Ed Begley Jr.). The next day Irina finds herself in the zoo where these scientists work; drawn to the newly captured panther, she befriends Oliver and takes a job in the gift shop. Shortly after the panther's violence turns deadly, it escapes, and soon Paul turns up spouting an unbelievable story about his family's were-cat heritage and his inevitable sexual union with little Irina. On the run from her dangerous brother, Irina takes refuge in a sexually frustrated romance with Oliver, afraid of what might happen if she consummates their passion. Astute viewers will notice that the zoologist characters refer to the film's panthers as leopards; \"panther\" is actually a generic term for any large cat, especially a black one, but Cat People's panthers are in fact leopards whose black color comes from a recessive trait known as melanism. ~ Brian J. Dillard, Rovi",
+        "rating": "R",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Paul Schrader"
+        ],
+        "writers": [
+            "Alan Ormsby",
+            "Paul Schrader",
+            "DeWitt Bodeen",
+            "Walter Halsey Davis"
+        ],
+        "premiered": "Apr 2, 1982",
+        "runtime": "119 minutes",
+        "studio": "Universal Pictures",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/nastassja_kinski",
+                "celebrityName": "Nastassja Kinski",
+                "character": "Irena Gallier"
+            },
+            {
+                "celebrityURL": "/celebrity/malcolm_mcdowell",
+                "celebrityName": "Malcolm McDowell",
+                "character": "Paul"
+            },
+            {
+                "celebrityURL": "/celebrity/john_heard",
+                "celebrityName": "John Heard",
+                "character": "Oliver Yates"
+            },
+            {
+                "celebrityURL": "/celebrity/annette_otoole",
+                "celebrityName": "Annette O'Toole",
+                "character": "Alice Perrin"
+            },
+            {
+                "celebrityURL": "/celebrity/ed_begley_jr",
+                "celebrityName": "Ed Begley Jr.",
+                "character": "Joe Creigh"
+            },
+            {
+                "celebrityURL": "/celebrity/scott_paulin",
+                "celebrityName": "Scott Paulin",
+                "character": "Bill Searle"
+            },
+            {
+                "celebrityURL": "/celebrity/frankie_faison",
+                "celebrityName": "Frankie Faison",
+                "character": "Detective Brandt"
+            },
+            {
+                "celebrityURL": "/celebrity/ron_diamond",
+                "celebrityName": "Ron Diamond",
+                "character": "Detective Diamond"
+            },
+            {
+                "celebrityURL": "/celebrity/lynn_lowry",
+                "celebrityName": "Lynn Lowry",
+                "character": "Ruthie"
+            },
+            {
+                "celebrityURL": "/celebrity/john_larroquette",
+                "celebrityName": "John Larroquette",
+                "character": "Bronte Judson"
+            },
+            {
+                "celebrityURL": "/celebrity/ruby_dee",
+                "celebrityName": "Ruby Dee",
+                "character": "Female"
+            },
+            {
+                "celebrityURL": "/celebrity/tessa_richarde",
+                "celebrityName": "Tessa Richarde",
+                "character": "Billie"
+            },
+            {
+                "celebrityURL": "/celebrity/patricia_perkins",
+                "celebrityName": "Patricia Perkins",
+                "character": "Taxi Driver"
+            },
+            {
+                "celebrityURL": "/celebrity/berry_berenson",
+                "celebrityName": "Berry Berenson",
+                "character": "Sandra"
+            },
+            {
+                "celebrityURL": "/celebrity/fausto_barajas",
+                "celebrityName": "Fausto Barajas",
+                "character": "Otis"
+            },
+            {
+                "celebrityURL": "/celebrity/john_h_fields",
+                "celebrityName": "John H. Fields",
+                "character": "Massage Parlor Manager"
+            },
+            {
+                "celebrityURL": "/celebrity/emery_hollier",
+                "celebrityName": "Emery Hollier",
+                "character": "Yeatman Brewer"
+            },
+            {
+                "celebrityURL": "/celebrity/",
+                "celebrityName": "Stephen Marshall",
+                "character": "Moonie"
+            },
+            {
+                "celebrityURL": "/celebrity/stephen_marshal",
+                "celebrityName": "Stephen Marshal",
+                "character": "Moonie"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_pavlovitch",
+                "celebrityName": "Robert Pavlovitch",
+                "character": "Ted"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_pavlovich",
+                "celebrityName": "Robert Pavlovich",
+                "character": "Ted"
+            },
+            {
+                "celebrityURL": "/celebrity/julie_denney",
+                "celebrityName": "Julie Denney",
+                "character": "Carol"
+            },
+            {
+                "celebrityURL": "/celebrity/marco-st-john",
+                "celebrityName": "Marco St. John",
+                "character": "Policeman"
+            },
+            {
+                "celebrityURL": "/celebrity/arione_de_winter",
+                "celebrityName": "Arione De Winter",
+                "character": "Indian Village Mother"
+            },
+            {
+                "celebrityURL": "/celebrity/francine_segal",
+                "celebrityName": "Francine Segal",
+                "character": "Churchwoman"
+            },
+            {
+                "celebrityURL": "/celebrity/roger_e_reid",
+                "celebrityName": "Roger E. Reid",
+                "character": "Policeman"
+            },
+            {
+                "celebrityURL": "/celebrity/terc_martinez",
+                "celebrityName": "Terc Martinez",
+                "character": "Cub Scout"
+            },
+            {
+                "celebrityURL": "/celebrity/don_hood",
+                "celebrityName": "Don Hood",
+                "character": "Agent"
+            },
+            {
+                "celebrityURL": "/celebrity/david_showacre",
+                "celebrityName": "David Showacre",
+                "character": "Man in Bar"
+            },
+            {
+                "celebrityURL": "/celebrity/neva_gage",
+                "celebrityName": "Neva Gage",
+                "character": "Catlike Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/david_ross_mccarty",
+                "celebrityName": "David Ross McCarty",
+                "character": "Man in Airport"
+            },
+            {
+                "celebrityURL": "/celebrity/ray_wise",
+                "celebrityName": "Ray Wise",
+                "character": "Soap Opera Man"
+            },
+            {
+                "celebrityURL": "/celebrity/marisa_folse",
+                "celebrityName": "Marisa Folse",
+                "character": "Indian Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/james_deeth",
+                "celebrityName": "James Deeth",
+                "character": "Second Helicopter Pilot"
+            },
+            {
+                "celebrityURL": "/celebrity/danelle_hand",
+                "celebrityName": "Danelle Hand",
+                "character": "Indian Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/john_c_isbell",
+                "celebrityName": "John C. Isbell",
+                "character": "Police Officer"
+            },
+            {
+                "celebrityURL": "/celebrity/joann_dearing",
+                "celebrityName": "JoAnn Dearing",
+                "character": "Soap Opera Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/brett_alexander",
+                "celebrityName": "Brett Alexander",
+                "character": "Cub Scout"
+            },
+            {
+                "celebrityURL": "/celebrity/david_blackwell",
+                "celebrityName": "David Blackwell",
+                "character": "Staring Man on Bus"
+            },
+            {
+                "celebrityURL": "/celebrity/the_black_pope",
+                "celebrityName": "The Black Pope",
+                "character": "D.J."
+            },
+            {
+                "celebrityURL": "/celebrity/charles_joseph_konya_jr",
+                "celebrityName": "Charles Joseph Konya Jr.",
+                "character": "Policeman"
+            },
+            {
+                "celebrityURL": "/celebrity/harry_hauss",
+                "celebrityName": "Harry Hauss",
+                "character": "First Helicopter Pilot"
+            },
+            {
+                "celebrityURL": "/celebrity/gregory_gatto",
+                "celebrityName": "Gregory Gatto",
+                "character": "Cub Scout"
+            }
+        ],
+        "url": "/m/1003757-cat_people",
+        "criticReviews": [
+            {
+                "criticName": "Gary Arnold",
+                "criticOrganization": "Washington Post",
+                "criticReviewDate": "April 24, 2018",
+                "criticPost": "Schrader takes himself very seriously, but after \"Cat People,\" there's no reason the public should perceive him as anything greater than an exploitation director with delusions of grandeur.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Heather Wixson",
+                "criticOrganization": "Daily Dead",
+                "criticReviewDate": "January 8, 2016",
+                "criticPost": "Cat People does manage to exhibit a few moments of genius filmmaking with an intoxicating and almost dreamlike atmosphere that ultimately makes it a memorable- albeit uneven- exploration of obsession, repressed sexual desires and death.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Josh Slater-Williams",
+                "criticOrganization": "The Skinny",
+                "criticReviewDate": "May 21, 2015",
+                "criticPost": "It almost feels like an artist mythologising his own hang-ups through the framework of fantasy fiction.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Nathan Rabin",
+                "criticOrganization": "The Dissolve",
+                "criticReviewDate": "February 3, 2014",
+                "criticPost": "An appropriately strange beast-part moody, sex-saturated art film, and part slick genre fare.",
+                "criticScore": "3.5/5"
+            },
+            {
+                "criticName": "Felix Vasquez Jr.",
+                "criticOrganization": "Cinema Crazed",
+                "criticReviewDate": "January 23, 2014",
+                "criticPost": "Barely a notch above \"The Howling\" movie series",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Dustin Putman",
+                "criticOrganization": "TheFilmFile.com",
+                "criticReviewDate": "January 8, 2014",
+                "criticPost": "[Blu-ray Review] A curious but always intriguing blend of erotic love story and animalistic, gore-drenched terror tale.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Mike McGranaghan",
+                "criticOrganization": "Aisle Seat",
+                "criticReviewDate": "January 6, 2014",
+                "criticPost": "A twisted, sexy horror classic.",
+                "criticScore": "3.5/4"
+            },
+            {
+                "criticName": "David Nusair",
+                "criticOrganization": "Reel Film Reviews",
+                "criticReviewDate": "October 28, 2011",
+                "criticPost": "...an art-house experiment gone horribly wrong.",
+                "criticScore": "1.5/4"
+            },
+            {
+                "criticName": "Steve Crum",
+                "criticOrganization": "Video-Reviewmaster.com",
+                "criticReviewDate": "February 21, 2008",
+                "criticPost": "Paul Schrader's redo has its own share of chills.",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Kim Newman",
+                "criticOrganization": "Empire Magazine",
+                "criticReviewDate": "September 26, 2007",
+                "criticPost": "In 1982, Paul Schrader seemed a very odd choice to remake Val Lewton's classic 1943 horror movie. The original was a model of restraint and subtlety and the remake, frankly, isn't.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Dave Kehr",
+                "criticOrganization": "Chicago Reader",
+                "criticReviewDate": "September 26, 2007",
+                "criticPost": "Paul Schrader's hammering, art-porno remake of Jacques Tourneur's deft little thriller.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Variety Staff",
+                "criticOrganization": "Variety",
+                "criticReviewDate": "September 26, 2007",
+                "criticPost": "Schrader's rather misogynistic film is confused in its intentions.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Cole Smithey",
+                "criticOrganization": "ColeSmithey.com",
+                "criticReviewDate": "September 26, 2007",
+                "criticPost": "Ludicrous or not, Cat People is gorgeous to behold, due mostly to cinematographer John Bailey's marvelous detailed rendering of New Orleans in autumn.",
+                "criticScore": "2.5/4"
+            },
+            {
+                "criticName": "Jeffrey M. Anderson",
+                "criticOrganization": "Combustible Celluloid",
+                "criticReviewDate": "September 26, 2007",
+                "criticPost": "Kinski was essential to the film as conceived, and she's endlessly watchable.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Staci Layne Wilson",
+                "criticOrganization": "StaciWilson.com",
+                "criticReviewDate": "November 10, 2006",
+                "criticPost": "Sexy, scary and super cool.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Roger Ebert",
+                "criticOrganization": "Chicago Sun-Times",
+                "criticReviewDate": "June 24, 2006",
+                "criticPost": "The seductively exotic surface of this mythically underpinned fantasy might be offset for some by much graphic gore, but if you can buy the romantic metaphors for the primitivisms of sexual obsession, the film delivers down the line.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "James Sanford",
+                "criticOrganization": "Kalamazoo Gazette",
+                "criticReviewDate": "May 26, 2006",
+                "criticPost": "Underrated.",
+                "criticScore": "3/4"
+            }
+        ]
+    },
+    {
+        "title": "On a Clear Day You Can See Forever",
+        "description": "Barbara Streisand como una mujer que pide a su doctor hipnotizarla para que deje de fumar. Yves Montand, Bob Newhart, Larry Blyden, Simon Oakland, Jack Nicholson.",
+        "rating": "G",
+        "genres": [
+            "Classics",
+            "Comedy",
+            "Drama",
+            "Musical & Performing Arts",
+            "Science Fiction & Fantasy"
+        ],
+        "directors": [
+            "Vincente Minnelli",
+            "Vicente Minelli"
+        ],
+        "writers": [
+            "Alan Jay Lerner"
+        ],
+        "premiered": "Jan 1, 1970",
+        "runtime": "129 minutes",
+        "studio": "Paramount Pictures",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/barbra_streisand",
+                "celebrityName": "Barbra Streisand",
+                "character": "Daisy Gamble"
+            },
+            {
+                "celebrityURL": "/celebrity/yves_montand",
+                "celebrityName": "Yves Montand",
+                "character": "Dr. Marc Chabot"
+            },
+            {
+                "celebrityURL": "/celebrity/bob_newhart",
+                "celebrityName": "Bob Newhart",
+                "character": "Dr. Mason Hume"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_nicholson",
+                "celebrityName": "Jack Nicholson",
+                "character": "Tad Pringle"
+            },
+            {
+                "celebrityURL": "/celebrity/larry_blyden",
+                "celebrityName": "Larry Blyden",
+                "character": "Warren Pratt"
+            },
+            {
+                "celebrityURL": "/celebrity/simon_oakland",
+                "celebrityName": "Simon Oakland",
+                "character": "Dr. Conrad Fuller"
+            },
+            {
+                "celebrityURL": "/celebrity/1013103-john_richardson",
+                "celebrityName": "John Richardson",
+                "character": "Robert Tentrees"
+            },
+            {
+                "celebrityURL": "/celebrity/pamela_brown",
+                "celebrityName": "Pamela Brown",
+                "character": "Mrs. Fitzherbert"
+            },
+            {
+                "celebrityURL": "/celebrity/irene_handl",
+                "celebrityName": "Irene Handl",
+                "character": "Winnie Wainwhisle"
+            },
+            {
+                "celebrityURL": "/celebrity/roy_kinnear",
+                "celebrityName": "Roy Kinnear",
+                "character": "Prince Regent"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_crowcroft",
+                "celebrityName": "Peter Crowcroft",
+                "character": "Divorce Attorney"
+            },
+            {
+                "celebrityURL": "/celebrity/byron-webster",
+                "celebrityName": "Byron Webster",
+                "character": "Prosecuting Attorney"
+            },
+            {
+                "celebrityURL": "/celebrity/mabel_albertson",
+                "celebrityName": "Mabel Albertson",
+                "character": "Mrs. Hatch"
+            },
+            {
+                "celebrityURL": "/celebrity/laurie_main",
+                "celebrityName": "Laurie Main",
+                "character": "Lord Percy"
+            },
+            {
+                "celebrityURL": "/celebrity/kermit_murdock",
+                "celebrityName": "Kermit Murdock",
+                "character": "Hoyt III"
+            },
+            {
+                "celebrityURL": "/celebrity/elaine_giftos",
+                "celebrityName": "Elaine Giftos",
+                "character": "Muriel"
+            },
+            {
+                "celebrityURL": "/celebrity/john_le_mesurier",
+                "celebrityName": "John Le Mesurier",
+                "character": "Pelham"
+            },
+            {
+                "celebrityURL": "/celebrity/angela_pringle",
+                "celebrityName": "Angela Pringle",
+                "character": "Diana Smallwood"
+            },
+            {
+                "celebrityURL": "/celebrity/leon_ames",
+                "celebrityName": "Leon Ames",
+                "character": "Burt Clews"
+            },
+            {
+                "celebrityURL": "/celebrity/paul_camen",
+                "celebrityName": "Paul Camen",
+                "character": "Millard"
+            },
+            {
+                "celebrityURL": "/celebrity/george_neise",
+                "celebrityName": "George N. Neise",
+                "character": "Wytelipt"
+            },
+            {
+                "celebrityURL": "/celebrity/tony_colti",
+                "celebrityName": "Tony Colti",
+                "character": "Preston"
+            },
+            {
+                "celebrityURL": "/celebrity/jeannie_berlin",
+                "celebrityName": "Jeannie Berlin"
+            }
+        ],
+        "url": "/m/forever_and_a_day",
+        "criticReviews": [
+            {
+                "criticName": "Phil Hall",
+                "criticOrganization": "IdentityTheory",
+                "criticReviewDate": "February 15, 2010",
+                "criticPost": "Despite its numerous faults, it succeeds as a Streisand showcase",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "July 23, 2009",
+                "criticPost": "Though one of Minnelli's weaker films, this Alan J. Lerner's musical, which bears thematic resemblance to Minnelli's Gigi and Cukor's My Fair Lady, is worth seeing for Streisand's performance.",
+                "criticScore": "C+"
+            },
+            {
+                "criticName": "Michael E. Grost",
+                "criticOrganization": "Classic Film and Television",
+                "criticReviewDate": "August 8, 2008",
+                "criticPost": "Visually rich Minnelli musical - a delight.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Steve Crum",
+                "criticOrganization": "Kansas City Kansan",
+                "criticReviewDate": "October 25, 2004",
+                "criticPost": "Streisand shines in otherwise dull musical.",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Christopher Null",
+                "criticOrganization": "Filmcritic.com",
+                "criticReviewDate": "May 26, 2005",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "January 29, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Carol Cling",
+                "criticOrganization": "Las Vegas Review-Journal",
+                "criticReviewDate": "August 22, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Nell Minow",
+                "criticOrganization": "Movie Mom",
+                "criticReviewDate": "June 20, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  4/5"
+            }
+        ]
+    },
+    {
+        "title": "Heaven Can Wait",
+        "description": "In this film, Warren Beatty plays pro-football-player Joe Pendleton, who is whisked to Heaven before his due date by over-eager celestial escort Buck Henry. The erudite Mr. Jordan arranges for Joe to enter the mortal coil of a cold-hearted businessman named Farnsworth, who has just been murdered by his wife.",
+        "rating": "PG",
+        "genres": [
+            "Comedy",
+            "Science Fiction & Fantasy",
+            "Romance",
+            "Sports & Fitness"
+        ],
+        "directors": [
+            "Warren Beatty",
+            "Buck Henry"
+        ],
+        "writers": [
+            "Elaine May",
+            "Warren Beatty"
+        ],
+        "premiered": "Jun 28, 1978",
+        "runtime": "101 minutes",
+        "studio": "Paramount Home Video",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/warren_beatty",
+                "celebrityName": "Warren Beatty",
+                "character": "Joe Pendleton"
+            },
+            {
+                "celebrityURL": "/celebrity/julie_christie",
+                "celebrityName": "Julie Christie",
+                "character": "Betty Logan"
+            },
+            {
+                "celebrityURL": "/celebrity/james_mason",
+                "celebrityName": "James Mason",
+                "character": "Mr. Jordan"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_warden",
+                "celebrityName": "Jack Warden",
+                "character": "Max Corkle"
+            },
+            {
+                "celebrityURL": "/celebrity/dyan_cannon",
+                "celebrityName": "Dyan Cannon",
+                "character": "Julia Farnsworth"
+            },
+            {
+                "celebrityURL": "/celebrity/charles_grodin",
+                "celebrityName": "Charles Grodin",
+                "character": "Tony Abbott"
+            },
+            {
+                "celebrityURL": "/celebrity/buck_henry",
+                "celebrityName": "Buck Henry",
+                "character": "The Escort"
+            },
+            {
+                "celebrityURL": "/celebrity/vincent_gardenia",
+                "celebrityName": "Vincent Gardenia",
+                "character": "Lt. Krim"
+            },
+            {
+                "celebrityURL": "/celebrity/joseph_maher",
+                "celebrityName": "Joseph Maher",
+                "character": "Sisk"
+            },
+            {
+                "celebrityURL": "/celebrity/hamilton_camp",
+                "celebrityName": "Hamilton Camp",
+                "character": "Bentley"
+            },
+            {
+                "celebrityURL": "/celebrity/arthur_malet",
+                "celebrityName": "Arthur Malet",
+                "character": "Everett"
+            },
+            {
+                "celebrityURL": "/celebrity/stephanie_faracy",
+                "celebrityName": "Stephanie Faracy",
+                "character": "Corinne"
+            },
+            {
+                "celebrityURL": "/celebrity/jeannie_linero",
+                "celebrityName": "Jeannie Linero",
+                "character": "Lavinia"
+            },
+            {
+                "celebrityURL": "/celebrity/harry_dk_wong",
+                "celebrityName": "Harry D.K. Wong",
+                "character": "Gardener"
+            },
+            {
+                "celebrityURL": "/celebrity/george_j_manos",
+                "celebrityName": "George J. Manos",
+                "character": "Security Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/larry_block",
+                "celebrityName": "Larry Block",
+                "character": "Peters"
+            },
+            {
+                "celebrityURL": "/celebrity/frank_campanella",
+                "celebrityName": "Frank Campanella",
+                "character": "Conway"
+            },
+            {
+                "celebrityURL": "/celebrity/bill_sorrells",
+                "celebrityName": "Bill Sorrells",
+                "character": "Tomarken"
+            },
+            {
+                "celebrityURL": "/celebrity/dick_enberg",
+                "celebrityName": "Dick Enberg",
+                "character": "TV Interviewer"
+            },
+            {
+                "celebrityURL": "/celebrity/dolph_sweet",
+                "celebrityName": "Dolph Sweet",
+                "character": "Head Coach"
+            },
+            {
+                "celebrityURL": "/celebrity/rg_armstrong",
+                "celebrityName": "R.G. Armstrong",
+                "character": "General Manager"
+            },
+            {
+                "celebrityURL": "/celebrity/ed-peck",
+                "celebrityName": "Ed Peck",
+                "character": "Trainer"
+            },
+            {
+                "celebrityURL": "/celebrity/john_randolph",
+                "celebrityName": "John Randolph",
+                "character": "Former Owner"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_obrien_2",
+                "celebrityName": "Richard O'Brien (II)",
+                "character": "Former Owner's Adviser"
+            },
+            {
+                "celebrityURL": "/celebrity/joseph_f_makel",
+                "celebrityName": "Joseph F. Makel",
+                "character": "Haitian Ambassador"
+            },
+            {
+                "celebrityURL": "/celebrity/will-hare",
+                "celebrityName": "Will Hare",
+                "character": "Team Doctor"
+            },
+            {
+                "celebrityURL": "/celebrity/lee_weaver",
+                "celebrityName": "Lee Weaver",
+                "character": "Way Station Attendant"
+            },
+            {
+                "celebrityURL": "/celebrity/roger_bowen",
+                "celebrityName": "Roger Bowen",
+                "character": "Newspaperman"
+            },
+            {
+                "celebrityURL": "/celebrity/keene_curtis",
+                "celebrityName": "Keene Curtis",
+                "character": "Oppenheim"
+            },
+            {
+                "celebrityURL": "/celebrity/william_larsen",
+                "celebrityName": "William Larsen",
+                "character": "Renfield"
+            },
+            {
+                "celebrityURL": "/celebrity/morgan-farley",
+                "celebrityName": "Morgan Farley",
+                "character": "Middleton"
+            },
+            {
+                "celebrityURL": "/celebrity/william_bogert",
+                "celebrityName": "William Bogert",
+                "character": "Lawson"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_e_leonard",
+                "celebrityName": "Robert E. Leonard",
+                "character": "Board Member"
+            },
+            {
+                "celebrityURL": "/celebrity/joel_marston",
+                "celebrityName": "Joel Marston",
+                "character": "Board Member"
+            },
+            {
+                "celebrityURL": "/celebrity/earl_montgomery_jr",
+                "celebrityName": "Earl Montgomery Jr.",
+                "character": "Board Member"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_c_stevens",
+                "celebrityName": "Robert C. Stevens",
+                "character": "Board Member"
+            },
+            {
+                "celebrityURL": "/celebrity/bennie_massa",
+                "celebrityName": "Bennie Massa",
+                "character": "Coliseum Security Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_tomarken",
+                "celebrityName": "Peter Tomarken",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/lisa_richards",
+                "celebrityName": "Lisa Blake Richards",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/william_sylvester",
+                "celebrityName": "William Sylvester",
+                "character": "Nuclear Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/charlie_charles",
+                "celebrityName": "Charlie Charles",
+                "character": "High-Wire Performer"
+            },
+            {
+                "celebrityURL": "/celebrity/penelope_milford",
+                "celebrityName": "Penelope Milford",
+                "character": "Chauffeur"
+            },
+            {
+                "celebrityURL": "/celebrity/nick_outin",
+                "celebrityName": "Nick Outin",
+                "character": "Hodges"
+            },
+            {
+                "celebrityURL": "/celebrity/jerry_scanlan",
+                "celebrityName": "Jerry Scanlan",
+                "character": "Kowalsky"
+            },
+            {
+                "celebrityURL": "/celebrity/jim_boeke",
+                "celebrityName": "Jim Boeke",
+                "character": "Gudnitz"
+            },
+            {
+                "celebrityURL": "/celebrity/marvin_fleming",
+                "celebrityName": "Marvin Fleming",
+                "character": "Gorman"
+            },
+            {
+                "celebrityURL": "/celebrity/deacon_jones",
+                "celebrityName": "Deacon Jones",
+                "character": "Owens"
+            },
+            {
+                "celebrityURL": "/celebrity/les_josephson",
+                "celebrityName": "Les Josephson",
+                "character": "Cassidy"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_t_snow",
+                "celebrityName": "Jack T. Snow",
+                "character": "Football Player"
+            },
+            {
+                "celebrityURL": "/celebrity/allison_caine",
+                "celebrityName": "Allison Caine",
+                "character": "Football Player"
+            },
+            {
+                "celebrityURL": "/celebrity/charlie_cowan",
+                "celebrityName": "Charlie Cowan",
+                "character": "TV Sportscaster"
+            },
+            {
+                "celebrityURL": "/celebrity/joe_corolla",
+                "celebrityName": "Joe Corolla",
+                "character": "TV Sportscaster"
+            },
+            {
+                "celebrityURL": "/celebrity/bryant_gumbel",
+                "celebrityName": "Bryant Gumbel",
+                "character": "TV Commentator"
+            },
+            {
+                "celebrityURL": "/celebrity/jim_healy",
+                "celebrityName": "Jim Healy",
+                "character": "TV Color Analyst"
+            },
+            {
+                "celebrityURL": "/celebrity/curt_gowdy",
+                "celebrityName": "Curt Gowdy",
+                "character": "Waiter"
+            },
+            {
+                "celebrityURL": "/celebrity/al_derogatis",
+                "celebrityName": "Al DeRogatis",
+                "character": "Waiter"
+            },
+            {
+                "celebrityURL": "/celebrity/elliot_reid",
+                "celebrityName": "Elliott Reid",
+                "character": "Swimmer"
+            },
+            {
+                "celebrityURL": "/celebrity/byron_webster",
+                "celebrityName": "Byron Webster",
+                "character": "Swimmer's Friend"
+            },
+            {
+                "celebrityURL": "/celebrity/garrett_craig",
+                "celebrityName": "Garrett Craig",
+                "character": "Wealthy Man in Restaurant"
+            },
+            {
+                "celebrityURL": "/celebrity/paul_damato",
+                "celebrityName": "Paul D'Amato"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_fortier",
+                "celebrityName": "Robert Fortier"
+            }
+        ],
+        "url": "/m/1009426-heaven_can_wait",
+        "criticReviews": [
+            {
+                "criticName": "Judith Martin",
+                "criticOrganization": "Washington Post",
+                "criticReviewDate": "August 30, 2016",
+                "criticPost": "This is a very sweet movie to watch, the pleasant cinematic equivalent of light summer reading.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Renee Schonfeld",
+                "criticOrganization": "Common Sense Media",
+                "criticReviewDate": "May 3, 2016",
+                "criticPost": "Still-relevant '70s comic fantasy has some profanity.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Frank Rich",
+                "criticOrganization": "TIME Magazine",
+                "criticReviewDate": "January 24, 2014",
+                "criticPost": "[The film] has everything going for it: big laughs, populist politics, billowy sequences set in heaven, a murder plot, a climactic Super Bowl game, a supporting cast of choice comic actors, and best of all, a touching (but PG) romance.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Jo Berry",
+                "criticOrganization": "Radio Times",
+                "criticReviewDate": "January 24, 2014",
+                "criticPost": "This updated version of the 1941 film Here Comes Mr Jordan is one of the few remakes that is almost as good as the original.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Variety Staff",
+                "criticOrganization": "Variety",
+                "criticReviewDate": "March 26, 2009",
+                "criticPost": "Heaven Can Wait is an outstanding film.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "July 26, 2008",
+                "criticPost": "Supremely produced, this whimsical romantic comedy served as star vehicle for Julie Christie and especially Warren Beatty, who made an impressive co-directing debut with Buck Henry; the film deservedly won the Oscar for Art Direction.",
+                "criticScore": "B+"
+            },
+            {
+                "criticName": "Jonathan Rosenbaum",
+                "criticOrganization": "Chicago Reader",
+                "criticReviewDate": "March 21, 2007",
+                "criticPost": "There are a few laughs from Grodin and Cannon, but Beatty and Christie are like 400-pound gorillas chasing a milkweed seed.",
+                "criticScore": "2.5/5"
+            },
+            {
+                "criticName": "Dennis Schwartz",
+                "criticOrganization": "Ozus' World Movie Reviews",
+                "criticReviewDate": "March 21, 2007",
+                "criticPost": "It's certainly likable enough and was a big hit when it came out, but one could hardly call it an auspicious artistic debut -- a crafty commercial entertainment with a certain amount of intelligence is more like it.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Geoff Brown",
+                "criticOrganization": "Time Out",
+                "criticReviewDate": "July 9, 2006",
+                "criticPost": "Frivolous and amusing in spots.",
+                "criticScore": "B-"
+            },
+            {
+                "criticName": "Clint Morris",
+                "criticOrganization": "Moviehole",
+                "criticReviewDate": "February 9, 2006",
+                "criticPost": "The film drags its feet uncertainly from beginning to end.",
+                "criticScore": "Read More"
+            },
+            {
+                "criticName": "Vincent Canby",
+                "criticOrganization": "New York Times",
+                "criticReviewDate": "June 11, 2005",
+                "criticPost": "A comedy classic.....if you've never seen it, you have to ask yourself...why?",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Edward Douglas",
+                "criticOrganization": "ComingSoon.net",
+                "criticReviewDate": "May 9, 2005",
+                "criticPost": "There's nothing worse than a pushy narrative.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Roger Ebert",
+                "criticOrganization": "Chicago Sun-Times",
+                "criticReviewDate": "January 31, 2005",
+                "criticPost": "A really enjoyable high concept comedy; better than the 2000 remake!",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Frederic and Mary Ann Brussat",
+                "criticOrganization": "Spirituality and Practice",
+                "criticReviewDate": "October 23, 2004",
+                "criticPost": "This is the kind of upbeat screwball comedy Hollywood used to do smoothly and well.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Ken Hanke",
+                "criticOrganization": "Mountain Xpress (Asheville, NC)",
+                "criticReviewDate": "January 24, 2004",
+                "criticPost": "Heaven Can Wait shines in almost every department: it in one of those rare movies that deserves to be seen again and again.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Jeffrey Westhoff",
+                "criticOrganization": "Northwest Herald (Crystal Lake, IL)",
+                "criticReviewDate": "November 26, 2003",
+                "criticPost": "Unnecessary, charmless remake of Here Comes Mr.Jordan.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Daniel Etherington",
+                "criticOrganization": "Film4",
+                "criticReviewDate": "August 7, 2003",
+                "criticPost": "God, how I love this movie.",
+                "criticScore": "5/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "May 24, 2003",
+                "criticPost": "It may not have had quite the resonance of Beatty's earlier work, but Heaven Can Wait is a smart, likeable 1970s comedy with a heart.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "James Rocchi",
+                "criticOrganization": "Netflix",
+                "criticReviewDate": "November 25, 2002",
+                "criticPost": "Beatty's best comedy.",
+                "criticScore": "4/5"
+            }
+        ]
+    },
+    {
+        "title": "Charlotte Bronte's Jane Eyre",
+        "description": "This version of Charlotte Bronte's classic romance is greatly subdued and plays down the Gothic aspects in favor of creating a more realistic view of the star-crossed relationship between two tortured souls. The film follows the trials of the sad young governess as she finds love with her enigmatic employer.",
+        "rating": "R",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "directors": [
+            "Franco Zeffirelli"
+        ],
+        "writers": [
+            "Franco Zeffirelli",
+            "Hugh Whitemore"
+        ],
+        "premiered": "Apr 12, 1996",
+        "runtime": "112 minutes",
+        "studio": "Miramax",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/william_hurt",
+                "celebrityName": "William Hurt",
+                "character": "Rochester"
+            },
+            {
+                "celebrityURL": "/celebrity/charlotte_gainsbourg",
+                "celebrityName": "Charlotte Gainsbourg",
+                "character": "Jane Eyre"
+            },
+            {
+                "celebrityURL": "/celebrity/anna_paquin",
+                "celebrityName": "Anna Paquin",
+                "character": "Young Jane"
+            },
+            {
+                "celebrityURL": "/celebrity/geraldine_chaplin",
+                "celebrityName": "Geraldine Chaplin",
+                "character": "Miss Scatcherd"
+            },
+            {
+                "celebrityURL": "/celebrity/fiona_shaw",
+                "celebrityName": "Fiona Shaw",
+                "character": "Mrs. Reed"
+            },
+            {
+                "celebrityURL": "/celebrity/elle_macpherson",
+                "celebrityName": "Elle Macpherson",
+                "character": "Blanche Ingram"
+            },
+            {
+                "celebrityURL": "/celebrity/1073460-john_wood",
+                "celebrityName": "John Wood",
+                "character": "Mr. Brocklehurst"
+            },
+            {
+                "celebrityURL": "/celebrity/leanne-rowe",
+                "celebrityName": "Leanne Rowe",
+                "character": "Helen Burns"
+            },
+            {
+                "celebrityURL": "/celebrity/joan_plowright",
+                "celebrityName": "Joan Plowright",
+                "character": "Mrs. Fairfax"
+            },
+            {
+                "celebrityURL": "/celebrity/billie_whitelaw",
+                "celebrityName": "Billie Whitelaw",
+                "character": "Grace Pool"
+            },
+            {
+                "celebrityURL": "/celebrity/samuel_west",
+                "celebrityName": "Samuel West",
+                "character": "St. John Rivers"
+            },
+            {
+                "celebrityURL": "/celebrity/edward_de_souza",
+                "celebrityName": "Edward de Souza",
+                "character": "Mason"
+            },
+            {
+                "celebrityURL": "/celebrity/amanda_root",
+                "celebrityName": "Amanda Root",
+                "character": "Miss Temple"
+            },
+            {
+                "celebrityURL": "/celebrity/maria_schneider",
+                "celebrityName": "Maria Schneider",
+                "character": "Bertha"
+            },
+            {
+                "celebrityURL": "/celebrity/charlotte_attenborough",
+                "celebrityName": "Charlotte Attenborough",
+                "character": "Mary Rivers"
+            },
+            {
+                "celebrityURL": "/celebrity/nic_knight",
+                "celebrityName": "Nic Knight",
+                "character": "John Reed"
+            },
+            {
+                "celebrityURL": "/celebrity/nicola_howard",
+                "celebrityName": "Nicola Howard",
+                "character": "Eliza Reed"
+            },
+            {
+                "celebrityURL": "/celebrity/sasha_graff",
+                "celebrityName": "Sasha Graff",
+                "character": "Georgiana Reed"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_warwick",
+                "celebrityName": "Richard Warwick",
+                "character": "John"
+            },
+            {
+                "celebrityURL": "/celebrity/judith_parker",
+                "celebrityName": "Judith Parker",
+                "character": "Leah"
+            },
+            {
+                "celebrityURL": "/celebrity/josephine_serre",
+                "celebrityName": "Josephine Serre",
+                "character": "Adele"
+            },
+            {
+                "celebrityURL": "/celebrity/simon_beresford",
+                "celebrityName": "Simon Beresford",
+                "character": "Henry Eshton"
+            },
+            {
+                "celebrityURL": "/celebrity/chris_larkin",
+                "celebrityName": "Chris Larkin",
+                "character": "Frederick Lynn"
+            },
+            {
+                "celebrityURL": "/celebrity/miranda_forbes",
+                "celebrityName": "Miranda Forbes",
+                "character": "Lady Ingram"
+            },
+            {
+                "celebrityURL": "/celebrity/ann_queensberry",
+                "celebrityName": "Ann Queensberry",
+                "character": "Lady Lynn"
+            },
+            {
+                "celebrityURL": "/celebrity/sheila-burrell",
+                "celebrityName": "Sheila Burrell",
+                "character": "Lady Eshton"
+            },
+            {
+                "celebrityURL": "/celebrity/sara_stevens",
+                "celebrityName": "Sara Stevens",
+                "character": "Amy Eshton"
+            },
+            {
+                "celebrityURL": "/celebrity/orina_messina",
+                "celebrityName": "Orina Messina",
+                "character": "Louisa Eshton"
+            },
+            {
+                "celebrityURL": "/celebrity/marissa_dunlop",
+                "celebrityName": "Marissa Dunlop",
+                "character": "Mary Ingram"
+            },
+            {
+                "celebrityURL": "/celebrity/julian_fellowes",
+                "celebrityName": "Julian Fellowes",
+                "character": "Colonel Dent"
+            },
+            {
+                "celebrityURL": "/celebrity/barry_martin",
+                "celebrityName": "Barry Martin",
+                "character": "Sir George Lynn"
+            },
+            {
+                "celebrityURL": "/celebrity/walter_sparrow",
+                "celebrityName": "Walter Sparrow",
+                "character": "Lord Eshton"
+            },
+            {
+                "celebrityURL": "/celebrity/steffan_boje",
+                "celebrityName": "Steffan Boje",
+                "character": "Party Guest"
+            },
+            {
+                "celebrityURL": "/celebrity/golda_broderick",
+                "celebrityName": "Golda Broderick",
+                "character": "Mrs. Bennett"
+            },
+            {
+                "celebrityURL": "/celebrity/john_tranter",
+                "celebrityName": "John Tranter",
+                "character": "Dr. Carter"
+            },
+            {
+                "celebrityURL": "/celebrity/ralph-nossek",
+                "celebrityName": "Ralph Nossek",
+                "character": "Reverend Wood"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_woodthorpe",
+                "celebrityName": "Peter Woodthorpe",
+                "character": "Briggs"
+            }
+        ],
+        "url": "/m/1057656-jane_eyre",
+        "criticReviews": [
+            {
+                "criticName": "Audrey Rock-Richardson",
+                "criticOrganization": "Tooele Transcript-Bulletin (Utah)",
+                "criticReviewDate": "June 30, 2004",
+                "criticPost": "All the literary elements are here, but it's lacking in emotion.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Dan Lybarger",
+                "criticOrganization": "Nitrate Online",
+                "criticReviewDate": "February 23, 2004",
+                "criticPost": "Interestingly low-key take on the classic. By underplaying Rochester, Hurt manages to make him just a little bit creepier.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Frederic and Mary Ann Brussat",
+                "criticOrganization": "Spirituality and Practice",
+                "criticReviewDate": "August 27, 2002",
+                "criticPost": "Convincing and mesmerizing interpretation of this literary classic by Charlotte Bronte.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "James Sanford",
+                "criticOrganization": "Kalamazoo Gazette",
+                "criticReviewDate": "July 29, 2002",
+                "criticPost": "an O.K. adaptation, most notable for Hurt's performance",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Mike Clark",
+                "criticOrganization": "USA Today",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "Jane Eyre with William Hurt as Rochester sounds dicey enough, but the last thing you expect from Zeffirelli's latest is a Jane without juice.",
+                "criticScore": "Read More  2/4"
+            },
+            {
+                "criticName": "Lisa Schwarzbaum",
+                "criticOrganization": "Entertainment Weekly",
+                "criticReviewDate": "September 7, 2011",
+                "criticPost": "",
+                "criticScore": "B-"
+            },
+            {
+                "criticName": "Robin Clifford",
+                "criticOrganization": "Reeling Reviews",
+                "criticReviewDate": "March 11, 2011",
+                "criticPost": "",
+                "criticScore": "A-"
+            },
+            {
+                "criticName": "Peter Travers",
+                "criticOrganization": "Rolling Stone",
+                "criticReviewDate": "March 11, 2011",
+                "criticPost": "",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Owen Gleiberman",
+                "criticOrganization": "Entertainment Weekly",
+                "criticReviewDate": "March 10, 2011",
+                "criticPost": "",
+                "criticScore": "B-"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "June 11, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Carol Cling",
+                "criticOrganization": "Las Vegas Review-Journal",
+                "criticReviewDate": "July 16, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Matt Brunson",
+                "criticOrganization": "Creative Loafing",
+                "criticReviewDate": "January 21, 2004",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Dragan Antulov",
+                "criticOrganization": "rec.arts.movies.reviews",
+                "criticReviewDate": "January 13, 2004",
+                "criticPost": "",
+                "criticScore": "6/10"
+            },
+            {
+                "criticName": "Susan Tavernetti",
+                "criticOrganization": "Palo Alto Weekly",
+                "criticReviewDate": "May 20, 2003",
+                "criticPost": "",
+                "criticScore": "1/4"
+            },
+            {
+                "criticName": "Nell Minow",
+                "criticOrganization": "Movie Mom",
+                "criticReviewDate": "April 18, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  4/5"
+            },
+            {
+                "criticName": "Bill Thompson",
+                "criticOrganization": "Post and Courier (Charleston, SC)",
+                "criticReviewDate": "February 12, 2003",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Jeffrey Westhoff",
+                "criticOrganization": "Northwest Herald (Crystal Lake, IL)",
+                "criticReviewDate": "December 24, 2002",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "October 30, 2002",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Rob Vaux",
+                "criticOrganization": "Flipside Movie Emporium",
+                "criticReviewDate": "August 13, 2002",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "James Berardinelli",
+                "criticOrganization": "ReelViews",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "",
+                "criticScore": "3/4"
+            }
+        ]
+    },
+    {
+        "title": "Southern Comfort",
+        "description": "A handful of part time soldiers unwittingly turn a field exercise into a miniature war in this offbeat action drama from writer and director Walter Hill. A group of National Guard reservists are sent to Louisiana on a chilly weekend for war games exercises. None of these weekend warriors seem especially happy to be there, especially laid-back Spencer (Keith Carradine), tightly-wound macho man Reece (Fred Ward) and transplanted Texan Hardin (Powers Booth). While making their way through swamp country, the reservists discover their maps are out of date and they've become lost. Rather than march back to camp and start over, they decide to \"borrow\" several canoes they've found by the banks of the bayou, which should put them back on track. When a Cajun local catches the soldiers stealing his canoes, Stuckey (Lewis Smith) fires a few rounds in his direction; for the purposes of their exercises, the Guardsmen have been given blank shells, so Stuckey imagines this is a harmless way to scare the man off. However, the Cajun soon returns fire -- with real bullets. After Poole (Peter Coyote) is killed by a shotgun blast, the Guardsmen find themselves lost in a place they do not understand, surrounded by angry men determined to drive the unwelcome visitors off their land at all costs. A taut and atmospheric action film which is also serves as an intelligent and evocative metaphor for America's role in the Vietnam war, Southern Comfort also features an excellent score by guitarist (and frequent Walter Hill collaborator) Ry Cooder. ~ Mark Deming, Rovi",
+        "rating": "R",
+        "genres": [
+            "Action & Adventure",
+            "Drama",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Walter Hill"
+        ],
+        "writers": [
+            "Michael Kane",
+            "Walter Hill",
+            "David Giler"
+        ],
+        "premiered": "Jan 1, 1981",
+        "runtime": "105 minutes",
+        "studio": "20th Century Fox Film Corporation",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/keith_carradine",
+                "celebrityName": "Keith Carradine",
+                "character": "Spencer"
+            },
+            {
+                "celebrityURL": "/celebrity/powers_boothe",
+                "celebrityName": "Powers Boothe",
+                "character": "Hardin"
+            },
+            {
+                "celebrityURL": "/celebrity/fred_ward",
+                "celebrityName": "Fred Ward",
+                "character": "Reece"
+            },
+            {
+                "celebrityURL": "/celebrity/franklyn_seales",
+                "celebrityName": "Franklyn Seales",
+                "character": "Simms"
+            },
+            {
+                "celebrityURL": "/celebrity/tk_carter",
+                "celebrityName": "T.K. Carter",
+                "character": "Cribbs"
+            },
+            {
+                "celebrityURL": "/celebrity/lewis_smith",
+                "celebrityName": "Lewis Smith",
+                "character": "Stuckey"
+            },
+            {
+                "celebrityURL": "/celebrity/les_lannom",
+                "celebrityName": "Les Lannom",
+                "character": "Casper"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_coyote",
+                "celebrityName": "Peter Coyote",
+                "character": "Poole"
+            },
+            {
+                "celebrityURL": "/celebrity/alan_autry",
+                "celebrityName": "Alan Autry",
+                "character": "Bowden"
+            },
+            {
+                "celebrityURL": "/celebrity/brion_james",
+                "celebrityName": "Brion James",
+                "character": "Trapper"
+            },
+            {
+                "celebrityURL": "/celebrity/sonny_landham",
+                "celebrityName": "Sonny Landham",
+                "character": "Hunter"
+            },
+            {
+                "celebrityURL": "/celebrity/allan_graf",
+                "celebrityName": "Allan Graf",
+                "character": "Hunter"
+            },
+            {
+                "celebrityURL": "/celebrity/ned-dowd",
+                "celebrityName": "Ned Dowd",
+                "character": "Hunter"
+            },
+            {
+                "celebrityURL": "/celebrity/rob_ryder",
+                "celebrityName": "Rob Ryder",
+                "character": "Hunter"
+            },
+            {
+                "celebrityURL": "/celebrity/greg_guirard",
+                "celebrityName": "Greg Guirard",
+                "character": "Cajun Couple"
+            },
+            {
+                "celebrityURL": "/celebrity/june_borel",
+                "celebrityName": "June Borel",
+                "character": "Cajun Couple"
+            },
+            {
+                "celebrityURL": "/celebrity/jeanne_louise_bulliard",
+                "celebrityName": "Jeanne Louise Bulliard",
+                "character": "Cajun Dancer"
+            },
+            {
+                "celebrityURL": "/celebrity/orel_borle",
+                "celebrityName": "Orel Borle",
+                "character": "Cajun Dancer"
+            },
+            {
+                "celebrityURL": "/celebrity/jeannie_spector",
+                "celebrityName": "Jeannie Spector",
+                "character": "Cajun Dancer"
+            },
+            {
+                "celebrityURL": "/celebrity/marc_savoy",
+                "celebrityName": "Marc Savoy",
+                "character": "Cajun Musician"
+            },
+            {
+                "celebrityURL": "/celebrity/frank_savoy",
+                "celebrityName": "Frank Savoy",
+                "character": "Cajun Musician"
+            },
+            {
+                "celebrityURL": "/celebrity/dewey_balfa",
+                "celebrityName": "Dewey Balfa",
+                "character": "Cajun Musician"
+            },
+            {
+                "celebrityURL": "/celebrity/john_stelly",
+                "celebrityName": "John Stelly",
+                "character": "Cajun Musician"
+            }
+        ],
+        "url": "/m/movies-of-color-black-southern-cinema",
+        "criticReviews": [
+            {
+                "criticName": "John Beifuss",
+                "criticOrganization": "Commercial Appeal (Memphis, TN)",
+                "criticReviewDate": "September 4, 2014",
+                "criticPost": "The notion of Vietnam as quagmire is literalized in this stunning 1981 action-suspense film.",
+                "criticScore": "3.5/4"
+            },
+            {
+                "criticName": "Noel Murray",
+                "criticOrganization": "The Dissolve",
+                "criticReviewDate": "July 7, 2014",
+                "criticPost": "Beyond its genre roots and its deeper meanings, Southern Comfort is a well-honed study of characters and setting.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Fernando F. Croce",
+                "criticOrganization": "CinePassion",
+                "criticReviewDate": "April 2, 2010",
+                "criticPost": "Walter Hill gives machismo, and he takes it away",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Dennis Schwartz",
+                "criticOrganization": "Ozus' World Movie Reviews",
+                "criticReviewDate": "June 27, 2009",
+                "criticPost": "Fails to deliver all that's promised.",
+                "criticScore": "B"
+            },
+            {
+                "criticName": "Chuck O'Leary",
+                "criticOrganization": "Fantastica Daily",
+                "criticReviewDate": "October 10, 2005",
+                "criticPost": "An atmospheric, tough-as-nails survival tale, and arguably Walter Hill's best movie overall. Well cast with a great Ry Cooder score. Packs a definite wallop.",
+                "criticScore": "5/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "April 3, 2005",
+                "criticPost": "Perfectly entertaining gung-ho war flick. Walter Hill knows his action.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Brian Mckay",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 19, 2003",
+                "criticPost": "Goes down relatively smooth. Pour yourself a glass or three of its namesake, and enjoy!",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "December 26, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "November 23, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Roger Ebert",
+                "criticOrganization": "Chicago Sun-Times",
+                "criticReviewDate": "October 23, 2004",
+                "criticPost": "",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Daniel M. Kimmel",
+                "criticOrganization": "Worcester Telegram & Gazette",
+                "criticReviewDate": "May 14, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Frank Swietek",
+                "criticOrganization": "One Guy's Opinion",
+                "criticReviewDate": "April 15, 2004",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Frederic and Mary Ann Brussat",
+                "criticOrganization": "Spirituality and Practice",
+                "criticReviewDate": "March 27, 2004",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Carol Cling",
+                "criticOrganization": "Las Vegas Review-Journal",
+                "criticReviewDate": "August 22, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Christopher Null",
+                "criticOrganization": "Filmcritic.com",
+                "criticReviewDate": "March 9, 2003",
+                "criticPost": "",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Nicolas Lacroix",
+                "criticOrganization": "Showbizz.net",
+                "criticReviewDate": "November 16, 2002",
+                "criticPost": "",
+                "criticScore": "Read More  4/5"
+            }
+        ]
+    },
+    {
+        "title": "Southern Belles",
+        "description": "Laff-fest sensation and parody queen Anna Faris (of the Scary Movie series) appears vis-à-vis Laura Breckenridge and Justin Chambers in Southern Belles, written and directed by Paul S. Myers and Brennan Shroff. Faris and Breckenridge play Belle and Bell, two trailer-trash Georgian zeroes. Desperate for adventure, and craving a move to urban Atlanta sprawl, the women hatch a nutty get-rich-quick scheme. Their plans appear poised to succeed -- until one of the girls threatens to upturn everything by falling for a policeman named Rhett Butler. Frederick Weller and Heather Goldenhersh co-star in this guffaw-a-minute farce, an official selection at the 2005 Atlanta Film Festival.",
+        "rating": "R",
+        "genres": [
+            "Art House & International",
+            "Comedy"
+        ],
+        "directors": [
+            "Paul S. Myers",
+            "Brennan Shroff"
+        ],
+        "writers": [
+            "Paul S. Myers",
+            "Brennan Shroff"
+        ],
+        "premiered": "Feb 16, 2009",
+        "runtime": "90 minutes",
+        "studio": "Hart Sharp Video",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/anna_faris",
+                "celebrityName": "Anna Faris",
+                "character": "Belle"
+            },
+            {
+                "celebrityURL": "/celebrity/laura_breckenridge",
+                "celebrityName": "Laura Breckenridge",
+                "character": "Bell"
+            },
+            {
+                "celebrityURL": "/celebrity/justin_chambers",
+                "celebrityName": "Justin Chambers",
+                "character": "Rhett Butler"
+            },
+            {
+                "celebrityURL": "/celebrity/frederick_weller",
+                "celebrityName": "Frederick Weller",
+                "character": "Hampton"
+            },
+            {
+                "celebrityURL": "/celebrity/770736961",
+                "celebrityName": "David Wheir",
+                "character": "Bob-oh"
+            },
+            {
+                "celebrityURL": "/celebrity/craig_myers",
+                "celebrityName": "Craig Myers",
+                "character": "Captain Willard"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_mccarthy",
+                "celebrityName": "Jack McCarthy",
+                "character": "Rhett's Partner"
+            },
+            {
+                "celebrityURL": "/celebrity/blake_cohen",
+                "celebrityName": "Blake Cohen",
+                "character": "Yankee 1"
+            },
+            {
+                "celebrityURL": "/celebrity/zachary_gardner",
+                "celebrityName": "Zachary Gardner",
+                "character": "Kevin"
+            },
+            {
+                "celebrityURL": "/celebrity/tammy_arnold",
+                "celebrityName": "Tammy Arnold",
+                "character": "Mrs. Jane Willard"
+            },
+            {
+                "celebrityURL": "/celebrity/tg_boleyn",
+                "celebrityName": "T.G. Boleyn",
+                "character": "Sailor"
+            },
+            {
+                "celebrityURL": "/celebrity/judah_friedlander",
+                "celebrityName": "Judah Friedlander",
+                "character": "Duane"
+            },
+            {
+                "celebrityURL": "/celebrity/trevor_gagnon",
+                "celebrityName": "Trevor Gagnon",
+                "character": "Atticus"
+            },
+            {
+                "celebrityURL": "/celebrity/heather_goldenhersh",
+                "celebrityName": "Heather Goldenhersh",
+                "character": "Margery"
+            },
+            {
+                "celebrityURL": "/celebrity/naima_lena",
+                "celebrityName": "Naima Lena",
+                "character": "Claudette"
+            },
+            {
+                "celebrityURL": "/celebrity/joanne_pankow",
+                "celebrityName": "Joanne Pankow",
+                "character": "Mrs. Bell"
+            },
+            {
+                "celebrityURL": "/celebrity/laurel_ullman",
+                "celebrityName": "Laurel Ullman",
+                "character": "Jenny"
+            },
+            {
+                "celebrityURL": "/celebrity/ernest_whitted",
+                "celebrityName": "Ernest Whitted",
+                "character": "Church Attendee"
+            }
+        ],
+        "url": "/m/southern_cross",
+        "criticReviews": [
+            {
+                "criticName": "Dennis Schwartz",
+                "criticOrganization": "Ozus' World Movie Reviews",
+                "criticReviewDate": "July 4, 2006",
+                "criticPost": "A goofy, dumb, grating lightweight comedy that's crying out to be a TV sitcom.",
+                "criticScore": "C"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 22, 2005",
+                "criticPost": "Funnier than just about 75% of the really expensive Hollywood yukfests, plus it's clearly conceived with just as much heart as goofball irreverence.",
+                "criticScore": "4/5"
+            }
+        ]
+    },
+    {
+        "title": "Southern Baptist Sissies",
+        "description": "Southern Baptist Sissies is a film of the theatrical experience of writer/director Del Shores' GLAAD Award-winning play about four gay boys growing up in the Southern Baptist church. It explores the conflict between the caustic rhetoric of dogmatic religion and the fragile development of adolescent homosexuality while challenging hypocrisy, exposing damage and offering hope. The intimate experience of theatre on the film screen reveals the complicated emotions from all sides - the confused child, the struggling adolescent and the angry and damaged adult. (c) Beard Collins",
+        "rating": "NR",
+        "genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "directors": [
+            "Del Shores"
+        ],
+        "writers": [
+            "Del Shores"
+        ],
+        "premiered": "Feb 28, 2014",
+        "runtime": "138 minutes",
+        "studio": "Beard Collins Shores Productions",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/emerson_collins",
+                "celebrityName": "Emerson Collins",
+                "character": "Mark"
+            },
+            {
+                "celebrityURL": "/celebrity/leslie_jordan",
+                "celebrityName": "Leslie Jordan",
+                "character": "Peanut"
+            },
+            {
+                "celebrityURL": "/celebrity/dale-dickey",
+                "celebrityName": "Dale Dickey",
+                "character": "Odette"
+            },
+            {
+                "celebrityURL": "/celebrity/newell-alexander",
+                "celebrityName": "Newell Alexander",
+                "character": "Preacher"
+            },
+            {
+                "celebrityURL": "/celebrity/rosemary_alexander",
+                "celebrityName": "Rosemary Alexander",
+                "character": "Andrew's Mother"
+            },
+            {
+                "celebrityURL": "/celebrity/luke_stratte_mcclure",
+                "celebrityName": "Luke Stratte-McClure",
+                "character": "TJ"
+            },
+            {
+                "celebrityURL": "/celebrity/willam_belli",
+                "celebrityName": "Willam Belli",
+                "character": "Benny"
+            }
+        ],
+        "url": "/m/the_southern_star",
+        "criticReviews": [
+            {
+                "criticName": "Frank Scheck",
+                "criticOrganization": "Hollywood Reporter",
+                "criticReviewDate": "September 1, 2017",
+                "criticPost": "... the ensemble does an excellent job of adjusting their performances for the cameras, with the young male leads delivering sensitive, well-modulated turns that keep us fully involved in their characters' fates.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Jamie S. Rich",
+                "criticOrganization": "Oregonian",
+                "criticReviewDate": "March 28, 2014",
+                "criticPost": "The pieces of the play fit together a little too neatly, but \"Southern Baptist Sissies\" has many powerful displays of heavy emotion, building to a cathartic climax.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Fr. Chris Carpenter",
+                "criticOrganization": "Movie Dearest",
+                "criticReviewDate": "March 8, 2014",
+                "criticPost": "To call it stagey is an understatement, since it is simply a filmed version of a performance of (Del Shores') play. As such, it is also overlong at 138 minutes without the benefit of an intermission and comes across as preachy and pedantic.",
+                "criticScore": "C-"
+            },
+            {
+                "criticName": "Martin Tsai",
+                "criticOrganization": "Los Angeles Times",
+                "criticReviewDate": "March 6, 2014",
+                "criticPost": "Designated for a safe space containing a receptive audience, the play neither provokes nor challenges. It preaches to the choir instead of spreading the word.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Rich Cline",
+                "criticOrganization": "Contactmusic.com",
+                "criticReviewDate": "February 27, 2014",
+                "criticPost": "A filmed staging of Del Shores' provocative stage play, this movie is an engaging exploration of the point where religion and sexuality collide in the American South.",
+                "criticScore": "4.5/5"
+            }
+        ]
+    },
+    {
+        "title": "Killer Klowns from Outer Space",
+        "description": "This low-budget cult classic horror spoof has one of the great movie titles of all time. Mike (Grant Cramer) and his sweetheart, Debbie (Suzanne Snyder), are smooching on lover's lane when they see what appears to be a meteorite crashing over the horizon. They loosen their liplock long enough to investigate and find a curious circus tent. There they discover malevolent clowns who stop their victims with popcorn-shooting guns and acid-drenched pies in order to feast on human blood. The unfortunates are then entombed into inescapable cotton-candy cocoons. Officer Dave Hanson (John Allen Nelson) is called to investigate with help from Officer Mooney (John Vernon). For those viewers who already think clowns are a little creepy to begin with, this one will push them over the edge.",
+        "rating": "PG-13",
+        "genres": [
+            "Comedy",
+            "Horror",
+            "Science Fiction & Fantasy"
+        ],
+        "directors": [
+            "Stephen Chiodo"
+        ],
+        "writers": [
+            "Charles Chiodo",
+            "Stephen Chiodo"
+        ],
+        "premiered": "Jan 1, 1988",
+        "runtime": "90 minutes",
+        "studio": "MGM",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/grant-cramer",
+                "celebrityName": "Grant Cramer",
+                "character": "Mike Tobacco"
+            },
+            {
+                "celebrityURL": "/celebrity/suzanne_snyder",
+                "celebrityName": "Suzanne Snyder",
+                "character": "Debbie Stone"
+            },
+            {
+                "celebrityURL": "/celebrity/john_allen_nelson",
+                "celebrityName": "John Allen Nelson",
+                "character": "Dave Hanson"
+            },
+            {
+                "celebrityURL": "/celebrity/royal_dano",
+                "celebrityName": "Royal Dano",
+                "character": "Framer Gene Green"
+            },
+            {
+                "celebrityURL": "/celebrity/john_vernon",
+                "celebrityName": "John Vernon",
+                "character": "Officer Mooney"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_siegel",
+                "celebrityName": "Michael Siegel",
+                "character": "Rich"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_licassi",
+                "celebrityName": "Peter Licassi",
+                "character": "Paul"
+            },
+            {
+                "celebrityURL": "/celebrity/alana_lambros_10",
+                "celebrityName": "Alana Lambros",
+                "character": "Punk #2"
+            },
+            {
+                "celebrityURL": "/celebrity/ed_mitchell",
+                "celebrityName": "Ed Mitchell",
+                "character": "Slug"
+            },
+            {
+                "celebrityURL": "/celebrity/danny_kovacs",
+                "celebrityName": "Danny Kovacs",
+                "character": "Klown Performer"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_halton",
+                "celebrityName": "Michael Halton",
+                "character": "Klown Performer"
+            },
+            {
+                "celebrityURL": "/celebrity/charles_chiodo_8",
+                "celebrityName": "Charles Chiodo",
+                "character": "State Trooper"
+            },
+            {
+                "celebrityURL": "/celebrity/harrod_blank",
+                "celebrityName": "Harrod Blank"
+            },
+            {
+                "celebrityURL": "/celebrity/jeff_yesko",
+                "celebrityName": "Jeff Yesko"
+            }
+        ],
+        "url": "/m/return_of_the_killer_tomatoes_the_sequel",
+        "criticReviews": [
+            {
+                "criticName": "Matt Brunson",
+                "criticOrganization": "Creative Loafing",
+                "criticReviewDate": "April 28, 2018",
+                "criticPost": "The imagination that went into the visual effects, the set design, and the alien gadgetry makes it easy to overlook any minor deficiencies in other departments.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Andrew Pollard",
+                "criticOrganization": "Starburst",
+                "criticReviewDate": "April 12, 2018",
+                "criticPost": "Truly something special for genre fans or for those with a love of fun, imaginative films with a ridiculous premise, classic soundtrack, and a blackly humorous edge",
+                "criticScore": "8/10"
+            },
+            {
+                "criticName": "Anton Bitel",
+                "criticOrganization": "Projected Figures",
+                "criticReviewDate": "March 18, 2014",
+                "criticPost": "Chiodo takes an alien invasion plot familiar from the 50s, and makes it all his own by rigorously and liberally painting it with every clown reference imaginable.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Walter Chaw",
+                "criticOrganization": "Film Freak Central",
+                "criticReviewDate": "October 31, 2012",
+                "criticPost": "Boy, you know, I really like the Chiodo Brothers' Killer Klowns from Outer Space. I can't help it.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Brian Orndorf",
+                "criticOrganization": "Blu-ray.com",
+                "criticReviewDate": "September 28, 2012",
+                "criticPost": "The title alone encourages immediate dismissal, but for those on the hunt for something miles away from the norm that showcases truly inspired moviemaking minds, Killer Klowns from Outer Space is a superb cult distraction.",
+                "criticScore": "B+"
+            },
+            {
+                "criticName": "Kevin A. Ranson",
+                "criticOrganization": "MovieCrypt.com",
+                "criticReviewDate": "September 29, 2011",
+                "criticPost": "'Can't Sleep, Clowns Will Eat Me.' Not just pretty words, thanks to the Chiodo brothers.",
+                "criticScore": "3.0/4.0"
+            },
+            {
+                "criticName": "Ian Berriman",
+                "criticOrganization": "SFX Magazine",
+                "criticReviewDate": "September 16, 2010",
+                "criticPost": "It's a one-gag movie, but while some of the iterations of that gag are about as hilarious as a squirt in the face from a plastic flower, a few are genuinely rib-tickling.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Steve Crum",
+                "criticOrganization": "Video-Reviewmaster.com",
+                "criticReviewDate": "March 14, 2009",
+                "criticPost": "The title says it all...and is the only reason to see this misfire.",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Andrew L. Urban",
+                "criticOrganization": "Urban Cinefile",
+                "criticReviewDate": "February 12, 2009",
+                "criticPost": "This krazy, kooky movie strings together the creature feature with the alien movie, and pumps it full of dark humour",
+                "criticScore": ""
+            },
+            {
+                "criticName": "James Sanford",
+                "criticOrganization": "Kalamazoo Gazette",
+                "criticReviewDate": "October 1, 2004",
+                "criticPost": "Warped fun with memorably weird ideas, effects and costumes",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Luke Y. Thompson",
+                "criticOrganization": "New Times",
+                "criticReviewDate": "July 16, 2003",
+                "criticPost": "The name says it all, and the movie delivers.",
+                "criticScore": "Read More  5/5"
+            },
+            {
+                "criticName": "Brian Mckay",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 19, 2003",
+                "criticPost": "IT'S GOT CLOWNS! FROM OUTER SPACE! AND THEY'RE KILLING PEOPLE! What's not to like?",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Jon Niccum",
+                "criticOrganization": "Lawrence Journal-World",
+                "criticReviewDate": "March 14, 2003",
+                "criticPost": "As if clowns weren't already scary enough",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Gerry Shamray",
+                "criticOrganization": "Your Movies (cleveland.com)",
+                "criticReviewDate": "February 7, 2003",
+                "criticPost": "Yes, it's goofy but the klowns really are killer.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Nell Minow",
+                "criticOrganization": "Movie Mom",
+                "criticReviewDate": "June 21, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Jake Euker",
+                "criticOrganization": "F5 (Wichita, KS)",
+                "criticReviewDate": "November 4, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Laura Clifford",
+                "criticOrganization": "Reeling Reviews",
+                "criticReviewDate": "December 14, 2002",
+                "criticPost": "",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "October 30, 2002",
+                "criticPost": "",
+                "criticScore": "Read More  2/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "July 26, 2002",
+                "criticPost": "",
+                "criticScore": "3/5"
+            }
+        ]
+    },
+    {
+        "title": "The Replacement Killers",
+        "description": "A contract killer, played by international superstar Chow Yun-fat, refuses an assignment and all hell breaks loose. Irritatingly disjointed, and that's not even counting Mira Sorvino.",
+        "rating": "R",
+        "genres": [
+            "Action & Adventure"
+        ],
+        "directors": [
+            "Antoine Fuqua"
+        ],
+        "writers": [
+            "Ken Sanzel"
+        ],
+        "premiered": "Feb 6, 1998",
+        "runtime": "87 minutes",
+        "studio": "Sony Pictures Home Entertainment",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/yunfat_chow",
+                "celebrityName": "Yun-Fat Chow",
+                "character": "John Lee"
+            },
+            {
+                "celebrityURL": "/celebrity/mira_sorvino",
+                "celebrityName": "Mira Sorvino",
+                "character": "Meg Coburn"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_rooker",
+                "celebrityName": "Michael Rooker",
+                "character": "Stan Zeedo Zedkov"
+            },
+            {
+                "celebrityURL": "/celebrity/jurgen_prochnow_2",
+                "celebrityName": "Jürgen Prochnow",
+                "character": "Michal Kogan"
+            },
+            {
+                "celebrityURL": "/celebrity/kenneth_tsang",
+                "celebrityName": "Kenneth Tsang",
+                "character": "Terence Wei"
+            },
+            {
+                "celebrityURL": "/celebrity/til_schweiger",
+                "celebrityName": "Til Schweiger",
+                "character": "Ryker"
+            },
+            {
+                "celebrityURL": "/celebrity/danny_trejo",
+                "celebrityName": "Danny Trejo",
+                "character": "Collins"
+            },
+            {
+                "celebrityURL": "/celebrity/randall-duk-kim",
+                "celebrityName": "Randall Duk Kim",
+                "character": "Alan Chan"
+            },
+            {
+                "celebrityURL": "/celebrity/carlos_gomez",
+                "celebrityName": "Carlos Gomez",
+                "character": "Hunt"
+            },
+            {
+                "celebrityURL": "/celebrity/frank-medrano",
+                "celebrityName": "Frank Medrano",
+                "character": "Rawlins"
+            },
+            {
+                "celebrityURL": "/celebrity/patrick_kilpatrick",
+                "celebrityName": "Patrick Kilpatrick",
+                "character": "Pryce"
+            },
+            {
+                "celebrityURL": "/celebrity/leo_lee",
+                "celebrityName": "Leo Lee",
+                "character": "Lam"
+            },
+            {
+                "celebrityURL": "/celebrity/andrew_j_marton",
+                "celebrityName": "Andrew J. Marton",
+                "character": "Stevie"
+            },
+            {
+                "celebrityURL": "/celebrity/clifton_collins_jr",
+                "celebrityName": "Clifton Collins Jr.",
+                "character": "Loco"
+            },
+            {
+                "celebrityURL": "/celebrity/yau_gene_chan",
+                "celebrityName": "Yau-Gene Chan",
+                "character": "Peter Wei"
+            },
+            {
+                "celebrityURL": "/celebrity/sydney_coberly",
+                "celebrityName": "Sydney Coberly",
+                "character": "Sara"
+            },
+            {
+                "celebrityURL": "/celebrity/nicki_micheaux",
+                "celebrityName": "Nicki Micheaux",
+                "character": "Technician"
+            },
+            {
+                "celebrityURL": "/celebrity/steven_garcia",
+                "celebrityName": "Steven Garcia",
+                "character": "Smuggler"
+            },
+            {
+                "celebrityURL": "/celebrity/max_daniels",
+                "celebrityName": "Max Daniels",
+                "character": "Priest"
+            },
+            {
+                "celebrityURL": "/celebrity/james_wing_woo",
+                "celebrityName": "James Wing Woo",
+                "character": "Old Man"
+            },
+            {
+                "celebrityURL": "/celebrity/albert_wong",
+                "celebrityName": "Albert Wong",
+                "character": "Thug"
+            },
+            {
+                "celebrityURL": "/celebrity/1053770-chris_doyle",
+                "celebrityName": "Chris Doyle",
+                "character": "Thug"
+            },
+            {
+                "celebrityURL": "/celebrity/joe_bucaro_iii",
+                "celebrityName": "Joe Bucaro III",
+                "character": "Thug"
+            },
+            {
+                "celebrityURL": "/celebrity/bob_apisa",
+                "celebrityName": "Bob Apisa",
+                "character": "Thug"
+            },
+            {
+                "celebrityURL": "/celebrity/norm_f_compton",
+                "celebrityName": "Norm F. Compton",
+                "character": "Banger"
+            },
+            {
+                "celebrityURL": "/celebrity/cle_bone_sloan",
+                "celebrityName": "Cle \"Bone\" Sloan",
+                "character": "Banger"
+            },
+            {
+                "celebrityURL": "/celebrity/paul_higgins",
+                "celebrityName": "Paul Higgins",
+                "character": "Bodyguard"
+            },
+            {
+                "celebrityURL": "/celebrity/james_lew",
+                "celebrityName": "James Lew",
+                "character": "Gangster"
+            },
+            {
+                "celebrityURL": "/celebrity/thomas_rosales_jr",
+                "celebrityName": "Thomas Rosales Jr.",
+                "character": "Gangster"
+            },
+            {
+                "celebrityURL": "/celebrity/eddie_perez",
+                "celebrityName": "Eddie Perez",
+                "character": "Gangster"
+            },
+            {
+                "celebrityURL": "/celebrity/mario-roberts",
+                "celebrityName": "Mario Roberts",
+                "character": "Gangster"
+            },
+            {
+                "celebrityURL": "/celebrity/jimmy_ortega",
+                "celebrityName": "Jimmy Ortega",
+                "character": "Gangster"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_l_duran",
+                "celebrityName": "Richard L. Duran",
+                "character": "Helicopter Pilot"
+            },
+            {
+                "celebrityURL": "/celebrity/david_gene_gibbs",
+                "celebrityName": "David Gene Gibbs",
+                "character": "Helicopter Pilot"
+            },
+            {
+                "celebrityURL": "/celebrity/rodger_larue",
+                "celebrityName": "Rodger LaRue"
+            }
+        ],
+        "url": "/m/aileen_life_and_death_of_a_serial_killer",
+        "criticReviews": [
+            {
+                "criticName": "David Nusair",
+                "criticOrganization": "Reel Film Reviews",
+                "criticReviewDate": "March 10, 2016",
+                "criticPost": "...it's ultimately impossible not to wonder what Chow, making his English-language debut here, was thinking when he signed up for the project.",
+                "criticScore": "2/4"
+            },
+            {
+                "criticName": "Cole Smithey",
+                "criticOrganization": "ColeSmithey.com",
+                "criticReviewDate": "May 19, 2009",
+                "criticPost": "The John Woo school of the ballet of bullets gets a full dose of Sam Peckinpah under the steady hand of director Antoine Fuqua's finely framed tale of revenge.",
+                "criticScore": "B"
+            },
+            {
+                "criticName": "Jeffrey M. Anderson",
+                "criticOrganization": "Combustible Celluloid",
+                "criticReviewDate": "April 27, 2006",
+                "criticPost": "An unworthy vehicle for a great star like Chow Yun-fat.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "January 29, 2005",
+                "criticPost": "The Replacement Killers is not a very good film, but it is impossible to deny that it has a certain beauty.",
+                "criticScore": "Read More  C-"
+            },
+            {
+                "criticName": "Brian Mckay",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 19, 2003",
+                "criticPost": "Will serve as a suitable replacement when [Chow Yun Fat's] better films are already rented out for the weekend.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "DVD Clinic",
+                "criticReviewDate": "July 27, 2002",
+                "criticPost": "Style over substance all the way, but at least it's not boring.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Bill Chambers",
+                "criticOrganization": "Film Freak Central",
+                "criticReviewDate": "March 8, 2002",
+                "criticPost": "The most dispiriting thing about The Replacement Killers is that it proves Chow [Yun-Fat]'s charisma repressible.",
+                "criticScore": "1.5/4"
+            },
+            {
+                "criticName": "Carlo Cavagna",
+                "criticOrganization": "AboutFilm.com",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "One cannot accuse Killers of possessing a kernel of intelligence, but it's still a stylish action film.",
+                "criticScore": "C+"
+            },
+            {
+                "criticName": "Maitland McDonagh",
+                "criticOrganization": "Film Journal International",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "Fuqua...obviously knows a good thing when he sees one and lets Chow dominate The Replacement Killers so thoroughly that the movie's liabilities...slide by relatively painlessly.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Michael Dequina",
+                "criticOrganization": "TheMovieReport.com",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "The ever-charismatic Chow will certainly have no trouble winning new fans with his English language debut.",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "David N. Butterworth",
+                "criticOrganization": "rec.arts.movies.reviews",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "Unfortunately, \"The Replacement Killers\" isn't a film by John Woo.",
+                "criticScore": "2/4"
+            },
+            {
+                "criticName": "Frank Ochieng",
+                "criticOrganization": "rec.arts.movies.reviews",
+                "criticReviewDate": "January 1, 2000",
+                "criticPost": "A fair action thriller is offered here but what a difference this movie would make from merely being fair to that of being a fist-full-of-frenzied fun. A mild recommendation at best.",
+                "criticScore": "2.5/4"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "March 19, 2013",
+                "criticPost": "",
+                "criticScore": "Read More  C"
+            },
+            {
+                "criticName": "Lisa Schwarzbaum",
+                "criticOrganization": "Entertainment Weekly",
+                "criticReviewDate": "September 7, 2011",
+                "criticPost": "",
+                "criticScore": "C"
+            },
+            {
+                "criticName": "Garth Franklin",
+                "criticOrganization": "Dark Horizons",
+                "criticReviewDate": "December 6, 2005",
+                "criticPost": "",
+                "criticScore": "2.5/5"
+            },
+            {
+                "criticName": "Dragan Antulov",
+                "criticOrganization": "rec.arts.movies.reviews",
+                "criticReviewDate": "March 14, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Jeanne Aufmuth",
+                "criticOrganization": "Palo Alto Weekly",
+                "criticReviewDate": "February 3, 2004",
+                "criticPost": "",
+                "criticScore": "4/10"
+            }
+        ]
+    },
+    {
+        "title": "Natural Born Killers",
+        "description": "A frenetic, bloody look at mass murder and the mass media, director Oliver Stone's extremely controversial film divided critics and audiences with its mixture of over-the-top violence and bitter cultural satire. At the center of the film, written by Stone and Quentin Tarantino, among others, are Mickey (Woody Harrelson) and Mallory (Juliette Lewis), a young couple united by their desire for each other and their common love of violence. Together, they embark on a record-breaking, exceptionally gory killing spree that captivates the sensation-hungry tabloid media. Their fame is ensured by one newsman, Wayne Gale (Robert Downey, Jr.), who reports on Mickey and Mallory for his show, American Maniacs. Even the duo's eventual capture by the police only increases their notoriety, as Gale develops a plan for a Super Bowl Sunday interview that Mickey and Mallory twist to their own advantage. Visually overwhelming, Robert Richardson's hyperkinetic cinematography switches between documentary-style black-and-white, surveillance video, garishly colored psychedelia, and even animation in a rapid-fire fashion that mirrors the psychosis of the killers and the media-saturated culture that makes them popular heroes. The film's extreme violence -- numerous edits were required to win an R rating -- became a subject of debate, as some critics asserted that the film irresponsibly glorified its murderers and blamed the filmmakers for potentially inciting copy-cat killings. Defenders argued that the film attacks media obsession with violence and satirizes a sensationalistic, celebrity-obsessed society. Certain to provoke discussion, Natural Born Killers will thoroughly alienate many viewers with its shock tactics, chaotic approach, and disturbing subject matter, while others will value the combination of technical virtuosity and dark commentary on the modern American landscape. ~ Judd Blaise, Rovi",
+        "rating": "R",
+        "genres": [
+            "Action & Adventure",
+            "Drama",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Oliver Stone"
+        ],
+        "writers": [
+            "Oliver Stone",
+            "David Veloz",
+            "Richard Rutowski"
+        ],
+        "premiered": "Aug 26, 1994",
+        "runtime": "119 minutes",
+        "studio": "Warner Bros. Pictures",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/woody_harrelson",
+                "celebrityName": "Woody Harrelson",
+                "character": "Mickey"
+            },
+            {
+                "celebrityURL": "/celebrity/juliette_lewis",
+                "celebrityName": "Juliette Lewis",
+                "character": "Mallory"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_downey_jr",
+                "celebrityName": "Robert Downey Jr.",
+                "character": "Wayne Gale"
+            },
+            {
+                "celebrityURL": "/celebrity/tommy_lee_jones",
+                "celebrityName": "Tommy Lee Jones",
+                "character": "Dwight McClusky"
+            },
+            {
+                "celebrityURL": "/celebrity/tom_sizemore",
+                "celebrityName": "Tom Sizemore",
+                "character": "Jack Scagnetti"
+            },
+            {
+                "celebrityURL": "/celebrity/rodney_dangerfield",
+                "celebrityName": "Rodney Dangerfield",
+                "character": "Mallory's Father"
+            },
+            {
+                "celebrityURL": "/celebrity/edie_mcclurg",
+                "celebrityName": "Edie McClurg",
+                "character": "Mallory's Mother"
+            },
+            {
+                "celebrityURL": "/celebrity/russell_means",
+                "celebrityName": "Russell Means",
+                "character": "Old Indian"
+            },
+            {
+                "celebrityURL": "/celebrity/balthazar_getty",
+                "celebrityName": "Balthazar Getty",
+                "character": "Gas Station Attendant"
+            },
+            {
+                "celebrityURL": "/celebrity/joe_grifasi",
+                "celebrityName": "Joe Grifasi",
+                "character": "Duncan Homolka"
+            },
+            {
+                "celebrityURL": "/celebrity/evan_handler",
+                "celebrityName": "Evan Handler",
+                "character": "David"
+            },
+            {
+                "celebrityURL": "/celebrity/kirk_baltz",
+                "celebrityName": "Kirk Baltz",
+                "character": "Roger"
+            },
+            {
+                "celebrityURL": "/celebrity/billy-hopkins",
+                "celebrityName": "Billy Hopkins",
+                "character": "Julie"
+            },
+            {
+                "celebrityURL": "/celebrity/terrylene",
+                "celebrityName": "Terrylene",
+                "character": "Kevin"
+            },
+            {
+                "celebrityURL": "/celebrity/sean_stone",
+                "celebrityName": "Sean Stone",
+                "character": "Cowboy Sheriff"
+            },
+            {
+                "celebrityURL": "/celebrity/ashley_judd",
+                "celebrityName": "Ashley Judd",
+                "character": "Kavanaugh"
+            },
+            {
+                "celebrityURL": "/celebrity/denis_leary",
+                "celebrityName": "Denis Leary",
+                "character": "Wurlitzer"
+            },
+            {
+                "celebrityURL": "/celebrity/red_west",
+                "celebrityName": "Red West",
+                "character": "Dr. Emil Reingold"
+            },
+            {
+                "celebrityURL": "/celebrity/pruitt_taylor_vince",
+                "celebrityName": "Pruitt Taylor Vince",
+                "character": "1st Deputy"
+            },
+            {
+                "celebrityURL": "/celebrity/heidi_levitt",
+                "celebrityName": "Heidi Levitt",
+                "character": "uncredited"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_palance",
+                "celebrityName": "Jack Palance",
+                "character": "Mabel"
+            },
+            {
+                "celebrityURL": "/celebrity/everett_quinton",
+                "celebrityName": "Everett Quinton",
+                "character": "Pinball Cowboy"
+            },
+            {
+                "celebrityURL": "/celebrity/rachel_ticotin",
+                "celebrityName": "Rachel Ticotin",
+                "character": "Sonny"
+            },
+            {
+                "celebrityURL": "/celebrity/steven-wright",
+                "celebrityName": "Steven Wright",
+                "character": "Earl"
+            },
+            {
+                "celebrityURL": "/celebrity/marshall_bell",
+                "celebrityName": "Marshall Bell",
+                "character": "Short Order Cook"
+            },
+            {
+                "celebrityURL": "/celebrity/arliss_howard",
+                "celebrityName": "Arliss Howard",
+                "character": "1st Work Boss"
+            },
+            {
+                "celebrityURL": "/celebrity/olan_jones",
+                "celebrityName": "O-Lan Jones",
+                "character": "2nd Work Boss"
+            },
+            {
+                "celebrityURL": "/celebrity/ed_white",
+                "celebrityName": "Ed White",
+                "character": "3rd Work Boss"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_lineback",
+                "celebrityName": "Richard Lineback",
+                "character": "Kid"
+            },
+            {
+                "celebrityURL": "/celebrity/lanny-flaherty",
+                "celebrityName": "Lanny Flaherty",
+                "character": "TV Mallory"
+            },
+            {
+                "celebrityURL": "/celebrity/carol_renee_modrall",
+                "celebrityName": "Carol-Renee Modrall",
+                "character": "Dale Wrigley"
+            },
+            {
+                "celebrityURL": "/celebrity/jerry_gardner",
+                "celebrityName": "Jerry Gardner",
+                "character": "Gerald Nash"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_caffrey",
+                "celebrityName": "Jack Caffrey",
+                "character": "Deborah"
+            },
+            {
+                "celebrityURL": "/celebrity/leon_skyhorse_thomas",
+                "celebrityName": "Leon Skyhorse Thomas",
+                "character": "Soundman"
+            },
+            {
+                "celebrityURL": "/celebrity/jamie_harrold",
+                "celebrityName": "Jamie Harrold",
+                "character": "1st Kid"
+            },
+            {
+                "celebrityURL": "/celebrity/corey_everson",
+                "celebrityName": "Corey Everson",
+                "character": "2nd Kid"
+            },
+            {
+                "celebrityURL": "/celebrity/dale_dye",
+                "celebrityName": "Dale Dye",
+                "character": "3rd Kid"
+            },
+            {
+                "celebrityURL": "/celebrity/eddie_doogie_conna",
+                "celebrityName": "Eddie 'Doogie' Conna",
+                "character": "1st Japanese Kid/Japanese Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/maria_pitillo",
+                "celebrityName": "Maria Pitillo",
+                "character": "2nd Japanese Kid"
+            },
+            {
+                "celebrityURL": "/celebrity/josh_richman",
+                "celebrityName": "Josh Richman",
+                "character": "London Boy"
+            },
+            {
+                "celebrityURL": "/celebrity/matthew_faber",
+                "celebrityName": "Matthew Faber",
+                "character": "London Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/jamie_herrold",
+                "celebrityName": "Jamie Herrold",
+                "character": "1st French Boy"
+            },
+            {
+                "celebrityURL": "/celebrity/jake_beecham",
+                "celebrityName": "Jake Beecham",
+                "character": "Mickey Knox in Wayne Gale's reconstruction (uncredite"
+            },
+            {
+                "celebrityURL": "/celebrity/saemi-nakamura",
+                "celebrityName": "Saemi Nakamura",
+                "character": "French Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/seiko_yoshida",
+                "celebrityName": "Seiko Yoshida",
+                "character": "2nd French Boy"
+            },
+            {
+                "celebrityURL": "/celebrity/jared_harris",
+                "celebrityName": "Jared Harris",
+                "character": "Young Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/katharine_mcqueen",
+                "celebrityName": "Katharine McQueen",
+                "character": "Mickey's Mom"
+            },
+            {
+                "celebrityURL": "/celebrity/salvator_xuereb",
+                "celebrityName": "Salvator Xuereb",
+                "character": "Mickey's Dad"
+            },
+            {
+                "celebrityURL": "/celebrity/mark_harmon",
+                "celebrityName": "Mark Harmon",
+                "character": "Young Mickey"
+            },
+            {
+                "celebrityURL": "/celebrity/natalie_karp",
+                "celebrityName": "Natalie Karp",
+                "character": "Emily (Hostage in Motel)"
+            },
+            {
+                "celebrityURL": "/celebrity/emmanuel_xuereb",
+                "celebrityName": "Emmanuel Xuereb",
+                "character": "Indian Cop"
+            },
+            {
+                "celebrityURL": "/celebrity/jessie_rutowski",
+                "celebrityName": "Jessie Rutowski",
+                "character": "Young Indian boy"
+            },
+            {
+                "celebrityURL": "/celebrity/sally_jackson",
+                "celebrityName": "Sally Jackson",
+                "character": "Pinky"
+            },
+            {
+                "celebrityURL": "/celebrity/phil_neilson",
+                "celebrityName": "Phil Neilson",
+                "character": "Druggist"
+            },
+            {
+                "celebrityURL": "/celebrity/brian_douglas_barker",
+                "celebrityName": "Brian Douglas Barker",
+                "character": "Intense Cop"
+            },
+            {
+                "celebrityURL": "/celebrity/corinna_laszlo",
+                "celebrityName": "Corinna Laszlo",
+                "character": "Black Inmate"
+            },
+            {
+                "celebrityURL": "/celebrity/gerry_runnels",
+                "celebrityName": "Gerry Runnels",
+                "character": "1st Mallory's Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/jeremiah_bitsui",
+                "celebrityName": "Jeremiah Bitsui",
+                "character": "2nd Mallory's Guard"
+            },
+            {
+                "celebrityURL": "/celebrity/lorraine_ferris",
+                "celebrityName": "Lorraine Ferris",
+                "character": "Antonia Chavez"
+            },
+            {
+                "celebrityURL": "/celebrity/glen_chin",
+                "celebrityName": "Glen Chin",
+                "character": "Smithy"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_crombie",
+                "celebrityName": "Peter Crombie",
+                "character": "Napolatoni"
+            },
+            {
+                "celebrityURL": "/celebrity/john-m-watson-sr",
+                "celebrityName": "John M. Watson Sr.",
+                "character": "Sparky"
+            },
+            {
+                "celebrityURL": "/celebrity/douglas_crosby",
+                "celebrityName": "Douglas Crosby",
+                "character": "Wgn Newscaster"
+            },
+            {
+                "celebrityURL": "/celebrity/carl-ciarfalio",
+                "celebrityName": "Carl Ciarfalio"
+            },
+            {
+                "celebrityURL": "/celebrity/melinda_ramos_renna",
+                "celebrityName": "Melinda Ramos Renna"
+            },
+            {
+                "celebrityURL": "/celebrity/jim_carrane",
+                "celebrityName": "Jim Carrane"
+            },
+            {
+                "celebrityURL": "/celebrity/bob_swan",
+                "celebrityName": "Bob Swan"
+            },
+            {
+                "celebrityURL": "/celebrity/louis_lombardi",
+                "celebrityName": "Louis Lombardi"
+            },
+            {
+                "celebrityURL": "/celebrity/robert-rj-jordan",
+                "celebrityName": "Robert \"R.J.\" Jordan"
+            }
+        ],
+        "url": "/m/the_fearless_vampire_killers",
+        "criticReviews": [
+            {
+                "criticName": "David Ansen",
+                "criticOrganization": "Newsweek",
+                "criticReviewDate": "February 13, 2018",
+                "criticPost": "The movie is enlightening, not because it transmits new information, but in the way that movies enlighten, through a synergy of images and rhythms that makes us sense the world in a new way.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Robert Kojder",
+                "criticOrganization": "Flickering Myth",
+                "criticReviewDate": "December 1, 2017",
+                "criticPost": "They are anti-heroes of the tallest order, yet some of the most riveting and dementedly sympathetic characters ever created",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Quentin Curtis",
+                "criticOrganization": "Independent on Sunday",
+                "criticReviewDate": "November 30, 2017",
+                "criticPost": "It's an interminable farrago of slogans and pyrotechnics. It has the scathing exaggeration of satire, without the point and bite which make us recognise the real world. It flies off into its own realm of sadistic fantasy.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Jeff Beck",
+                "criticOrganization": "Examiner.com",
+                "criticReviewDate": "December 11, 2014",
+                "criticPost": "It can easily be said that \"Natural Born Killers\" ranks among the worst films in Oliver Stone's filmography. It's an incompetently-made attempt at drilling home an incredibly simplistic point that anyone can learn from turning on the news.",
+                "criticScore": "1/5"
+            },
+            {
+                "criticName": "David Keyes",
+                "criticOrganization": "Cinemaphile.org",
+                "criticReviewDate": "January 27, 2014",
+                "criticPost": "It plays like a mad dash across the cerebral mind-field in search of the right mood, and fails drastically at finding one.",
+                "criticScore": "1.5/4"
+            },
+            {
+                "criticName": "Kevin Carr",
+                "criticOrganization": "7M Pictures",
+                "criticReviewDate": "June 26, 2011",
+                "criticPost": "At times with this movie the art overpowered the film.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "David Gurney",
+                "criticOrganization": "Common Sense Media",
+                "criticReviewDate": "January 1, 2011",
+                "criticPost": "Bloody, violent, sexually explicit. Mature teens+.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Matt Noller",
+                "criticOrganization": "Slant Magazine",
+                "criticReviewDate": "October 27, 2009",
+                "criticPost": "Natural Born Killers finds Stone throwing everything against the wall to see what sticks.",
+                "criticScore": ".5/4"
+            },
+            {
+                "criticName": "Rob Gonsalves",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "August 25, 2008",
+                "criticPost": "Electrifying, except when it's stupid.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Peter Canavese",
+                "criticOrganization": "Groucho Reviews",
+                "criticReviewDate": "June 23, 2008",
+                "criticPost": "Profane, hallucinogenic, and wickedly satirical, Oliver Stone's Natural Born Killers mainlined a message from hell (a.k.a. modern America, as seen by Stone) into mall theatres and multiplexes. [Blu-Ray]",
+                "criticScore": "3.5/4"
+            },
+            {
+                "criticName": "John J. Puccio",
+                "criticOrganization": "Movie Metropolis",
+                "criticReviewDate": "June 10, 2008",
+                "criticPost": "Stone has guts, I'll grant him that; but he needn't have spilled so much of it in our laps.",
+                "criticScore": "6/10"
+            },
+            {
+                "criticName": "Chuck O'Leary",
+                "criticOrganization": "Fantastica Daily",
+                "criticReviewDate": "January 25, 2006",
+                "criticPost": "An incoherent, experimental acid trip so unbearably pretentious that it gave me newfound respect for the Warren Commission. A real torture test.",
+                "criticScore": "1/10"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "January 3, 2006",
+                "criticPost": "One of the most audacious, timely, but also deeply problematic films, a feverish nightmare of American culture at its worst, which might explain the heated controversy and legal battles.",
+                "criticScore": "B-"
+            },
+            {
+                "criticName": "Michael Dequina",
+                "criticOrganization": "TheMovieReport.com",
+                "criticReviewDate": "January 5, 2004",
+                "criticPost": "Sick, twisted, and brilliant.",
+                "criticScore": "4/4"
+            },
+            {
+                "criticName": "Janet Maslin",
+                "criticOrganization": "New York Times",
+                "criticReviewDate": "May 20, 2003",
+                "criticPost": "As a satirist, [Stone's] an elephant ballerina.",
+                "criticScore": "Read More  2.5/5"
+            },
+            {
+                "criticName": "Leonard Schwarz",
+                "criticOrganization": "Palo Alto Weekly",
+                "criticReviewDate": "May 20, 2003",
+                "criticPost": "America's obsession with tabloid television and with the psychopaths whose lives the shows sensationalize is the ostensible target of Oliver Stone's latest bombastic and self-righteous exploration of evil in America.",
+                "criticScore": "2/4"
+            },
+            {
+                "criticName": "Ken Hanke",
+                "criticOrganization": "Mountain Xpress (Asheville, NC)",
+                "criticReviewDate": "May 14, 2003",
+                "criticPost": "Flashy, loathsome, and utterly empty.",
+                "criticScore": "1/5"
+            },
+            {
+                "criticName": "Brian Mckay",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "March 18, 2003",
+                "criticPost": "[Stone's] idea of subtlety is to put a velvet Crown Royale sack over a hammer before he smacks you in the face with it repeatedly.",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Kevin N. Laforest",
+                "criticOrganization": "Montreal Film Journal",
+                "criticReviewDate": "September 10, 2002",
+                "criticPost": "Oliver Stone does an amazing job behind the camera, and the editing is totally delirious: it's one of the most visually dazzling films I've ever seen.",
+                "criticScore": "4/4"
+            },
+            {
+                "criticName": "Stephen Farber",
+                "criticOrganization": "Movieline",
+                "criticReviewDate": "January 9, 2002",
+                "criticPost": "Made in the style of an MTV video...Natural Born Killers is exactly the kind of bullying, mindless assault that Stone excoriates the media for perpetrating.",
+                "criticScore": ""
+            }
+        ]
+    },
+    {
+        "title": "The Notorious Landlady",
+        "description": "This uneven farce by director Richard Quine has its hilarious and witty moments as American diplomat William Gridley (Jack Lemmon) inadvertently gets caught up in a jewel theft and mayhem. After William lands in London to take up his new position and get settled in his new digs, he becomes involved with his gorgeous landlady Carlye Hardwicke (Kim Novak). Carlye's husband is missing, and she is suspected of doing him in. But then he unexpectedly comes back home where an argument with Carlye over some jewels makes him as dead as everyone had assumed -- with her wielding the murder weapon. Carlye is eventually acquitted thanks to a witness who has designs on the jewels herself -- but the story is far from over. First there is an exciting helicopter ride and a wild chase to decide just who will end up with the loot.",
+        "rating": "NR",
+        "genres": [
+            "Classics",
+            "Comedy",
+            "Drama",
+            "Horror",
+            "Mystery & Suspense"
+        ],
+        "directors": [
+            "Richard Quine"
+        ],
+        "writers": [
+            "Larry Gelbart",
+            "Blake Edwards"
+        ],
+        "premiered": "Jan 1, 1962",
+        "runtime": "123 minutes",
+        "studio": "Columbia Pictures Corporation",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/jack_lemmon",
+                "celebrityName": "Jack Lemmon",
+                "character": "William Gridley"
+            },
+            {
+                "celebrityURL": "/celebrity/kim_novak",
+                "celebrityName": "Kim Novak",
+                "character": "Carlyle Hardwicke"
+            },
+            {
+                "celebrityURL": "/celebrity/fred_astaire",
+                "celebrityName": "Fred Astaire",
+                "character": "Franklyn Ambruster"
+            },
+            {
+                "celebrityURL": "/celebrity/lionel_jeffries",
+                "celebrityName": "Lionel Jeffries",
+                "character": "Inspector Oliphant"
+            },
+            {
+                "celebrityURL": "/celebrity/estelle_winwood",
+                "celebrityName": "Estelle Winwood",
+                "character": "Mrs. Dunhill"
+            },
+            {
+                "celebrityURL": "/celebrity/maxwell_reed",
+                "celebrityName": "Maxwell Reed",
+                "character": "Miles Hardwicke"
+            },
+            {
+                "celebrityURL": "/celebrity/philippa_bevans",
+                "celebrityName": "Philippa Bevans",
+                "character": "Mrs. Brown"
+            },
+            {
+                "celebrityURL": "/celebrity/henry_daniell",
+                "celebrityName": "Henry Daniell",
+                "character": "Stranger"
+            },
+            {
+                "celebrityURL": "/celebrity/ronald_long",
+                "celebrityName": "Ronald Long",
+                "character": "Coroner"
+            },
+            {
+                "celebrityURL": "/celebrity/doris_lloyd",
+                "celebrityName": "Doris Lloyd",
+                "character": "Lady Fallott"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_peel",
+                "celebrityName": "Richard Peel",
+                "character": "Dillings"
+            },
+            {
+                "celebrityURL": "/celebrity/florence_wyatt",
+                "celebrityName": "Florence Wyatt",
+                "character": "Ambruster's Secretary"
+            },
+            {
+                "celebrityURL": "/celebrity/frederic_worlock",
+                "celebrityName": "Frederic Worlock",
+                "character": "Elderly Colonel"
+            },
+            {
+                "celebrityURL": "/celebrity/dick-crockett",
+                "celebrityName": "Dick Crockett",
+                "character": "Carstairs"
+            },
+            {
+                "celebrityURL": "/celebrity/scott_davey",
+                "celebrityName": "Scott Davey",
+                "character": "Henry"
+            },
+            {
+                "celebrityURL": "/celebrity/jack_livesey",
+                "celebrityName": "Jack Livesey",
+                "character": "Counsel"
+            },
+            {
+                "celebrityURL": "/celebrity/tom_dillon",
+                "celebrityName": "Tom Dillon",
+                "character": "Coroner's Officer"
+            },
+            {
+                "celebrityURL": "/celebrity/benno_schneider",
+                "celebrityName": "Benno Schneider",
+                "character": "Man"
+            },
+            {
+                "celebrityURL": "/celebrity/clive_halliday",
+                "celebrityName": "Clive Halliday",
+                "character": "Man"
+            },
+            {
+                "celebrityURL": "/celebrity/anthony_eustrel",
+                "celebrityName": "Anthony Eustrel",
+                "character": "Man"
+            },
+            {
+                "celebrityURL": "/celebrity/carter_dehaven_sr",
+                "celebrityName": "Carter DeHaven Sr.",
+                "character": "Old Man"
+            },
+            {
+                "celebrityURL": "/celebrity/1007316-david_hughes",
+                "celebrityName": "David Hughes",
+                "character": "Old Man"
+            },
+            {
+                "celebrityURL": "/celebrity/nelson_welch",
+                "celebrityName": "Nelson Welch",
+                "character": "Old Man"
+            },
+            {
+                "celebrityURL": "/celebrity/cecil_weston",
+                "celebrityName": "Cecil Weston",
+                "character": "Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/thomas_p_dillon",
+                "celebrityName": "Thomas P. Dillon",
+                "character": "Coroner's Officer"
+            },
+            {
+                "celebrityURL": "/celebrity/mavis_neal",
+                "celebrityName": "Mavis Neal",
+                "character": "Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/cicely_walper",
+                "celebrityName": "Cicely Walper",
+                "character": "Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/queenie-leonard",
+                "celebrityName": "Queenie Leonard",
+                "character": "Woman"
+            },
+            {
+                "celebrityURL": "/celebrity/betty_fairfax",
+                "celebrityName": "Betty Fairfax",
+                "character": "Woman in Bathrobe"
+            },
+            {
+                "celebrityURL": "/celebrity/clive_morgan",
+                "celebrityName": "Clive Morgan",
+                "character": "Man in Smoking Jacket"
+            },
+            {
+                "celebrityURL": "/celebrity/",
+                "celebrityName": "Julie Scott Edwards",
+                "character": "Flousy"
+            },
+            {
+                "celebrityURL": "/celebrity/david_hilary_hughes",
+                "celebrityName": "David Hilary Hughes",
+                "character": "Old Man"
+            },
+            {
+                "celebrityURL": "/celebrity/eric_micklewood",
+                "celebrityName": "Eric Micklewood",
+                "character": "Man with a Hangover"
+            },
+            {
+                "celebrityURL": "/celebrity/mark_burke",
+                "celebrityName": "Mark Burke",
+                "character": "Little Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/ottola-nesmith",
+                "celebrityName": "Ottola Nesmith",
+                "character": "Flower Lady"
+            },
+            {
+                "celebrityURL": "/celebrity/milton_parsons",
+                "celebrityName": "Milton Parsons",
+                "character": "Mysterious Man"
+            },
+            {
+                "celebrityURL": "/celebrity/bru_mysak",
+                "celebrityName": "Bru Mysak",
+                "character": "Ambruster's Driver"
+            },
+            {
+                "celebrityURL": "/celebrity/iris_bristol",
+                "celebrityName": "Iris Bristol",
+                "character": "Girl"
+            },
+            {
+                "celebrityURL": "/celebrity/ross_brown_2",
+                "celebrityName": "Ross Brown",
+                "character": "Boy"
+            },
+            {
+                "celebrityURL": "/celebrity/gwendolyn-watts",
+                "celebrityName": "Gwendolyn Watts",
+                "character": "Wife"
+            },
+            {
+                "celebrityURL": "/celebrity/james_logan",
+                "celebrityName": "James Logan",
+                "character": "Bobby"
+            },
+            {
+                "celebrityURL": "/celebrity/bryan_herbert",
+                "celebrityName": "Bryan Herbert",
+                "character": "Husband"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_st_clair",
+                "celebrityName": "Michael St. Clair",
+                "character": "Fire Chief"
+            },
+            {
+                "celebrityURL": "/celebrity/mary_scott",
+                "celebrityName": "Mary Scott",
+                "character": "Waitress"
+            },
+            {
+                "celebrityURL": "/celebrity/tudor_owen",
+                "celebrityName": "Tudor Owen",
+                "character": "Farmer"
+            },
+            {
+                "celebrityURL": "/celebrity/tom_symonds",
+                "celebrityName": "Tom Symonds",
+                "character": "Alf"
+            },
+            {
+                "celebrityURL": "/celebrity/laurence_conroy",
+                "celebrityName": "Laurence Conroy",
+                "character": "Clerk"
+            },
+            {
+                "celebrityURL": "/celebrity/barry_bernard",
+                "celebrityName": "Barry Bernard",
+                "character": "Attendant"
+            },
+            {
+                "celebrityURL": "/celebrity/mary_obrady",
+                "celebrityName": "Mary O'Brady",
+                "character": "Mrs. Oliphant"
+            },
+            {
+                "celebrityURL": "/celebrity/towyna_thomas",
+                "celebrityName": "Towyna Thomas",
+                "character": "Dowager"
+            },
+            {
+                "celebrityURL": "/celebrity/harold_innocent",
+                "celebrityName": "Harold Innocent",
+                "character": "Young Escort"
+            },
+            {
+                "celebrityURL": "/celebrity/marjorie_bennett",
+                "celebrityName": "Marjorie Bennett",
+                "character": "Autograph Seeker"
+            },
+            {
+                "celebrityURL": "/celebrity/alex_finlayson",
+                "celebrityName": "Alex Finlayson",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/jackson_halliday",
+                "celebrityName": "Jackson Halliday",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/ogden_dangerfield",
+                "celebrityName": "Ogden Dangerfield",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/joe_palma",
+                "celebrityName": "Joe Palma",
+                "character": "Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/jacqueline_squire",
+                "celebrityName": "Jacqueline Squire",
+                "character": "Woman Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/brian_gaffikin",
+                "celebrityName": "Brian Gaffikin",
+                "character": "TV Reporter"
+            },
+            {
+                "celebrityURL": "/celebrity/george_pelling",
+                "celebrityName": "George Pelling",
+                "character": "Ticket Agent"
+            },
+            {
+                "celebrityURL": "/celebrity/john_uhler_lemmon_ii",
+                "celebrityName": "John Uhler Lemmon II",
+                "character": "Old Man in Wheelchair"
+            }
+        ],
+        "url": "/m/notorious_big_bigger_than_life_2007",
+        "criticReviews": [
+            {
+                "criticName": "Dennis Schwartz",
+                "criticOrganization": "Ozus' World Movie Reviews",
+                "criticReviewDate": "April 18, 2003",
+                "criticPost": "Poor Fred Astaire comes off the worst of all -- he's stuck as a fawning American embassy chief.",
+                "criticScore": "C-"
+            }
+        ]
+    },
+    {
+        "title": "The Razor's Edge",
+        "description": "In this Bill Murray-driven remake of the 1946 Tyrone Power film, Murray plays the lead, Larry Darrel, a World War I survivor who takes off on a foreign trek to discover the meaning of his life. Apparently Murray said he'd film Ghostbusters only if Columbia would let him do Razor's Edge.",
+        "rating": "PG-13",
+        "genres": [
+            "Drama"
+        ],
+        "directors": [
+            "John Byrum"
+        ],
+        "writers": [
+            "John Byrum",
+            "Bill Murray"
+        ],
+        "premiered": "Oct 19, 1984",
+        "runtime": "128 minutes",
+        "studio": "Columbia Pictures",
+        "cast": [
+            {
+                "celebrityURL": "/celebrity/bill_murray",
+                "celebrityName": "Bill Murray",
+                "character": "Larry Darrell"
+            },
+            {
+                "celebrityURL": "/celebrity/catherine_hicks",
+                "celebrityName": "Catherine Hicks",
+                "character": "Isabel"
+            },
+            {
+                "celebrityURL": "/celebrity/theresa_russell",
+                "celebrityName": "Theresa Russell",
+                "character": "Sophie"
+            },
+            {
+                "celebrityURL": "/celebrity/denholm_elliott",
+                "celebrityName": "Denholm Elliott",
+                "character": "Elliott Templeton"
+            },
+            {
+                "celebrityURL": "/celebrity/james_keach",
+                "celebrityName": "James Keach",
+                "character": "Gray Maturin"
+            },
+            {
+                "celebrityURL": "/celebrity/peter_vaughan",
+                "celebrityName": "Peter Vaughan",
+                "character": "Mackenzie"
+            },
+            {
+                "celebrityURL": "/celebrity/briandoylemurray",
+                "celebrityName": "Brian Doyle-Murray",
+                "character": "Piedmont"
+            },
+            {
+                "celebrityURL": "/celebrity/brian_doyle_murray",
+                "celebrityName": "Brian Doyle Murray",
+                "character": "Malcolm"
+            },
+            {
+                "celebrityURL": "/celebrity/stephen_davies",
+                "celebrityName": "Stephen Davies",
+                "character": "Raaz"
+            },
+            {
+                "celebrityURL": "/celebrity/saeed_jaffrey",
+                "celebrityName": "Saeed Jaffrey",
+                "character": "Louisa Bradley"
+            },
+            {
+                "celebrityURL": "/celebrity/faith_brook",
+                "celebrityName": "Faith Brook",
+                "character": "Joseph"
+            },
+            {
+                "celebrityURL": "/celebrity/andre_maranne",
+                "celebrityName": "Andre Maranne",
+                "character": "Henry Maturin"
+            },
+            {
+                "celebrityURL": "/celebrity/bruce_boa",
+                "celebrityName": "Bruce Boa",
+                "character": "Coco"
+            },
+            {
+                "celebrityURL": "/celebrity/serge_feuillard",
+                "celebrityName": "Serge Feuillard",
+                "character": "Bob"
+            },
+            {
+                "celebrityURL": "/celebrity/joris_stuyck",
+                "celebrityName": "Joris Stuyck",
+                "character": "Red Cross Lady"
+            },
+            {
+                "celebrityURL": "/celebrity/helen_horton",
+                "celebrityName": "Helen Horton",
+                "character": "Tyler"
+            },
+            {
+                "celebrityURL": "/celebrity/michael_fitzpatrick",
+                "celebrityName": "Michael Fitzpatrick",
+                "character": "Albert"
+            },
+            {
+                "celebrityURL": "/celebrity/robert_manuel",
+                "celebrityName": "Robert Manuel",
+                "character": "Man at Kissing Booth"
+            },
+            {
+                "celebrityURL": "/celebrity/sam-douglas",
+                "celebrityName": "Sam Douglas",
+                "character": "Governess"
+            },
+            {
+                "celebrityURL": "/celebrity/nora_connolly",
+                "celebrityName": "Nora Connolly",
+                "character": "Brian Ryan"
+            },
+            {
+                "celebrityURL": "/celebrity/jeff-harding",
+                "celebrityName": "Jeff Harding",
+                "character": "Doug Van Allen"
+            },
+            {
+                "celebrityURL": "/celebrity/richard_oldfield",
+                "celebrityName": "Richard Oldfield",
+                "character": "Doctor"
+            },
+            {
+                "celebrityURL": "/celebrity/gordon_sterne",
+                "celebrityName": "Gordon Sterne",
+                "character": "Nun"
+            },
+            {
+                "celebrityURL": "/celebrity/mary_larkin",
+                "celebrityName": "Mary Larkin",
+                "character": "Kevin"
+            },
+            {
+                "celebrityURL": "/celebrity/christopher_muncke",
+                "celebrityName": "Christopher Muncke",
+                "character": "Party Guest"
+            },
+            {
+                "celebrityURL": "/celebrity/russell_sommers",
+                "celebrityName": "Russell Sommers",
+                "character": "French Detective"
+            },
+            {
+                "celebrityURL": "/celebrity/john_moreno",
+                "celebrityName": "John Moreno",
+                "character": "French Detective"
+            },
+            {
+                "celebrityURL": "/celebrity/jennifer_shull",
+                "celebrityName": "Jennifer Shull",
+                "character": "Priscilla Maturin"
+            },
+            {
+                "celebrityURL": "/celebrity/hugo_bower",
+                "celebrityName": "Hugo Bower",
+                "character": "Joan Maturin"
+            },
+            {
+                "celebrityURL": "/celebrity/abbie_shilling",
+                "celebrityName": "Abbie Shilling",
+                "character": "Communist Vendor"
+            },
+            {
+                "celebrityURL": "/celebrity/cassie_shilling",
+                "celebrityName": "Cassie Shilling",
+                "character": "Morgue Attendant"
+            },
+            {
+                "celebrityURL": "/celebrity/jean_francois_soubielle",
+                "celebrityName": "Jean-Francois Soubielle",
+                "character": "Mrs. MacKenzie"
+            },
+            {
+                "celebrityURL": "/celebrity/claude_le_sache",
+                "celebrityName": "Claude Le Sache",
+                "character": "Wounded French Soldier"
+            },
+            {
+                "celebrityURL": "/celebrity/caroline_john",
+                "celebrityName": "Caroline John",
+                "character": "Wounded French Soldier"
+            },
+            {
+                "celebrityURL": "/celebrity/daniel_chatto",
+                "celebrityName": "Daniel Chatto",
+                "character": "Lama"
+            },
+            {
+                "celebrityURL": "/celebrity/louis_sheldon",
+                "celebrityName": "Louis Sheldon"
+            },
+            {
+                "celebrityURL": "/celebrity/kunchuck_tharching",
+                "celebrityName": "Kunchuck Tharching"
+            }
+        ],
+        "url": "/m/1017237-razors_edge",
+        "criticReviews": [
+            {
+                "criticName": "Paul Attanasio",
+                "criticOrganization": "Washington Post",
+                "criticReviewDate": "January 4, 2018",
+                "criticPost": "An adaptation of the novel by W. Somerset Maugham, this longtime pet project of Murray's will only disappoint his many fans.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Clint Morris",
+                "criticOrganization": "Mediasharx",
+                "criticReviewDate": "March 3, 2006",
+                "criticPost": "A gratifying gamble for the immersive Bill Murray",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Steve Crum",
+                "criticOrganization": "Kansas City Kansan",
+                "criticReviewDate": "October 19, 2004",
+                "criticPost": "Dismal misfire by Murray trying early on for drama accolades",
+                "criticScore": "Read More  2/5"
+            },
+            {
+                "criticName": "Ken Hanke",
+                "criticOrganization": "Mountain Xpress (Asheville, NC)",
+                "criticReviewDate": "February 11, 2004",
+                "criticPost": "Sincere try, but even with censorship issues, the 1946 version was better.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Scott Weinberg",
+                "criticOrganization": "eFilmCritic.com",
+                "criticReviewDate": "October 20, 2002",
+                "criticPost": "The Razor's Edge may be a truncated and somewhat episodic adaptation, but it's certainly compelling enough to keep you involved for a solid two hours.",
+                "criticScore": "4/5"
+            },
+            {
+                "criticName": "Bob Bloom",
+                "criticOrganization": "Journal and Courier (Lafayette, IN)",
+                "criticReviewDate": "October 14, 2002",
+                "criticPost": "Murray provides an interesting performance; the movie grows on you.",
+                "criticScore": "3/5"
+            },
+            {
+                "criticName": "Kevin N. Laforest",
+                "criticOrganization": "Apollo Guide",
+                "criticReviewDate": "October 4, 2002",
+                "criticPost": "Were it paced more smoothly, and if the lead character's spiritual search was developed instead of just hinted at, this could have been a great film.",
+                "criticScore": "Read More  55/100"
+            },
+            {
+                "criticName": "Frederic and Mary Ann Brussat",
+                "criticOrganization": "Spirituality and Practice",
+                "criticReviewDate": "September 1, 2002",
+                "criticPost": "An American's quest for the meaning of life takes him from Iowa to Tibet to discover the spiritual practices of equanimity, atttention, and compassion.",
+                "criticScore": ""
+            },
+            {
+                "criticName": "Bill Chambers",
+                "criticOrganization": "Film Freak Central",
+                "criticReviewDate": "August 18, 2002",
+                "criticPost": "\"Don't write that book report to it, just enjoy its eccentricities.\"",
+                "criticScore": "3/4"
+            },
+            {
+                "criticName": "Chuck O'Leary",
+                "criticOrganization": "Fantastica Daily",
+                "criticReviewDate": "October 9, 2005",
+                "criticPost": "",
+                "criticScore": "2/5"
+            },
+            {
+                "criticName": "Lori Hoffman",
+                "criticOrganization": "Atlantic City Weekly",
+                "criticReviewDate": "June 15, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  2/5"
+            },
+            {
+                "criticName": "Emanuel Levy",
+                "criticOrganization": "EmanuelLevy.Com",
+                "criticReviewDate": "June 13, 2005",
+                "criticPost": "",
+                "criticScore": "Read More  1/5"
+            },
+            {
+                "criticName": "Roger Ebert",
+                "criticOrganization": "Chicago Sun-Times",
+                "criticReviewDate": "October 23, 2004",
+                "criticPost": "",
+                "criticScore": "2.5/4"
+            },
+            {
+                "criticName": "Carol Cling",
+                "criticOrganization": "Las Vegas Review-Journal",
+                "criticReviewDate": "March 26, 2004",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "Philip Martin",
+                "criticOrganization": "Arkansas Democrat-Gazette",
+                "criticReviewDate": "May 23, 2003",
+                "criticPost": "",
+                "criticScore": "Read More  3/5"
+            },
+            {
+                "criticName": "David Poland",
+                "criticOrganization": "Hot Button",
+                "criticReviewDate": "July 26, 2002",
+                "criticPost": "",
+                "criticScore": "1/5"
+            }
+        ]
+    }
+]

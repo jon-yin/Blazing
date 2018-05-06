@@ -23,7 +23,7 @@ Media.prototype.nextPattern = function () {
 
 module.exports = {
   host: 'https://www.rottentomatoes.com',
-  reqDelay: 500,
+  reqDelay: 1000,
   mediaType: 'tvshow',
   mediaSelectors: {
     description: Object.assign({}, Media.prototype, {
