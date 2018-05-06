@@ -50,7 +50,10 @@ public class MediaService {
 	private ReviewRepository revRepo;
 	@Autowired
 	private UserService service;
-
+	@Autowired
+	private SessionService sesService;
+	
+	
 	@Transactional
 	public Movie findMovie(long id) {
 		Optional<Movie> movie = movieRepo.findById(id);
@@ -259,6 +262,8 @@ public class MediaService {
 				foundReview.setDatetime(LocalDateTime.now());
 				foundReview.setScore(newReview.getRating());
 				Review savedRev = revRepo.save(foundReview);
+				User updated = service.findUser(user.getId());
+				sesService.updateCurrentUser(updated);
 				updateMovieScore(savedRev);
 				return true;
 				
