@@ -21,7 +21,6 @@ const TV_PROPS = BASE_PROPS + ['startYear', 'endYear', 'meterScore']
 // movieCount and tvCount
 // save the movies and tv show objects
 
-
 var jsonObject = {}
 jsonObject[MOVIES_KEY] = []
 jsonObject[TVSHOWS_KEY] = []
