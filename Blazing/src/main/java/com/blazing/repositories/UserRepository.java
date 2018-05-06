@@ -6,10 +6,10 @@ import org.springframework.stereotype.Repository;
 import com.blazing.objects.User;
 
 @Repository
-public interface UserRepository<T extends User> extends JpaRepository<T, Long>{
+public interface UserRepository extends JpaRepository<User, Long>{
 
 	
 	Long countUsersByEmailAddress(String emailAddress);
-	T findUserByEmailAddress(String emailAddress);
+	User findUserByEmailAddress(String emailAddress);
 	
 }

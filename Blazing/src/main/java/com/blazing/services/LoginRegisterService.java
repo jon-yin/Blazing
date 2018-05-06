@@ -25,7 +25,7 @@ import com.blazing.repositories.UserRepository;
 public class LoginRegisterService {
 
 	@Autowired
-	private UserRepository<User> repository;
+	private UserRepository repository;
 	
 	@Autowired
 	private TokenRepository tokenRepo;
