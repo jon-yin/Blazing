@@ -41,6 +41,9 @@
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" id="critics-reviews-tab" href="#critics-reviews" role="tab">Latest Film Reviews</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" id="critics-apply-tab" href="#critics-apply" role="tab">Apply for Critic Role</a>
+						</li>
 					</ul>
 				</section>
 			</div>
@@ -68,11 +71,11 @@
 						</div>
 					</section>
 				</div>
-				<div class="tab-pane fade show" id="critics-list" role="tabpanel" aria-labelledby="critics-list-tab">
+				<div class="tab-pane fade" id="critics-list" role="tabpanel" aria-labelledby="critics-list-tab">
 					<section>
 						<h5 class="section-header">CRITICS LIST</h5>
 						<div class="w-100 d-flex justify-content-center">
-							<ul class="pagination">
+							<ul class="pagination pagination-sm">
 								<li class="page-item active"><a class="page-link" href="#">A</a></li>
 								<li class="page-item"><a class="page-link" href="#">B</a></li>
 								<li class="page-item"><a class="page-link" href="#">C</a></li>
@@ -108,7 +111,7 @@
 						</div>
 					</section>
 				</div>
-				<div class="tab-pane fade show" id="critics-groups" role="tabpanel" aria-labelledby="critics-groups-tab">
+				<div class="tab-pane fade" id="critics-groups" role="tabpanel" aria-labelledby="critics-groups-tab">
 					<section>
 						<h5 class="section-header">CRITICS GROUP</h5>
 						<div>
@@ -125,7 +128,7 @@
 						</div>
 					</section>
 				</div>
-				<div class="tab-pane fade show" id="critics-reviews" role="tabpanel" aria-labelledby="critics-reviews-tab">
+				<div class="tab-pane fade" id="critics-reviews" role="tabpanel" aria-labelledby="critics-reviews-tab">
 					<section>
 						<h5 class="section-header">LATEST FILM REVIEWS</h5>
 						<div>
@@ -160,10 +163,68 @@
 						</div>
 					</section>
 				</div>
+				<div class="tab-pane fade" id="critics-apply" role="tabpanel" aria-labelledby="critics-apply-tab">
+					<section>
+						<h5 class="section-header">APPLY TO BECOME A CRITIC</h5>
+						<div class="m-2 p-2">
+							description of how to apply and rules for being a critic
+						</div>
+						<div class="w-100 text-center p-2 border" th:if="${session.currentUser}">
+							<form th:unless="${session.currentUser.role.name() == 'CRITIC'} or ${session.currentUser.role.name() == 'ADMIN'}">
+								<div>If you want to apply, please write a reason why you want to contribute to the Blazing community.</div>
+								<div class="w-100"><textarea class="w-75" id="apply-desc" rows="5"></textarea></div>
+								<small class="text-danger" id="no-desc-apply" style="display: none;">Please enter your reason of applying</small>
+								<button type="submit" id="critic-apply-button" class="font-weight-bold btn btn-success btn-lg">APPLY</button>
+							</form>
+							<script th:inline="javascript">
+							/*<![CDATA[*/
+							function apply(id, body){
+								var app = {};
+								app["body"] = body;
+								app["userId"] = id;
+								var jsonString = JSON.stringify(app);
+								$.ajax({
+									type : "POST",
+									url : location.href + "/apply",
+									contentType: "application/json",
+									data : jsonString,
+									success : function(data) {
+										console.log(data);
+										if (data){
+											location.reload();	
+										}else{
+											
+										}
+									},
+									error : function(e) {
+										console.log("ERROR: ", e);
+									}
+								});
+							}
+							$(function(){
+								$("#critic-apply-button").on("click", function(e){
+									e.preventDefault();
+									$("#no-desc-apply").hide();
+									var body = $("#apply-desc").val();
+									var userId = /*[[${session.currentUser.id}]]*/ 0;
+									console.log(userId);
+									if (body.length == 0){
+										$("#no-desc-apply").show();
+										return;
+									}else{
+										apply(userId, body);
+									}
+								});
+							});
+							/*]]>*/
+							</script>
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
 	</div>
-	<footer xmlns:th="/fragments/footer.html : footer"></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>
