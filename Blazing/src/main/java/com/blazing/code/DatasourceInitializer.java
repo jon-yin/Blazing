@@ -26,9 +26,11 @@ import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.objects.Celebrity;
+import com.blazing.objects.CriticReview;
 import com.blazing.repositories.CelebrityRepository;
 import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
+import com.blazing.repositories.ReviewRepository;
 import com.blazing.repositories.UserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,10 +51,14 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
     private MovieCharacterRepository moviecharRepo;
 	
 	@Autowired
+	private ReviewRepository reviewRepo;
+	
+	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
 	private HashMap<String, Long> celebURLtoID = new HashMap<>();
 	private HashMap<String, Long> movieURLtoID = new HashMap<>(); 
+	private HashMap<String, Long> criticNametoID = new HashMap<>();
 
     @Override
     @Transactional
@@ -60,26 +66,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
         // load json file, add to my sql db
         try {
             mapJSONtoCelebrities("data/celebs/pcelebs00.json");
-            /*mapJSONtoCelebrities("data/celebs/pcelebs01.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs02.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs03.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs04.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs05.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs06.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs07.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs08.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs09.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs10.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs11.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs12.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs13.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs14.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs15.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs16.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs17.json");
-            mapJSONtoCelebrities("data/celebs/pcelebs18.json"); 
-            mapJSONtoCelebrities("data/celebs/pcelebs19.json"); */
             mapJSONtoMovie("data/movies/pmovies00.json");
+            mapJSONtoReviews("data/reviews/creviews00.json");
             User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
@@ -201,5 +189,84 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			movieURLtoID.put(url, movie.getId());
 		}
     }
-
+	
+	private void mapJSONtoReviews(String jsonFileName) throws IOException {
+		Path jsonFilePath = Paths.get(jsonFileName);
+		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
+		ObjectMapper om = new ObjectMapper();
+		JsonNode Tree = om.readTree(jsonString);
+		Iterator<JsonNode> Iterator = Tree.iterator();
+		while (Iterator.hasNext()) {
+			JsonNode treeiterator = Iterator.next();
+			
+			String movieurl = treeiterator.get("url").textValue();
+			movieurl = movieurl.substring(0, movieurl.length() - 9 );
+			Optional<Movie> opmovie = movieRepo.findById(movieURLtoID.get(movieurl));
+			if (opmovie.isPresent()) {
+				Movie movie = opmovie.get();
+				JsonNode criticReviews = treeiterator.get("criticReviews");
+				Iterator<JsonNode> ReviewIterator = criticReviews.iterator();
+				while (ReviewIterator.hasNext()) {
+					JsonNode criticReview = ReviewIterator.next();
+					
+					User user = new User();
+					
+					String name = criticReview.get("criticName").textValue();
+					if (criticNametoID.containsKey(name)) {
+						long id = criticNametoID.get(name);
+						Optional<User> opuser = userRepo.findById(id);
+						if (opuser.isPresent()) {
+							user = opuser.get();
+						}
+					}
+					else {
+						user.setEmailAddress("setup@privilege.com");
+					    user.setPassword(encoder.encode("a"));
+					    user.setEnabled(true);
+					    user.setRole(Roles.CRITIC);
+					        
+					    String[] names = name.split(" ");
+					    if (names.length == 1) {
+					        user.setFirstName(names[0]);
+					        user.setLastName("");
+					    }
+					    else {
+					        user.setFirstName(names[0]);
+						    user.setLastName(names[names.length -1]);
+					    }
+					    user = userRepo.save(user);
+					    criticNametoID.put(name, user.getId());
+					}
+					
+					CriticReview review = new CriticReview();
+					review.setPublication(criticReview.get("criticOrganization").textValue());
+					review.setBlazing(true);
+					review.setCustomScore(criticReview.get("criticScore").textValue());
+					review.setBody(criticReview.get("criticPost").textValue());
+					review.setUser(user);
+					review.setSource(movie);
+					
+					String postDate = criticReview.get("criticReviewDate").textValue();
+					DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+					DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+					LocalDate postDate2 = null;
+					try{
+						postDate2 = LocalDate.parse(postDate, format1);
+					}
+					catch(DateTimeParseException pe){
+						postDate2 = LocalDate.parse(postDate, format2);
+					}
+					review.setDatetime(postDate2.atStartOfDay());
+					review = reviewRepo.save(review);
+					
+					user.addToReviews(review);
+					user = userRepo.save(user);
+					
+					movie.addReview(review);
+				}
+				
+				movie = movieRepo.save(movie);
+			}
+		}
+	}
 }
