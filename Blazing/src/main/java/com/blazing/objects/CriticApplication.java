@@ -35,6 +35,12 @@ public class CriticApplication {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public long getUserId() {
+		return userId;
+	}
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
 
 	
 	
