@@ -67,10 +67,12 @@ public class MovieController extends MediaController<Movie>{
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String getMovieDetails(@PathVariable("movie") long movie, Model model)
+	public String getMovieDetails(@PathVariable("movie") long movie, @SessionAttribute("currentUser") User user, Model model)
 	{
 		Movie currentMovie = mediaService.findMovie(movie);
+		Review review = super.retrieveReviewFromUser(user, movie);
 		model.addAttribute("movie", currentMovie);
+		model.addAttribute("currentReview", review);
 		return "movie-details";
 	}
 	
