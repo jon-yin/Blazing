@@ -1,7 +1,5 @@
 package com.blazing.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import com.blazing.objects.CriticApplication;
+import com.blazing.objects.ChangePassword;
 import com.blazing.objects.MovieInfo;
-import com.blazing.objects.Roles;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
 import com.blazing.services.UserService;
@@ -74,6 +71,16 @@ public class UserController {
 		{
 			return "settings";
 		}
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/changepass", method = RequestMethod.POST)
+	public boolean changePassword(@RequestBody ChangePassword info, @SessionAttribute(value="currentUser",required=false) User user)
+	{
+		String password = info.getOldPass();
+		String newPass = info.getNewPass();
+		String confirm = info.getConfirmNewPass();
+		return userService.changePassword(password,newPass,confirm,user);
 	}
 	
 	@RequestMapping(path="/delete", method = RequestMethod.POST)

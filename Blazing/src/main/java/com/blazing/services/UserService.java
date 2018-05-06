@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.blazing.objects.CriticApplication;
@@ -21,6 +22,8 @@ import com.blazing.repositories.UserRepository;
 @Service
 public class UserService {
 
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	@Autowired
 	private UserRepository userRepo;
 	@Autowired
@@ -131,6 +134,43 @@ public class UserService {
 	public void updateSessionUser(User newUser)
 	{
 		sesService.updateCurrentUser(newUser);
+	}
+
+	public boolean changePassword(String password, String newPass, String confirm, User user) {
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			String encoded = encoder.encode(password);
+			if (encoded.equals(user.getPassword()))
+			{
+				if (password.equals(newPass))
+				{
+					return false;
+				}
+				else
+				{
+					if (confirm.equals(newPass))
+					{
+						String encodednewPass = encoder.encode(newPass);
+						user.setPassword(encodednewPass);
+						User newUser = saveUserState(user);
+						sesService.updateCurrentUser(newUser);
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return false;
 	}
 	
 
