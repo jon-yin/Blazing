@@ -61,9 +61,6 @@ public class Celebrity implements Comparable<Celebrity>{
 	public Set<Media> getFilmography() {
 		return filmography;
 	}
-	public void setFilmography(Set<Media> filmography) {
-		this.filmography = filmography;
-	}
 	
 	@Column(nullable=false)
 	@OneToMany(mappedBy="actor")
