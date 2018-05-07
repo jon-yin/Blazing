@@ -246,7 +246,13 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					review.setBody(criticReview.get("criticPost").textValue());
 					review.setUser(user);
 					review.setSource(movie);
-					
+					if (criticReview.get("criticFresh").textValue().equals("true")) {
+						review.setBlazing(true);
+					}
+					else {
+						review.setBlazing(false);
+					}
+						
 					String postDate = criticReview.get("criticReviewDate").textValue();
 					DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
 					DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMMM d, yyyy");
