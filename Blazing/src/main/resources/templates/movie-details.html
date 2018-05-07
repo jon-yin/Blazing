@@ -508,7 +508,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.reviews}">
+									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getReviews()}">
 										<div class="reviewer" style="width: 100px;">
 											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
