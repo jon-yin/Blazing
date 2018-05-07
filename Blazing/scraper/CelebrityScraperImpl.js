@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { MediaScraper } = require('./MediaScraper.js');
-const celebrityOptions = require('./input/celebrity-options');
+const { MediaScraper } = require('./code/MediaScraper.js');
+const celebrityOptions = require('./output/celebrity-options');
 
 const inputfile = './searchResults/done/movies00.json';
 

@@ -1,12 +1,12 @@
 const fs = require('fs');
-const { MediaScraper } = require('./MediaScraper.js');
-const seasonOptions = require('./input/season-options');
+const { MediaScraper } = require('./code/MediaScraper.js');
+const seasonOptions = require('./options/season-options');
 
-// const inputfile = './searchResults/done/movies00.json';
+const inputfile = './output/parsedTVshows/ptvshows00.json';
 
 try {
-  var json = JSON.parse(fs.readFileSync(process.argv[2]));
-  // var json = JSON.parse(fs.readFileSync(inputfile));
+  // var json = JSON.parse(fs.readFileSync(process.argv[2]));
+  var json = JSON.parse(fs.readFileSync(inputfile));
 
   /// look up the number of seasons
 
@@ -17,6 +17,7 @@ try {
   // and add the number of seasons, and an array of season urls for each show
 
   // filter out season urls. we want show urls
+
   let tvShows = [];
   json.tvSeries.forEach(show => {
     let v = show.url.match(/\/s\d\d$/);

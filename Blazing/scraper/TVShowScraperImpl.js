@@ -1,29 +1,42 @@
 const fs = require('fs');
 const { MediaScraper } = require('./code/MediaScraper.js');
-const criticReviewOptions = require('./options/critic-options');
+const tvShowOptions = require('./options/tvshow-options');
 
-// const inputfile = './output/parsedMovies/pmovies19.json';
-
-// parses critic reviews for a movie url
+const inputfile = './searchResults/done/movies00.json';
 
 try {
+
+  // get all the season urls from the tvshows object
+
   var json = JSON.parse(fs.readFileSync(process.argv[2]));
+  console.log(`there are ${json.tvSeries.length} TV Shows`);
   // var json = JSON.parse(fs.readFileSync(inputfile));
 
   // filter out season urls. we want show urls
-  let criticReview = [];
-  json.forEach(review => {
-    criticReview.push({ url: review.url + criticReviewOptions.appendToUrlEnd });
+  let tvShows = [];
+  json.tvSeries.forEach(show => {
+    if (show.startYear >= 1950) {
+      let v = show.url.match(/\/s\d\d$/);
+      if (v === null) {
+        tvShows.push({ url: show.url });
+      }
+    }
   });
 
-  // var ms = new MediaScraper(criticReview.slice(0,4), criticReviewOptions);
-  var ms = new MediaScraper(criticReview, criticReviewOptions);
+  console.log(`there are ${tvShows.length} TV Shows after year 1950`);
+
+
+  var ms = new MediaScraper(tvShows, tvShowOptions);
 
   ms.bigSearch()
     .then(result => {
 
       let checkProperties = function (obj) {
         for (var key in obj) {
+
+          if (tvShowOptions.notRequired.includes(key)) {
+            continue;
+          }
 
           if (Array.isArray(obj[key]) && obj[key].length < 1) {
             return false;
@@ -39,7 +52,6 @@ try {
       let cleanedResults = [];
       for (let i = 0; i < result.length; i++) {
         if (checkProperties(result[i])) {
-          // cleanedResults.push({ url: result[i] });
           cleanedResults.push(result[i]);
         }
       }
@@ -50,10 +62,10 @@ try {
 
       let f = JSON.stringify(cleanedResults, null, 4);
       fs.writeFileSync(process.argv[3], f);
-      // fs.writeFileSync('newcritic.json', f);
+      // fs.writeFileSync('seasonout.json', f);
     });
 
 }
 catch (e) {
   console.error(e);
-}
+} 
