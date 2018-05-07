@@ -103,7 +103,7 @@
 									<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
 									<div style="width: 50px;"><span>YEAR</span></div>
 								</div>
-								<div class="details-link border-top border-bottom" th:each="media : ${celebrity.getFilmography()}">
+								<div class="details-link border-top border-bottom" th:each="media : ${celebrity.filmography}">
 									<a class="w-100 d-flex align-items-start" th:href="@{/viewmovie/{id}(id=${media.id})}">
 										<div style="width: 75px">
 											<span class="icon tiny burning"></span>
@@ -125,7 +125,7 @@
 								<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
 								<div style="width: 50px;"><span>YEAR</span></div>
 							</div>
-							<div class="details-link border-top border-bottom" th:each="media : ${celebrity.getFilmography()}">
+							<div class="details-link border-top border-bottom" th:each="media : ${celebrity.filmography}">
 								<a class="w-100 d-flex align-items-start" href="#">
 									<div style="width: 75px">
 										<span class="icon tiny burning"></span>

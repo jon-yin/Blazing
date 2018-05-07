@@ -46,19 +46,69 @@
 								<div class="pr-2">Reason</div>
 							</div>
 							<div class="w-100 p-1 my-1 border d-flex" th:each="report : ${reported}">
-								<div class="pr-2" style="min-width: 100px;"><a th:text="|${report.user.firstName} ${report.user.lastName}|" th:href="@{/viewprofile/{id}(id=${report.user.id})}">User</a></div>
-								<div class="pr-2" style="min-width: 150px;">
+								<div class="pr-2" style="min-width: 100px; max-width: 100px;"><a th:text="|${report.user.firstName} ${report.user.lastName}|" th:href="@{/viewprofile/{id}(id=${report.user.id})}">User</a></div>
+								<div class="pr-2" style="min-width: 150px; max-width: 150px;">
 									<a th:text="${report.source.title}" th:if="${report.source instanceof T(com.blazing.objects.Movie)}" th:href="@{/viewmovie/{id}(id=${report.source.id})}">Media</a>
 									<a th:text="${report.source.title}" th:if="${report.source instanceof T(com.blazing.objects.TV)}" th:href="@{/viewtv/{id}(id=${report.source.id})}">Media</a>
 								</div>
-								<div class="pr-2" style="min-width: 200px;" th:text="${report.body}">Review</div>
+								<div class="pr-2" style="min-width: 200px; max-width: 200px;" th:text="${report.body}">Review</div>
 								<div class="pr-2" th:each="reason: ${report.getReasons()}">
 									<div class="pb-2" th:text="${reason}">reason</div>
 								</div>
 								<div class="ml-auto d-flex">
-									<div class="pr-2"><a href="#"><i class="fa fa-gavel"></i></a></div>
-									<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
+									<div class="pr-2"><button type="button" class="btn" th:id="'rem-rvw-button'+${report.id}"><i class="fa fa-gavel"></i></button></div>
+									<div class="pr-1"><button type="button" class="btn" th:id="'dis-rvw-button'+${report.id}"><i class="fa fa-times"></i></button></div>
 								</div>
+								<script th:inline="javascript">
+								/*<![CDATA[*/
+									$(function(){
+										var remButton = /*[['#rem-rvw-button'+${report.id}]]*/ "#";
+										var disButton = /*[['#dis-rvw-button'+${report.id}]]*/ "#";
+										var repID = /*[[${report.id}]]*/ 0;
+										$(remButton).on("click",function(e){
+											e.preventDefault();
+											$.ajax({
+												type : "POST",
+												url : location.href + "/removereview",
+												contentType: "application/json",
+												data : ""+repID,
+												success : function(data) {
+													console.log(data);
+													if (data){
+														location.reload();	
+													}else{
+														
+													}
+												},
+												error : function(e) {
+													console.log("ERROR: ", e);
+												}
+											});
+										});
+										$(disButton).on("click",function(e){
+											e.preventDefault();
+											var jsonString = JSON.stringify(app);
+											$.ajax({
+												type : "POST",
+												url : location.href + "/dismissreview",
+												contentType: "application/json",
+												data : ""+repID,
+												success : function(data) {
+													console.log(data);
+													if (data){
+														location.reload();	
+													}else{
+														
+													}
+												},
+												error : function(e) {
+													console.log("ERROR: ", e);
+												}
+											});
+										});
+									});
+								/*]]>*/
+								</script>
 							</div>
 						</section>
 					</div>
@@ -70,21 +120,21 @@
 								<div class="pr-2">Description</div>
 							</div>
 							<div class="w-100 p-1 my-1 d-flex" th:each="app : ${applications}">
-								<div class="pr-2" style="min-width: 100px;"><a th:href="@{/viewprofile/{id}(id=${app.getUser().id})}" th:text="|${app.getUser().firstName} ${app.getUser().lastName}|">User</a></div>
+								<div class="pr-2" style="min-width: 100px; max-width: 100px;"><a th:href="@{/viewprofile/{id}(id=${app.getUser().id})}" th:text="|${app.getUser().firstName} ${app.getUser().lastName}|">User</a></div>
 								<div class="pr-2" th:text="${app.body}">Description</div>
 								<div class="ml-auto d-flex">
-									<div class="pr-2"><a th:id="'acc-app'+${app.id}+'-button'" href="#"><i class="fa fa-check"></i></a></div>
-									<div class="pr-1"><a th:id="'rej-app'+${app.id}+'-button'" href="#"><i class="fa fa-times"></i></a></div>
+									<div class="pr-2"><button type="button" class="btn" th:id="'acc-app-button'+${app.id}"><i class="fa fa-check"></i></button></div>
+									<div class="pr-1"><button type="button" class="btn" th:id="'rej-app-button'+${app.id}"><i class="fa fa-times"></i></button></div>
 								</div>
-								<script>
+								<script th:inline="javascript">
 								/*<![CDATA[*/
 									$(function(){
-										var accButton = /*[['#acc-app'+${app.id}+'-button']]*/ "";
-										var rejButton = /*[['#rej-app'+${app.id}+'-button']]*/ "";
+										var accButton = /*[['#acc-app-button'+${app.id}]]*/ "#";
+										var rejButton = /*[['#rej-app-button'+${app.id}]]*/ "#";
 										$(accButton).on("click",function(e){
 											e.preventDefault();
 											var id = /*[[${app.getUser().id}]]*/ 0;
-											var body = /*[[${app.body}]]*/ "";
+											var body = /*[[${app.body}]]*/ "#";
 											var app = {};
 											app["body"] = body;
 											app["userId"] = id;
