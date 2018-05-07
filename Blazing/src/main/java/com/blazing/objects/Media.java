@@ -54,7 +54,6 @@ public abstract class Media implements Comparable<Media>{
 		airtimes = new LocalDate[2];
 		videos = new HashSet<>();
 		images = new HashSet<>();
-		reviews = new HashSet<>();
 		cast = new HashSet<>();
 		reviews = new HashSet<>();
 		criticReviews = new HashSet<>();
