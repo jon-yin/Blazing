@@ -80,13 +80,15 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // load json file, add to my sql db
-        try {
+        /*try {
             mapJSONtoCelebrities("data/celebs/pcelebs00.json");
             mapJSONtoCelebrities("data/celebs/pcelebs01.json");
             mapJSONtoCelebrities("data/celebs/pcelebs02.json");
             mapJSONtoCelebrities("data/celebs/pcelebs03.json");
             mapJSONtoCelebrities("data/celebs/pcelebs04.json");
             mapJSONtoCelebrities("data/celebs/pcelebs19.json");
+            
+            System.out.println("Celeb Done");
             
             mapJSONtoMovie("data/movies/pmovies00.json");
             mapJSONtoMovie("data/movies/pmovies01.json");
@@ -109,6 +111,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoMovie("data/movies/pmovies18.json");
             mapJSONtoMovie("data/movies/pmovies19.json");
             
+            System.out.println("Movie Done");
+            
             mapJSONtoReviews("data/reviews/pcritic00.json");
             mapJSONtoReviews("data/reviews/pcritic01.json");
             mapJSONtoReviews("data/reviews/pcritic02.json");
@@ -129,6 +133,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoReviews("data/reviews/pcritic18.json");
             mapJSONtoReviews("data/reviews/pcritic19.json");
             
+            System.out.println("Review Done");
+            
             mapJSONtoTV("data/tvshows/ptvshows00.json");
             mapJSONtoTV("data/tvshows/ptvshows01.json");
             mapJSONtoTV("data/tvshows/ptvshows03.json");
@@ -147,6 +153,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoTV("data/tvshows/ptvshows17.json");
             mapJSONtoTV("data/tvshows/ptvshows18.json");
             mapJSONtoTV("data/tvshows/ptvshows19.json");
+            
+            System.out.println("TV Done");
             
             mapJSONtoSeason("data/seasons/pseasons00.json");
             mapJSONtoSeason("data/seasons/pseasons01.json");
@@ -167,6 +175,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoSeason("data/seasons/pseasons18.json");
             mapJSONtoSeason("data/seasons/pseasons19.json");
             
+            System.out.println("Season Done");
+            
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews00.json");
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews01.json");
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews03.json");
@@ -185,6 +195,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews17.json");
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews18.json");
             mapJSONtoSeasonReviews("data/seasonreviews/pseasonreviews19.json");
+            
+            System.out.println("SeasonReview Done");
             
             mapJSONtoEpisode("data/episodes/pepisodes00.json");
             mapJSONtoEpisode("data/episodes/pepisodes01.json");
@@ -205,6 +217,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoEpisode("data/episodes/pepisodes18.json");
             mapJSONtoEpisode("data/episodes/pepisodes19.json");
             
+            System.out.println("Episodes Done");
+            
             User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
@@ -221,9 +235,11 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             testUser.setLastName("guy");
             testUser.setRole(Roles.USER);
             userRepo.save(testUser);
+            
+            System.out.println("Started");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void mapJSONtoCelebrities(String jsonFileName) throws IOException {
