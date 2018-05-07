@@ -233,7 +233,7 @@ public class MediaService {
 		model.addAttribute("browseAllMovies", movies);
 		LocalDate thisWeek = LocalDate.now().minusDays(7);
 		List<Movie> recent = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0 && m.getAirtimes()[0].compareTo(LocalDate.now())<=0)).collect(Collectors.toList());
-		System.out.println(recent.size());
+		//System.out.println(recent.size());
 		model.addAttribute("thisWeek", recent);
 		List<Movie> future = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(LocalDate.now()) > 0)).collect(Collectors.toList());
 		model.addAttribute("upcoming", future);
@@ -251,14 +251,14 @@ public class MediaService {
 			weeklyMovies = weeklyMovies.subList(0, numMovies);
 		}
 		model.addAttribute("thisWeek", weeklyMovies);
-		System.out.println(weeklyMovies.size());
+		//System.out.println(weeklyMovies.size());
 		List<Movie> upcomingMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(today) > 0)).collect(Collectors.toList());
 		if (upcomingMovies.size() > numMovies)
 		{
 			upcomingMovies = upcomingMovies.subList(0, numMovies);
 		}
 		model.addAttribute("upcoming", upcomingMovies);
-		System.out.println(upcomingMovies.size());
+		//System.out.println(upcomingMovies.size());
 	}
 
 	@Transactional

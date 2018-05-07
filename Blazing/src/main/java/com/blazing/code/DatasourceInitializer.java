@@ -25,11 +25,13 @@ import com.blazing.objects.CriticReview;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.Roles;
+import com.blazing.objects.TV;
 import com.blazing.objects.User;
 import com.blazing.repositories.CelebrityRepository;
 import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
 import com.blazing.repositories.ReviewRepository;
+import com.blazing.repositories.TVRepository;
 import com.blazing.repositories.UserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -53,11 +55,15 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 	private ReviewRepository reviewRepo;
 	
 	@Autowired
+	private TVRepository tvRepo;
+	
+	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
 	private HashMap<String, Long> celebURLtoID = new HashMap<>();
 	private HashMap<String, Long> movieURLtoID = new HashMap<>(); 
 	private HashMap<String, Long> criticNametoID = new HashMap<>();
+	private HashMap<String, Long> tvURLtoID = new HashMap<>();
 
     @Override
     @Transactional
@@ -70,6 +76,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoMovie("data/movies/pmovies01.json");
             mapJSONtoReviews("data/reviews/pcritic00.json");
             mapJSONtoReviews("data/reviews/pcritic01.json");
+            mapJSONtoTV("data/tvshows/ptvshows00.json");
             User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
@@ -269,6 +276,76 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					movie = movieRepo.save(movie);
 				}
 			}
+		}
+	}
+	
+	private void mapJSONtoTV(String jsonFileName) throws IOException {
+		Path jsonFilePath = Paths.get(jsonFileName);
+		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
+		ObjectMapper om = new ObjectMapper();
+		JsonNode Tree = om.readTree(jsonString);
+		Iterator<JsonNode> Iterator = Tree.iterator();
+		while (Iterator.hasNext()) {
+			JsonNode tree = Iterator.next();
+			
+			TV tvshow = new TV();
+			
+			String title = tree.get("title").textValue();
+			tvshow.setTitle(title);
+			String description = tree.get("description").textValue();
+			tvshow.setDescription(description);
+			String network = tree.get("network").textValue();
+			tvshow.setNetwork(network);
+			String airtime = tree.get("premiere").textValue();
+			DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+			DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMM d, yyyy");
+			LocalDate airtime2 = null;
+			try{
+				airtime2 = LocalDate.parse(airtime, format1);
+			}
+			catch(DateTimeParseException pe){
+				try {
+					airtime2 = LocalDate.parse(airtime, format2);
+				}
+				catch(DateTimeParseException p) {
+					airtime2 = null;
+				}
+			}
+			tvshow.getAirtimes()[0] = airtime2;
+			
+			tvshow = tvRepo.save(tvshow);
+			
+			JsonNode Cast = tree.get("cast");
+			Iterator<JsonNode> Iteratorcast = Cast.iterator();
+			while(Iteratorcast.hasNext()) {
+				JsonNode castmember = Iteratorcast.next();
+				String celeburl = castmember.get("celebrityURL").textValue();
+				Long id = celebURLtoID.get(celeburl);
+				if (id != null) {
+					Optional<Celebrity> opceleb = celebrityRepo.findById(id);
+					if (opceleb.isPresent()) {
+						Celebrity celeb = opceleb.get();
+						MovieCharacter moviechar = new MovieCharacter();
+						moviechar.setSource(tvshow);
+						moviechar.setActor(celeb);
+						String charactername = "";
+						try {
+							charactername = castmember.get("character").textValue();
+						}
+						catch(NullPointerException e){
+							charactername = "";
+						}
+						moviechar.setName(charactername);
+						moviecharRepo.save(moviechar);
+						celeb.getCharacters().add(moviechar);
+						celebrityRepo.save(celeb);
+					}
+				}
+			}
+			
+			tvshow = tvRepo.save(tvshow);
+			String url = tree.get("url").textValue();
+			tvURLtoID.put(url, tvshow.getId());
 		}
 	}
 }

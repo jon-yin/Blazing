@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 public class TV extends Media{
 	
 	private Set<Season> seasons;
+	private String network;
 	
 	public TV()
 	{
@@ -37,6 +38,15 @@ public class TV extends Media{
 	public double calculateAudienceScore()
 	{
 		return 0;
+	}
+	
+	@Column
+	public String getNetwork() {
+		return network;
+	}
+
+	public void setNetwork(String network) {
+		this.network = network;
 	}
 
 }
