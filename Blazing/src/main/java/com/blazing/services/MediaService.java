@@ -246,7 +246,7 @@ public class MediaService {
 
 	public void getTrendingMovies(Model model) {
 		List<Movie> movies = movieRepo.findAll();
-		List<Movie> trending = movies.subList(0, numMovies);
+		//List<Movie> trending = movies.subList(0, numMovies);
 		model.addAttribute("trendingMovies", movies);
 		LocalDate thisWeek = LocalDate.now().minusDays(7);
 		LocalDate today = LocalDate.now();
@@ -255,13 +255,15 @@ public class MediaService {
 		{
 			weeklyMovies = weeklyMovies.subList(0, numMovies);
 		}
-		model.addAttribute("thisWeek", weeklyMovies.subList(0, numMovies));
+		model.addAttribute("thisWeek", weeklyMovies);
+		System.out.println(weeklyMovies.size());
 		List<Movie> upcomingMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(today) > 0)).collect(Collectors.toList());
 		if (upcomingMovies.size() > numMovies)
 		{
 			upcomingMovies = upcomingMovies.subList(0, numMovies);
 		}
-		model.addAttribute("upcoming", weeklyMovies.subList(0, numMovies));
+		model.addAttribute("upcoming", upcomingMovies);
+		System.out.println(upcomingMovies.size());
 	}
 
 	@Transactional
