@@ -31,6 +31,8 @@
 					<button type="button" class="btn btn-secondary mb-1" id="re-verify" th:if="${session.currentUser} and not ${session.currentUser.enabled}">Re-send Verification</button>
 					<img class="image profile" src="/images/thumbnail.png">
 					<div class="mt-1" th:if="${session.currentUser} and not ${foundUser.equals(session.currentUser)}">
+						<button type="button" class="btn btn-secondary" id="block-button" th:unless="${#sets.contains(session.currentUser.blockList, foundUser)}">Block</button>
+						<button type="button" class="btn btn-secondary" id="unblock-button" th:if="${#sets.contains(session.currentUser.blockList, foundUser)}">UnBlock</button>
 						<button type="button" class="btn btn-secondary" id="follow-button" th:unless="${#sets.contains(foundUser.followers, session.currentUser)}">Follow</button>
 						<button type="button" class="btn btn-secondary" id="unfollow-button" th:if="${#sets.contains(foundUser.followers, session.currentUser)}">UnFollow</button>
 					</div>
@@ -300,11 +302,41 @@
 			}
 		});
 	}
+
+	function block(e){
+		e.preventDefault();
+		var id = /*[[${foundUser.id}]]*/ 0;
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			data: ""+id,
+			url: location.href + "/block",
+			success: function(){
+				location.reload();
+			}
+		});
+	}
+	
+	function unblock(e){
+		e.preventDefault();
+		var id = /*[[${foundUser.id}]]*/ 0;
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			data: ""+id,
+			url: location.href + "/unblock",
+			success: function(){
+				location.reload();
+			}
+		});
+	}
 	
 	$(function(){
 		$("#re-verify").on("click", reverify);
 		$("#follow-button").on("click", follow);
 		$("#unfollow-button").on("click", unfollow);
+		$("#block-button").on("click", block);
+		$("#unblock-button").on("click", unblock);
 		$("#acc-settings").on("click", function(){
 			location.href += "/settings";
 		});

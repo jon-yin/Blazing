@@ -199,71 +199,73 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			
 			String movieurl = treeiterator.get("url").textValue();
 			movieurl = movieurl.substring(0, movieurl.length() - 9 );
-			Optional<Movie> opmovie = movieRepo.findById(movieURLtoID.get(movieurl));
-			if (opmovie.isPresent()) {
-				Movie movie = opmovie.get();
-				JsonNode criticReviews = treeiterator.get("criticReviews");
-				Iterator<JsonNode> ReviewIterator = criticReviews.iterator();
-				while (ReviewIterator.hasNext()) {
-					JsonNode criticReview = ReviewIterator.next();
-					
-					User user = new User();
-					
-					String name = criticReview.get("criticName").textValue();
-					if (criticNametoID.containsKey(name)) {
-						long id = criticNametoID.get(name);
-						Optional<User> opuser = userRepo.findById(id);
-						if (opuser.isPresent()) {
-							user = opuser.get();
+			if (movieURLtoID.get(movieurl) != null) {
+				Optional<Movie> opmovie = movieRepo.findById(movieURLtoID.get(movieurl));
+				if (opmovie.isPresent()) {
+					Movie movie = opmovie.get();
+					JsonNode criticReviews = treeiterator.get("criticReviews");
+					Iterator<JsonNode> ReviewIterator = criticReviews.iterator();
+					while (ReviewIterator.hasNext()) {
+						JsonNode criticReview = ReviewIterator.next();
+						
+						User user = new User();
+						
+						String name = criticReview.get("criticName").textValue();
+						if (criticNametoID.containsKey(name)) {
+							long id = criticNametoID.get(name);
+							Optional<User> opuser = userRepo.findById(id);
+							if (opuser.isPresent()) {
+								user = opuser.get();
+							}
 						}
-					}
-					else {
-						user.setEmailAddress("setup@privilege.com");
-					    user.setPassword(encoder.encode("a"));
-					    user.setEnabled(true);
-					    user.setRole(Roles.CRITIC);
-					        
-					    String[] names = name.split(" ");
-					    if (names.length == 1) {
-					        user.setFirstName(names[0]);
-					        user.setLastName("");
-					    }
-					    else {
-					        user.setFirstName(names[0]);
-						    user.setLastName(names[names.length -1]);
-					    }
-					    user = userRepo.save(user);
-					    criticNametoID.put(name, user.getId());
+						else {
+							user.setEmailAddress("setup@privilege.com");
+						    user.setPassword(encoder.encode("a"));
+						    user.setEnabled(true);
+						    user.setRole(Roles.CRITIC);
+						        
+						    String[] names = name.split(" ");
+						    if (names.length == 1) {
+						        user.setFirstName(names[0]);
+						        user.setLastName("");
+						    }
+						    else {
+						        user.setFirstName(names[0]);
+							    user.setLastName(names[names.length -1]);
+						    }
+						    user = userRepo.save(user);
+						    criticNametoID.put(name, user.getId());
+						}
+						
+						CriticReview review = new CriticReview();
+						review.setPublication(criticReview.get("criticOrganization").textValue());
+						review.setBlazing(true);
+						review.setCustomScore(criticReview.get("criticScore").textValue());
+						review.setBody(criticReview.get("criticPost").textValue());
+						review.setUser(user);
+						review.setSource(movie);
+						
+						String postDate = criticReview.get("criticReviewDate").textValue();
+						DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+						DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+						LocalDate postDate2 = null;
+						try{
+							postDate2 = LocalDate.parse(postDate, format1);
+						}
+						catch(DateTimeParseException pe){
+							postDate2 = LocalDate.parse(postDate, format2);
+						}
+						review.setDatetime(postDate2.atStartOfDay());
+						review = reviewRepo.save(review);
+						
+						user.addToReviews(review);
+						user = userRepo.save(user);
+						
+						movie.addCriticReview(review);
 					}
 					
-					CriticReview review = new CriticReview();
-					review.setPublication(criticReview.get("criticOrganization").textValue());
-					review.setBlazing(true);
-					review.setCustomScore(criticReview.get("criticScore").textValue());
-					review.setBody(criticReview.get("criticPost").textValue());
-					review.setUser(user);
-					review.setSource(movie);
-					
-					String postDate = criticReview.get("criticReviewDate").textValue();
-					DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-					DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMMM d, yyyy");
-					LocalDate postDate2 = null;
-					try{
-						postDate2 = LocalDate.parse(postDate, format1);
-					}
-					catch(DateTimeParseException pe){
-						postDate2 = LocalDate.parse(postDate, format2);
-					}
-					review.setDatetime(postDate2.atStartOfDay());
-					review = reviewRepo.save(review);
-					
-					user.addToReviews(review);
-					user = userRepo.save(user);
-					
-					movie.addCriticReview(review);
+					movie = movieRepo.save(movie);
 				}
-				
-				movie = movieRepo.save(movie);
 			}
 		}
 	}
