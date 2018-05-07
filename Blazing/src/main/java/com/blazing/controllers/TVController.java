@@ -37,10 +37,11 @@ public class TVController extends MediaController<TV>{
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String getTVDetails(@PathVariable("tv") long tv, Model model)
+	public String getTVDetails(@PathVariable("tv") long tv, @SessionAttribute(required=false,value="currentUser") User user, Model model)
 	{
 		TV currentTV = mediaService.findTV(tv);
 		model.addAttribute("tv", currentTV);
+		super.retrieveUnblockedReviews(user, currentTV, model);
 		return "tv-details";
 	}
 	
