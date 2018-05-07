@@ -65,8 +65,11 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
         // load json file, add to my sql db
         try {
             mapJSONtoCelebrities("data/celebs/pcelebs00.json");
+            mapJSONtoCelebrities("data/celebs/pcelebs01.json");
             mapJSONtoMovie("data/movies/pmovies00.json");
-            mapJSONtoReviews("data/reviews/creviews00.json");
+            mapJSONtoMovie("data/movies/pmovies01.json");
+            mapJSONtoReviews("data/reviews/pcritic00.json");
+            mapJSONtoReviews("data/reviews/pcritic01.json");
             User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
