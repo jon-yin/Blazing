@@ -5,8 +5,8 @@ const seasonOptions = require('./options/season-options');
 const inputfile = './output/parsedTVshows/ptvshows00.json';
 
 try {
-  // var json = JSON.parse(fs.readFileSync(process.argv[2]));
-  var json = JSON.parse(fs.readFileSync(inputfile));
+  var json = JSON.parse(fs.readFileSync(process.argv[2]));
+  // var json = JSON.parse(fs.readFileSync(inputfile));
 
   /// look up the number of seasons
 
@@ -21,12 +21,12 @@ try {
   let seasonLinks = [];
 
   json.forEach(tvShow => {
-    console.log(tvShow.seasons);
     tvShow.seasons.forEach(seasonUrl => {
-      seasonLinks.push(seasonUrl);
+      if (seasonUrl != null) { seasonLinks.push({ url: seasonUrl }); }
     });
   });
 
+  // var ms = new MediaScraper(seasonLinks.slice(4,10), seasonOptions);
   var ms = new MediaScraper(seasonLinks, seasonOptions);
 
   ms.bigSearch()
@@ -34,6 +34,9 @@ try {
 
       let checkProperties = function (obj) {
         for (var key in obj) {
+          if (seasonOptions.notRequired.includes(key)) {
+            continue;
+          }
           if (Array.isArray(obj[key]) && obj[key].length < 1) {
             return false;
           }
@@ -57,8 +60,8 @@ try {
       console.log(`Parsed ${result.length} urls, after clean up, got ${cleanedResults.length} results`)
 
       let f = JSON.stringify(cleanedResults, null, 4);
-      // fs.writeFileSync(process.argv[3], f);
-      fs.writeFileSync('seasonout.json', f);
+      fs.writeFileSync(process.argv[3], f);
+      // fs.writeFileSync('seasonout.json', f);
     });
 
 }
