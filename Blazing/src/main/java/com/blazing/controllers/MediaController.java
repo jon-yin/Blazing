@@ -17,7 +17,6 @@ import com.blazing.services.MediaService;
 import com.blazing.services.ReviewService;
 import com.blazing.services.SessionService;
 import com.blazing.services.UserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class MediaController<T> {
