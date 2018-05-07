@@ -7,6 +7,18 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "wikiscraper",
+      "program": "${workspaceFolder}/WikiScraperImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "episodescraper",
+      "program": "${workspaceFolder}/EpisodeScraperImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "tvshowscraper",
       "program": "${workspaceFolder}/TVShowScraperImpl.js"
     },
