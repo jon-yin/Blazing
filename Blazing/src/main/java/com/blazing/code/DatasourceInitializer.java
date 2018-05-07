@@ -260,7 +260,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					user.addToReviews(review);
 					user = userRepo.save(user);
 					
-					movie.addReview(review);
+					movie.addCriticReview(review);
 				}
 				
 				movie = movieRepo.save(movie);
