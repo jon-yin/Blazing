@@ -266,7 +266,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 						
 						movie.addCriticReview(review);
 					}
-					
 					movie = movieRepo.save(movie);
 				}
 			}
