@@ -1,6 +1,8 @@
 package com.blazing.objects;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -22,6 +24,12 @@ public class Celebrity implements Comparable<Celebrity>{
 	private Set<Media> filmography;
 	private Set<MovieCharacter> characters;
 	private String description;
+	
+	public Celebrity()
+	{
+		filmography = new HashSet<>();
+		characters = new HashSet<>();
+	}
 	
 	
 	@Id

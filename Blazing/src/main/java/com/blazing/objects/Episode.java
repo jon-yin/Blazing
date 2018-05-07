@@ -10,6 +10,7 @@ public class Episode extends Media{
 
 	private Season season;
 	private String description;
+	private int episodeNumber;
 	
 	@ManyToOne
 	@JoinColumn(name="SEASON_ID", nullable = false)
@@ -26,6 +27,13 @@ public class Episode extends Media{
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public int getEpisodeNumber() {
+		return episodeNumber;
+	}
+	public void setEpisodeNumber(int episodeNumber) {
+		this.episodeNumber = episodeNumber;
 	}
 	
 	

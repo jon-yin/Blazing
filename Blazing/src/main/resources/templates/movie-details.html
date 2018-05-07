@@ -429,15 +429,10 @@
 													</div>
 													<script th:inline="javascript">
 														/*<![CDATA[*/
-															var rvwIDBtn = /*[['#rep-cr-button'+${cr.id}]]*/ "#";
-															var rvwID = /*[[${cr.id}]]*/ 0;
-															var reportBodyID = /*[['#c-reason'+${cr.id}]]*/ "#";
-															
-															function reportReview(e){
-																e.preventDefault();
+															function reportCReview(id, body){
 																data = {};
-																data["id"] = rvwID;
-																data["body"] = $(reportBodyID).val();
+																data["id"] = id;
+																data["body"] = body;
 																var jsonString = JSON.stringify(data);
 																$.ajax({
 																	type : "POST",
@@ -457,7 +452,13 @@
 															}
 															
 															$(function(){
-																$(rvwIDBtn).on("click",reportReview);
+																var rvwIDBtn = /*[['#rep-cr-button'+${cr.id}]]*/ "#";
+																var rvwID = /*[[${cr.id}]]*/ 0;
+																var reportBodyID = /*[['#c-reason'+${cr.id}]]*/ "#";
+																$(rvwIDBtn).on("click",function(e){
+																	e.preventDefault();
+																	reportCReview(rvwID, $(reportBodyID).val());
+																});
 															});
 														/*]]*/
 													</script>
@@ -533,13 +534,8 @@
 														</form>
 													</div>
 													<script th:inline="javascript">
-														/*<![CDATA[*/
-															var rvwIDBtn = /*[['#rep-rvw-button'+${review.id}]]*/ "#";
-															var rvwID = /*[[${review.id}]]*/ 0;
-															var reportBodyID = /*[['#reason'+${review.id}]]*/ "#";
-															
-															function reportReview(e){
-																e.preventDefault();
+														/*<![CDATA[*/															
+															function reportReview(id,body){
 																data = {};
 																data["id"] = rvwID;
 																data["body"] = $(reportBodyID).val();
@@ -562,7 +558,13 @@
 															}
 															
 															$(function(){
-																$(rvwIDBtn).on("click",reportReview);
+																var rvwIDBtn = /*[['#rep-rvw-button'+${review.id}]]*/ "#";
+																var rvwID = /*[[${review.id}]]*/ 0;
+																var reportBodyID = /*[['#reason'+${review.id}]]*/ "#";
+																$(rvwIDBtn).on("click", function(e){
+																	e.preventDefault();
+																	reportReview(rvwID, $(reportBodyID).val());
+																});
 															});
 														/*]]*/
 													</script>
@@ -570,7 +572,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getReviews()}">
+									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getAudienceReviews()}">
 										<div class="reviewer" style="min-width: 100px; max-width: 100px;">
 											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
