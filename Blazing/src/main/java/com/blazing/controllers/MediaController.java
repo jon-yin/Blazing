@@ -6,9 +6,11 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import com.blazing.objects.CriticReview;
 import com.blazing.objects.EditedReviewInfo;
+import com.blazing.objects.Media;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.Roles;
@@ -145,6 +147,21 @@ public class MediaController<T> {
 			return false;
 		}
 		return mediaService.editReview(newBody, user);
+	}
+
+	public void retrieveUnblockedReviews(User user, Media currentMedia,Model model) {
+		if (user==null || currentMedia == null)
+		{
+			model.addAttribute("reviews", null);
+			model.addAttribute("criticreviews", null);
+			return;
+		}
+		else{
+			List<Review> unblocked = currentMedia.nonBlockedAudience(user);
+			model.addAttribute("reviews", unblocked);
+			List<CriticReview> c_unblocked = currentMedia.nonBlockedCritic(user);
+			model.addAttribute("criticreviews", c_unblocked);
+		}
 	}
 
 }

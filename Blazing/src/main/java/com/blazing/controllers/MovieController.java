@@ -1,5 +1,7 @@
 package com.blazing.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,6 +74,7 @@ public class MovieController extends MediaController<Movie>{
 		Review review = super.retrieveReviewFromUser(user, movie);
 		model.addAttribute("movie", currentMovie);
 		model.addAttribute("currentReview", review);
+		super.retrieveUnblockedReviews(user,currentMovie,model);
 		return "movie-details";
 	}
 	
