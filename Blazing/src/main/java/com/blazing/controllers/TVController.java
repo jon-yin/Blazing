@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.TV;
@@ -80,6 +81,13 @@ public class TVController extends MediaController<TV>{
 	public boolean removeReview(@RequestBody long id)
 	{
 		return super.removeReview(id);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path="/edit", method = RequestMethod.POST)
+	public boolean  editReview(@RequestBody EditedReviewInfo info, @SessionAttribute(value="currentUser", required=false) User currentUser)
+	{
+		return super.editReview(currentUser, info);
 	}
 	
 	

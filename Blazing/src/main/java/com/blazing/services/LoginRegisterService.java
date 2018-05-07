@@ -124,11 +124,11 @@ public class LoginRegisterService {
 			Hibernate.initialize(verified.getNotInterested());
 			Hibernate.initialize(verified.getFollowing());
 			Hibernate.initialize(verified.getReviews());
+			Hibernate.initialize(verified.getBlockList());
 			verified = repository.save(verified);
 			session.setAttribute("currentUser", verified);
 			status.setSuccess(true);
 			status.setUser(verified);
-			User detached = (User)session.getAttribute("currentUser");
 			return status;
 		}
 	}
@@ -144,6 +144,7 @@ public class LoginRegisterService {
 			Hibernate.initialize(user.getWishlist());
 			Hibernate.initialize(user.getNotInterested());
 			Hibernate.initialize(user.getFollowing());
+			Hibernate.initialize(user.getBlockList());
 			user = repository.saveAndFlush(user);
 			if (encoder.matches(password, user.getPassword()))
 			{

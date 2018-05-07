@@ -10,7 +10,6 @@ import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -21,12 +20,12 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.blazing.objects.Celebrity;
+import com.blazing.objects.CriticReview;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
 import com.blazing.objects.Roles;
 import com.blazing.objects.User;
-import com.blazing.objects.Celebrity;
-import com.blazing.objects.CriticReview;
 import com.blazing.repositories.CelebrityRepository;
 import com.blazing.repositories.MovieCharacterRepository;
 import com.blazing.repositories.MovieRepository;
@@ -98,7 +97,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		while (Iterator.hasNext()) {
 			JsonNode tree = Iterator.next();
 			Celebrity celeb = new Celebrity();
-			
 			String name = tree.get("name").textValue();
 			celeb.setName(name);
 			String birthdate = tree.get("birthdate").textValue();

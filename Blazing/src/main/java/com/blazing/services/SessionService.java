@@ -21,6 +21,7 @@ public class SessionService {
 		Hibernate.initialize(user.getNotInterested());
 		Hibernate.initialize(user.getFollowing());
 		Hibernate.initialize(user.getReviews());
+		Hibernate.initialize(user.getBlockList());
 		session.setAttribute("currentUser", user);
 	}
 

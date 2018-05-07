@@ -118,7 +118,7 @@
 										</div>
 										<div class="col">
 											<div>
-												Average Rating: <span>7.8/10</span>
+												Average Rating: <span>7.8</span>/10
 											</div>
 											<div>
 												Reviews Counted: <span>1000</span>
@@ -146,7 +146,7 @@
 										</div>
 										<div class="col">
 											<div>
-												Average Rating: <span>3.5/5</span>
+												Average Rating: <span>3.5</span>10
 											</div>
 											<div>
 												User Rating: <span>93,042</span>
@@ -164,13 +164,10 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">CAST</h5>
-									<div class="celebrity-list row no-gutters"
-										th:each="character : ${movie.cast}">
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html"> <img
-												src="/images/thumbnail.png"
-												th:src="${character.actor.portrait}"
-												style="max-height: 50px; width: auto;">
+									<div class="celebrity-list row no-gutters">
+										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${movie.cast}">
+											<a class="d-flex" href="/celebrity-details.html">
+												<img src="/images/thumbnail.png" th:src="${character.actor.portrait}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>

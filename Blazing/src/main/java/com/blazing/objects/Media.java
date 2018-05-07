@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderColumn;
 import javax.persistence.Transient;
 
 
@@ -93,7 +94,7 @@ public abstract class Media implements Comparable<Media>{
 		this.poster = poster;
 	}
 	
-	
+	@OrderColumn
 	public LocalDate[] getAirtimes() {
 		return airtimes;
 	}

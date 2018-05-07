@@ -23,6 +23,9 @@ footer{
 tr>td, tr>th{
 	padding-bottom: 5px;
 }
+textarea {
+	resize: none;
+}
 
 /*nav and links*/
 .nav-link {
@@ -69,7 +72,7 @@ a:hover{
 	width: 75px;
 }
 
-/*images*/
+/*images and videos*/
 .cover-image{
 	background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url('https://resizing.flixster.com/RRqugkGjsRsIG361g_cgwE7fIE4=/740x290/v1.bjsxODQ5MTU0O2o7MTc2NjE7MTIwMDsyMDQ4Ozg5MQ');
 	background-size: auto;
@@ -86,6 +89,9 @@ a:hover{
 .image.profile {
 	max-width: 200px;
 	height: auto;
+}
+.video-thumbnail {
+	width: auto;
 }
 
 /*episodes*/
