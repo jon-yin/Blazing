@@ -27,7 +27,6 @@ import javax.persistence.Transient;
 
 
 @Entity
-@DiscriminatorColumn(name ="dcolumn")
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Media implements Comparable<Media>{
 
@@ -41,7 +40,6 @@ public abstract class Media implements Comparable<Media>{
 	private Set<File> videos;
 	private Set<ImageEntity> images;
 	private Set<MovieCharacter> cast;
-	private Set<CriticReview> criticReviews;
 	private Set<Review> reviews;
 	private Genre genre;
 	private Set<User> u_Wishlist;
@@ -56,7 +54,6 @@ public abstract class Media implements Comparable<Media>{
 		images = new HashSet<>();
 		cast = new HashSet<>();
 		reviews = new HashSet<>();
-		criticReviews = new HashSet<>();
 		u_Wishlist = new HashSet<>();
 		u_NotInterested = new HashSet<>();
 	}
@@ -95,7 +92,6 @@ public abstract class Media implements Comparable<Media>{
 		this.poster = poster;
 	}
 	
-	@OrderColumn
 	public LocalDate[] getAirtimes() {
 		return airtimes;
 	}
@@ -151,14 +147,30 @@ public abstract class Media implements Comparable<Media>{
 		this.reviews = reviews;
 	}
 	
-	@OneToMany(mappedBy="source")
-	@Column(nullable=false)
+	@Transient
 	public Set<CriticReview> getCriticReviews() {
+		Set<CriticReview> criticReviews = new HashSet<CriticReview>();
+		for (Review review: reviews)
+		{
+			if (review.isCritic())
+			{
+				criticReviews.add((CriticReview)review);
+			}
+		}
 		return criticReviews;
 	}
-
-	public void setCriticReviews(Set<CriticReview> criticReviews) {
-		this.criticReviews = criticReviews;
+	
+	@Transient
+	public Set<Review> getAudienceReviews() {
+		Set<Review> audreview = new HashSet<Review>();
+		for (Review review: reviews)
+		{
+			if (!review.isCritic())
+			{
+				audreview.add(review);
+			}
+		}
+		return audreview;
 	}
 
 	@Enumerated(EnumType.STRING)
@@ -173,7 +185,7 @@ public abstract class Media implements Comparable<Media>{
 	public List<Review> nonBlockedAudience(User user)
 	{
 		List<Review> goodReviews = new ArrayList<>();
-		for (Review review: reviews)
+		for (Review review: getAudienceReviews())
 		{
 			if (!user.getBlockList().contains((review.getUser())))
 			{
@@ -187,7 +199,7 @@ public abstract class Media implements Comparable<Media>{
 	public List<CriticReview> nonBlockedCritic(User user)
 	{
 		List<CriticReview> goodReviews = new ArrayList<>();
-		for (CriticReview review: criticReviews)
+		for (CriticReview review: getCriticReviews())
 		{
 			if (!user.getBlockList().contains((review.getUser())))
 			{
@@ -218,36 +230,55 @@ public abstract class Media implements Comparable<Media>{
 
 	public void calculateBlazingScore(CriticReview review, boolean remove)
 	{
-		double blazingTotal = blazingScore * criticReviews.size();
+		double divisor = getCriticReviews().size();
+		double blazingTotal = blazingScore * divisor;
 		int reviewScore = review.isBlazing() ? 1 : 0;
 		if (remove)
 		{
 			blazingTotal -= reviewScore;
-			criticReviews.remove(review);
+			reviews.remove(review);
+			divisor--;
 		}
 		else
 		{
 			blazingTotal += reviewScore;
-			criticReviews.add(review);
+			reviews.add(review);
+			divisor++;
 		}
-		blazingScore = blazingTotal / criticReviews.size();
-		
+		if (divisor == 0)
+		{
+			blazingScore=0;
+		}
+		else
+		{
+			blazingScore = blazingTotal / divisor;
+		}
 	}
 	
 	private void calculateAudienceScore(Review review, boolean remove)
 	{
-		double totalScore = audienceScore * reviews.size();
+		double divisor = getAudienceReviews().size();
+		double totalScore = audienceScore * divisor;
 		if (remove)
 		{
 			totalScore -= review.getScore();
 			reviews.remove(review);
+			divisor--;
 		}
 		else
 		{
 			totalScore += review.getScore();
 			reviews.add(review);
+			divisor++;
 		}
-		audienceScore = totalScore / reviews.size();
+		if (divisor == 0)
+		{
+			audienceScore = 0;
+		}
+		else
+		{
+			audienceScore = totalScore /divisor;
+		}
 	}
 	
 	@Override
