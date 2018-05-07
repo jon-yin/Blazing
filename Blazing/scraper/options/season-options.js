@@ -31,6 +31,7 @@ Media.prototype.nextPattern = function () {
 module.exports = {
   host: 'https://www.rottentomatoes.com',
   reqDelay: 1000,
+  notRequired: ['premiered'],
   mediaSelectors: {
 
     summary: Object.assign({}, Media.prototype, {
@@ -57,37 +58,21 @@ module.exports = {
       }]
     }),
 
-    episodes: Object.assign({}, Media.prototype, {
-      name: 'episodes',
+    episodesUrl: Object.assign({}, Media.prototype, {
+      name: 'episodesUrl',
       patterns: [{
-        selector: {
-          path: '#episode-list-root', transform: null
-        },
+        selector: { path: '#episode-list-root', transform: null },
         childSelectors: [
           {
-            name: 'episodeUrl',
+            name: null,
             selector: {
-              path: 'div:nth-child(1) > div > div:nth-child(1) > a:nth-child(1)',
+              path: 'a',
               transform: ($, episodes) => {
                 let urls = [];
                 episodes.each(function (index, value) {
                   urls.push($(value).attr('href'));
                 });
                 return urls;
-              }
-            },
-            childSelectors: null
-          },
-          {
-            name: 'airDate',
-            selector: {
-              path: 'div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2)',
-              transform: ($, airDates) => {
-                let ads = [];
-                airDates.each(function (i, airDate) {
-                  ads.push($(this).text().replace(/Air Date:/, '').trim());
-                });
-                return ads;
               }
             },
             childSelectors: null

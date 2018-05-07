@@ -38,7 +38,6 @@ module.exports.MediaScraper = class MediaScraper {
       // lastQuery[1]['url'] = remaining[0].url;
       queryResults.push(lastQuery[1]);
       return Promise.resolve(queryResults);
-
     });
 
   }
@@ -61,6 +60,7 @@ module.exports.MediaScraper = class MediaScraper {
     };
 
     let recursiveParser = ($, context, mediaSelector, explicitPropertyName) => {
+      // changed tripple equals to double equals, turn back if it breaks something 
       if (mediaSelector.childSelectors === null || mediaSelector.pattern().childSelectors === null) {
         let result;
         let o = {};
