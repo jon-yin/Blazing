@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "imageScraper",
+      "program": "${workspaceFolder}/ImageScraperImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "wikiscraper",
       "program": "${workspaceFolder}/WikiScraperImpl.js"
     },

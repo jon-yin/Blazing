@@ -1,6 +1,6 @@
 const fs = require('fs');
 const request = require('request-promise')
-const { OMDBParser } = require('./OMDBParser.js');
+const { OMDBParser } = require('./code/OMDBParser.js');
 
 // let url = 'http://www.omdbapi.com/?i=tt3896198&apikey=cea2a16a';
 
@@ -9,6 +9,7 @@ const { OMDBParser } = require('./OMDBParser.js');
 // returns json of all the new movie objects
 
 try {
+
 
   let APIURL = 'http://www.omdbapi.com/?t=';
   let YEAR = '&y=';
@@ -22,33 +23,20 @@ try {
     }
   }
 
-  let pmovieFile = './output/parsedMovies/parsedMovies1950Up/pmovies00.json';
+  let pmovieFile = './output/parsedMovies/parsedMovies1950Up/pmovies19.json';
   var pmovies = JSON.parse(fs.readFileSync(pmovieFile));
 
   let queryStrs = [];
   pmovies.forEach((m) => {
     let q = APIURL + m.title + YEAR + m.premiered.match(/\d\d\d\d$/) + APIKEY;
-    console.log(q);
-    queryStrs.push(q);
+    queryStrs.push({ url: m.url, query: q });
   });
 
-  var omdb = new OMDBParser(queryStrs.slice(30, 50), options);
+  var omdb = new OMDBParser(queryStrs.slice(30, 32), options);
+  omdb.search().then((results) => {
+    console.log(results);
 
-  omdb.search().then((res) => {
-    // should be an array of url + boxOffice objects
-    console.log(res);
   });
-
-  // let json = [];
-  // request({ url: 'http://www.omdbapi.com/?t=scary movie 4' + APIKEY }).then(res => {
-  //   let results = JSON.parse(res, null, 4);
-
-  //   // pmovies.forEach(obj => {
-  //   //   json.push(Object.assign({}, obj, { boxOffice: obj.BoxOffice }));
-  //   // });
-
-  //   console.log({ boxOffice: results.BoxOffice });
-  // });
 
 }
 catch (e) {
