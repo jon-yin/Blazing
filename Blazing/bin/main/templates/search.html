@@ -44,7 +44,7 @@
 						<div class="tab-pane show fade active" id="movie-results" role="tabpanel" aria-labelledby="show-movie-results">
 							<div class="movie-results-list" th:if="${relevantMovies.size()}">
 								<a class="w-100 m-2 d-flex align-items-center" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
-									<div class="score pr-2 text-center" style="width: 75px;">
+									<div class="score pr-2 text-center" style="min-width: 75px;">
 										<span class="icon tiny burning"></span>
 										<span th:text="${movie.blazingScore}">70</span>%
 									</div>

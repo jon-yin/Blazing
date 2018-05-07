@@ -27,8 +27,7 @@ public class AllCriticsController {
 	@ResponseBody
 	public boolean submitApplication(@RequestBody CriticApplication application)
 	{
-		userService.addApplication(application);
-		return true;
+		return userService.addApplication(application);
 	}
 	
 }

@@ -204,5 +204,11 @@ $(function() {
 		autoplay: true,
 		autoplaySpeed: 4000
 	});
+	$(".section-carousel.video-thumbnails").slick('unslick');
+	$(".section-carousel.video-thumbnails").slick({
+		infinite: false,
+		centerMode: true,
+		swipeToSlide: true
+	});
 	$(".section-carousel-item.details-link, #browse-list > .details-link").width(150);
 });
