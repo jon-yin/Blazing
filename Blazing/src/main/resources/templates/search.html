@@ -78,10 +78,10 @@
 						</div>
 						
 						<div class="tab-pane show fade" id="celeb-results" role="tabpanel" aria-labelledby="show-celeb-results">
-							<div class="celeb-results-list">
-								<a class="w-100 m-2 d-flex align-items-center" href="#">
+							<div class="celeb-results-list" th:if="${relevantCelebs.size()}">
+								<a class="w-100 m-2 d-flex align-items-center" th:each="celeb : ${relevantCelebs}" th:href="@{/viewceleb/{celebid}(celebid=${celeb.id})}">
 									<img src="/images/thumbnail.png" class="search-image pr-2" style="width: 100px; height: 100px;">
-									<div class="font-weight-bold">Celeb McCelebface</div>
+									<div class="font-weight-bold" th:text="${celeb.name}">Celeb McCelebface</div>
 								</a>
 							</div>
 						</div>

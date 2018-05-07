@@ -2,7 +2,9 @@ package com.blazing.objects;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -166,6 +168,34 @@ public abstract class Media implements Comparable<Media>{
 	}
 	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+	
+	@Transient
+	public List<Review> nonBlockedAudience(User user)
+	{
+		List<Review> goodReviews = new ArrayList<>();
+		for (Review review: reviews)
+		{
+			if (!user.getBlockList().contains((review.getUser())))
+			{
+				goodReviews.add(review);
+			}
+		}
+		return goodReviews;
+	}
+	
+	@Transient
+	public List<CriticReview> nonBlockedCritic(User user)
+	{
+		List<CriticReview> goodReviews = new ArrayList<>();
+		for (CriticReview review: criticReviews)
+		{
+			if (!user.getBlockList().contains((review.getUser())))
+			{
+				goodReviews.add(review);
+			}
+		}
+		return goodReviews;
 	}
 	
 	
