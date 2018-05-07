@@ -85,6 +85,20 @@ module.exports = {
             childSelectors: null
           },
           {
+            name: 'postUrl',
+            selector: {
+              path: 'div.review_table_row > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > a:nth-child(1)',
+              transform: ($, postUrls) => {
+                let urls = [];
+                postUrls.each(function (index, value) {
+                  urls.push($(value).attr('href'));
+                });
+                return urls;
+              }
+            },
+            childSelectors: null
+          },
+          {
             name: 'criticScore',
             selector: {
               path: 'div.review_table_row > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)',

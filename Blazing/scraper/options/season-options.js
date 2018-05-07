@@ -32,22 +32,14 @@ module.exports = {
   host: 'https://www.rottentomatoes.com',
   reqDelay: 1000,
   mediaSelectors: {
-    seasons: Object.assign({}, Media.prototype, {
-      name: 'seasons',
+
+    summary: Object.assign({}, Media.prototype, {
+      name: 'summary',
       patterns: [{
-        selector: {
-          path: '#seasonList > div:nth-child(2) a', transform: ($, seasons) => {
-            let urls = [];
-            seasons.each(function (index, value) {
-              urls.push($(value).attr('href'));
-            });
-            return urls;
-          }
-        },
+        selector: { path: '#movieSynopsis', transform: null },
         childSelectors: null
       }]
-    })
-
+    }),
 
 
   }
