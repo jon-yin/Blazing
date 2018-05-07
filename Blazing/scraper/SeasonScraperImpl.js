@@ -18,15 +18,16 @@ try {
 
   // filter out season urls. we want show urls
 
-  let tvShows = [];
-  json.tvSeries.forEach(show => {
-    let v = show.url.match(/\/s\d\d$/);
-    if (v === null) {
-      tvShows.push({ url: show.url });
-    }
+  let seasonLinks = [];
+
+  json.forEach(tvShow => {
+    console.log(tvShow.seasons);
+    tvShow.seasons.forEach(seasonUrl => {
+      seasonLinks.push(seasonUrl);
+    });
   });
 
-  var ms = new MediaScraper(tvShows, seasonOptions);
+  var ms = new MediaScraper(seasonLinks, seasonOptions);
 
   ms.bigSearch()
     .then(result => {
