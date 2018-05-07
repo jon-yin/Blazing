@@ -71,9 +71,69 @@
 								<div class="pr-2" style="min-width: 100px;"><a th:href="@{/viewprofile/{id}(id=${app.getUser().id})}" th:text="|${app.getUser().firstName} ${app.getUser().lastName}|">User</a></div>
 								<div class="pr-2" th:text="${app.body}">Description</div>
 								<div class="ml-auto d-flex">
-									<div class="pr-2"><a href="#"><i class="fa fa-check"></i></a></div>
-									<div class="pr-1"><a href="#"><i class="fa fa-times"></i></a></div>
+									<div class="pr-2"><a th:id="'acc-app'+${app.id}+'-button'" href="#"><i class="fa fa-check"></i></a></div>
+									<div class="pr-1"><a th:id="'rej-app'+${app.id}+'-button'" href="#"><i class="fa fa-times"></i></a></div>
 								</div>
+								<script>
+								/*<![CDATA[*/
+									$(function(){
+										var accButton = /*[['#acc-app'+${app.id}+'-button']]*/ "";
+										var rejButton = /*[['#rej-app'+${app.id}+'-button']]*/ "";
+										$(accButton).on("click",function(e){
+											e.preventDefault();
+											var id = /*[[${app.getUser().id}]]*/ 0;
+											var body = /*[[${app.body}]]*/ "";
+											var app = {};
+											app["body"] = body;
+											app["userId"] = id;
+											var jsonString = JSON.stringify(app);
+											$.ajax({
+												type : "POST",
+												url : location.href + "/approvecritic",
+												contentType: "application/json",
+												data : jsonString,
+												success : function(data) {
+													console.log(data);
+													if (data){
+														location.reload();	
+													}else{
+														
+													}
+												},
+												error : function(e) {
+													console.log("ERROR: ", e);
+												}
+											});
+										});
+										$(rejButton).on("click",function(e){
+											e.preventDefault();
+											var id = /*[[${app.getUser().id}]]*/ 0;
+											var body = /*[[${app.body}]]*/ "";
+											var app = {};
+											app["body"] = body;
+											app["userId"] = id;
+											var jsonString = JSON.stringify(app);
+											$.ajax({
+												type : "POST",
+												url : location.href + "/rejectcritic",
+												contentType: "application/json",
+												data : jsonString,
+												success : function(data) {
+													console.log(data);
+													if (data){
+														location.reload();	
+													}else{
+														
+													}
+												},
+												error : function(e) {
+													console.log("ERROR: ", e);
+												}
+											});
+										});
+									});
+								/*]]>*/
+								</script>
 							</div>
 						</section>
 					</div>
