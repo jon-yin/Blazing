@@ -166,7 +166,7 @@
 									<h5 class="section-header">CAST</h5>
 									<div class="celebrity-list row no-gutters">
 										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${movie.cast}">
-											<a class="d-flex" href="/celebrity-details.html">
+											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
 												<img src="/images/thumbnail.png" th:src="${character.actor.portrait}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
@@ -259,7 +259,7 @@
 										</div>
 									</div>
 									<div>
-										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc"></textarea>
+										<textarea class="form-control" placeholder="Add A Review (Optional)" id="rvw-desc"></textarea>
 									</div>
 								</div>
 							</div>
@@ -299,7 +299,7 @@
 										<div class="ml-auto"><button id="del-rating" type="submit" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></div>
 									</div>
 									<div>
-										<textarea class="form-control" placeholder="Add A Review (Optional)" style="resize: none;" id="rvw-desc" th:text="${currentReview.body}"></textarea>
+										<textarea class="form-control" placeholder="Add A Review (Optional)" id="rvw-desc" th:text="${currentReview.body}"></textarea>
 									</div>
 								</div>
 							</div>
@@ -384,6 +384,9 @@
 							<section class="px-0 pb-0 mb-0" th:if="${movie.getCriticReviews().size()}">
 								<div class="reviews">
 									<div class="review critic" th:if="${session.currentUser}" th:each="cr : ${criticreviews}">
+										<div>
+											<a class="p-1" data-toggle="modal" th:attr="data-target='#report-cr'+${cr.id}" href="#"><i class="fa fa-flag"></i></a>
+										</div>
 										<div class="quote d-flex">
 											<div class="icon med burning mr-4" style="min-width: 64px;" th:if="${cr.isBlazing()}"></div>
 											<div class="icon med ashes mr-4" style="min-width: 64px;" th:unless="${cr.isBlazing()}"></div>
@@ -401,6 +404,65 @@
 										</div>
 										<div class="reviewer text-right">
 											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:href="@{cr.publication}">Publication</span>
+										</div>
+										<div class="modal fade" th:id="'report-cr'+${cr.id}" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title">Report A Review...</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<form>
+															<div class="form-group">
+																<label th:for="'reported-cr'+${cr.id}">Reported Review</label>
+																<textarea class="form-control" th:id="'reported-cr'+${cr.id}" rows="5" readonly th:text="${cr.body}"></textarea>
+															</div>
+															<div class="form-group">
+																<label th:for="'c-reason'+${cr.id}">Reason For Report</label>
+																<textarea class="form-control" th:id="'c-reason'+${cr.id}" rows="5"></textarea>
+															</div>
+															<button class="btn btn-secondary" th:id="'rep-cr-button'+${cr.id}">Report</button>
+														</form>
+													</div>
+													<script th:inline="javascript">
+														/*<![CDATA[*/
+															var rvwIDBtn = /*[['#rep-cr-button'+${cr.id}]]*/ "#";
+															var rvwID = /*[[${cr.id}]]*/ 0;
+															var reportBodyID = /*[['#c-reason'+${cr.id}]]*/ "#";
+															
+															function reportReview(e){
+																e.preventDefault();
+																data = {};
+																data["id"] = rvwID;
+																data["body"] = $(reportBodyID).val();
+																var jsonString = JSON.stringify(data);
+																$.ajax({
+																	type : "POST",
+																	contentType : "application/json",
+																	url : location.href+"/report",
+																	data : jsonString,
+																	success : function(data) {
+																		if (data == true){
+																			location.reload();
+																		}else{
+																		}
+																	},
+																	error : function(e) {
+																		console.log("ERROR: ", e);
+																	}
+																});
+															}
+															
+															$(function(){
+																$(rvwIDBtn).on("click",reportReview);
+															});
+														/*]]*/
+													</script>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="review critic" th:unless="${session.currentUser}" th:each="cr : ${movie.criticReviews}">
@@ -461,11 +523,11 @@
 														<form>
 															<div class="form-group">
 																<label th:for="'reported-rvw'+${review.id}">Reported Review</label>
-																<textarea class="form-control" th:id="'reported-rvw'+${review.id}" rows="5" readonly th:text="${review.body}" style="resize: none;"></textarea>
+																<textarea class="form-control" th:id="'reported-rvw'+${review.id}" rows="5" readonly th:text="${review.body}"></textarea>
 															</div>
 															<div class="form-group">
 																<label th:for="'reason'+${review.id}">Reason For Report</label>
-																<textarea class="form-control" th:id="'reason'+${review.id}" rows="5" style="resize: none;"></textarea>
+																<textarea class="form-control" th:id="'reason'+${review.id}" rows="5"></textarea>
 															</div>
 															<button class="btn btn-secondary" th:id="'rep-rvw-button'+${review.id}">Report</button>
 														</form>
@@ -509,7 +571,7 @@
 										</div>
 									</div>
 									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getReviews()}">
-										<div class="reviewer" style="width: 100px;">
+										<div class="reviewer" style="min-width: 100px; max-width: 100px;">
 											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
 										<div class="quote">
@@ -517,68 +579,6 @@
 										</div>
 										<div class="date font-weight-bold ml-auto">
 											<span th:text="|${review.datetime.getMonthValue()}/${review.datetime.getDayOfMonth()}/${review.datetime.getYear()}|">Date</span>
-										</div>
-										<div>
-											<button type="button" class="btn p-1" data-toggle="modal" th:attr="data-target='#report-rvw'+${review.id}"><i class="fa fa-flag"></i></button>
-										</div>
-										<div class="modal fade" th:id="'report-rvw'+${review.id}" tabindex="-1" role="dialog" aria-hidden="true">
-											<div class="modal-dialog modal-dialog-centered" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h5 class="modal-title">Report A Review...</h5>
-														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-													</div>
-													<div class="modal-body">
-														<form>
-															<div class="form-group">
-																<label th:for="'reported-rvw'+${review.id}">Reported Review</label>
-																<textarea class="form-control" th:id="'reported-rvw'+${review.id}" rows="5" readonly th:text="${review.body}" style="resize: none;"></textarea>
-															</div>
-															<div class="form-group">
-																<label th:for="'reason'+${review.id}">Reason For Report</label>
-																<textarea class="form-control" th:id="'reason'+${review.id}" rows="5" style="resize: none;"></textarea>
-															</div>
-															<button class="btn btn-secondary" th:id="'rep-rvw-button'+${review.id}">Report</button>
-														</form>
-													</div>
-													<script th:inline="javascript">
-														/*<![CDATA[*/
-															var rvwIDBtn = /*[['#rep-rvw-button'+${review.id}]]*/ "#";
-															var rvwID = /*[[${review.id}]]*/ 0;
-															var reportBodyID = /*[['#reason'+${review.id}]]*/ "#";
-															
-															function reportReview(e){
-																e.preventDefault();
-																data = {};
-																data["id"] = rvwID;
-																data["body"] = $(reportBodyID).val();
-																var jsonString = JSON.stringify(data);
-																$.ajax({
-																	type : "POST",
-																	contentType : "application/json",
-																	url : location.href+"/report",
-																	data : jsonString,
-																	success : function(data) {
-																		if (data == true){
-																			location.reload();
-																		}else{
-																		}
-																	},
-																	error : function(e) {
-																		console.log("ERROR: ", e);
-																	}
-																});
-															}
-															
-															$(function(){
-																$(rvwIDBtn).on("click",reportReview);
-															});
-														/*]]*/
-													</script>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>

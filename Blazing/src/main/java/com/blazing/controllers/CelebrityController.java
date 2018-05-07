@@ -20,7 +20,7 @@ public class CelebrityController {
 	public String viewCelebrity(@PathVariable("celebid") long celebid, Model model)
 	{
 		Celebrity celeb = celebService.findCelebrity(celebid);
-		model.addAttribute("Celebrity", celeb);
+		model.addAttribute("celebrity", celeb);
 		return "celebrity-details";
 	}
 }
