@@ -41,6 +41,60 @@ module.exports = {
       }]
     }),
 
+    premiered: Object.assign({}, Media.prototype, {
+      name: 'premiered',
+      patterns: [{
+        selector: { path: 'li.meta-row:nth-child(2) > div:nth-child(2)', transform: null },
+        childSelectors: null
+      }]
+    }),
+
+    network: Object.assign({}, Media.prototype, {
+      name: 'network',
+      patterns: [{
+        selector: { path: 'li.meta-row:nth-child(1) > div:nth-child(2)', transform: null },
+        childSelectors: null
+      }]
+    }),
+
+    episodes: Object.assign({}, Media.prototype, {
+      name: 'episodes',
+      patterns: [{
+        selector: {
+          path: '#episode-list-root', transform: null
+        },
+        childSelectors: [
+          {
+            name: 'episodeUrl',
+            selector: {
+              path: 'div:nth-child(1) > div > div:nth-child(1) > a:nth-child(1)',
+              transform: ($, episodes) => {
+                let urls = [];
+                episodes.each(function (index, value) {
+                  urls.push($(value).attr('href'));
+                });
+                return urls;
+              }
+            },
+            childSelectors: null
+          },
+          {
+            name: 'airDate',
+            selector: {
+              path: 'div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2)',
+              transform: ($, airDates) => {
+                let ads = [];
+                airDates.each(function (i, airDate) {
+                  ads.push($(this).text().replace(/Air Date:/, '').trim());
+                });
+                return ads;
+              }
+            },
+            childSelectors: null
+          }
+        ]
+      }]
+    }),
 
   }
 };

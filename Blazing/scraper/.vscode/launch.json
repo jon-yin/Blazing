@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "tvshowscraper",
+      "program": "${workspaceFolder}/TVShowScraperImpl.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "yearandabove",
       "program": "${workspaceFolder}/1950andAbove.js"
     },
@@ -31,7 +37,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "tvshowscraper",
+      "name": "seasoncraper",
       "program": "${workspaceFolder}/SeasonScraperImpl.js"
     },
     {
