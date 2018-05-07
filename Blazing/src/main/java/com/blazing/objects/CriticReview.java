@@ -12,12 +12,14 @@ public class CriticReview extends Review {
 	public CriticReview()
 	{
 		super();
+		setCritic(true);
 	}
 	
 	public CriticReview(Review review)
 	{
 		setBody(review.getBody());
 		setScore(review.getScore());
+		setCritic(true);
 	}
 	
 	public boolean isBlazing() {

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,11 +19,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
+@DiscriminatorColumn(name ="dcolumn")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Review {
 	
 	private long id;
 	private int score;
+	private boolean isCritic;
 	private String body;
 	private User user;
 	private LocalDateTime datetime;
@@ -35,6 +38,7 @@ public class Review {
 	{
 		userReports = new HashMap<>();
 		score = -1;
+		isCritic=false;
 	}
 	
 	@Id
@@ -160,6 +164,16 @@ public class Review {
 		set.addAll(userReports.values());
 		return set;
 	}
+
+	public boolean isCritic() {
+		return isCritic;
+	}
+
+	public void setCritic(boolean isCritic) {
+		this.isCritic = isCritic;
+	}
+	
+	
 	
 	
 }
