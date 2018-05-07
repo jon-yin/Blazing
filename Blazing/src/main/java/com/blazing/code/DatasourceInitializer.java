@@ -246,11 +246,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					review.setBody(criticReview.get("criticPost").textValue());
 					review.setUser(user);
 					review.setSource(movie);
-					if (criticReview.get("criticFresh").textValue().equals("true")) {
-						review.setBlazing(true);
-					}
-					else {
-						review.setBlazing(false);
+					if (criticReview.get("criticFresh")!= null){
+						review.setBlazing(criticReview.get("criticFresh").booleanValue());
 					}
 						
 					String postDate = criticReview.get("criticReviewDate").textValue();
