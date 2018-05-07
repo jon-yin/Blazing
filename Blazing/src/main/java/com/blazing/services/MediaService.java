@@ -251,8 +251,16 @@ public class MediaService {
 		LocalDate thisWeek = LocalDate.now().minusDays(7);
 		LocalDate today = LocalDate.now();
 		List<Movie> weeklyMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(thisWeek) > 0 && m.getAirtimes()[0].compareTo(today)<=0)).collect(Collectors.toList());
+		if (weeklyMovies.size() > numMovies)
+		{
+			weeklyMovies = weeklyMovies.subList(0, numMovies);
+		}
 		model.addAttribute("thisWeek", weeklyMovies.subList(0, numMovies));
 		List<Movie> upcomingMovies = movies.stream().filter(m -> (m.getAirtimes()[0].compareTo(today) > 0)).collect(Collectors.toList());
+		if (upcomingMovies.size() > numMovies)
+		{
+			upcomingMovies = upcomingMovies.subList(0, numMovies);
+		}
 		model.addAttribute("upcoming", weeklyMovies.subList(0, numMovies));
 	}
 
