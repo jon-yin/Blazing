@@ -154,8 +154,8 @@ public class MediaController<T> {
 		{
 			model.addAttribute("reviews", null);
 			model.addAttribute("criticreviews", null);
-			System.out.println("CRITIC REVIEWS: " + currentMedia.getCriticReviews().size());
-			System.out.println("AUDIENCE REVIEWS: " + currentMedia.getAudienceReviews().size());
+			//System.out.println("CRITIC REVIEWS: " + currentMedia.getCriticReviews().size());
+			//System.out.println("AUDIENCE REVIEWS: " + currentMedia.getAudienceReviews().size());
 			return;
 		}
 		else{

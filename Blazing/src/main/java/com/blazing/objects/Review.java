@@ -153,6 +153,7 @@ public class Review {
 		{
 			userReports.put(id,body);
 			flagCount++;
+			System.out.println("FlagCountWentUp");
 			return true;
 		}
 	}

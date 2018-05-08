@@ -96,6 +96,7 @@ public class MovieController extends MediaController<Movie>{
 	@RequestMapping(path="/report", method=RequestMethod.POST)
 	public boolean reportReview(@RequestBody ReportInfo data, @SessionAttribute(value="currentUser",required=false) User user)
 	{
+		System.out.println("Called controller");
 		return super.reportReview(data, user);
 	}
 	
