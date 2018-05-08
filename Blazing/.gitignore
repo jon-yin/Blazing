@@ -27,4 +27,6 @@
 
 /out/
 /scraper/node_modules
-/scraper/output/posters
+/scraper/output/posters/m/*
+/scraper/output/posters/tv/*
+/scraper/output/posters/celebrity/*
