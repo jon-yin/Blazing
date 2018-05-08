@@ -28,38 +28,19 @@
 		<div class="row">
 			<div class="col">
 				<div>
-					<video id="vid-thumb1" preload="metadata" data-toggle="modal" data-target="#vid-modal1">
-						<source src="/videos/black-panther-trailer-1.mp4#t=10" type="video/mp4">
+					<video id="vid-cover" style="width: 100%; height: auto;" preload="metadata" data-toggle="modal" data-target="#vid-modal1">
+						<source th:src="@{/videos/Black Panther.mp4#t=30}" type="video/mp4">
 					</video>
-					<div class="modal fade" id="vid-modal1" tabindex="-1" role="dialog" aria-labelledby="videoTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" style="max-width: 90%!important;" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<video id="video1" controls="controls">
-										<source src="/videos/black-panther-trailer-1.mp4" type="video/mp4">
-									</video>
-								</div>
-							</div>
-						</div>
-					</div>
-					<script th:inline="javascript">
-					/*<![CDATA[*/
+					<script>
 					$(function(){
-						$("#vid-thumb1").css("width","100%");
-						$("#vid-thumb1").css("height","auto");
-						$("#video1").css("width","100%");
-						$("#video1").css("height","auto");
-		 				$("#vid-modal1").on("hidden.bs.modal",function(){
-							$("#video1").get(0).pause();
-							$("#video1").get(0).currentTime = 0;
+						$("#vid-cover").on("click",function(){
+							if (!$(this).attr("controls")){
+								$(this).attr("controls","controls");
+								$(this).get(0).currentTime = 0;
+								$(this).get(0).play();
+							}
 						});
 					});
-					/*]]>*/
 					</script>
 				</div>
 				<section class="container-fluid">
@@ -70,25 +51,23 @@
 							<table class="table text-left">
 								<tr class="align-top">
 									<th>RATING:</th>
-									<td>PG-13 (for prolonged sequences of action violence, and
-										a brief rude gesture)</td>
+									<td><span th:text="${movie.rating}"></span></td>
 								</tr>
 								<tr class="align-top">
 									<th>GENRE:</th>
-									<td>Action &amp; Adventure, Drama, Science Fiction &amp;
-										Fantasy</td>
+									<td><span th:text="${movie.Genres}">genre</span></td>
 								</tr>
 								<tr class="align-top">
 									<th>DIRECTED BY:</th>
-									<td>Ryan Coogler</td>
+									<td><span th:text="${movie.Director}">d</span></td>
 								</tr>
 								<tr class="align-top">
 									<th>WRITTEN BY:</th>
-									<td>Joe Robert Cole, Ryan Coogler</td>
+									<td><span th:text="${movie.Writer}">w</span></td>
 								</tr>
 								<tr class="align-top">
 									<th>IN THEATERS:</th>
-									<td>Feb 16, 2018 Wide</td>
+									<td><span th:text="|${movie.airtimes[0].getMonthValue()}/${movie.airtimes[0].getDayOfMonth()}/${movie.airtimes[0].getYear()}|">runtime</span> Wide</td>
 								</tr>
 								<tr class="align-top">
 									<th>BOX OFFICE:</th>
@@ -96,11 +75,11 @@
 								</tr>
 								<tr class="align-top">
 									<th>RUNTIME:</th>
-									<td>135 minutes</td>
+									<td><span th:text="${movie.runTime}">i</span></td>
 								</tr>
 								<tr class="align-top">
 									<th>STUDIO:</th>
-									<td>Marvel Studios</td>
+									<td><span th:text="${movie.studio}">s</span></td>
 								</tr>
 							</table>
 						</section>
@@ -113,7 +92,7 @@
 											<div>
 												<span class="icon med burning"></span> <span
 													style="font-size: 64px;"><span
-													th:text="${movie.blazingScore}">70</span>%</span>
+													th:text="${movie.blazingScore*100}">70</span>%</span>
 											</div>
 										</div>
 										<div class="col">
@@ -121,7 +100,7 @@
 												Average Rating: <span>7.8</span>/10
 											</div>
 											<div>
-												Reviews Counted: <span>1000</span>
+												Reviews Counted: <span th:text="${movie.getCriticReviews().size()}"></span>
 											</div>
 											<div>
 												Blazing: <span>700</span>
@@ -139,17 +118,18 @@
 									<div class="row d-flex flex-row align-items-center">
 										<div class="col d-flex justify-content-center">
 											<div>
-												<span class="icon med burning"></span> <span
-													style="font-size: 64px;"><span
-													th:text="${movie.audienceScore}">70</span>%</span>
+												<span class="icon med burning"></span>
+												<span style="font-size: 64px;">
+													<span th:text="${movie.audienceScore}">10</span>/10
+												</span>
 											</div>
 										</div>
 										<div class="col">
 											<div>
-												Average Rating: <span>3.5</span>10
+												Average Rating: <span>3.5</span>/10
 											</div>
 											<div>
-												User Rating: <span>93,042</span>
+												User Ratings: <span th:text="${movie.getAudienceReviews().size()}">1</span>
 											</div>
 										</div>
 									</div>
@@ -177,9 +157,9 @@
 											</a>
 										</div>
 									</div>
-									<div class="text-right">
+									<!-- <div class="text-right">
 										<a href="#">View All...</a>
-									</div>
+									</div> -->
 								</section>
 							</div>
 						</div>
@@ -360,6 +340,7 @@
 									});
 									$("#del-rating").on("click", function(e){
 										e.preventDefault();
+										var rvwID = /*[[${currentReview.id}]]*/ 0;
 										deleteReview(rvwID);
 									});
 								});
@@ -400,7 +381,7 @@
 										</div>
 										<div class="results text-right">
 											<span th:text="|${cr.datetime.getMonthValue()}/${cr.datetime.getDayOfMonth()}/${cr.datetime.getYear()}|">January 1, 1970</span>
-											 - <span th:if="${cr.customScore.length()}" th:text="${cr.customScore}">Rating</span><span th:unless="${cr.customScore.length()}">N/A</span>
+											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
 											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:href="@{cr.publication}">Publication</span>
@@ -429,15 +410,10 @@
 													</div>
 													<script th:inline="javascript">
 														/*<![CDATA[*/
-															var rvwIDBtn = /*[['#rep-cr-button'+${cr.id}]]*/ "#";
-															var rvwID = /*[[${cr.id}]]*/ 0;
-															var reportBodyID = /*[['#c-reason'+${cr.id}]]*/ "#";
-															
-															function reportReview(e){
-																e.preventDefault();
+															function reportCReview(id, body){
 																data = {};
-																data["id"] = rvwID;
-																data["body"] = $(reportBodyID).val();
+																data["id"] = id;
+																data["body"] = body;
 																var jsonString = JSON.stringify(data);
 																$.ajax({
 																	type : "POST",
@@ -457,7 +433,13 @@
 															}
 															
 															$(function(){
-																$(rvwIDBtn).on("click",reportReview);
+																var rvwIDBtn = /*[['#rep-cr-button'+${cr.id}]]*/ "#";
+																var rvwID = /*[[${cr.id}]]*/ 0;
+																var reportBodyID = /*[['#c-reason'+${cr.id}]]*/ "#";
+																$(rvwIDBtn).on("click",function(e){
+																	e.preventDefault();
+																	reportCReview(rvwID, $(reportBodyID).val());
+																});
 															});
 														/*]]*/
 													</script>
@@ -479,16 +461,16 @@
 										</div>
 										<div class="results text-right">
 											<span th:text="|${cr.datetime.getMonthValue()}/${cr.datetime.getDayOfMonth()}/${cr.datetime.getYear()}|">January 1, 1970</span>
-											 - <span th:if="${cr.customScore.length()}" th:text="${cr.customScore}">Rating</span><span th:unless="${cr.customScore.length()}">N/A</span>
+											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:href="@{cr.publication}">Publication</span>
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a><!-- , <span th:href="@{cr.publication}">Publication</span> -->
 										</div>
 									</div>
 								</div>
-								<div class="text-right">
+<!-- 								<div class="text-right">
 									<a href="#">View All Critic Reviews...</a>
-								</div>
+								</div> -->
 							</section>
 							<section class="px-0 pb-0 mb-0" th:unless="${movie.getCriticReviews().size()}">
 								<h5 class="text-center w-100">No Reviews!</h5>
@@ -533,13 +515,8 @@
 														</form>
 													</div>
 													<script th:inline="javascript">
-														/*<![CDATA[*/
-															var rvwIDBtn = /*[['#rep-rvw-button'+${review.id}]]*/ "#";
-															var rvwID = /*[[${review.id}]]*/ 0;
-															var reportBodyID = /*[['#reason'+${review.id}]]*/ "#";
-															
-															function reportReview(e){
-																e.preventDefault();
+														/*<![CDATA[*/															
+															function reportReview(id,body){
 																data = {};
 																data["id"] = rvwID;
 																data["body"] = $(reportBodyID).val();
@@ -562,7 +539,13 @@
 															}
 															
 															$(function(){
-																$(rvwIDBtn).on("click",reportReview);
+																var rvwIDBtn = /*[['#rep-rvw-button'+${review.id}]]*/ "#";
+																var rvwID = /*[[${review.id}]]*/ 0;
+																var reportBodyID = /*[['#reason'+${review.id}]]*/ "#";
+																$(rvwIDBtn).on("click", function(e){
+																	e.preventDefault();
+																	reportReview(rvwID, $(reportBodyID).val());
+																});
 															});
 														/*]]*/
 													</script>
@@ -570,7 +553,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getReviews()}">
+									<div class="review audience d-flex flex-row border-bottom" th:unless="${session.currentUser}" th:each="review : ${movie.getAudienceReviews()}">
 										<div class="reviewer" style="min-width: 100px; max-width: 100px;">
 											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="${review.user.firstName+' '+review.user.lastName}">Name</a>
 										</div>
@@ -582,9 +565,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="text-right">
+								<!-- <div class="text-right">
 									<a href="#">View All Audience Reviews...</a>
-								</div>
+								</div> -->
 							</section>
 							<section class="px-0 pb-0 mb-0" th:unless="${movie.getReviews().size()}">
 								<h5 class="text-center w-100">No Reviews!</h5>

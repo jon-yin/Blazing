@@ -45,11 +45,11 @@
 								<span th:if="${celebrity.birthday}" th:text="|${celebrity.birthday.getMonthValue()}/${celebrity.birthday.getDayOfMonth()}/${celebrity.birthday.getYear()}|">birthday</span>
 								<span th:unless="${celebrity.birthday}">N/A</span>
 							</div>
-							<div class="text-md-left">
+							<!-- <div class="text-md-left">
 								<span class="font-weight-bold">Date Of Death: </span>
 								<span th:if="${celebrity.death}" th:text="|${celebrity.death.getMonthValue()}/${celebrity.death.getDayOfMonth()}/${celebrity.death.getYear()}|">death</span>
 								<span th:unless="${celebrity.death}">N/A</span>
-							</div>
+							</div> -->
 						</section>
 						<div class="col border-left border-right">
 							<div class="row flex-nowrap">
@@ -57,90 +57,56 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<section class="col">
-							<h5 class="section-header">PHOTOS</h5>
-							<div class="section-carousel">
-								<div class="section-carousel-item">
-									<img src="/images/v1.jpg">
-								</div>
-								<div class="section-carousel-item">
-									<img src="/images/v2.jpg">
-								</div>
-								<div class="section-carousel-item">
-									<img src="/images/v3.jpg">
-								</div>
-								<div class="section-carousel-item">
-									<img src="/images/v4.jpg">
-								</div>
-							</div>
-						</section>
-					</div>
-				</section>
-				<section>
-					<h5 class="section-header">HIGHEST RATED MOVIES</h5>
-					<div class="d-flex flex-wrap justify-content-around">
-						<a class="details-link btn text-center" href="/details.html" role="button">
-							<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
-							<div class="name">Black Panther</div>
-							<div>
-								<span class="icon tiny burning"></span>
-								<span>70</span>%
-							</div>
-						</a>
-					</div>
 				</section>
 				<section>
 					<h5 class="section-header">FILMOGRAPHY</h5>
-					<div class="row">
-						<div class="col">
-							<h5>MOVIES</h5>
-							<div>
-								<div class="d-flex align-items-start">
-									<div style="width: 75px"><span>SCORE</span></div>
-									<div class="col text-truncate"><span>TITLE</span></div>
-									<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-									<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-									<div style="width: 50px;"><span>YEAR</span></div>
-								</div>
-								<div class="details-link border-top border-bottom" th:each="media : ${celebrity.getFilmography()}" th:if="${media.class.name == 'com.blazing.objects.Movie'}">
-									<a class="w-100 d-flex align-items-start" th:href="@{/viewmovie/{id}(id=${media.id})}">
-										<div style="width: 75px">
-											<span class="icon tiny burning"></span>
-											<span>70</span>%
-										</div>
-										<div class="col text-truncate" th:text="${media.title}">MOVIE</div>
-										<div class="col-auto text-truncate" style="width: 100px;">ROLE</div>
-										<div class="col-auto text-truncate" style="width: 100px;"><span>BOX OFFICE</span></div>
-										<div style="width: 50px;" th:text="|${media.airtimes[0].getMonthValue()}/${media.airtimes[0].getDayOfMonth()}/${media.airtimes[0].getYear()}|">YEAR</div>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<h5>TV</h5>
-							<div class="d-flex align-items-start">
+					<section>
+						<h5>MOVIES</h5>
+						<div>
+							<div class="d-flex align-items-start border-bottom">
 								<div style="width: 75px"><span>SCORE</span></div>
 								<div class="col text-truncate"><span>TITLE</span></div>
-								<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-								<div style="width: 50px;"><span>YEAR</span></div>
+								<div class="col-auto text-truncate" style="min-width: 150px;"><span>ROLE</span></div>
+								<div class="col-auto text-truncate" style="min-width: 150px;"><span>BOX OFFICE</span></div>
+								<div style="min-width: 100px;"><span>YEAR</span></div>
 							</div>
-							<div class="details-link border-top border-bottom" th:each="media : ${celebrity.getFilmography()}" th:if="${media.class.name == 'com.blazing.objects.TV'}">
-								<a class="w-100 d-flex align-items-start" href="#">
+							<div class="details-link border-bottom" th:each="character : ${celebrity.getCharacters()}" th:if="${character.source.class.name == 'com.blazing.objects.Movie'}">
+								<a class="w-100 d-flex align-items-start" th:href="@{/viewmovie/{id}(id=${character.source.id})}">
 									<div style="width: 75px">
 										<span class="icon tiny burning"></span>
 										<span>70</span>%
 									</div>
-									<div class="col text-truncate"><span>TV</span></div>
-									<div class="col-auto text-truncate" style="width: 100px;"><span>ROLE</span></div>
-									<div style="width: 50px;">
-										<span th:text="|${media.airtimes[0].getMonthValue()}/${media.airtimes[0].getDayOfMonth()}/${media.airtimes[0].getYear()}|">YEAR</span>
-										<span th:text="|${media.airtimes[1].getMonthValue()}/${media.airtimes[1].getDayOfMonth()}/${media.airtimes[1].getYear()}|">YEAR</span>
-									</div>
+									<div class="col text-truncate" th:text="${character.source.title}">MOVIE</div>
+									<div class="col-auto text-truncate" style="min-width: 150px;" th:text="${character.name}">ROLE</div>
+									<div class="col-auto text-truncate" style="min-width: 150px;"><span>BOX OFFICE</span></div>
+									<div style="min-width: 100px;" th:text="|${character.source.airtimes[0].getMonthValue()}/${character.source.airtimes[0].getDayOfMonth()}/${character.source.airtimes[0].getYear()}|">YEAR</div>
 								</a>
 							</div>
 						</div>
-					</div>
+					</section>
+					<section>
+						<h5>TV</h5>
+						<div class="d-flex align-items-start border-bottom">
+							<div style="width: 75px"><span>SCORE</span></div>
+							<div class="col text-truncate"><span>TITLE</span></div>
+							<div class="col-auto text-truncate" style="min-width: 300px;"><span>ROLE</span></div>
+							<div style="min-width: 100px;"><span>YEAR</span></div>
+						</div>
+						<div class="details-link border-bottom" th:each="character : ${celebrity.getCharacters()}" th:if="${character.source.class.name == 'com.blazing.objects.TV'}">
+							<a class="w-100 d-flex align-items-start" href="#">
+								<div style="width: 75px">
+									<span class="icon tiny burning"></span>
+									<span>70</span>%
+								</div>
+								<div class="col text-truncate" th:text="${character.source.title}"><span>TV</span></div>
+								<div class="col-auto text-truncate" style="min-width: 300px;"><span th:text="${character.name}">ROLE</span></div>
+								<div style="min-width: 100px;">
+									<span th:text="|${character.source.airtimes[0].getMonthValue()}/${character.source.airtimes[0].getDayOfMonth()}/${character.source.airtimes[0].getYear()}|">YEAR</span>
+									<span th:text="|${character.source.airtimes[1].getMonthValue()}/${character.source.airtimes[1].getDayOfMonth()}/${character.source.airtimes[1].getYear()}|">YEAR</span>
+								</div>
+							</a>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>

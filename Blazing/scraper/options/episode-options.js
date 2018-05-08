@@ -30,53 +30,57 @@ Media.prototype.nextPattern = function () {
 
 module.exports = {
   host: 'https://www.rottentomatoes.com',
-  reqDelay: 1000,
+  reqDelay: 500,
+  notRequired: [],
   mediaSelectors: {
-    seasons: Object.assign({}, Media.prototype, {
-      name: 'seasons',
+    summary: Object.assign({}, Media.prototype, {
+      name: 'summary',
+      patterns: [{
+        selector: { path: '#movieSynopsis', transform: null },
+        childSelectors: null
+      }]
+    }),
+
+    // network: Object.assign({}, Media.prototype, {
+    //   name: 'network',
+    //   patterns: [{
+    //     selector: { path: 'li.meta-row:nth-child(2) > div:nth-child(2)', transform: null },
+    //     childSelectors: null
+    //   }]
+    // }),
+
+    airDate: Object.assign({}, Media.prototype, {
+      name: 'airDate',
+      c: 0,
       patterns: [{
         selector: {
-          path: '#seasonList > div:nth-child(2) a', transform: ($, seasons) => {
-            let urls = [];
-            seasons.each(function (index, value) {
-              urls.push($(value).attr('href'));
-            });
-            return urls;
+          path: 'li.meta-row:nth-child(2) > div:nth-child(2)', transform: ($, airDate) => {
+            // check if sibling label is 'air date'
+            let label = airDate.siblings();
+            if (label.text().trim().match(/Air Date:/)) {
+              return airDate.text().trim();
+            }
+            else {
+              return '';
+            }
+          }
+        },
+        childSelectors: null
+      }, {
+        selector: {
+          path: 'li.meta-row:nth-child(3) > div:nth-child(2)', transform: ($, airDate) => {
+            // check if sibling label is 'air date'
+            let label = airDate.siblings();
+            if (label.text().trim().match(/Air Date:/)) {
+              return airDate.text().trim();
+            }
+            else {
+              return '';
+            }
           }
         },
         childSelectors: null
       }]
-    })
+    }),
   }
-};
-
-
-    // episodes: Object.assign({}, Media.prototype, {
-    //   name: 'episodes',
-    //   patterns: [{
-    //     selector: { path: '#episode-list-root', transform: null },
-    //     childSelectors: [
-    //       {
-    //         name: 'episodeUrl',
-    //         selector: {
-    //           path: 'a',
-    //           transform: ($, celebEntries) => {
-    //             let urls = [];
-    //             celebEntries.each(function (index, value) {
-    //               urls.push($(value).attr('href'));
-    //             });
-    //             return urls;
-    //           }
-    //         },
-    //         childSelectors: null
-    //       },
-    //       {
-    //         name: 'episodeTitle',
-    //         selector: {
-    //           path: 'a', transform: Helpers.arrayFromChildNodes
-    //         },
-    //         childSelectors: null
-    //       },
-    //     ]
-    //   }],
-    // })
+}; 
