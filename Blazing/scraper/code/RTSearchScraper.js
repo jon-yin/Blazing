@@ -17,7 +17,6 @@ module.exports.RTSearchScraper = class RTSearchScraper {
 		this.opts = options;
 	}
 
-	/* input file name required */
 	search() {
 		var self = this;
 
@@ -150,7 +149,13 @@ module.exports.RTSearchScraper = class RTSearchScraper {
 			});
 		};
 
-		return readInFile(self.inputFile).then(runQueries);
+		if (typeof (self.inputFile) === 'string') {
+			console.log('path given');
+			return readInFile(self.inputFile).then(runQueries);
+		}
+		else if (Array.isArray(self.inputFile)) {
+			console.log('array given');
+			return runQueries(self.inputFile);
+		}
 	}
-
 };

@@ -1,12 +1,12 @@
 const fs = require('fs');
 const { MediaScraper } = require('./code/MediaScraper.js');
-const celebrityOptions = require('./output/celebrity-options');
+const celebrityOptions = require('./options/celebrity-options.js');
 
 const inputfile = './searchResults/done/movies00.json';
 
 try {
   var json = JSON.parse(fs.readFileSync(inputfile));
-  var ms = new MediaScraper(json.castItems, celebrityOptions);
+var ms = new MediaScraper(json.castItems, celebrityOptions);
 
   // iterate over all entries, scrape info and return
   ms.bigSearch()

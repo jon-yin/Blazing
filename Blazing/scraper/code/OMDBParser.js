@@ -1,6 +1,4 @@
 const request = require('request-promise');
-const fs = require('fs');
-const readline = require('readline');
 
 module.exports.OMDBParser = class OMDBParser {
   constructor(queryStrings, options) {
@@ -16,10 +14,18 @@ module.exports.OMDBParser = class OMDBParser {
       return request(data.query).then((response) => {
         let rslt = JSON.parse(response, null, 2);
         rslt = cb(rslt);
-        return new Promise(function (res1, resp1) {
-          console.info('rslt from... ' + data.query);
-          res1({ url: data.url, posterPath: './posters' + data.url + '_poster', posterSrc: rslt.Poster });
+        console.info('rslt from... ' + data.query);
+
+        return Promise.resolve({
+          url: data.url,
+          // handle multiple types if needed
+          posterPath: data.url + '_poster.jpg',
+          posterSrc: rslt.Poster
         });
+
+      }).catch(err => {
+        console.log('request timed out, skipping...');
+        return Promise.resolve();
       });
     };
 
