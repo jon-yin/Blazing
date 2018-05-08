@@ -28,7 +28,7 @@
 		<div class="row">
 			<div class="col">
 				<section>
-					<h2>SEARCH RESULTS: <span id="search-title"></span></h2>
+					<h2>SEARCH RESULTS: <span th:text="${#request.getParameter('q')}"></span></h2>
 					<ul class="nav nav-tabs flex-nowrap text-center" id="tab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-item nav-link active" id="show-movie-results" data-toggle="tab" href="#movie-results" role="tab" aria-controls="movie-results" aria-selected="true">Movies</a>
@@ -43,19 +43,19 @@
 					<div class="tab-content" id="show-results">
 						<div class="tab-pane show fade active" id="movie-results" role="tabpanel" aria-labelledby="show-movie-results">
 							<div class="movie-results-list" th:if="${relevantMovies.size()}">
-								<a class="w-100 m-2 d-flex align-items-center" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
+								<a class="w-100 p-2 d-flex align-items-center border-top border-bottom" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 									<div class="score pr-2 text-center" style="min-width: 75px;">
 										<span class="icon tiny burning"></span>
 										<span th:text="${movie.blazingScore}">70</span>%
 									</div>
 									<img src="/images/black-panther.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>
-										<div class="font-weight-bold" th:text="${movie.title}">MOVIE</div>
-										<div th:text="${movie.description}">movie description</div>
+										<div class="font-weight-bold" th:text="${movie.title}">title</div>
+										<div class="search-desc" th:text="${#strings.abbreviate(movie.description,480)}">movie description</div>
 									</div>
 								</a>
 							</div>
-							<div class="movie-results-list" th:unless="${relevantMovies.size()}">
+							<div th:unless="${relevantMovies.size()}">
 								<h3 class="text-center w-100">No results found!</h3>
 							</div>
 						</div>
@@ -72,21 +72,23 @@
 									</div>
 								</a>
 							</div>
-							<div class="movie-results-list" th:unless="${relevantTV.size()}">
+							<div th:unless="${relevantTV.size()}">
 								<h3 class="text-center w-100">No results found!</h3>
 							</div>
 						</div>
 						
 						<div class="tab-pane show fade" id="celeb-results" role="tabpanel" aria-labelledby="show-celeb-results">
 							<div class="celeb-results-list" th:if="${relevantCelebs.size()}">
-								<a class="w-100 m-2 d-flex align-items-center" th:each="celeb : ${relevantCelebs}" th:href="@{/viewceleb/{celebid}(celebid=${celeb.id})}">
-									<img src="/images/thumbnail.png" class="search-image pr-2" style="width: 100px; height: 100px;">
+								<a class="w-50 py-2 d-flex align-items-center" th:each="celeb : ${relevantCelebs}" th:href="@{/viewceleb/{celebid}(celebid=${celeb.id})}">
+									<!-- <img src="/images/thumbnail.png" class="search-image pr-2" style="width: 100px; height: 100px;"> -->
 									<div class="font-weight-bold" th:text="${celeb.name}">Celeb McCelebface</div>
 								</a>
 							</div>
+							<div th:unless="${relevantCelebs.size()}">
+								<h3 class="text-center w-100">No results found!</h3>
+							</div>
 						</div>
 					</div>
-
 					<div style="display: none;">
 						No results found!
 					</div>
@@ -102,8 +104,6 @@
 <script type="application/javascript" th:src="@{/js/get-query-string.js}"></script>
 <script>
 	$(function(){
-		var browseData = getDataFromQueryString();
-		$("#search-title").html(browseData["q"]);
 	});
 </script>
 

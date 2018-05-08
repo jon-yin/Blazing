@@ -107,10 +107,13 @@
 					<div class="tab-pane show fade" id="ratings" role="tabpanel" aria-labelledby="show-ratings">
 						<section>
 							<h5 class="section-header">RATINGS HISTORY</h5>
-							<div class="w-100 p-1 my-1 border">
-								<span>test</span>
-								<span>test</span>
-								<span>test</span>
+							<div class="w-100 p-1 my-1 border d-flex" th:each="review: ${foundUser.reviews}">
+								<div class="pr-1" style="min-width: 50px; max-width: 50px;"><span th:text="${review.score}">rating</span>/10</div>
+								<div class="pr-1" style="min-width: 100px; max-width: 200px;">
+									<a th:if="${review.source.class.name == 'com.blazing.objects.Movie'}" th:href="@{~/viewmovie/{id}(id=${review.source.id})}" th:text="${review.source.title}">media</a>
+									<a th:if="${review.source.class.name == 'com.blazing.objects.TV'}" th:href="@{~/viewtv/{id}(id=${review.source.id})}" th:text="${review.source.title}">media</a>
+									</div>
+								<div class="text-truncate" th:text="${review.body}">review</div>
 							</div>
 						</section>
 					</div>

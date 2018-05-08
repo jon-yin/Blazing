@@ -168,11 +168,11 @@ public class MediaService {
 			Media curMedia = media.get();
 			if (user.getRole() == Roles.CRITIC)
 			{
-				curMedia.addReview(review);
+				curMedia.addCriticReview((CriticReview)review);
 			}
 			else
 			{
-				curMedia.addCriticReview((CriticReview)review);
+				curMedia.addReview(review);
 			}
 			user.addToReviews(review);
 			review.setUser(user);

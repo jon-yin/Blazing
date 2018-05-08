@@ -39,7 +39,8 @@ $(function(){
 	}
 		$(".pagination li").first().addClass("active");
 		showPage(1);
-		$(".pagination li").on("click",function() {
+		$(".pagination li").on("click",function(e) {
+			e.preventDefault()
 			if ($(this).attr("id") != "page-ell-prev" && $(this).attr("id") != "page-ell-next"){
 				$(".pagination li").removeClass("active");
 				$(this).addClass("active");
