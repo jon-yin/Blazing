@@ -3,6 +3,7 @@ package com.blazing.services;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,6 +18,7 @@ import org.springframework.ui.Model;
 import com.blazing.objects.Celebrity;
 import com.blazing.objects.CriticReview;
 import com.blazing.objects.EditedReviewInfo;
+import com.blazing.objects.Episode;
 import com.blazing.objects.Media;
 import com.blazing.objects.Movie;
 import com.blazing.objects.MovieCharacter;
@@ -24,6 +26,7 @@ import com.blazing.objects.MovieInfo;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.Roles;
+import com.blazing.objects.Season;
 import com.blazing.objects.TV;
 import com.blazing.objects.User;
 import com.blazing.repositories.CelebrityRepository;
@@ -69,7 +72,13 @@ public class MediaService {
 	@Transactional
 	public TV findTV(long id) {
 		Optional<TV> tv = tvRepo.findById(id);
-		return tv.orElse(null);
+		TV foundTv = tv.get();
+		for (Season season: foundTv.getSeasons())
+		{
+			season.getEpisodes().sort(Comparator.comparing(Episode::getEpisodeNumber));
+		}
+		foundTv.getSeasons().sort(Comparator.comparing(Season::getSeasonNumber));
+		return tv.get();
 	}
 
 	@Transactional

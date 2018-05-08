@@ -1,7 +1,7 @@
 package com.blazing.objects;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,22 +10,22 @@ import javax.persistence.OneToMany;
 @Entity
 public class TV extends Media{
 	
-	private Set<Season> seasons;
+	private List<Season> seasons;
 	private String network;
 	
 	public TV()
 	{
-		seasons = new HashSet<>();
+		seasons = new ArrayList<>();
 	}
 	
 	@Column(nullable=false)
 	@OneToMany(mappedBy="show")
-	public Set<Season> getSeasons()
+	public List<Season> getSeasons()
 	{
 		return seasons;
 	}
 	
-	public void setSeasons(Set<Season> seasons)
+	public void setSeasons(List<Season> seasons)
 	{
 		this.seasons = seasons;
 	}
