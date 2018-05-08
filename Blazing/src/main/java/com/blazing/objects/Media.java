@@ -33,7 +33,7 @@ public abstract class Media implements Comparable<Media>{
 	private long id;
 	private String title;
 	private String description;
-	private ImageEntity poster;
+	private String poster;
 	private LocalDate[] airtimes;
 	private double audienceScore;
 	private double blazingScore;
@@ -83,12 +83,11 @@ public abstract class Media implements Comparable<Media>{
 		this.description = description;
 	}
 	
-	@OneToOne
-	@JoinColumn(name="POSTER")
-	public ImageEntity getPoster() {
+	@Column(columnDefinition="LONGTEXT")
+	public String getPoster() {
 		return poster;
 	}
-	public void setPoster(ImageEntity poster) {
+	public void setPoster(String poster) {
 		this.poster = poster;
 	}
 	

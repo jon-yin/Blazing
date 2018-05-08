@@ -1,5 +1,6 @@
 package com.blazing.code;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -234,9 +235,9 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             testUser.setFirstName("User");
             testUser.setLastName("guy");
             testUser.setRole(Roles.USER);
-            userRepo.save(testUser);
+            userRepo.save(testUser); 
             
-            System.out.println("Started");
+            System.out.println("Started"); 
         } catch (IOException e) {
             e.printStackTrace();
         }*/
@@ -336,6 +337,17 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			
 			movie = movieRepo.save(movie);
 			
+			String url = tree.get("url").textValue();
+			movieURLtoID.put(url, movie.getId());
+		
+			String posterpath = "/data/movieposters/" + url.substring(3, url.length()) + "_poster.jpg";
+			File tmpfile = new File(posterpath);
+			if (tmpfile.exists()) {
+				movie.setPoster(posterpath);
+			}
+			
+			movie = movieRepo.save(movie);
+			
 			JsonNode Cast = tree.get("cast");
 			Iterator<JsonNode> Iteratorcast = Cast.iterator();
 			while(Iteratorcast.hasNext()) {
@@ -368,9 +380,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			
 			movie = movieRepo.save(movie);
-			
-			String url = tree.get("url").textValue();
-			movieURLtoID.put(url, movie.getId());
 		}
     }
 	
