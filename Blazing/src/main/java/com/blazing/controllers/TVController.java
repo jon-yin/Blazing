@@ -2,7 +2,6 @@ package com.blazing.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.blazing.objects.EditedReviewInfo;
+import com.blazing.objects.Episode;
 import com.blazing.objects.ReportInfo;
 import com.blazing.objects.Review;
 import com.blazing.objects.Season;
@@ -39,11 +39,28 @@ public class TVController extends MediaController<TV>{
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String getTVDetails(@PathVariable("tv") long tv, @SessionAttribute(required=false,value="currentUser") User user, Model model)
+	public String getTVDetails(@PathVariable("tv") long tv, @PathVariable("season") long season, @SessionAttribute(required=false,value="currentUser") User user, Model model)
 	{
 		TV currentTV = mediaService.findTV(tv);
 		model.addAttribute("tv", currentTV);
-		super.retrieveUnblockedReviews(user, currentTV, model);
+		long trueIndex = season - 1;
+		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
+		super.retrieveUnblockedReviews(user, sSeason, model);
+		return "tv-details";
+	}
+	
+	@RequestMapping(path="/{episode}",method = RequestMethod.GET)
+	public String getEpisodeDetails(@PathVariable("tv") long tv, @PathVariable("season") long season, 
+			@PathVariable("episode")long episode, @SessionAttribute(required=false,value="currentUser") User user, Model model)
+	
+	{
+		TV currentTV = mediaService.findTV(tv);
+		model.addAttribute("tv", currentTV);
+		long trueIndex = season - 1;
+		long trueEpisode = episode - 1;
+		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
+		Episode sEpisode = sSeason.getEpisodes().get((int) trueEpisode);
+		super.retrieveUnblockedReviews(user, sEpisode, model);
 		return "tv-details";
 	}
 	
