@@ -61,10 +61,10 @@
 						</div>
 						<div class="tab-pane show fade" id="tv-results" role="tabpanel" aria-labelledby="show-tv-results">
 							<div class="tv-results-list" th:if="${relevantTV.size()}">
-								<a class="w-100 m-2 d-flex align-items-center" th:each="tv : ${relevantTV}" th:href="#">
+								<a class="w-100 m-2 d-flex align-items-center" th:each="tv : ${relevantTV}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
 									<div class="score pr-2">
 										<span class="icon tiny burning"></span>
-										<span th:text="${tv.id}">70</span>%
+										<span th:text="${tv.blazingScore}">70</span>%
 									</div>
 									<img src="/images/counterpart.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>

@@ -1,6 +1,7 @@
 package com.blazing.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import com.blazing.objects.TV;
 import com.blazing.objects.User;
 import com.blazing.services.MediaService;
 
+@Controller
 @RequestMapping(value="/viewtv/{tv}/{season}", method=RequestMethod.GET)
 public class TVController extends MediaController<TV>{
 	
@@ -45,6 +47,7 @@ public class TVController extends MediaController<TV>{
 		model.addAttribute("tv", currentTV);
 		long trueIndex = season - 1;
 		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
+		model.addAttribute("season", sSeason);
 		super.retrieveUnblockedReviews(user, sSeason, model);
 		return "tv-details";
 	}
@@ -61,7 +64,7 @@ public class TVController extends MediaController<TV>{
 		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
 		Episode sEpisode = sSeason.getEpisodes().get((int) trueEpisode);
 		super.retrieveUnblockedReviews(user, sEpisode, model);
-		return "tv-details";
+		return "episode-details";
 	}
 	
 	@RequestMapping(path="/addnotinterested", method = RequestMethod.POST)

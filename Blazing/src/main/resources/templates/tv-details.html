@@ -20,7 +20,7 @@
 	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 </head>
 
-<link rel="stylesheet" href="@{/css/styles.css}">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
 	<header th:insert="/fragments/header.html :: header"></header>
@@ -33,22 +33,14 @@
 						<section class="col-md-auto mx-auto text-center sidebar">
 							<div class="d-flex align-items-center justify-content-center" style="margin-bottom: 10px;">
 								<div class="dropdown show">
-									<a class="btn dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Seasons
-									</a>
+									<a class="btn btn-dark-outline dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="|Season ${season.seasonNumber+1}|"></a>
 									<div class="dropdown-menu" aria-labelledby="seasons-link">
-										<a class="dropdown-item" href="#">Season 1</a>
-										<a class="dropdown-item" href="#">Season 2</a>
-										<a class="dropdown-item" href="#">Season 3</a>
+										<a class="dropdown-item" th:each="s : ${tv.getSeasons()}" th:href="@{~/viewtv/{tvid}/{sNum}(tvid=${tv.id},sNum=${s.seasonNumber+1})}" th:classappend="${s.seasonNumber == season.seasonNumber} ? 'active' : ''" th:text="|Season ${s.seasonNumber+1}|"></a>
 									</div>
 								</div>
 							</div>
 							<img src="/images/counterpart.jpg">
 							<table class="table text-left">
-								<tr class="align-top">
-									<th>GENRE:</th>
-									<td><span th:text="${tv.Genres}">genre</span></td>
-								</tr>
 								<tr class="align-top">
 									<th>NETWORK:</th>
 									<td><span th:text="${tv.network}">network</span></td>
@@ -91,7 +83,6 @@
 									<div class="row d-flex flex-row align-items-center">
 										<div class="col d-flex justify-content-center">
 											<div>
-												<span class="icon med burning"></span>
 												<span style="font-size: 64px;">
 													<span th:text="${tv.audienceScore*10}">10</span>%
 												</span>
@@ -111,7 +102,7 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">TV SEASON INFO</h5>
-									<div id="description" th:text="${tv.description}">
+									<div id="description" th:text="${season.description}">
 										description
 									</div>
 								</section>
@@ -119,11 +110,10 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">CAST</h5>
-									<div class="celebrity-list row no-gutters"
-										th:each="character : ${tv.cast}">
-										<div class="celebrity-link col-6 col-md-4 pb-1">
-											<a class="d-flex" href="/celebrity-details.html">
-											<img src="/images/thumbnail.png" th:src="@{character.actor.portrait}" style="max-height: 50px; width: auto;">
+									<div class="celebrity-list row no-gutters">
+										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${tv.cast}">
+											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
+												<img src="/images/thumbnail.png" th:src="@{character.actor.portrait}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
@@ -182,8 +172,9 @@
 				<section>
 					<h5 class="section-header">EPISODES</h5>
 					<div class="episode-list">
-						<a class="episode" th:each="" href="#">
-							<div class="episode-number" style="width: 25px;">1</div>
+						<span th:text="${season.getEpisodes().size()}"></span>
+						<!-- <a class="episode" th:each="e : ${season.episodes}" href="@{/{eNum}(eNum=${e.episodeNumber+1})}">
+							<div class="episode-number" style="width: 25px;" th:text="${e.episodeNumber}">1</div>
 							<div class="episode-score" style="width: 75px;">
 								<span class="icon tiny burning"></span>
 								<span>70</span>%
@@ -194,10 +185,10 @@
 									<div>Air Date: <span>Jan 1, 1111</span></div>
 								</div>
 								<div class="d-flex flex-row justify-content-between">
-									<div class="text-truncate">description description description description description description description description</div>
+									<div class="text-truncate" th:text="${e.description}">description</div>
 								</div>
 							</div>
-						</a>
+						</a> -->
 					</div>
 				</section>
 				<section>
@@ -576,7 +567,7 @@
 			</div>
 		</div>
 	</div>
-	<footer></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></header>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>

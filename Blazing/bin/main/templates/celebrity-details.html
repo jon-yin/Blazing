@@ -93,7 +93,7 @@
 							<div style="min-width: 100px;"><span>YEAR</span></div>
 						</div>
 						<div class="details-link border-bottom" th:each="character : ${celebrity.getCharacters()}" th:if="${character.source.class.name == 'com.blazing.objects.TV'}">
-							<a class="w-100 d-flex align-items-start" href="#">
+							<a class="w-100 d-flex align-items-start" th:href="@{/viewtv/{id}/1(id=${character.source.id})}">
 								<div style="width: 75px">
 									<span class="icon tiny burning"></span>
 									<span>70</span>%
@@ -102,7 +102,6 @@
 								<div class="col-auto text-truncate" style="min-width: 300px;"><span th:text="${character.name}">ROLE</span></div>
 								<div style="min-width: 100px;">
 									<span th:text="|${character.source.airtimes[0].getMonthValue()}/${character.source.airtimes[0].getDayOfMonth()}/${character.source.airtimes[0].getYear()}|">YEAR</span>
-									<span th:text="|${character.source.airtimes[1].getMonthValue()}/${character.source.airtimes[1].getDayOfMonth()}/${character.source.airtimes[1].getYear()}|">YEAR</span>
 								</div>
 							</a>
 						</div>
