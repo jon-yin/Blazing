@@ -82,6 +82,24 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // load json file, add to my sql db
         /*try {
+        	
+        	User user = new User();
+            user.setEmailAddress("a@a.com");
+            user.setPassword(encoder.encode("a"));
+            user.setEnabled(true);
+            user.setRole(Roles.ADMIN);
+            user.setFirstName("Admin");
+            user.setLastName("guy");
+            userRepo.save(user);
+            User testUser = new User();
+            testUser.setEmailAddress("b@b.com");
+            testUser.setPassword(encoder.encode("b"));
+            testUser.setEnabled(true);
+            testUser.setFirstName("User");
+            testUser.setLastName("guy");
+            testUser.setRole(Roles.USER);
+            userRepo.save(testUser); 
+        	
             mapJSONtoCelebrities("data/celebs/pcelebs00.json");
             mapJSONtoCelebrities("data/celebs/pcelebs01.json");
             mapJSONtoCelebrities("data/celebs/pcelebs02.json");
@@ -220,22 +238,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             
             System.out.println("Episodes Done");
             
-            User user = new User();
-            user.setEmailAddress("a@a.com");
-            user.setPassword(encoder.encode("a"));
-            user.setEnabled(true);
-            user.setRole(Roles.ADMIN);
-            user.setFirstName("Admin");
-            user.setLastName("guy");
-            userRepo.save(user);
-            User testUser = new User();
-            testUser.setEmailAddress("b@b.com");
-            testUser.setPassword(encoder.encode("b"));
-            testUser.setEnabled(true);
-            testUser.setFirstName("User");
-            testUser.setLastName("guy");
-            testUser.setRole(Roles.USER);
-            userRepo.save(testUser); 
             
             System.out.println("Started"); 
         } catch (IOException e) {
@@ -343,7 +345,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			String posterpath = "/data/movieposters/" + url.substring(3, url.length()) + "_poster.jpg";
 			File tmpfile = new File(posterpath);
 			if (tmpfile.exists()) {
-				movie.setPoster(posterpath);
+				String posterpath2 = url.substring(3,url.length()) + "_poster.jpg";
+				movie.setPoster(posterpath2);
 			}
 			
 			movie = movieRepo.save(movie);

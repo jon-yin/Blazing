@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -119,6 +120,7 @@ public abstract class Media implements Comparable<Media>{
 		this.videos = videos;
 	}
 	
+	@ElementCollection
 	public Set<String> getImages() {
 		return images;
 	}
