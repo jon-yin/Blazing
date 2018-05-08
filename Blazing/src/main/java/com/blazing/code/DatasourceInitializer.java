@@ -357,10 +357,12 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 							charactername = "";
 						}
 						moviechar.setName(charactername);
-						moviecharRepo.save(moviechar);
+						moviechar = moviecharRepo.save(moviechar);
 						celeb.getCharacters().add(moviechar);
 						celeb.getFilmography().add(movie);
-						celebrityRepo.save(celeb);
+						celeb = celebrityRepo.save(celeb);
+						movie.getCast().add(moviechar);
+						movie = movieRepo.save(movie);
 					}
 				}
 			}
@@ -520,9 +522,12 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 							charactername = "";
 						}
 						moviechar.setName(charactername);
-						moviecharRepo.save(moviechar);
+						moviechar = moviecharRepo.save(moviechar);
+						celeb.getFilmography().add(tvshow);
 						celeb.getCharacters().add(moviechar);
-						celebrityRepo.save(celeb);
+						celeb = celebrityRepo.save(celeb);
+						tvshow.getCast().add(moviechar);
+						tvshow = tvRepo.save(tvshow);
 					}
 				}
 			}
