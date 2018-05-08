@@ -47,7 +47,7 @@
 					<h3 class="section-header" th:text="${movie.title}">TITLE</h3>
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
-							<img src="/images/black-panther.jpg">
+							<img th:src="@{${movie.poster}}">
 							<table class="table text-left">
 								<tr class="align-top">
 									<th>RATING:</th>
@@ -68,10 +68,6 @@
 								<tr class="align-top">
 									<th>IN THEATERS:</th>
 									<td><span th:text="|${movie.airtimes[0].getMonthValue()}/${movie.airtimes[0].getDayOfMonth()}/${movie.airtimes[0].getYear()}|">runtime</span> Wide</td>
-								</tr>
-								<tr class="align-top">
-									<th>BOX OFFICE:</th>
-									<td>$501,105,037</td>
 								</tr>
 								<tr class="align-top">
 									<th>RUNTIME:</th>
@@ -97,16 +93,13 @@
 										</div>
 										<div class="col">
 											<div>
-												Average Rating: <span>7.8</span>/10
-											</div>
-											<div>
 												Reviews Counted: <span th:text="${movie.getCriticReviews().size()}"></span>
 											</div>
 											<div>
-												Blazing: <span>700</span>
+												Blazing: <span th:text="${movie.blazingScore*movie.getCriticReviews().size()}"></span>
 											</div>
 											<div>
-												Ashes: <span>300</span>
+												Ashes: <span th:text="${movie.getCriticReviews().size()-movie.blazingScore*movie.getCriticReviews().size()}">300</span>
 											</div>
 										</div>
 									</div>
@@ -118,15 +111,14 @@
 									<div class="row d-flex flex-row align-items-center">
 										<div class="col d-flex justify-content-center">
 											<div>
-												<span class="icon med burning"></span>
 												<span style="font-size: 64px;">
-													<span th:text="${movie.audienceScore}">10</span>/10
+													<span th:text="${movie.audienceScore*10}">10</span>%
 												</span>
 											</div>
 										</div>
 										<div class="col">
 											<div>
-												Average Rating: <span>3.5</span>/10
+												Average Rating: <span th:text="${movie.audienceScore}">10</span>/10
 											</div>
 											<div>
 												User Ratings: <span th:text="${movie.getAudienceReviews().size()}">1</span>
@@ -147,7 +139,7 @@
 									<div class="celebrity-list row no-gutters">
 										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${movie.cast}">
 											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
-												<img src="/images/thumbnail.png" th:src="${character.actor.portrait}" style="max-height: 50px; width: auto;">
+												<img src="/images/thumbnail.png" th:src="@{character.actor.portrait}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
@@ -213,9 +205,6 @@
 							<h5 class="section-header">ADD YOUR RATING</h5>
 							<div class="row flex-nowrap align-items-stretch">
 								<!-- user review block -->
-								<div class="col-auto">
-									<img src="/images/thumbnail.png" style="width: 90px; height: 90px;">
-								</div>
 								<div class="col d-flex flex-column justify-content-between">
 									<div class="d-flex align-items-center">
 										<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
@@ -231,6 +220,10 @@
 											<option value="9">9</option>
 											<option value="10">10</option>
 										</select>
+										<div class="form-check" th:if="${session.currentUser.role.name() == 'CRITIC'}">
+											<input type="checkbox" class="form-check-input" id="is-blazing">
+											<label class="form-check-label" for="is-blazing">Blazing?</label>
+										</div>
 										<div class="btn-group" id="wts-ni">
 											<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 100px;" th:unless="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span></label>
 											<label class="btn btn-sm btn-success active" id="want-to-see" style="width: 100px;" th:if="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-check"></i> Will See!</span></label>
@@ -252,13 +245,9 @@
 							<h5 class="section-header">EDIT YOUR RATING</h5>
 							<div class="row flex-nowrap align-items-stretch">
 								<!-- user review block -->
-								<div class="col-auto">
-									<img src="/images/thumbnail.png" style="width: 90px; height: 90px;">
-								</div>
 								<div class="col d-flex flex-column justify-content-between">
 									<div class="d-flex align-items-center">
 										<select id="rating-number" class="form-control form-control-sm" style="width: 60px;">
-											<option value="0" selected>Rate...</option>
 											<option value="1" th:selected="${currentReview.score} == 1">1</option>
 											<option value="2" th:selected="${currentReview.score} == 2">2</option>
 											<option value="3" th:selected="${currentReview.score} == 3">3</option>
@@ -270,6 +259,10 @@
 											<option value="9" th:selected="${currentReview.score} == 9">9</option>
 											<option value="10" th:selected="${currentReview.score} == 10">10</option>
 										</select>
+										<div class="form-check" th:if="${session.currentUser.role.name() == 'CRITIC'}">
+											<input type="checkbox" class="form-check-input" id="is-blazing" th:checked="${currentReview.isBlazing}">
+											<label class="form-check-label" for="is-blazing">Blazing?</label>
+										</div>
 										<div class="btn-group" id="wts-ni">
 											<label class="btn btn-sm btn-dark" id="want-to-see" style="width: 100px;" th:unless="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-plus"></i> Want To See</span></label>
 											<label class="btn btn-sm btn-success active" id="want-to-see" style="width: 100px;" th:if="${#sets.contains(session.currentUser.getWishlist(),movie)}"><span class="button-text"><i class="fa fa-check"></i> Will See!</span></label>
@@ -384,7 +377,7 @@
 											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:href="@{cr.publication}">Publication</span>
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <a th:if="${cr.publication}" th:href="@{cr.publication}">Publication</a>
 										</div>
 										<div class="modal fade" th:id="'report-cr'+${cr.id}" tabindex="-1" role="dialog" aria-hidden="true">
 											<div class="modal-dialog modal-dialog-centered" role="document">
@@ -578,12 +571,6 @@
 			</div>
 		</div>
 	</div>
-	<nav class="navbar d-none">
-		<button type="button" class="btn btn-light">Edit
-			Page...</button>
-		<button type="button" class="btn btn-danger">Delete
-			Page</button>
-	</nav>
 	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
