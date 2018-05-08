@@ -30,30 +30,50 @@ public class BrowseService {
 		case "blazing-movies":
 			List<Movie> findMovies = findBlazingMovieReleases();
 			model.addAttribute("movies", findMovies);
+			model.addAttribute("tvs", null);
+			model.addAttribute("browseTitle", "Blazing Movies Picks");
 			break;
 		case "opening-movies":
 			List<Movie> weeklyMovies = findWeeklyMovieReleases();
 			model.addAttribute("movies", weeklyMovies);
+			model.addAttribute("tvs", null);
+			model.addAttribute("browseTitle", "Opening This Week");
 			break;
 		case "coming-soon":
 			List<Movie> upcomingMovies = findUpcomingMovieReleases();
 			model.addAttribute("movies", upcomingMovies);
+			model.addAttribute("tvs", null);
+			model.addAttribute("browseTitle", "Coming Soon To Theaters");
+			break;
+		case "all-movies":
+			List<Movie> Movies = findAllMoviesReleases();
+			model.addAttribute("movies", Movies);
+			model.addAttribute("tvs", null);
+			model.addAttribute("browseTitle", "All Movies");
 			break;
 		case "blazing-tv":
 			List<TV> blazingTV = findBlazingTVReleases();
 			model.addAttribute("tvs",blazingTV);
+			model.addAttribute("movies", null);
+			model.addAttribute("browseTitle", "Blazing TV Picks");
 			break;
 		case "new-tv":
 			List<TV> newTV = findWeeklyTVReleases();
 			model.addAttribute("tvs", newTV);
+			model.addAttribute("movies", null);
+			model.addAttribute("browseTitle", "New TV Tonight");
 			break;
 		case "all-tv":
-			List<TV> Tvs = findAllTVReleases();
-			model.addAttribute("tvs", Tvs);
+			List<TV> TVs = findAllTVReleases();
+			model.addAttribute("tvs", TVs);
+			model.addAttribute("movies", null);
+			model.addAttribute("browseTitle", "All TV");
 			break;
 		case "popular-tv":
 			List<TV> popularTV = findPopularTVReleases();
 			model.addAttribute("tvs", popularTV);
+			model.addAttribute("movies", null);
+			model.addAttribute("browseTitle", "Most Popular TV");
 			break;
 		}
 	}

@@ -33,31 +33,31 @@
 							<h5 class="section-header">IN THEATERS</h5>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="blazing-movies-tab" href="#" th:href="@{/browse?type=blazing-movies}">Blazing Movie Picks</a>
+							<a class="nav-link" id="blazing-movies-tab" href="#" th:href="@{/browse?type=blazing-movies}" th:classappend="${browseTitle.equals('Blazing Movie Picks')} ? 'active' : ''">Blazing Movie Picks</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="opening-movies-tab" href="#" th:href="@{/browse?type=opening-movies}">Opening This Week</a>
+							<a class="nav-link" id="opening-movies-tab" href="#" th:href="@{/browse?type=opening-movies}" th:classappend="${browseTitle.equals('Opening This Week')} ? 'active' : ''">Opening This Week</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="coming-soon-tab" href="#" th:href="@{/browse?type=coming-soon}">Coming Soon</a>
+							<a class="nav-link" id="coming-soon-tab" href="#" th:href="@{/browse?type=coming-soon}" th:classappend="${browseTitle.equals('Coming Soon To Theaters')} ? 'active' : ''">Coming Soon</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="all-movies-tab" href="#" th:href="@{/browse?type=all-movies}">All Movies</a>
+							<a class="nav-link" id="all-movies-tab" href="#" th:href="@{/browse?type=all-movies}" th:classappend="${browseTitle.equals('All Movies')} ? 'active' : ''">All Movies</a>
 						</li>
 						<li class="pt-2">
 							<h5 class="section-header">TV</h5>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="blazing-tv-tab" href="#" th:href="@{/browse?type=blazing-tv}">Blazing TV Picks</a>
+							<a class="nav-link" id="blazing-tv-tab" href="#" th:href="@{/browse?type=blazing-tv}" th:classappend="${browseTitle.equals('Blazing TV Picks')} ? 'active' : ''">Blazing TV Picks</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="new-tv-tab" href="#" th:href="@{/browse?type=new-tv}">New TV Tonight</a>
+							<a class="nav-link" id="new-tv-tab" href="#" th:href="@{/browse?type=new-tv}" th:classappend="${browseTitle.equals('New TV Tonight')} ? 'active' : ''">New TV Tonight</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="popular-tv-tab" href="#" th:href="@{/browse?type=popular-tv}">Most Popular TV</a>
+							<a class="nav-link" id="popular-tv-tab" href="#" th:href="@{/browse?type=popular-tv}" th:classappend="${browseTitle.equals('Most Popular TV')} ? 'active' : ''">Most Popular TV</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="all-tv-tab" href="#" th:href="@{/browse?type=all-tv}">All TV</a>
+							<a class="nav-link" id="all-tv-tab" href="#" th:href="@{/browse?type=all-tv}" th:classappend="${browseTitle.equals('All TV')} ? 'active' : ''">All TV</a>
 						</li>
 					</ul>
 				</section>
@@ -65,14 +65,24 @@
 
 			<div class="col-12 col-md-auto main-content" id="browse-content">
 				<section>
-					<h5 class="section-header" id="browse-title"></h5>
-					<div class="results-list" id="browse-list">
-						<a class="details-link btn text-center" th:each="movie : ${browseAllMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
+					<h5 class="section-header" th:text="${browseTitle}"></h5>
+					<div class="results-list" id="browse-list" th:if="${movies}">
+						<a class="details-link btn text-center" th:each="movie : ${movies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 							<img class="image" src="/images/peter-rabbit.jpg">
 							<div class="name text-truncate" th:text="${movie.title}">Peter Rabbit</div>
 							<div>
 								<span class="icon tiny burning"></span>
 								<span th:text="${movie.blazingScore}">70</span>%
+							</div>
+						</a>
+					</div>
+					<div class="results-list" id="browse-list" th:if="${tvs}">
+						<a class="details-link btn text-center" th:each="tv : ${tvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+							<img class="image" src="/images/peter-rabbit.jpg">
+							<div class="name text-truncate" th:text="${tv.title}">Peter Rabbit</div>
+							<div>
+								<span class="icon tiny burning"></span>
+								<span th:text="${tv.blazingScore}">70</span>%
 							</div>
 						</a>
 					</div>
@@ -91,55 +101,5 @@
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>
 <script type="application/javascript" th:src="@{/js/main.js}"></script>
 <script type="application/javascript" th:src="@{/js/media-per-page.js}"></script>
-<script type="application/javascript" th:src="@{/js/get-query-string.js}"></script>
-<script>
-	/* function getBrowseType(){
-		var browseData = getDataFromQueryString();
-		var browseTab = "#"+browseData["type"]+"-tab";
-		$(browseTab).addClass('show active');
-		var browseTitle;
-		switch(browseData["type"]){
-			case "blazing-movies":
-				browseTitle = "BLAZING MOVIE PICKS";
-				break;
-			case "opening-movies":
-				browseTitle = "OPENING THIS WEEK";
-				break;
-			case "coming-soon":
-				browseTitle = "COMING SOON TO THEATERS";
-				break;
-			case "all-movies":
-				browseTitle = "BROWSE ALL MOVIES";
-				break;
-			case "blazing-tv":
-				browseTitle = "BLAZING TV PICKS";
-				break;
-			case "new-tv":
-				browseTitle = "NEW TV TONIGHT";
-				break;
-			case "popular-tv":
-				browseTitle = "MOST POPULAR TV";
-				break;
-			case "all-tv":
-				browseTitle = "BROWSE ALL TV";
-				break;
-			default:
-				break;
-		}
- 		$("#browse-title").html(browseTitle);
-	} */
-
-	$(function(){
-		getBrowseType();
-
-		/* $("#browse-tabs > .nav-item > .nav-link").on('click',function(){
-			$("#browse-tabs > .nav-item > .nav-link").removeClass("active");
-			var browseType = $(this).attr("id");
-			var stateObj = {};
-			history.pushState(stateObj,"","/browse?type="+browseType.substring(0,browseType.length-4));
-			getBrowseType();
-		}); */
-	});
-</script>
 
 </html>
