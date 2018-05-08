@@ -123,20 +123,84 @@
 					<form class="p-2 border">
 						<h5>Change Password</h5>
 						<div class="form-group">
-							<label for="enter-current-ps">Enter Current Password</label>
-							<input type="text" class="form-control" id="enter-current-ps" aria-describedby="enter-current-ps">
+							<label for="enter-current-pw">Enter Current Password</label>
+							<input type="password" class="form-control" id="enter-cur-pw" aria-describedby="enter-current-pw">
+							<small class="text-danger" id="no-curpw-change" style="display: none;">Please enter your current password</small>
 						</div>
 						<div class="form-group">
-							<label for="enter-new-ps">Enter New Password</label>
-							<input type="text" class="form-control" id="enter-new-ps" aria-describedby="enter-new-ps">
+							<label for="enter-new-pw">Enter New Password</label>
+							<input type="password" class="form-control" id="enter-new-pw" aria-describedby="enter-new-pw">
+							<small class="text-danger" id="no-newpw-change" style="display: none;">Please enter your new password</small>
 						</div>
 						<div class="form-group">
-							<label for="reenter-new-ps">Re-enter New Password</label>
-							<input type="text" class="form-control" id="reenter-new-ps" aria-describedby="reenter-new-ps">
+							<label for="reenter-new-pw">Re-enter New Password</label>
+							<input type="password" class="form-control" id="reenter-new-pw" aria-describedby="reenter-new-pw">
+							<small class="text-danger" id="no-renewpw-change" style="display: none;">Please enter your password</small>
 						</div>
-						<button class="btn btn-secondary">Update Password</button>
+						<button class="btn btn-secondary" id="update-pw-button">Update Password</button>
+						<small class="text-danger" id="fail-pw-change" style="display: none;">Fail, try again</small>
 					</form>
 					<script>
+					$(function(){
+						$("#update-pw-button").on("click",function(e){
+							e.preventDefault();
+							$("#no-curpw-change").hide();
+							$("#no-newpw-change").hide();
+							$("#no-renewpw-change").hide();
+							$("#fail-pw-change").hide();
+							$("#update-pw-button").css("background-color","#aaaaaa");
+							$("#update-pw-button").attr("disabled",true);
+							var curPass = $("#enter-cur-pw").val();
+							var newPass = $("#enter-new-pw").val();
+							var renewPass = $("#reenter-new-pw").val();
+							var fail = false;
+							if (curPass.length == 0){
+								$("#no-curpw-change").show();
+								fail = true;
+							}
+							if (newPass.length == 0){
+								$("#no-newpw-change").show();
+								fail = true;
+							}
+							if (renewPass.length == 0){
+								$("#no-renewpw-change").show();
+								fail = true;
+							}
+							if (fail){
+								$("#update-user-button").css("background-color","#6c757d");
+								$("#update-user-button").attr("disabled",false);
+								return;
+							}
+							var passwords = {};
+							passwords["oldPass"] = curPass;
+							passwords["newPass"] = newPass;
+							passwords["confirmNewPass"] = renewPass;
+							var url = location.href.substr(0, location.href.lastIndexOf("/"));
+							var jsonString = JSON.stringify(passwords);
+							$.ajax({
+								type : "POST",
+								contentType : "application/json",
+								url : url+"/changepass",
+								data : jsonString,
+								success : function(data) {
+									if (data == true){
+										$("#enter-cur-pw").val("");
+										$("#enter-new-pw").val("");
+										$("#reenter-new-pw").val("");
+									}else{
+										$("#fail-pw-change").show();
+									}
+								},
+								error : function(e) {
+									console.log("ERROR: ", e);
+								},
+								complete : function() {
+									$("#update-pw-button").css("background-color","#6c757d");
+									$("#update-pw-button").attr("disabled",false);
+								}
+							});
+						});
+					});
 					</script>
 				</section>
 			</div>

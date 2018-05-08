@@ -149,6 +149,7 @@ public class UserService {
 	public boolean changePassword(String password, String newPass, String confirm, User user) {
 		if (user == null)
 		{
+			System.out.println("user is null");
 			return false;
 		}
 		else
@@ -178,6 +179,9 @@ public class UserService {
 			}
 			else
 			{
+				System.out.println("wrong current password");
+				System.out.println(encoded);
+				System.out.println(user.getPassword());
 				return false;
 			}
 		}
