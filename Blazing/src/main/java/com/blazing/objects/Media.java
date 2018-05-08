@@ -38,7 +38,7 @@ public abstract class Media implements Comparable<Media>{
 	private double audienceScore;
 	private double blazingScore;
 	private Set<File> videos;
-	private Set<ImageEntity> images;
+	private Set<String> images;
 	private Set<MovieCharacter> cast;
 	private Set<Review> reviews;
 	private Genre genre;
@@ -119,12 +119,10 @@ public abstract class Media implements Comparable<Media>{
 		this.videos = videos;
 	}
 	
-	@OneToMany
-	@JoinColumn(name="IMAGES")
-	public Set<ImageEntity> getImages() {
+	public Set<String> getImages() {
 		return images;
 	}
-	public void setImages(Set<ImageEntity> images) {
+	public void setImages(Set<String> images) {
 		this.images = images;
 	}
 	
