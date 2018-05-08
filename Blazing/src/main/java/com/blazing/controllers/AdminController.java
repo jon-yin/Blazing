@@ -71,7 +71,7 @@ public class AdminController {
 	@ResponseBody
 	public boolean dismissReview(@RequestBody long reviewId)
 	{
-		return reviewService.removeReview(reviewId, false);
+		return reviewService.dismissFlag(reviewId);
 	}
 	
 }
