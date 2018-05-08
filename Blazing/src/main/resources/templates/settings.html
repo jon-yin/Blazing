@@ -29,36 +29,97 @@
 			<div class="col">
 				<section>
 					<h5 class="section-header">SETTINGS</h5>
-					<h3 th:text="|${session.currentUser.firstName} ${session.currentUser.lastName}|">first and last name</h3>
+					<h3 class="ml-2" th:text="|${session.currentUser.firstName} ${session.currentUser.lastName}|">first and last name</h3>
 					<form class="p-2 border mb-2">
 						<h5>Change Profile</h5>
 						<div class="form-group">
-							<label for="change-pic">Change Profile Picture</label>
-							<div class="input-group">
-								<div class="custom-file">
-									<input type="file" class="form-control-file" id="change-pic" accept=".jpg,.jpeg,.png,.gif">
-									<label class="custom-file-label" for="change-pic">Choose file</label>
-								</div>
-							</div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="change-first">Change First Name</label>
 							<input type="text" class="form-control" id="change-first" aria-describedby="change-first">
 						</div>
 						<div class="form-group">
 							<label for="change-last">Change Last Name</label>
 							<input type="text" class="form-control" id="change-last" aria-describedby="change-last">
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label for="change-email">Change Email</label>
-							<input type="text" class="form-control" id="change-email" aria-describedby="change-email">
+							<input type="text" class="form-control" id="change-email" aria-describedby="change-email" th:placeholder="${session.currentUser.emailAddress}">
+							<small class="text-danger" id="no-em-change" style="display: none;">Please enter your email</small>
+							<small class="text-danger" id="inv-em-change" style="display: none;">Invalid email</small>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="change-info">Update User Info</label>
 							<textarea class="form-control" id="change-info" rows="5" style="resize: none;"></textarea>
-						</div>
-						<button class="btn btn-dark">Update User Info</button>
+						</div> -->
+						<button class="btn btn-secondary" id="update-user-button">Update User Info</button>
 					</form>
+					<div class="modal fade" id="nemail-reverify" tabindex="-1" role="dialog" aria-labelledby="#reverifyLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="reverifyLabel">Success!</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="location.reload()">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									You have successfully changed your email. 
+									We have sent a verification email to you. 
+									Please check your new email.
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+					$(function(){
+						$("#update-user-button").on("click",function(e){
+							e.preventDefault();
+							$("#no-em-change").hide();
+							$("#inv-em-change").hide();
+							$("#update-user-button").css("background-color","#aaaaaa");
+							$("#update-user-button").attr("disabled",true);
+							var newEmail = $("#change-email").val();
+							var fail = false;
+							if (newEmail.length == 0){
+								$("#no-em-change").show();
+								fail = true;
+							}
+							if (newEmail.match(emailRegex) == null && newEmail.length != 0){
+								$("#inv-em-change").show();
+								fail = true;
+							}
+							if (fail){
+								$("#update-user-button").css("background-color","#6c757d");
+								$("#update-user-button").attr("disabled",false);
+								return;
+							}
+							var url = location.href.substr(0, location.href.lastIndexOf("/"));
+							$.ajax({
+								type : "POST",
+								contentType : "application/json",
+								url : url+"/changeemail",
+								data : ""+newEmail,
+								success : function(data) {
+									if (data == true){
+										$("#change-email").val("");
+									}else{
+										$("#inv-em-change").show();
+									}
+								},
+								error : function(e) {
+									console.log("ERROR: ", e);
+								},
+								complete : function() {
+									$("#update-user-button").css("background-color","#6c757d");
+									$("#update-user-button").attr("disabled",false);
+									$("#nemail-reverify").modal("show");
+								}
+							});
+						});
+					});
+					</script>
+					
 					<form class="p-2 border">
 						<h5>Change Password</h5>
 						<div class="form-group">
@@ -73,8 +134,10 @@
 							<label for="reenter-new-ps">Re-enter New Password</label>
 							<input type="text" class="form-control" id="reenter-new-ps" aria-describedby="reenter-new-ps">
 						</div>
-						<button class="btn btn-dark">Update Password</button>
+						<button class="btn btn-secondary">Update Password</button>
 					</form>
+					<script>
+					</script>
 				</section>
 			</div>
 		</div>

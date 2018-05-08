@@ -134,17 +134,17 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar">
+		<nav class="navbar" th:if="${session.currentUser}">
 			<div class="mr-auto">
 				<button type="button" class="btn btn-light" id="acc-settings">Account Settings</button>
-				<button type="button" class="btn btn-light" id="admin-page" th:if="${session.currentUser} and ${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Admin Page</button>
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie">Add a Movie</button>
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv">Add a TV Show</button>
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity">Add a Celebrity</button>
+				<button type="button" class="btn btn-light" id="admin-page" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Admin Page</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Movie</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a TV Show</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Celebrity</button>
 			</div>
 			<div class="ml-auto">
-				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ban-user">Ban</button>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-account">Delete</button>
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ban-user" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Ban</button>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-account" th:if="${foundUser.equals(session.currentUser)}">Delete</button>
 			</div>
 		</nav>
 		

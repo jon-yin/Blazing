@@ -168,6 +168,7 @@ public class UserService {
 						user.setPassword(encodednewPass);
 						User newUser = saveUserState(user);
 						sesService.updateCurrentUser(newUser);
+						return true;
 					}
 					else
 					{
@@ -180,7 +181,6 @@ public class UserService {
 				return false;
 			}
 		}
-		return false;
 	}
 
 	public boolean blockUser(User target, User user) {
