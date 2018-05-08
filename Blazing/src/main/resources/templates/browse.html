@@ -39,9 +39,6 @@
 							<a class="nav-link" id="opening-movies-tab" href="#" th:href="@{/browse?type=opening-movies}">Opening This Week</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="top-bo-tab" href="#" th:href="@{/browse?type=top-bo}">Top Box Office</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" id="coming-soon-tab" href="#" th:href="@{/browse?type=coming-soon}">Coming Soon</a>
 						</li>
 						<li class="nav-item">
@@ -69,24 +66,6 @@
 			<div class="col-12 col-md-auto main-content" id="browse-content">
 				<section>
 					<h5 class="section-header" id="browse-title"></h5>
-					<section class="border" id="browse-filters">
-						<div class="d-flex flex-row">
-							<!-- temporary filters -->
-							<div class="slider-container border-left border-right px-2">
-								Critics Scores: From
-								<input type="number" min="0" max="100" value="0"> To
-								<input type="number" min="0" max="100" value="100">
-							</div>
-							<div class="slider-container border-left border-right px-2">
-								Audience Scores: From
-								<input type="number" min="0" max="100" value="0"> To
-								<input type="number" min="0" max="100" value="100">
-							</div>
-							<div class="border-left border-right px-2">
-								Genre:
-							</div>
-						</div>
-					</section>
 					<div class="results-list" id="browse-list">
 						<a class="details-link btn text-center" th:each="movie : ${browseAllMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 							<img class="image" src="/images/peter-rabbit.jpg">
@@ -114,7 +93,7 @@
 <script type="application/javascript" th:src="@{/js/media-per-page.js}"></script>
 <script type="application/javascript" th:src="@{/js/get-query-string.js}"></script>
 <script>
-	function getBrowseType(){
+	/* function getBrowseType(){
 		var browseData = getDataFromQueryString();
 		var browseTab = "#"+browseData["type"]+"-tab";
 		$(browseTab).addClass('show active');
@@ -125,9 +104,6 @@
 				break;
 			case "opening-movies":
 				browseTitle = "OPENING THIS WEEK";
-				break;
-			case "top-bo":
-				browseTitle = "TOP BOX OFFICE";
 				break;
 			case "coming-soon":
 				browseTitle = "COMING SOON TO THEATERS";
@@ -151,7 +127,7 @@
 				break;
 		}
  		$("#browse-title").html(browseTitle);
-	}
+	} */
 
 	$(function(){
 		getBrowseType();

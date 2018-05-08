@@ -2,6 +2,8 @@ function review(score, body){
 	var reviewDetails = {};
 	reviewDetails["score"] = score;
 	reviewDetails["body"] = body;
+	if(!$("#is-blazing").length)
+		reviewDetails["isBlazing"] = document.getElementById('is-blazing').checked;
 	var jsonString = JSON.stringify(reviewDetails);
 	$.ajax({
 		type : "POST",
@@ -26,7 +28,7 @@ $(function(){
 		if (score == "0"){
 			$("#submit-fail").show();
 		}else{
-			review(score,$("#rvw-desc").val());
+			review(score, $("#rvw-desc").val());
 		}
 	});
 });
