@@ -8,49 +8,50 @@ try {
   // var json = JSON.parse(fs.readFileSync(process.argv[2]));
   // var json = JSON.parse(fs.readFileSync(inputfile));
   let json = [{
-    url: '/List_of_Academy_Award-winning_films' } ];
+    url: '/List_of_Academy_Award-winning_films'
+  }];
 
-    var ms = new MediaScraper(json, wikiOptions);
+  var ms = new MediaScraper(json, wikiOptions);
 
-    ms.bigSearch()
-      .then(result => {
+  ms.bigSearch()
+    .then(result => {
 
-        let checkProperties = function (obj) {
-          for (var key in obj) {
+      let checkProperties = function (obj) {
+        for (var key in obj) {
 
-            if (wikiOptions.notRequired.includes(key)) {
-              continue;
-            }
-
-            if (Array.isArray(obj[key]) && obj[key].length < 1) {
-              return false;
-            }
-            if (obj[key] === "") {
-              return false;
-            }
+          if (wikiOptions.notRequired.includes(key)) {
+            continue;
           }
-          return true;
-        };
 
-        let cleanedResults = [];
-        for (let i = 0; i < result.length; i++) {
-          if (checkProperties(result[i])) {
-            cleanedResults.push(result[i]);
+          if (Array.isArray(obj[key]) && obj[key].length < 1) {
+            return false;
+          }
+          if (obj[key] === "") {
+            return false;
           }
         }
+        return true;
+      };
 
-        // if result is clean start getting large media like images, videos
+      let cleanedResults = [];
+      for (let i = 0; i < result.length; i++) {
+        if (checkProperties(result[i])) {
+          cleanedResults.push(result[i]);
+        }
+      }
 
-        console.log(`Parsed ${result.length} urls, after clean up, got ${cleanedResults.length} results`)
+      // if result is clean start getting large media like images, videos
 
-        let f = JSON.stringify(cleanedResults, null, 4);
-        // fs.writeFileSync(process.argv[3], f);
-        fs.writeFileSync('winners.json', f);
-      });
-  }
+      console.log(`Parsed ${result.length} urls, after clean up, got ${cleanedResults.length} results`)
+
+      let f = JSON.stringify(cleanedResults[0], null, 4);
+      // fs.writeFileSync(process.argv[3], f);
+      fs.writeFileSync('winners.json', f);
+    });
+}
 catch (e) {
-    console.error(e);
-  }
+  console.error(e);
+}
 
 //   // MediaScraper.getMovieInfo(movieCriticsUrl, options);
 //   // const ws = fs.createWriteStream('img.jpg')

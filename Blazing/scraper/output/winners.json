@@ -1,547 +1,545 @@
-[
-    {
-        "url": "/List_of_Academy_Award-winning_films",
-        "awardWinners": [
-            {
-                "filmName": "The Shape of Water",
-                "yearWon": "2017",
-                "awards": "4",
-                "nominations": "13"
-            },
-            {
-                "filmName": "Moonlight",
-                "yearWon": "2016",
-                "awards": "3",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Spotlight",
-                "yearWon": "2015",
-                "awards": "2",
-                "nominations": "6"
-            },
-            {
-                "filmName": "Birdman",
-                "yearWon": "2014",
-                "awards": "4",
-                "nominations": "9"
-            },
-            {
-                "filmName": "12 Years a Slave",
-                "yearWon": "2013",
-                "awards": "3",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Argo",
-                "yearWon": "2012",
-                "awards": "3",
-                "nominations": "7"
-            },
-            {
-                "filmName": "The Artist",
-                "yearWon": "2011",
-                "awards": "5",
-                "nominations": "10"
-            },
-            {
-                "filmName": "The King's Speech",
-                "yearWon": "2010",
-                "awards": "4",
-                "nominations": "12"
-            },
-            {
-                "filmName": "The Hurt Locker",
-                "yearWon": "2009",
-                "awards": "6",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Slumdog Millionaire",
-                "yearWon": "2008",
-                "awards": "8",
-                "nominations": "10"
-            },
-            {
-                "filmName": "No Country for Old Men",
-                "yearWon": "2007",
-                "awards": "4",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Departed",
-                "yearWon": "2006",
-                "awards": "4",
-                "nominations": "5"
-            },
-            {
-                "filmName": "Crash",
-                "yearWon": "2005",
-                "awards": "3",
-                "nominations": "6"
-            },
-            {
-                "filmName": "Million Dollar Baby",
-                "yearWon": "2004",
-                "awards": "4",
-                "nominations": "7"
-            },
-            {
-                "filmName": "The Lord of the Rings: The Return of the King",
-                "yearWon": "2003",
-                "awards": "11",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Chicago",
-                "yearWon": "2002",
-                "awards": "6",
-                "nominations": "13"
-            },
-            {
-                "filmName": "A Beautiful Mind",
-                "yearWon": "2001",
-                "awards": "4",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Gladiator",
-                "yearWon": "2000",
-                "awards": "5",
-                "nominations": "12"
-            },
-            {
-                "filmName": "American Beauty",
-                "yearWon": "1999",
-                "awards": "5",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Shakespeare in Love",
-                "yearWon": "1998",
-                "awards": "7",
-                "nominations": "13"
-            },
-            {
-                "filmName": "Titanic",
-                "yearWon": "1997",
-                "awards": "11",
-                "nominations": "14"
-            },
-            {
-                "filmName": "The English Patient",
-                "yearWon": "1996",
-                "awards": "9",
-                "nominations": "12"
-            },
-            {
-                "filmName": "Braveheart",
-                "yearWon": "1995",
-                "awards": "5",
-                "nominations": "10"
-            },
-            {
-                "filmName": "Forrest Gump",
-                "yearWon": "1994",
-                "awards": "6",
-                "nominations": "13"
-            },
-            {
-                "filmName": "Schindler's List",
-                "yearWon": "1993",
-                "awards": "7",
-                "nominations": "12"
-            },
-            {
-                "filmName": "Unforgiven",
-                "yearWon": "1992",
-                "awards": "4",
-                "nominations": "9"
-            },
-            {
-                "filmName": "The Silence of the Lambs",
-                "yearWon": "1991",
-                "awards": "5",
-                "nominations": "7"
-            },
-            {
-                "filmName": "Dances with Wolves",
-                "yearWon": "1990",
-                "awards": "7",
-                "nominations": "12"
-            },
-            {
-                "filmName": "Driving Miss Daisy",
-                "yearWon": "1989",
-                "awards": "4",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Rain Man",
-                "yearWon": "1988",
-                "awards": "4",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Last Emperor",
-                "yearWon": "1987",
-                "awards": "9",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Platoon",
-                "yearWon": "1986",
-                "awards": "4",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Out of Africa",
-                "yearWon": "1985",
-                "awards": "7",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Amadeus",
-                "yearWon": "1984",
-                "awards": "8",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Terms of Endearment",
-                "yearWon": "1983",
-                "awards": "5",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Gandhi",
-                "yearWon": "1982",
-                "awards": "8",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Chariots of Fire",
-                "yearWon": "1981",
-                "awards": "4",
-                "nominations": "7"
-            },
-            {
-                "filmName": "Ordinary People",
-                "yearWon": "1980",
-                "awards": "4",
-                "nominations": "6"
-            },
-            {
-                "filmName": "Kramer vs. Kramer",
-                "yearWon": "1979",
-                "awards": "5",
-                "nominations": "9"
-            },
-            {
-                "filmName": "The Deer Hunter",
-                "yearWon": "1978",
-                "awards": "5",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Annie Hall",
-                "yearWon": "1977",
-                "awards": "4",
-                "nominations": "5"
-            },
-            {
-                "filmName": "Rocky",
-                "yearWon": "1976",
-                "awards": "3",
-                "nominations": "10"
-            },
-            {
-                "filmName": "One Flew over the Cuckoo's Nest",
-                "yearWon": "1975",
-                "awards": "5",
-                "nominations": "9"
-            },
-            {
-                "filmName": "The Godfather Part II",
-                "yearWon": "1974",
-                "awards": "6",
-                "nominations": "11"
-            },
-            {
-                "filmName": "The Sting",
-                "yearWon": "1973",
-                "awards": "7",
-                "nominations": "10"
-            },
-            {
-                "filmName": "The Godfather",
-                "yearWon": "1972",
-                "awards": "3",
-                "nominations": "10[4]"
-            },
-            {
-                "filmName": "The French Connection",
-                "yearWon": "1971",
-                "awards": "5",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Patton",
-                "yearWon": "1970",
-                "awards": "7",
-                "nominations": "10"
-            },
-            {
-                "filmName": "Midnight Cowboy",
-                "yearWon": "1969",
-                "awards": "3",
-                "nominations": "7"
-            },
-            {
-                "filmName": "Oliver!",
-                "yearWon": "1968",
-                "awards": "5 (1)",
-                "nominations": "11"
-            },
-            {
-                "filmName": "In the Heat of the Night",
-                "yearWon": "1967",
-                "awards": "5",
-                "nominations": "7"
-            },
-            {
-                "filmName": "A Man for All Seasons",
-                "yearWon": "1966",
-                "awards": "6",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Sound of Music",
-                "yearWon": "1965",
-                "awards": "5",
-                "nominations": "10"
-            },
-            {
-                "filmName": "All About Eve",
-                "yearWon": "1950",
-                "awards": "6",
-                "nominations": "14"
-            },
-            {
-                "filmName": "All Quiet on the Western Front",
-                "yearWon": "1929/30",
-                "awards": "2",
-                "nominations": "4"
-            },
-            {
-                "filmName": "All the King's Men",
-                "yearWon": "1949",
-                "awards": "3",
-                "nominations": "7"
-            },
-            {
-                "filmName": "An American in Paris",
-                "yearWon": "1951",
-                "awards": "6",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Apartment",
-                "yearWon": "1960",
-                "awards": "5",
-                "nominations": "10"
-            },
-            {
-                "filmName": "Around the World in 80 Days",
-                "yearWon": "1956",
-                "awards": "5",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Ben-Hur",
-                "yearWon": "1959",
-                "awards": "11",
-                "nominations": "12"
-            },
-            {
-                "filmName": "The Best Years of Our Lives",
-                "yearWon": "1946",
-                "awards": "7 (1)",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Bridge on the River Kwai",
-                "yearWon": "1957",
-                "awards": "7",
-                "nominations": "8"
-            },
-            {
-                "filmName": "The Broadway Melody",
-                "yearWon": "1928/29",
-                "awards": "1",
-                "nominations": "3"
-            },
-            {
-                "filmName": "Casablanca",
-                "yearWon": "1943",
-                "awards": "3",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Cavalcade",
-                "yearWon": "1932/33",
-                "awards": "3",
-                "nominations": "4"
-            },
-            {
-                "filmName": "Cimarron",
-                "yearWon": "1930/31",
-                "awards": "3",
-                "nominations": "7"
-            },
-            {
-                "filmName": "From Here to Eternity",
-                "yearWon": "1953",
-                "awards": "8",
-                "nominations": "13"
-            },
-            {
-                "filmName": "Gentleman's Agreement",
-                "yearWon": "1947",
-                "awards": "3",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Gigi",
-                "yearWon": "1958",
-                "awards": "9",
-                "nominations": "9"
-            },
-            {
-                "filmName": "Going My Way",
-                "yearWon": "1944",
-                "awards": "7",
-                "nominations": "10"
-            },
-            {
-                "filmName": "Gone with the Wind",
-                "yearWon": "1939",
-                "awards": "8 (2)",
-                "nominations": "13"
-            },
-            {
-                "filmName": "Grand Hotel",
-                "yearWon": "1931/32",
-                "awards": "1",
-                "nominations": "1"
-            },
-            {
-                "filmName": "The Great Ziegfeld",
-                "yearWon": "1936",
-                "awards": "3",
-                "nominations": "7"
-            },
-            {
-                "filmName": "The Greatest Show on Earth",
-                "yearWon": "1952",
-                "awards": "2",
-                "nominations": "5"
-            },
-            {
-                "filmName": "Hamlet",
-                "yearWon": "1948",
-                "awards": "4",
-                "nominations": "7"
-            },
-            {
-                "filmName": "How Green Was My Valley",
-                "yearWon": "1941",
-                "awards": "5",
-                "nominations": "10"
-            },
-            {
-                "filmName": "It Happened One Night",
-                "yearWon": "1934",
-                "awards": "5",
-                "nominations": "5"
-            },
-            {
-                "filmName": "Lawrence of Arabia",
-                "yearWon": "1962",
-                "awards": "7",
-                "nominations": "10"
-            },
-            {
-                "filmName": "The Life of Emile Zola",
-                "yearWon": "1937",
-                "awards": "3",
-                "nominations": "10"
-            },
-            {
-                "filmName": "The Lost Weekend",
-                "yearWon": "1945",
-                "awards": "4",
-                "nominations": "7"
-            },
-            {
-                "filmName": "Marty",
-                "yearWon": "1955",
-                "awards": "4",
-                "nominations": "8"
-            },
-            {
-                "filmName": "Mrs. Miniver",
-                "yearWon": "1942",
-                "awards": "6",
-                "nominations": "12"
-            },
-            {
-                "filmName": "Mutiny on the Bounty",
-                "yearWon": "1935",
-                "awards": "1",
-                "nominations": "8"
-            },
-            {
-                "filmName": "My Fair Lady",
-                "yearWon": "1964",
-                "awards": "8",
-                "nominations": "12"
-            },
-            {
-                "filmName": "On the Waterfront",
-                "yearWon": "1954",
-                "awards": "8",
-                "nominations": "12"
-            },
-            {
-                "filmName": "Rebecca",
-                "yearWon": "1940",
-                "awards": "2",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Tom Jones",
-                "yearWon": "1963",
-                "awards": "4",
-                "nominations": "10"
-            },
-            {
-                "filmName": "West Side Story",
-                "yearWon": "1961",
-                "awards": "10",
-                "nominations": "11"
-            },
-            {
-                "filmName": "Wings",
-                "yearWon": "1927/28",
-                "awards": "2",
-                "nominations": "2"
-            },
-            {
-                "filmName": "You Can't Take It with You",
-                "yearWon": "1938",
-                "awards": "2",
-                "nominations": "7"
-            }
-        ]
-    }
-]
+{
+    "url": "/List_of_Academy_Award-winning_films",
+    "awardWinners": [
+        {
+            "filmName": "The Shape of Water",
+            "yearWon": "2017",
+            "awards": "4",
+            "nominations": "13"
+        },
+        {
+            "filmName": "Moonlight",
+            "yearWon": "2016",
+            "awards": "3",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Spotlight",
+            "yearWon": "2015",
+            "awards": "2",
+            "nominations": "6"
+        },
+        {
+            "filmName": "Birdman",
+            "yearWon": "2014",
+            "awards": "4",
+            "nominations": "9"
+        },
+        {
+            "filmName": "12 Years a Slave",
+            "yearWon": "2013",
+            "awards": "3",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Argo",
+            "yearWon": "2012",
+            "awards": "3",
+            "nominations": "7"
+        },
+        {
+            "filmName": "The Artist",
+            "yearWon": "2011",
+            "awards": "5",
+            "nominations": "10"
+        },
+        {
+            "filmName": "The King's Speech",
+            "yearWon": "2010",
+            "awards": "4",
+            "nominations": "12"
+        },
+        {
+            "filmName": "The Hurt Locker",
+            "yearWon": "2009",
+            "awards": "6",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Slumdog Millionaire",
+            "yearWon": "2008",
+            "awards": "8",
+            "nominations": "10"
+        },
+        {
+            "filmName": "No Country for Old Men",
+            "yearWon": "2007",
+            "awards": "4",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Departed",
+            "yearWon": "2006",
+            "awards": "4",
+            "nominations": "5"
+        },
+        {
+            "filmName": "Crash",
+            "yearWon": "2005",
+            "awards": "3",
+            "nominations": "6"
+        },
+        {
+            "filmName": "Million Dollar Baby",
+            "yearWon": "2004",
+            "awards": "4",
+            "nominations": "7"
+        },
+        {
+            "filmName": "The Lord of the Rings: The Return of the King",
+            "yearWon": "2003",
+            "awards": "11",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Chicago",
+            "yearWon": "2002",
+            "awards": "6",
+            "nominations": "13"
+        },
+        {
+            "filmName": "A Beautiful Mind",
+            "yearWon": "2001",
+            "awards": "4",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Gladiator",
+            "yearWon": "2000",
+            "awards": "5",
+            "nominations": "12"
+        },
+        {
+            "filmName": "American Beauty",
+            "yearWon": "1999",
+            "awards": "5",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Shakespeare in Love",
+            "yearWon": "1998",
+            "awards": "7",
+            "nominations": "13"
+        },
+        {
+            "filmName": "Titanic",
+            "yearWon": "1997",
+            "awards": "11",
+            "nominations": "14"
+        },
+        {
+            "filmName": "The English Patient",
+            "yearWon": "1996",
+            "awards": "9",
+            "nominations": "12"
+        },
+        {
+            "filmName": "Braveheart",
+            "yearWon": "1995",
+            "awards": "5",
+            "nominations": "10"
+        },
+        {
+            "filmName": "Forrest Gump",
+            "yearWon": "1994",
+            "awards": "6",
+            "nominations": "13"
+        },
+        {
+            "filmName": "Schindler's List",
+            "yearWon": "1993",
+            "awards": "7",
+            "nominations": "12"
+        },
+        {
+            "filmName": "Unforgiven",
+            "yearWon": "1992",
+            "awards": "4",
+            "nominations": "9"
+        },
+        {
+            "filmName": "The Silence of the Lambs",
+            "yearWon": "1991",
+            "awards": "5",
+            "nominations": "7"
+        },
+        {
+            "filmName": "Dances with Wolves",
+            "yearWon": "1990",
+            "awards": "7",
+            "nominations": "12"
+        },
+        {
+            "filmName": "Driving Miss Daisy",
+            "yearWon": "1989",
+            "awards": "4",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Rain Man",
+            "yearWon": "1988",
+            "awards": "4",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Last Emperor",
+            "yearWon": "1987",
+            "awards": "9",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Platoon",
+            "yearWon": "1986",
+            "awards": "4",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Out of Africa",
+            "yearWon": "1985",
+            "awards": "7",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Amadeus",
+            "yearWon": "1984",
+            "awards": "8",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Terms of Endearment",
+            "yearWon": "1983",
+            "awards": "5",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Gandhi",
+            "yearWon": "1982",
+            "awards": "8",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Chariots of Fire",
+            "yearWon": "1981",
+            "awards": "4",
+            "nominations": "7"
+        },
+        {
+            "filmName": "Ordinary People",
+            "yearWon": "1980",
+            "awards": "4",
+            "nominations": "6"
+        },
+        {
+            "filmName": "Kramer vs. Kramer",
+            "yearWon": "1979",
+            "awards": "5",
+            "nominations": "9"
+        },
+        {
+            "filmName": "The Deer Hunter",
+            "yearWon": "1978",
+            "awards": "5",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Annie Hall",
+            "yearWon": "1977",
+            "awards": "4",
+            "nominations": "5"
+        },
+        {
+            "filmName": "Rocky",
+            "yearWon": "1976",
+            "awards": "3",
+            "nominations": "10"
+        },
+        {
+            "filmName": "One Flew over the Cuckoo's Nest",
+            "yearWon": "1975",
+            "awards": "5",
+            "nominations": "9"
+        },
+        {
+            "filmName": "The Godfather Part II",
+            "yearWon": "1974",
+            "awards": "6",
+            "nominations": "11"
+        },
+        {
+            "filmName": "The Sting",
+            "yearWon": "1973",
+            "awards": "7",
+            "nominations": "10"
+        },
+        {
+            "filmName": "The Godfather",
+            "yearWon": "1972",
+            "awards": "3",
+            "nominations": "10[4]"
+        },
+        {
+            "filmName": "The French Connection",
+            "yearWon": "1971",
+            "awards": "5",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Patton",
+            "yearWon": "1970",
+            "awards": "7",
+            "nominations": "10"
+        },
+        {
+            "filmName": "Midnight Cowboy",
+            "yearWon": "1969",
+            "awards": "3",
+            "nominations": "7"
+        },
+        {
+            "filmName": "Oliver!",
+            "yearWon": "1968",
+            "awards": "5 (1)",
+            "nominations": "11"
+        },
+        {
+            "filmName": "In the Heat of the Night",
+            "yearWon": "1967",
+            "awards": "5",
+            "nominations": "7"
+        },
+        {
+            "filmName": "A Man for All Seasons",
+            "yearWon": "1966",
+            "awards": "6",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Sound of Music",
+            "yearWon": "1965",
+            "awards": "5",
+            "nominations": "10"
+        },
+        {
+            "filmName": "All About Eve",
+            "yearWon": "1950",
+            "awards": "6",
+            "nominations": "14"
+        },
+        {
+            "filmName": "All Quiet on the Western Front",
+            "yearWon": "1929/30",
+            "awards": "2",
+            "nominations": "4"
+        },
+        {
+            "filmName": "All the King's Men",
+            "yearWon": "1949",
+            "awards": "3",
+            "nominations": "7"
+        },
+        {
+            "filmName": "An American in Paris",
+            "yearWon": "1951",
+            "awards": "6",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Apartment",
+            "yearWon": "1960",
+            "awards": "5",
+            "nominations": "10"
+        },
+        {
+            "filmName": "Around the World in 80 Days",
+            "yearWon": "1956",
+            "awards": "5",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Ben-Hur",
+            "yearWon": "1959",
+            "awards": "11",
+            "nominations": "12"
+        },
+        {
+            "filmName": "The Best Years of Our Lives",
+            "yearWon": "1946",
+            "awards": "7 (1)",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Bridge on the River Kwai",
+            "yearWon": "1957",
+            "awards": "7",
+            "nominations": "8"
+        },
+        {
+            "filmName": "The Broadway Melody",
+            "yearWon": "1928/29",
+            "awards": "1",
+            "nominations": "3"
+        },
+        {
+            "filmName": "Casablanca",
+            "yearWon": "1943",
+            "awards": "3",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Cavalcade",
+            "yearWon": "1932/33",
+            "awards": "3",
+            "nominations": "4"
+        },
+        {
+            "filmName": "Cimarron",
+            "yearWon": "1930/31",
+            "awards": "3",
+            "nominations": "7"
+        },
+        {
+            "filmName": "From Here to Eternity",
+            "yearWon": "1953",
+            "awards": "8",
+            "nominations": "13"
+        },
+        {
+            "filmName": "Gentleman's Agreement",
+            "yearWon": "1947",
+            "awards": "3",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Gigi",
+            "yearWon": "1958",
+            "awards": "9",
+            "nominations": "9"
+        },
+        {
+            "filmName": "Going My Way",
+            "yearWon": "1944",
+            "awards": "7",
+            "nominations": "10"
+        },
+        {
+            "filmName": "Gone with the Wind",
+            "yearWon": "1939",
+            "awards": "8 (2)",
+            "nominations": "13"
+        },
+        {
+            "filmName": "Grand Hotel",
+            "yearWon": "1931/32",
+            "awards": "1",
+            "nominations": "1"
+        },
+        {
+            "filmName": "The Great Ziegfeld",
+            "yearWon": "1936",
+            "awards": "3",
+            "nominations": "7"
+        },
+        {
+            "filmName": "The Greatest Show on Earth",
+            "yearWon": "1952",
+            "awards": "2",
+            "nominations": "5"
+        },
+        {
+            "filmName": "Hamlet",
+            "yearWon": "1948",
+            "awards": "4",
+            "nominations": "7"
+        },
+        {
+            "filmName": "How Green Was My Valley",
+            "yearWon": "1941",
+            "awards": "5",
+            "nominations": "10"
+        },
+        {
+            "filmName": "It Happened One Night",
+            "yearWon": "1934",
+            "awards": "5",
+            "nominations": "5"
+        },
+        {
+            "filmName": "Lawrence of Arabia",
+            "yearWon": "1962",
+            "awards": "7",
+            "nominations": "10"
+        },
+        {
+            "filmName": "The Life of Emile Zola",
+            "yearWon": "1937",
+            "awards": "3",
+            "nominations": "10"
+        },
+        {
+            "filmName": "The Lost Weekend",
+            "yearWon": "1945",
+            "awards": "4",
+            "nominations": "7"
+        },
+        {
+            "filmName": "Marty",
+            "yearWon": "1955",
+            "awards": "4",
+            "nominations": "8"
+        },
+        {
+            "filmName": "Mrs. Miniver",
+            "yearWon": "1942",
+            "awards": "6",
+            "nominations": "12"
+        },
+        {
+            "filmName": "Mutiny on the Bounty",
+            "yearWon": "1935",
+            "awards": "1",
+            "nominations": "8"
+        },
+        {
+            "filmName": "My Fair Lady",
+            "yearWon": "1964",
+            "awards": "8",
+            "nominations": "12"
+        },
+        {
+            "filmName": "On the Waterfront",
+            "yearWon": "1954",
+            "awards": "8",
+            "nominations": "12"
+        },
+        {
+            "filmName": "Rebecca",
+            "yearWon": "1940",
+            "awards": "2",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Tom Jones",
+            "yearWon": "1963",
+            "awards": "4",
+            "nominations": "10"
+        },
+        {
+            "filmName": "West Side Story",
+            "yearWon": "1961",
+            "awards": "10",
+            "nominations": "11"
+        },
+        {
+            "filmName": "Wings",
+            "yearWon": "1927/28",
+            "awards": "2",
+            "nominations": "2"
+        },
+        {
+            "filmName": "You Can't Take It with You",
+            "yearWon": "1938",
+            "awards": "2",
+            "nominations": "7"
+        }
+    ]
+}
