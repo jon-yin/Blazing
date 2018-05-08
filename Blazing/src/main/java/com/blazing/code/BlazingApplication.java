@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -24,6 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @EntityScan(basePackageClasses={Movie.class})
 @EnableJpaRepositories(basePackageClasses={ReviewRepository.class})
 @PropertySource("classpath:blazing.props")
+@EnableCaching
 public class BlazingApplication {
 
 	@Value("${bcrypt.strength}")

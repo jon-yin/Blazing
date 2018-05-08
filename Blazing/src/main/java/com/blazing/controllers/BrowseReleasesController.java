@@ -5,20 +5,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.blazing.services.MediaService;
+import com.blazing.services.BrowseService;
 
 @Controller
 @RequestMapping("/browse")
 public class BrowseReleasesController {
 
 	@Autowired
-	private MediaService service;
+	private BrowseService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String browse(Model model)
+	public String browse(Model model, @RequestParam("type") String find)
 	{
-		service.getAllMovies(model);
+		service.addToModel(find, model);
 		return "browse";
 	}
 	
