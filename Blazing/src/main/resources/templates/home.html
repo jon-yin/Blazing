@@ -80,30 +80,30 @@
 						<section>
 							<h5 class="section-header">NEW TV TONIGHT</h5>
 							<div class="section-carousel infinite-scroll">
-								<!-- <a class="section-carousel-item details-link btn text-center" th:each="tv : ${upcomingTvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
-									<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
-									<div class="name" th:text="${tv.title}">Counterpart</div>
+								<a class="section-carousel-item details-link btn text-center" th:each="season : ${upcomingTvs}" th:href="@{/viewtv/{id}/1(id=${season.show.id})}">
+									<img class="image" th:src="${(season.show.poster != null) ? '/images/'+season.show.poster : '/images/placeholder.png'}">
+									<div class="name" th:text="${season.show.title}">Counterpart</div>
 									<div>
-										<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
-										<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
-										<span th:text="${movie.blazingScore*100}">70</span>%
+										<span class="icon tiny burning" th:if="${season.show.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${season.show.blazingScore*100 > 70}"></span>
+										<span th:text="${season.show.blazingScore*100}">70</span>%
 									</div>
-								</a> -->
+								</a>
 							</div>
 							<div class="text-right"><a th:href="@{/browse?type=new-tv}">View All...</a></div>
 						</section>
 						<section>
 							<h5 class="section-header">MOST POPULAR TV ON BLAZING</h5>
 							<div class="section-carousel infinite-scroll">
-								<!-- <a class="section-carousel-item details-link btn text-center" th:each="tv: ${popularTvs}" th:href="@{/viewtv/{id}(id=${tv.id})}">
-									<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
-									<div class="name" th:text="${tv.title}">Counterpart</div>
+								<a class="section-carousel-item details-link btn text-center" th:each="season: ${popularTvs}" th:href="@{/viewtv/{id}/1(id=${season.show.id})}">
+									<img class="image" th:src="${(season.show.poster != null) ? '/images/'+season.show.poster : '/images/placeholder.png'}">
+									<div class="name" th:text="${season.show.title}">Counterpart</div>
 									<div>
-										<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
-										<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
-										<span th:text="${movie.blazingScore*100}">70</span>%
+										<span class="icon tiny burning" th:if="${season.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${season.blazingScore*100 > 70}"></span>
+										<span th:text="${season.blazingScore*100}">70</span>%
 									</div>
-								</a> -->
+								</a>
 							</div>
 							<div class="text-right"><a th:href="@{/browse?type=popular-tv}">View All...</a></div>
 						</section>
@@ -153,7 +153,7 @@
 				<section id="blazing-tv-picks">
 					<h5 class="section-header">BLAZING TV PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<!-- <a class="section-carousel-item details-link btn text-center" th:each="tv,i : ${blazingTvs}" th:if="${i.index < 10}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+						<a class="section-carousel-item details-link btn text-center" th:each="tv,i : ${blazingTvs}" th:if="${i.index < 10}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
 							<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
 							<div class="name text-truncate" th:text="${tv.title}">Counterpart</div>
 							<div>
@@ -161,7 +161,7 @@
 								<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
 								<span th:text="${tv.blazingScore*100}">70</span>%
 							</div>
-						</a> -->
+						</a>
 					</div>
 					<div class="text-right"><a th:href="@{/browse?type=blazing-tv}">View All...</a></div>
 				</section>

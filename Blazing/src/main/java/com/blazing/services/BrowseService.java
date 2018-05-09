@@ -37,48 +37,56 @@ public class BrowseService {
 			List<Movie> findMovies = findBlazingMovieReleases();
 			model.addAttribute("movies", findMovies);
 			model.addAttribute("tvs", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "Blazing Movie Picks");
 			break;
 		case "opening-movies":
 			List<Movie> weeklyMovies = findWeeklyMovieReleases();
 			model.addAttribute("movies", weeklyMovies);
 			model.addAttribute("tvs", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "Opening This Week");
 			break;
 		case "coming-soon":
 			List<Movie> upcomingMovies = findUpcomingMovieReleases();
 			model.addAttribute("movies", upcomingMovies);
 			model.addAttribute("tvs", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "Coming Soon To Theaters");
 			break;
 		case "all-movies":
 			List<Movie> Movies = findAllMoviesReleases();
 			model.addAttribute("movies", Movies);
 			model.addAttribute("tvs", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "All Movies");
 			break;
 		case "blazing-tv":
 			List<Season> blazingTV = findBlazingTVReleases();
-			model.addAttribute("tvs",blazingTV);
+			model.addAttribute("tvs", null);
 			model.addAttribute("movies", null);
+			model.addAttribute("seasons", blazingTV);
 			model.addAttribute("browseTitle", "Blazing TV Picks");
 			break;
 		case "new-tv":
 			List<Season> newTV = findBlazingTVReleases();
-			model.addAttribute("tvs", newTV);
+			model.addAttribute("tvs", null);
 			model.addAttribute("movies", null);
+			model.addAttribute("seasons", newTV);
 			model.addAttribute("browseTitle", "New TV Tonight");
 			break;
 		case "all-tv":
 			List<TV> TVs = findAllTVReleases();
 			model.addAttribute("tvs", TVs);
 			model.addAttribute("movies", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "All TV");
 			break;
 		case "popular-tv":
 			List<Season> popularTV = findPopularTVReleases();
 			model.addAttribute("tvs", popularTV);
 			model.addAttribute("movies", null);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "Most Popular TV");
 			break;
 		case "award-winners":
@@ -86,6 +94,7 @@ public class BrowseService {
 			List<TV> tvs = findAwardWinningTVs();
 			model.addAttribute("tvs", tvs);
 			model.addAttribute("movies", movies);
+			model.addAttribute("seasons", null);
 			model.addAttribute("browseTitle", "Award Winning Media");
 			break;
 		}
@@ -138,7 +147,7 @@ public class BrowseService {
 		List<Season> tvs = seasonrepo.findPopularSeason();
 		return tvs;
 	}
-	@Cacheable("Seasonss")
+	@Cacheable("Seasons")
 	public List<Season> findBlazingTVReleases()
 	{
 		return seasonrepo.findBlazingSeason();

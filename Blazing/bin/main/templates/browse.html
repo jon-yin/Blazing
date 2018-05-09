@@ -91,6 +91,17 @@
 							</div>
 						</a>
 					</div>
+					<div class="results-list" id="browse-list" th:if="${seasons}">
+						<a class="details-link btn text-center" th:each="season : ${seasons}" th:href="@{/viewtv/{tvid}/1(tvid=${season.show.id})}">
+							<img class="image" th:src="${(season.show.poster != null) ? '/images/'+season.show.poster : '/images/placeholder.png'}">
+							<div class="name text-truncate" th:text="${season.show.title}">Peter Rabbit</div>
+							<div>
+								<span class="icon tiny burning" th:if="${season.blazingScore*100 > 70}"></span>
+								<span class="icon tiny ashes" th:unless="${season.blazingScore*100 > 70}"></span>
+								<span th:text="${season.blazingScore*100}">70</span>%
+							</div>
+						</a>
+					</div>
 					<div class="w-100 d-flex justify-content-center">
 						<ul class="pagination pagination-sm">
 						</ul>
