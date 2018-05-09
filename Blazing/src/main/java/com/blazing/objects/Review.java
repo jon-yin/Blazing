@@ -25,7 +25,7 @@ public class Review {
 	
 	private long id;
 	private int score;
-	private boolean isCritic;
+	private boolean critic;
 	private String body;
 	private User user;
 	private LocalDateTime datetime;
@@ -38,7 +38,7 @@ public class Review {
 	{
 		userReports = new HashMap<>();
 		score = -1;
-		isCritic=false;
+		critic=false;
 	}
 	
 	@Id
@@ -167,12 +167,14 @@ public class Review {
 	}
 
 	public boolean isCritic() {
-		return isCritic;
+		return critic;
 	}
 
-	public void setCritic(boolean isCritic) {
-		this.isCritic = isCritic;
+	public void setCritic(boolean critic) {
+		this.critic = critic;
 	}
+
+
 	
 	
 	

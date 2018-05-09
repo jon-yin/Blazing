@@ -94,5 +94,9 @@ public class ReviewService {
 			return false;
 		}
 	}
+
+	public List<Review> getMostRecentCritic() {
+		return reviewRepo.findByCriticTrueOrderByDatetimeDesc();
+	}
 	
 }

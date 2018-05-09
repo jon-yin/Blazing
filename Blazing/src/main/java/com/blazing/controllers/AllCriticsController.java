@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.blazing.objects.CriticApplication;
+import com.blazing.objects.Review;
 import com.blazing.objects.User;
+import com.blazing.services.ReviewService;
 import com.blazing.services.UserService;
 
 @Controller
@@ -21,12 +23,16 @@ public class AllCriticsController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ReviewService reviewService;
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String getCritics(Model model)
 	{
 		List<User> critics = userService.getCritics();
+		List<Review> reviews = reviewService.getMostRecentCritic();
 		model.addAttribute("critics", critics);
-		model.addAttribute("reviews", null);
+		model.addAttribute("reviews", reviews);
 		return "critics-home";
 	}
 	
