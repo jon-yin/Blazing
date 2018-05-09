@@ -128,7 +128,7 @@
 					<div class="text-center">
 						<span class="icon large blazing"></span>
 					</div>
-					<div>Movies and TV shows are Certified BLAZING with a steady BLAZING score of 75% or higher after a set amount of reviews (80 for wide-release movies, 40 for limited-release movies, 20 for TV shows), including 5 reviews from Top Critics.</div>
+					<div>Movies and TV shows are Certified BLAZING if the score is consistently above 70%.</div>
 				</section>
 				<section id="blazing-movie-picks">
 					<h5 class="section-header">BLAZING MOVIE PICKS</h5>
@@ -138,7 +138,7 @@
 							<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 							<div>
 								<span class="icon tiny burning"></span>
-								<span th:text="${movie.blazingScore}">70</span>%
+								<span th:text="${movie.blazingScore*100}">70</span>%
 							</div>
 						</a>
 					</div>
