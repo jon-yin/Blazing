@@ -73,6 +73,7 @@ public class MovieController extends MediaController<Movie>{
 		Movie currentMovie = mediaService.findMovie(movie);
 		Review review = super.retrieveReviewFromUser(user, movie);
 		model.addAttribute("movie", currentMovie);
+		System.out.println(currentMovie.getCast().size());
 		model.addAttribute("currentReview", review);
 		super.retrieveUnblockedReviews(user,currentMovie,model);
 		return "movie-details";

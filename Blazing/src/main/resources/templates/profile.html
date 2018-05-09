@@ -79,8 +79,8 @@
 								<img class="image" th:src="${(media.poster != null) ? '/images/'+media.poster : '/images/placeholder.png'}">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
-									<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
-									<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+									<span class="icon tiny burning" th:if="${media.blazingScore*100 > 70}"></span>
+									<span class="icon tiny ashes" th:unless="${media.blazingScore*100 > 70}"></span>
 									<span th:text="${media.blazingScore*100}">70</span>%
 								</div>
 							</a>
@@ -95,8 +95,8 @@
 								<img class="image" th:src="${(media.poster != null) ? '/images/'+media.poster : '/images/placeholder.png'}">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
-									<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
-									<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+									<span class="icon tiny burning" th:if="${media.blazingScore*100 > 70}"></span>
+									<span class="icon tiny ashes" th:unless="${media.blazingScore*100 > 70}"></span>
 									<span th:text="${media.blazingScore*100}">70</span>%
 								</div>
 							</a>
