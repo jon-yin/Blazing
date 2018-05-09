@@ -81,8 +81,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // load json file, add to my sql db
-        /*try {
-        	
+        /*
+    	try {
         	User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));

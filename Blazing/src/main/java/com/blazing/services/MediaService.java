@@ -189,8 +189,10 @@ public class MediaService {
 			review.setDatetime(LocalDateTime.now());
 			review = revRepo.save(review);
 			curMedia = mediaRepo.save(curMedia);
+			//System.out.println("Review successful");
 			return true;
 		} else {
+			//System.out.println("Review unsuccessful");
 			return false;
 			
 		}

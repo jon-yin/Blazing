@@ -122,6 +122,7 @@ public class MediaController<T> {
 				status = mediaService.addReview(user, id, castedReview);
 			}
 			if (status) {
+				System.out.println("Updating user");
 				User updated = userService.saveUserState(user);
 				sesService.updateCurrentUser(updated);
 			}

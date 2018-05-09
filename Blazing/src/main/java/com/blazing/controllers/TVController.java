@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.blazing.objects.CriticReview;
 import com.blazing.objects.EditedReviewInfo;
 import com.blazing.objects.Episode;
 import com.blazing.objects.ReportInfo;
-import com.blazing.objects.Review;
 import com.blazing.objects.Season;
 import com.blazing.objects.TV;
 import com.blazing.objects.User;
@@ -89,9 +89,9 @@ public class TVController extends MediaController<TV>{
 	
 	@ResponseBody
 	@RequestMapping(path="/submitreview", method=RequestMethod.POST)
-	public boolean addReview(@PathVariable("tv") long id, @RequestBody Review review, @SessionAttribute("currentUser") User currentUser)
+	public boolean addReview(@PathVariable("tv") long id, @RequestBody CriticReview review, @SessionAttribute("currentUser") User currentUser)
 	{
-		return mediaService.addReview(currentUser, id, review);
+		return super.addReview(id,review,currentUser);
 	}
 	
 	@ResponseBody
