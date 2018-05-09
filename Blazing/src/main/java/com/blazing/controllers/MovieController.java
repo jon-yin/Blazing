@@ -82,7 +82,7 @@ public class MovieController extends MediaController<Movie>{
 	@RequestMapping(path="/submitreview", method=RequestMethod.POST)
 	public boolean addReview(@PathVariable("movie") long id, @RequestBody CriticReview review, @SessionAttribute("currentUser") User currentUser)
 	{
-		return mediaService.addReview(currentUser, id, review);
+		return super.addReview(id, review,currentUser);
 	}
 	
 	@ResponseBody
