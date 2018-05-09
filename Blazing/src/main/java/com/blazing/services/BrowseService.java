@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.blazing.objects.Movie;
+import com.blazing.objects.Season;
 import com.blazing.objects.TV;
 import com.blazing.repositories.MovieRepository;
+import com.blazing.repositories.SeasonRepository;
 import com.blazing.repositories.TVRepository;
 
 @Service
@@ -20,6 +22,9 @@ public class BrowseService {
 
 	@Autowired
 	public TVRepository tvrepo;
+	
+	@Autowired
+	public SeasonRepository seasonrepo;
 	
 	@Autowired
 	public MovieRepository movieRepo;
@@ -53,7 +58,7 @@ public class BrowseService {
 			model.addAttribute("browseTitle", "All Movies");
 			break;
 		case "blazing-tv":
-			List<TV> blazingTV = findBlazingTVReleases();
+			List<Season> blazingTV = findBlazingTVReleases();
 			model.addAttribute("tvs",blazingTV);
 			model.addAttribute("movies", null);
 			model.addAttribute("browseTitle", "Blazing TV Picks");
@@ -71,7 +76,7 @@ public class BrowseService {
 			model.addAttribute("browseTitle", "All TV");
 			break;
 		case "popular-tv":
-			List<TV> popularTV = findPopularTVReleases();
+			List<Season> popularTV = findPopularTVReleases();
 			model.addAttribute("tvs", popularTV);
 			model.addAttribute("movies", null);
 			model.addAttribute("browseTitle", "Most Popular TV");
@@ -127,16 +132,16 @@ public class BrowseService {
 	{
 		return movieRepo.findAll();
 	}
-	@Cacheable("TVs")
-	public List<TV> findPopularTVReleases()
+	@Cacheable("Seasons")
+	public List<Season> findPopularTVReleases()
 	{
-		List<TV> tvs = tvrepo.findPopularTV();
+		List<Season> tvs = seasonrepo.findPopularSeason();
 		return tvs;
 	}
-	@Cacheable("TVs")
-	public List<TV> findBlazingTVReleases()
+	@Cacheable("Seasonss")
+	public List<Season> findBlazingTVReleases()
 	{
-		return tvrepo.findBlazingTV();
+		return seasonrepo.findBlazingSeason();
 	}
 	@Cacheable("TVs")
 	public List<TV> findWeeklyTVReleases()
