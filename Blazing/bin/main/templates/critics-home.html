@@ -63,13 +63,13 @@
 					<section>
 						<h5 class="section-header">LATEST REVIEWS</h5>
 						<div class="row" id="latest-rvw-list">
-							<div class="col-6 mb-2" th:each="review : ${reviews}">
+							<div class="col-6 mb-2" th:each="review, i : ${reviews}" th:if="${i.index < 10}">
 								<div class="font-weight-bold"><a th:href="${review.source.class.name == 'com.blazing.objects.Movie' ? '/viewmovie/'+review.source.id : '/viewtv/'+review.source.id+'/1'}" th:text="${review.source.title}">Media Title</a></div>
 								<div class="mb-2">
 									<span class="icon tiny burning" th:if="${review.source.blazingScore*100 > 70}"></span>
 									<span class="icon tiny ashes" th:unless="${review.source.blazingScore*100 > 70}"></span>
 									 <span th:text="${#strings.abbreviate(review.body,150)}">review</span></div>
-								<div>- <a th:href="@{/viewprofile/{id}(id=review.user.id)}">critic</a>, <span th:text="${review.publication} ? ${review.publication} : ''">publication</span></div>
+								<div>- <a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="|${review.user.firstName} ${review.user.lastName}|">critic</a>, <span th:text="${review.publication} ? ${review.publication} : ''">publication</span></div>
 							</div>
 						</div>
 					</section>
@@ -79,7 +79,7 @@
 						<h5 class="section-header">CRITICS LIST</h5>
 						<div>
 							<ul class="list-group">
-								<li class="list-group-item border-bottom" th:each="u : ${critics}">
+								<li class="list-group-item border-bottom" th:each="u, i : ${critics}" th:if="${i.index < 100}">
 									<a th:href="@{/viewprofile/{id}(id=${u.id})}" th:text="|${u.firstName} ${u.lastName}|">critic</a>
 								</li>
 							</ul>
@@ -143,10 +143,10 @@
 										<td class="align-middle" style="width: 175px;"><span th:text="${review.source.title}">Movie McMovieFace</span></td>
 										<td class="align-middle">
 											<div>
-												"<a th:href="${(review.source.class.name == 'com.blazing.objects.Movie') ? '/viewmovie/'+review.source.id : '/viewtv/'+review.source.id+'/1'}">Amazing!</a>"
+												"<a th:href="${(review.source.class.name == 'com.blazing.objects.Movie') ? '/viewmovie/'+review.source.id : '/viewtv/'+review.source.id+'/1'}" th:text="${#strings.abbreviate(review.body,150)}">Amazing!</a>"
 											</div>
 											<div>
-												Posted <span th:text="|${review.datetime.getMonthValue()}/${review.datetime.getDayOfMonth()}/${review.datetime.getYear()}|">datetime</span>
+												<span th:text="|${review.datetime.getMonthValue()}/${review.datetime.getDayOfMonth()}/${review.datetime.getYear()}|">datetime</span>
 											</div>
 										</td>
 										<td class="align-middle" style="width: 175px;">
@@ -162,6 +162,12 @@
 				<div class="tab-pane fade" id="critics-apply" role="tabpanel" aria-labelledby="critics-apply-tab">
 					<section>
 						<h5 class="section-header">APPLY TO BECOME A CRITIC</h5>
+						<div>
+							Anyone can be a critic! First you must abide to the community guidelines and understand your responsibilities as a critic.
+						</div>
+						<div th:unless="${session.currentUser}">
+							Login first to continue.
+						</div>
 						<div class="w-100 text-center p-2 border" th:if="${session.currentUser}">
 							<form th:unless="${session.currentUser.role.name() == 'CRITIC'} or ${session.currentUser.role.name() == 'ADMIN'}">
 								<div>If you want to apply to become a critic, please write a reason why you want to contribute to the Blazing community.</div>

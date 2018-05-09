@@ -2,7 +2,7 @@ function review(score, body){
 	var reviewDetails = {};
 	reviewDetails["score"] = score;
 	reviewDetails["body"] = body;
-	if(!$("#is-blazing").length)
+	if(document.getElementById("is-blazing") != null)
 		reviewDetails["isBlazing"] = document.getElementById('is-blazing').checked;
 	var jsonString = JSON.stringify(reviewDetails);
 	$.ajax({

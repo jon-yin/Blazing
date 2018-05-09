@@ -58,7 +58,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse?type=opening-movies" th:href="@{/browse?type=opening-movies}">View All...</a></div>
+							<div class="text-right"><a th:href="@{/browse?type=opening-movies}">View All...</a></div>
 						</section>
 						<section>
 							<h5 class="section-header">COMING SOON TO THEATERS</h5>
@@ -73,7 +73,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse?type=coming-soon" th:href="@{/browse?type=coming-soon}">View All...</a></div>
+							<div class="text-right"><a th:href="@{/browse?type=coming-soon}">View All...</a></div>
 						</section>
 					</div>
 					<div class="tab-pane fade" id="tv-main" role="tabpanel" aria-labelledby="show-tvs">
@@ -119,7 +119,7 @@
 									<source th:src="@{/videos/Moonlight.mp4#t=30}" type="video/mp4">
 								</video>
 							</div>
-							<div class="text-right"><a href="/browse?type=opening-movies" th:href="@{/browse?type=opening-movies}">View All...</a></div>
+							<div class="text-right"><a th:href="@{/browse?type=opening-movies}">View All...</a></div>
 						</section>
 					</div>
 				</div>
@@ -135,7 +135,7 @@
 				<section id="blazing-movie-picks">
 					<h5 class="section-header">BLAZING MOVIE PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" th:each="movie : ${blazingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+						<a class="section-carousel-item details-link btn text-center" th:each="movie,i : ${blazingMovies}" th:if="${i.index < 10}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 							<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 							<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 							<div>
@@ -150,7 +150,7 @@
 				<section id="blazing-tv-picks">
 					<h5 class="section-header">BLAZING TV PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" th:each="tv : ${blazingTvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+						<a class="section-carousel-item details-link btn text-center" th:each="tv,i : ${blazingTvs}" th:if="${i.index < 10}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
 							<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
 							<div class="name text-truncate" th:text="${tv.title}">Counterpart</div>
 							<div>
@@ -160,7 +160,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="text-right"><a href="/browse?type=blazing-tv">View All...</a></div>
+					<div class="text-right"><a th:href="@{/browse?type=blazing-tv}">View All...</a></div>
 				</section>
 			</div>
 		</div>

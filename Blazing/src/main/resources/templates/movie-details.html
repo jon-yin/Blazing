@@ -34,7 +34,6 @@
 					<script>
 					document.getElementById('vid-cover').addEventListener('error', function(event) { document.getElementById('vid-cover').outerHTML = ''; }, true);
 					$(function(){
-
 						$("#vid-cover").on("click",function(){
 							if (!$(this).attr("controls")){
 								$(this).attr("controls","controls");
@@ -48,7 +47,7 @@
 				<section class="container-fluid">
 					<h3 class="section-header"><span th:text="${movie.title}">TITLE</span> <span th:text="|(${movie.airtimes[0].getYear()})|"></span></h3>
 					<div class="row flex-row-reverse">
-						<section class="col-md-auto mx-auto text-center sidebar">
+						<section class="col-md-auto mx-auto text-center sidebar" th:style="${movie.isAwarded() ? 'background-color:#EEE8AA;' : ''}">
 							<img th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}" style="width: 206px; height: auto;">
 							<table class="table text-left">
 								<tr class="align-top">
@@ -141,7 +140,7 @@
 									<div class="celebrity-list row no-gutters">
 										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${movie.cast}">
 											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
-												<img src="/images/thumbnail.png" th:src="@{character.actor.portrait}" style="max-height: 50px; width: auto;">
+												<img th:src="${(character.actor.portrait != null) ? '/images/'+character.actor.portrait : '/images/placeholder.png}'" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
@@ -199,8 +198,8 @@
 								<div class="tab-pane fade" id="photos" role="tabpanel"
 									aria-labelledby="photos">
 									<div class="section-carousel">
-										<div class="section-carousel-item">
-											<img src="/images/v1.jpg">
+										<div class="section-carousel-item" th:each="p : ${movie.images}">
+											<img th:src="'/images/'+${p}">
 										</div>
 									</div>
 									<div class="text-right">

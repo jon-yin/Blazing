@@ -30,7 +30,7 @@
 				<section class="container-fluid">
 					<h3 class="section-header" th:text="${tv.title}">TITLE</h3>
 					<div class="row flex-row-reverse">
-						<section class="col-md-auto mx-auto text-center sidebar">
+						<section class="col-md-auto mx-auto text-center sidebar" th:style="${tv.isAwarded() ? 'background-color:#EEE8AA;' : ''}">
 							<div class="d-flex align-items-center justify-content-center" style="margin-bottom: 10px;">
 								<div class="dropdown show">
 									<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="|Season ${season.seasonNumber+1}|"></a>
@@ -115,7 +115,7 @@
 									<div class="celebrity-list row no-gutters">
 										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${tv.cast}">
 											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
-												<img src="/images/thumbnail.png" th:src="@{character.actor.portrait}" style="max-height: 50px; width: auto;">
+												<img th:src="${(character.actor.portrait != null) ? '/images/'+character.actor.portrait : '/images/placeholder.png}'" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
@@ -166,19 +166,13 @@
 											<img src="/images/v1.jpg">
 										</div>
 									</div>
-									<div class="text-right">
-										<a href="#">View All Videos...</a>
-									</div>
 								</div>
 								<div class="tab-pane fade" id="photos" role="tabpanel"
 									aria-labelledby="photos">
 									<div class="section-carousel">
-										<div class="section-carousel-item">
-											<img src="/images/v1.jpg">
+										<div class="section-carousel-item" th:each="p : ${tv.images}">
+											<img th:src="'/images/'+${p}">
 										</div>
-									</div>
-									<div class="text-right">
-										<a href="#">View All Photos...</a>
 									</div>
 								</div>
 							</div>
@@ -188,8 +182,7 @@
 				<section>
 					<h5 class="section-header">EPISODES</h5>
 					<div class="episode-list">
-						<span th:text="${season.getEpisodes().size()}"></span>
-						<!-- <a class="episode" th:each="e : ${season.episodes}" href="@{/{eNum}(eNum=${e.episodeNumber+1})}">
+						<a class="episode" th:each="e : ${season.episodes}" th:href="@{/{eNum}(eNum=${e.episodeNumber+1})}">
 							<div class="episode-number" style="width: 25px;" th:text="${e.episodeNumber}">1</div>
 							<div class="episode-score" style="width: 75px;">
 								<span class="icon tiny burning"></span>
@@ -197,14 +190,10 @@
 							</div>
 							<div class="episode-body" style="width: calc(100% - 100px);">
 								<div class="d-flex flex-row justify-content-between">
-									<div class="font-weight-bold">EPISODE NAME</div>
-									<div>Air Date: <span>Jan 1, 1111</span></div>
-								</div>
-								<div class="d-flex flex-row justify-content-between">
 									<div class="text-truncate" th:text="${e.description}">description</div>
 								</div>
 							</div>
-						</a> -->
+						</a>
 					</div>
 				</section>
 				<section>
