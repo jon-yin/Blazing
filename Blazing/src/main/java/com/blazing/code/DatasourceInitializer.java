@@ -275,6 +275,15 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			
 			String url = tree.get("url").textValue();
 			celebURLtoID.put(url, celeb.getId());
+			
+			String posterpath = "data/celebposters/" + url.substring(11, url.length()) + "_poster.jpg";
+			Path posterFilePath = Paths.get(posterpath);
+			if (Files.exists(posterFilePath)) {
+				String posterpath2 = url.substring(11,url.length()) + "_portrait.jpg";
+				celeb.setPortrait(posterpath2);
+			}
+			
+			celeb = celebrityRepo.save(celeb);
 		}
 	}
 
@@ -342,11 +351,12 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			String url = tree.get("url").textValue();
 			movieURLtoID.put(url, movie.getId());
 		
-			String posterpath = "/data/movieposters/" + url.substring(3, url.length()) + "_poster.jpg";
-			File tmpfile = new File(posterpath);
-			if (tmpfile.exists()) {
+			String posterpath = "data/movieposters/" + url.substring(3, url.length()) + "_poster.jpg";
+			Path posterFilePath = Paths.get(posterpath);
+			if (Files.exists(posterFilePath)) {
 				String posterpath2 = url.substring(3,url.length()) + "_poster.jpg";
 				movie.setPoster(posterpath2);
+				movie.getImages().add(posterpath2);
 			}
 			
 			movie = movieRepo.save(movie);
@@ -511,6 +521,17 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			tvshow.getAirtimes()[0] = airtime2;
 			
+			String url = tree.get("url").textValue();
+			tvURLtoID.put(url, tvshow.getId());
+			
+			String posterpath = "data/tvposters/" + url.substring(4, url.length()) + "_poster.jpg";
+			Path posterFilePath = Paths.get(posterpath);
+			if (Files.exists(posterFilePath)) {
+				String posterpath2 = url.substring(4,url.length()) + "_portrait.jpg";
+				tvshow.setPoster(posterpath2);
+				tvshow.getImages().add(posterpath2);
+			}
+			
 			tvshow = tvRepo.save(tvshow);
 			
 			JsonNode Cast = tree.get("cast");
@@ -545,8 +566,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			
 			tvshow = tvRepo.save(tvshow);
-			String url = tree.get("url").textValue();
-			tvURLtoID.put(url, tvshow.getId());
 		}
 	}
 	
@@ -570,8 +589,10 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					sourcetv.getSeasons().add(season);
 					sourcetv = tvRepo.save(sourcetv);
 					season.setShow(sourcetv);
+					season.setPoster(sourcetv.getPoster());
+					season.getImages().add(sourcetv.getPoster());
 					
-					String seasonnumber = url.substring(url.length() - 2, url.length() - 1);
+					String seasonnumber = url.substring(url.length() - 2, url.length());
 					int seasonnumber2 = Integer.parseInt(seasonnumber);
 					season.setSeasonNumber(seasonnumber2);
 					
@@ -710,8 +731,10 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					sourceseason.getEpisodes().add(episode);
 					sourceseason = seasonRepo.save(sourceseason);
 					episode.setSeason(sourceseason);
+					episode.setPoster(sourceseason.getPoster());
+					episode.getImages().add(sourceseason.getPoster());
 					
-					String episodenumber = url.substring(url.length() - 2, url.length() - 1);
+					String episodenumber = url.substring(url.length() - 2, url.length());
 					int episodenumber2 = Integer.parseInt(episodenumber);
 					episode.setEpisodeNumber(episodenumber2);
 					

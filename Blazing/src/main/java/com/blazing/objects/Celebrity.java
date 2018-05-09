@@ -20,7 +20,7 @@ public class Celebrity implements Comparable<Celebrity>{
 	private String name;
 	private LocalDate birthday;
 	private LocalDate death;
-	private ImageEntity portrait;
+	private String portrait;
 	private Set<Media> filmography;
 	private Set<MovieCharacter> characters;
 	private String description;
@@ -57,13 +57,10 @@ public class Celebrity implements Comparable<Celebrity>{
 		this.death = death;
 	}
 	
-	
-	@OneToOne
-	@JoinColumn(name="IMAGE_ID")
-	public ImageEntity getPortrait() {
+	public String getPortrait() {
 		return portrait;
 	}
-	public void setPortrait(ImageEntity portrait) {
+	public void setPortrait(String portrait) {
 		this.portrait = portrait;
 	}
 	
