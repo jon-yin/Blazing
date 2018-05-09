@@ -31,7 +31,7 @@
 					<h3 class="section-header" th:text="${celebrity.name}">NAME</h3>
 					<div class="row">
 						<section class="col-md-auto mx-auto text-center sidebar">
-							<img src="/images/thumbnail.png">
+							<img th:src="${(celebrity.portrait != null) ? '/images/'+celebrity.portrait : '/images/placeholder.png'}" style="max-width: 206px; height: auto;">
 							<div class="text-md-left">
 								<span class="font-weight-bold">Highest Rated: </span>
 								<span>Movie</span>

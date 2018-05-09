@@ -47,17 +47,27 @@ public class AdminController {
 	
 	@RequestMapping(path="/approvecritic", method = RequestMethod.POST)
 	@ResponseBody
-	public void approveCritic(@RequestBody CriticApplication application)
+	public boolean approveCritic(@RequestBody CriticApplication application)
 	{
-		userService.upgradeUser(application.getUserId(), Roles.CRITIC);
-		userService.removeApplication(application);
+		try {
+			userService.upgradeUser(application.getUserId(), Roles.CRITIC);
+			userService.removeApplication(application);
+			return true;
+		}catch (Exception e) {
+			return false;
+		}
 	}
 	
 	@RequestMapping(path="/denycritic", method = RequestMethod.POST)
 	@ResponseBody
-	public void denyCritic(@RequestBody CriticApplication application)
+	public boolean denyCritic(@RequestBody CriticApplication application)
 	{
-		userService.removeApplication(application);
+		try {
+			userService.removeApplication(application);
+			return true;
+		}catch (Exception e) {
+			return false;
+		}
 	}
 	
 	@RequestMapping(path="/removereview", method = RequestMethod.POST)

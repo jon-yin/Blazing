@@ -119,7 +119,7 @@
 								<div class="pr-2">Description</div>
 							</div>
 							<div class="w-100 p-1 my-1 d-flex" th:each="app : ${applications}">
-								<div class="pr-2" style="min-width: 100px; max-width: 100px;"><a th:href="@{/viewprofile/{id}(id=${app.getUser().id})}" th:text="|${app.getUser().firstName} ${app.getUser().lastName}|">User</a></div>
+ 								<div class="pr-2" style="min-width: 100px; max-width: 100px;"><a th:href="@{/viewprofile/{id}(id=${app.getUser().id})}" th:text="|${app.getUser().firstName} ${app.getUser().lastName}|">User</a></div>
 								<div class="pr-2" th:text="${app.body}">Description</div>
 								<div class="ml-auto d-flex">
 									<div class="pr-2"><button type="button" class="btn" th:id="'acc-app-button'+${app.id}"><i class="fa fa-check"></i></button></div>
@@ -132,7 +132,7 @@
 										var rejButton = /*[['#rej-app-button'+${app.id}]]*/ "#";
 										$(accButton).on("click",function(e){
 											e.preventDefault();
-											var userId = /*[[${app.getUser().id}]]*/ 0;
+											var userId = /*[[${app.getUserId()}]]*/ 0;
 											var body = /*[[${app.body}]]*/ "#";
 											var appId = /*[[${app.id}]]*/ 0;
 											var app = {};
@@ -146,7 +146,8 @@
 												contentType: "application/json",
 												data : jsonString,
 												success : function(data) {
-													location.reload();
+													if (data)
+														location.reload();
 												},
 												error : function(e) {
 													console.log("ERROR: ", e);
@@ -155,7 +156,7 @@
 										});
 										$(rejButton).on("click",function(e){
 											e.preventDefault();
-											var userId = /*[[${app.getUser().id}]]*/ 0;
+											var userId = /*[[${app.getUserId()}]]*/ 0;
 											var body = /*[[${app.body}]]*/ "#";
 											var appId = /*[[${app.id}]]*/ 0;
 											var app = {};
@@ -169,7 +170,8 @@
 												contentType: "application/json",
 												data : jsonString,
 												success : function(data) {
-													location.reload();
+													if (data)
+														location.reload();
 												},
 												error : function(e) {
 													console.log("ERROR: ", e);

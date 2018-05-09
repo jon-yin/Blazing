@@ -132,7 +132,7 @@ public class UserService {
 	@Transactional
 	public void removeApplication(CriticApplication application)
 	{
-		appRepo.deleteById(application.getId());;
+		appRepo.deleteById(application.getId());
 	}
 	
 	@Transactional
