@@ -113,7 +113,7 @@
 								<div class="pr-1" style="min-width: 50px; max-width: 50px;"><span th:text="${review.score}">rating</span>/10</div>
 								<div class="pr-1" style="min-width: 100px; max-width: 200px;">
 									<a th:if="${review.source.class.name == 'com.blazing.objects.Movie'}" th:href="@{~/viewmovie/{id}(id=${review.source.id})}" th:text="${review.source.title}">media</a>
-									<a th:if="${review.source.class.name == 'com.blazing.objects.TV'}" th:href="@{~/viewtv/{id}(id=${review.source.id})}" th:text="${review.source.title}">media</a>
+									<a th:if="${review.source.class.name == 'com.blazing.objects.TV'}" th:href="@{~/viewtv/{id}/1(id=${review.source.id})}" th:text="${review.source.title}">media</a>
 									</div>
 								<div class="text-truncate" th:text="${review.body}">review</div>
 							</div>

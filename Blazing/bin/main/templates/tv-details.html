@@ -115,7 +115,7 @@
 									<div class="celebrity-list row no-gutters">
 										<div class="celebrity-link col-6 col-md-4 pb-1" th:each="character : ${tv.cast}">
 											<a class="d-flex" th:href="@{/viewceleb/{id}(id=${character.actor.id})}">
-												<img th:src="${(character.actor.portrait != null) ? '/images/'+character.actor.portrait : '/images/placeholder.png}'" style="max-height: 50px; width: auto;">
+												<img th:src="${(character.actor.portrait != null) ? '/images/'+character.actor.portrait : '/images/placeholder.png'}" style="max-height: 50px; width: auto;">
 												<div class="celebrity-link-body">
 													<div class="font-weight-bold" th:text="${character.actor.name}">Celeb McCelebFace</div>
 													<div>
