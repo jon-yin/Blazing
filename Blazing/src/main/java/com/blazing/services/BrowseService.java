@@ -1,6 +1,7 @@
 package com.blazing.services;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -75,6 +76,13 @@ public class BrowseService {
 			model.addAttribute("movies", null);
 			model.addAttribute("browseTitle", "Most Popular TV");
 			break;
+		case "award-winners":
+			List<Movie> movies = findAwardWinningMovies();
+			List<TV> tvs = findAwardWinningTVs();
+			model.addAttribute("tvs", tvs);
+			model.addAttribute("movies", movies);
+			model.addAttribute("browseTitle", "Award Winning Media");
+			break;
 		}
 	}
 	
@@ -143,5 +151,35 @@ public class BrowseService {
 	public List<TV> findAllTVReleases()
 	{
 		return tvrepo.findAll();
+	}
+	
+	@Cacheable("Movies")
+	public List<Movie> findAwardWinningMovies()
+	{
+		List<Movie> awardMovies =  movieRepo.findMoviesByAwardedTrue();
+		awardMovies.sort(new Comparator<Movie>()
+		{
+
+			@Override
+			public int compare(Movie o1, Movie o2) {
+				return (o1.getAirtimes()[0].compareTo(o2.getAirtimes()[0]));
+			}
+		});
+		return awardMovies;
+	}
+	
+	@Cacheable("TVs")
+	public List<TV> findAwardWinningTVs()
+	{
+		List<TV> tvs =  tvrepo.findTvByAwardedTrue();
+		tvs.sort(new Comparator<TV>()
+				{
+					@Override
+					public int compare(TV o1, TV o2) {
+						return o1.LatestEpisodeDate().compareTo(o2.LatestEpisodeDate());
+					}
+			
+				});
+		return tvs;
 	}
 }

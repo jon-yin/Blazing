@@ -19,4 +19,6 @@ public interface TVRepository extends GeneralMediaRepository<TV>{
 
 	@CacheEvict(value = "Movies", allEntries=true)
 	 <S extends TV> S save(S entity);
+	
+	List<TV> findTvByAwardedTrue();
 }
