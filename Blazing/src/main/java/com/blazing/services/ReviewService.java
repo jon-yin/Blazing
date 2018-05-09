@@ -96,7 +96,7 @@ public class ReviewService {
 	}
 
 	public List<Review> getMostRecentCritic() {
-		return reviewRepo.findByCriticTrueOrderByDatetimeDesc();
+		return reviewRepo.findTop100ByCriticTrueOrderByDatetimeDesc();
 	}
 	
 }

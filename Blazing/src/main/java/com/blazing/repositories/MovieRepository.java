@@ -11,7 +11,7 @@ import com.blazing.objects.Movie;
 @Repository
 public interface MovieRepository extends GeneralMediaRepository<Movie>{
 
-	@Query("select m from Movie m where m.blazingScore > 0.8 order by m.blazingScore DESC, size(m.reviews) DESC")
+	@Query("select m from Movie m where m.blazingScore > 0.7 order by m.blazingScore DESC, size(m.reviews) DESC")
 	List<Movie> findBlazingMovies();
 
 	@CacheEvict(value = "Movies", allEntries=true)
