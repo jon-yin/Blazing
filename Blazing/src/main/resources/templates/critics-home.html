@@ -63,10 +63,13 @@
 					<section>
 						<h5 class="section-header">LATEST REVIEWS</h5>
 						<div class="row" id="latest-rvw-list">
-							<div class="col-6 mb-2">
-								<div class="font-weight-bold"><a href="#">Media Title</a></div>
-								<div class="mb-2"><span class="icon tiny ashes"></span><span>this is a review. Amazing, isn't it? This is just a placeholder before we implement thymeleaf into it</span></div>
-								<div>- <a href="#">Critic McCriticFace</a>, <span>Publication McPublicationFace</span></div>
+							<div class="col-6 mb-2" th:each="review : ${reviews}">
+								<div class="font-weight-bold"><a th:href="${review.source.class.name == 'com.blazing.objects.Movie' ? '/viewmovie/'+review.source.id : '/viewtv/'+review.source.id+'/1'}" th:text="${review.source.title}">Media Title</a></div>
+								<div class="mb-2">
+									<span class="icon tiny burning" th:if="${review.source.blazingScore*100 > 70}"></span>
+									<span class="icon tiny ashes" th:unless="${review.source.blazingScore*100 > 70}"></span>
+									 <span th:text="${#strings.abbreviate(review.body,150)}">review</span></div>
+								<div>- <a th:href="@{/viewprofile/{id}(id=review.user.id)}">critic</a>, <span th:text="${review.publication} ? ${review.publication} : ''">publication</span></div>
 							</div>
 						</div>
 					</section>
@@ -111,6 +114,11 @@
 								</li>
 							</ul>
 						</div>
+						<script>
+							$(function(){
+								
+							});
+						</script>
 					</section>
 				</div>
 				<div class="tab-pane fade" id="critics-groups" role="tabpanel" aria-labelledby="critics-groups-tab">
@@ -162,20 +170,23 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td class="align-middle" style="width: 75px;"><span class="icon tiny ashes"></span> <span>Score</span></td>
-										<td class="align-middle" style="width: 175px;"><span>Movie McMovieFace</span></td>
+									<tr th:each="review : ${reviews}">
+										<td class="align-middle" style="width: 75px;">
+											<span class="icon tiny burning" th:if="${review.source.blazingScore*100 > 70}"></span>
+											<span class="icon tiny ashes" th:unless="${review.source.blazingScore*100 > 70}"></span>
+											<span th:text="${review.source.blazingScore*100}">Score</span>%</td>
+										<td class="align-middle" style="width: 175px;"><span th:text="${review.source.title}">Movie McMovieFace</span></td>
 										<td class="align-middle">
 											<div>
-												"<a href="#">Amazing!</a>"
+												"<a th:href="${(review.source.class.name == 'com.blazing.objects.Movie') ? '/viewmovie/'+review.source.id : '/viewtv/'+review.source.id+'/1'}">Amazing!</a>"
 											</div>
 											<div>
-												Posted <span>datetime</span>
+												Posted <span th:text="|${review.datetime.getMonthValue()}/${review.datetime.getDayOfMonth()}/${review.datetime.getYear()}|">datetime</span>
 											</div>
 										</td>
 										<td class="align-middle" style="width: 175px;">
-											<a href="#">Critic McCriticFace</a>
-											<a href="#">Publication</a>
+											<a th:href="@{/viewprofile/{id}(id=${review.user.id})}" th:text="|${review.user.firstName} ${review.user.lastName}|">Critic McCriticFace</a>
+											<span th:text="${review.publication} ? review.publication : ''">Publication</span>
 										</td>
 									</tr>
 								</tbody>
@@ -186,12 +197,9 @@
 				<div class="tab-pane fade" id="critics-apply" role="tabpanel" aria-labelledby="critics-apply-tab">
 					<section>
 						<h5 class="section-header">APPLY TO BECOME A CRITIC</h5>
-						<div class="m-2 p-2">
-							description of how to apply and rules for being a critic
-						</div>
 						<div class="w-100 text-center p-2 border" th:if="${session.currentUser}">
 							<form th:unless="${session.currentUser.role.name() == 'CRITIC'} or ${session.currentUser.role.name() == 'ADMIN'}">
-								<div>If you want to apply, please write a reason why you want to contribute to the Blazing community.</div>
+								<div>If you want to apply to become a critic, please write a reason why you want to contribute to the Blazing community.</div>
 								<div class="w-100"><textarea class="w-75" id="apply-desc" rows="5"></textarea></div>
 								<small class="text-danger" id="no-desc-apply" style="display: none;">Please enter your reason of applying</small>
 								<button type="submit" id="critic-apply-button" class="font-weight-bold btn btn-success btn-lg">APPLY</button>

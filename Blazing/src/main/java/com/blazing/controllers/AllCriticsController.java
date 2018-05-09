@@ -26,6 +26,7 @@ public class AllCriticsController {
 	{
 		List<User> critics = userService.getCritics();
 		model.addAttribute("critics", critics);
+		model.addAttribute("reviews", null);
 		return "critics-home";
 	}
 	

@@ -51,7 +51,7 @@
 									</div>
 									<img th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>
-										<div class="font-weight-bold" th:text="${movie.title}">title</div>
+										<div class="font-weight-bold"><span th:text="${movie.title}">title</span> <span th:text="|(${movie.airtimes[0].getYear()})|"></span></div>
 										<div class="search-desc" th:text="${#strings.abbreviate(movie.description,480)}">movie description</div>
 									</div>
 								</a>

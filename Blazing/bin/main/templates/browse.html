@@ -79,7 +79,7 @@
 					</div>
 					<div class="results-list" id="browse-list" th:if="${tvs}">
 						<a class="details-link btn text-center" th:each="tv : ${tvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
-							<img class="image" th:src="@{/images/{poster}(poster=${tv.poster})}">
+							<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
 							<div class="name text-truncate" th:text="${tv.title}">Peter Rabbit</div>
 							<div>
 								<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>

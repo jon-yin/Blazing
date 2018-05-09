@@ -87,7 +87,6 @@
 										});
 										$(disButton).on("click",function(e){
 											e.preventDefault();
-											var jsonString = JSON.stringify(app);
 											$.ajax({
 												type : "POST",
 												url : location.href + "/dismissreview",
@@ -162,7 +161,7 @@
 											var jsonString = JSON.stringify(app);
 											$.ajax({
 												type : "POST",
-												url : location.href + "/rejectcritic",
+												url : location.href + "/denycritic",
 												contentType: "application/json",
 												data : jsonString,
 												success : function(data) {

@@ -32,10 +32,9 @@
 						<source id="vid-source" th:src="@{'/videos/'+${movie.title}+'.mp4#t=30'}" type="video/mp4">
 					</video>
 					<script>
+					document.getElementById('vid-cover').addEventListener('error', function(event) { document.getElementById('vid-cover').outerHTML = ''; }, true);
 					$(function(){
-						$("#vid-source").on("error", function(){
-							$("#vid-cover").remove();
-						});
+
 						$("#vid-cover").on("click",function(){
 							if (!$(this).attr("controls")){
 								$(this).attr("controls","controls");
@@ -47,7 +46,7 @@
 					</script>
 				</div>
 				<section class="container-fluid">
-					<h3 class="section-header" th:text="${movie.title}">TITLE</h3>
+					<h3 class="section-header"><span th:text="${movie.title}">TITLE</span> <span th:text="|(${movie.airtimes[0].getYear()})|"></span></h3>
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
 							<img th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}" style="width: 206px; height: auto;">
@@ -394,7 +393,7 @@
 											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <a th:if="${cr.publication}" th:href="@{cr.publication}">Publication</a>
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:text="${cr.publication} ? ${cr.publication} : ''">Publication</span>
 										</div>
 										<div class="modal fade" th:id="'report-cr'+${cr.id}" tabindex="-1" role="dialog" aria-hidden="true">
 											<div class="modal-dialog modal-dialog-centered" role="document">
@@ -474,7 +473,7 @@
 											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a><!-- , <span th:href="@{cr.publication}">Publication</span> -->
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:text="${cr.publication} ? ${cr.publication} : ''">Publication</span>
 										</div>
 									</div>
 								</div>

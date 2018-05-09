@@ -389,7 +389,7 @@
 											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <a th:if="${cr.publication}" th:href="@{cr.publication}">Publication</a>
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:text="${cr.publication} ? ${cr.publication} : ''">Publication</span>
 										</div>
 										<div class="modal fade" th:id="'report-cr'+${cr.id}" tabindex="-1" role="dialog" aria-hidden="true">
 											<div class="modal-dialog modal-dialog-centered" role="document">
@@ -469,7 +469,7 @@
 											 - <span th:unless="${cr.customScore}">N/A</span><span th:if="${cr.customScore}" th:text="${cr.customScore}">Rating</span>
 										</div>
 										<div class="reviewer text-right">
-											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a><!-- , <span th:href="@{cr.publication}">Publication</span> -->
+											- <a th:text="|${cr.user.firstName} ${cr.user.lastName}|" th:href="@{/viewprofile/{id}(id=${cr.user.id})}">Name</a>, <span th:text="${cr.publication} ? ${cr.publication} : ''">Publication</span>
 										</div>
 									</div>
 								</div>
