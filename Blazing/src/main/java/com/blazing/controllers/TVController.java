@@ -63,7 +63,9 @@ public class TVController extends MediaController<TV>{
 		long trueEpisode = episode - 1;
 		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
 		Episode sEpisode = sSeason.getEpisodes().get((int) trueEpisode);
-		super.retrieveUnblockedReviews(user, sEpisode, model);
+		model.addAttribute("season", sSeason);
+		model.addAttribute("episode", sEpisode);
+//		super.retrieveUnblockedReviews(user, sEpisode, model);
 		return "episode-details";
 	}
 	

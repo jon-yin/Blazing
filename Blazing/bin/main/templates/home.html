@@ -48,7 +48,7 @@
 						<section>
 							<h5 class="section-header">OPENING THIS WEEK</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${thisWeek}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${weeklyMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 									<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
@@ -63,7 +63,7 @@
 						<section>
 							<h5 class="section-header">COMING SOON TO THEATERS</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${upcoming}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${upcomingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
 									<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
@@ -80,30 +80,32 @@
 						<section>
 							<h5 class="section-header">NEW TV TONIGHT</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/counterpart.jpg" alt="placeholder image">
-									<div class="name">Counterpart</div>
+								<a class="section-carousel-item details-link btn text-center" th:each="tv : ${upcomingTvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+									<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
+									<div class="name" th:text="${tv.title}">Counterpart</div>
 									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
+										<span th:text="${movie.blazingScore*100}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse?type=new-tv">View All...</a></div>
+							<div class="text-right"><a th:href="@{/browse?type=new-tv}">View All...</a></div>
 						</section>
 						<section>
 							<h5 class="section-header">MOST POPULAR TV ON BLAZING</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-									<img class="image" src="/images/counterpart.jpg" alt="placeholder image">
-									<div class="name">Counterpart</div>
+								<a class="section-carousel-item details-link btn text-center" th:each="${popularTvs}" th:href="@{/viewtv/{id}(id=${tv.id})}">
+									<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
+									<div class="name" th:text="${tv.title}">Counterpart</div>
 									<div>
-										<span class="icon tiny burning"></span>
-										<span>70</span>%
+										<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
+										<span th:text="${movie.blazingScore*100}">70</span>%
 									</div>
 								</a>
 							</div>
-							<div class="text-right"><a href="/browse?type=popular-tv">View All...</a></div>
+							<div class="text-right"><a th:href="@{/browse?type=popular-tv}">View All...</a></div>
 						</section>
 					</div>
 					<div class="tab-pane fade" id="videos-main" role="tabpanel" aria-labelledby="show-videos">
@@ -133,26 +135,28 @@
 				<section id="blazing-movie-picks">
 					<h5 class="section-header">BLAZING MOVIE PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" href="/movie-details.html" th:each="movie : ${thisWeek}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
-							<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+						<a class="section-carousel-item details-link btn text-center" th:each="movie : ${blazingMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
+							<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 							<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 							<div>
-								<span class="icon tiny burning"></span>
+								<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+								<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
 								<span th:text="${movie.blazingScore*100}">70</span>%
 							</div>
 						</a>
 					</div>
-					<div class="text-right"><a href="/browse?type=blazing-movies" th:href="@{/browse?type=blazing-movies}">View All...</a></div>
+					<div class="text-right"><a th:href="@{/browse?type=blazing-movies}">View All...</a></div>
 				</section>
 				<section id="blazing-tv-picks">
 					<h5 class="section-header">BLAZING TV PICKS</h5>
 					<div class="section-carousel infinite-scroll">
-						<a class="section-carousel-item details-link btn text-center" href="/tv-details.html">
-							<img class="image" src="/images/counterpart.jpg" alt="placeholder image">
-							<div class="name">Counterpart</div>
+						<a class="section-carousel-item details-link btn text-center" th:each="tv : ${blazingTvs}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+							<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
+							<div class="name text-truncate" th:text="${tv.title}">Counterpart</div>
 							<div>
-								<span class="icon tiny blazing"></span>
-								<span>70</span>%
+								<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
+								<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
+								<span th:text="${tv.blazingScore*100}">70</span>%
 							</div>
 						</a>
 					</div>

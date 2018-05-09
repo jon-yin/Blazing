@@ -86,6 +86,7 @@ public class BrowseService {
 		model.addAttribute("allMovie", findAllMoviesReleases());
 		model.addAttribute("upcomingTvs", findWeeklyTVReleases());
 		model.addAttribute("blazingTvs", findBlazingTVReleases());
+		model.addAttribute("popularTvs", findPopularTVReleases());
 		model.addAttribute("allTV", findAllTVReleases());
 	}
 	
