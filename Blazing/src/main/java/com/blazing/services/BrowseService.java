@@ -78,6 +78,17 @@ public class BrowseService {
 		}
 	}
 	
+	public void getHomePage(Model model)
+	{
+		model.addAttribute("upcomingMovies", findUpcomingMovieReleases());
+		model.addAttribute("blazingMovies", findBlazingMovieReleases());
+		model.addAttribute("weeklyMovies", findWeeklyMovieReleases());
+		model.addAttribute("allMovie", findAllMoviesReleases());
+		model.addAttribute("upcomingTvs", findWeeklyTVReleases());
+		model.addAttribute("blazingTvs", findBlazingTVReleases());
+		model.addAttribute("allTV", findAllTVReleases());
+	}
+	
 	@Cacheable("Movies")
 	public List<Movie> findUpcomingMovieReleases()
 	{

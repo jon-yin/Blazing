@@ -6,19 +6,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.blazing.services.MediaService;
+import com.blazing.services.BrowseService;
 
 @Controller
 @RequestMapping(path={"/","/home","/index"})
 public class IndexController {
 	
 	@Autowired
-	private MediaService mediaService;
+	private BrowseService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(Model model)
 	{
-		mediaService.getTrendingMovies(model);
+		service.getHomePage(model);
 		return "home";
 	}
 	
