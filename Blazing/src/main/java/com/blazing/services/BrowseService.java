@@ -31,7 +31,7 @@ public class BrowseService {
 			List<Movie> findMovies = findBlazingMovieReleases();
 			model.addAttribute("movies", findMovies);
 			model.addAttribute("tvs", null);
-			model.addAttribute("browseTitle", "Blazing Movies Picks");
+			model.addAttribute("browseTitle", "Blazing Movie Picks");
 			break;
 		case "opening-movies":
 			List<Movie> weeklyMovies = findWeeklyMovieReleases();
@@ -137,7 +137,7 @@ public class BrowseService {
 		LocalDate monthsAgo = LocalDate.now().minusMonths(2);
 		if (tv == null)
 			return tv;
-		List<TV> filtered = tv.stream().filter(Tv -> (Tv.getAirtimes()[0].compareTo(monthsAgo) > 0)).collect(Collectors.toList());
+		List<TV> filtered = tv.parallelStream().filter(Tv -> (Tv.LatestEpisodeDate().compareTo(monthsAgo) > 0)).collect(Collectors.toList());
 		return filtered;
 	}
 	@Cacheable("TVs")

@@ -95,7 +95,7 @@
 						<section>
 							<h5 class="section-header">MOST POPULAR TV ON BLAZING</h5>
 							<div class="section-carousel infinite-scroll">
-								<a class="section-carousel-item details-link btn text-center" th:each="${popularTvs}" th:href="@{/viewtv/{id}(id=${tv.id})}">
+								<a class="section-carousel-item details-link btn text-center" th:each="tv: ${popularTvs}" th:href="@{/viewtv/{id}(id=${tv.id})}">
 									<img class="image" th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}">
 									<div class="name" th:text="${tv.title}">Counterpart</div>
 									<div>

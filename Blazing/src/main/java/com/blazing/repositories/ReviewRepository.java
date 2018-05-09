@@ -13,4 +13,5 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{
 	
 	List<Review> getReviewsBySource(Media media);
 	List<Review> findByFlagCountGreaterThanOrderByFlagCountDesc(int flag);
+	List<Review> findByCriticTrueOrderByDatetimeDesc();
 }

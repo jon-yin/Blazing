@@ -56,6 +56,10 @@ public class TV extends Media{
 	@Transient
 	public LocalDate LatestEpisodeDate()
 	{
+		if (seasons.size() == 0)
+		{
+			return LocalDate.MIN;
+		}
 		seasons.sort(Comparator.comparing(Season::getSeasonNumber));
 		Season season = seasons.get(seasons.size()-1);
 		season.getEpisodes().sort(Comparator.comparing(Episode::getEpisodeNumber));

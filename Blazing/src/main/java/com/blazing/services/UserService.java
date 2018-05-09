@@ -145,7 +145,7 @@ public class UserService {
 	@Transactional
 	public List<User> getCritics()
 	{
-		List<User> critics = userRepo.findAll();
+		List<User> critics = userRepo.findMostPopularCritics();
 		return critics;
 	}
 	
