@@ -45,6 +45,7 @@ public abstract class Media implements Comparable<Media>{
 	private Genre genre;
 	private Set<User> u_Wishlist;
 	private Set<User> u_NotInterested;
+	private boolean Awarded;
 	
 	public Media()
 	{
@@ -338,6 +339,14 @@ public abstract class Media implements Comparable<Media>{
 	public void removeReview(Review review)
 	{
 		calculateAudienceScore(review,true);
+	}
+
+	public boolean isAwarded() {
+		return Awarded;
+	}
+
+	public void setAwarded(boolean awarded) {
+		Awarded = awarded;
 	}
 
 	

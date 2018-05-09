@@ -109,26 +109,27 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             
             System.out.println("Celeb Done");
             
-            mapJSONtoMovie("data/movies/pmovies00.json");
-            mapJSONtoMovie("data/movies/pmovies01.json");
-            mapJSONtoMovie("data/movies/pmovies02.json");
-            mapJSONtoMovie("data/movies/pmovies03.json");
-            mapJSONtoMovie("data/movies/pmovies04.json");
-            mapJSONtoMovie("data/movies/pmovies05.json");
-            mapJSONtoMovie("data/movies/pmovies06.json");
-            mapJSONtoMovie("data/movies/pmovies07.json");
-            mapJSONtoMovie("data/movies/pmovies08.json");
-            mapJSONtoMovie("data/movies/pmovies09.json");
-            mapJSONtoMovie("data/movies/pmovies10.json");
-            mapJSONtoMovie("data/movies/pmovies11.json");
-            mapJSONtoMovie("data/movies/pmovies12.json");
-            mapJSONtoMovie("data/movies/pmovies13.json");
-            mapJSONtoMovie("data/movies/pmovies14.json");
-            mapJSONtoMovie("data/movies/pmovies15.json");
-            mapJSONtoMovie("data/movies/pmovies16.json");
-            mapJSONtoMovie("data/movies/pmovies17.json");
-            mapJSONtoMovie("data/movies/pmovies18.json");
-            mapJSONtoMovie("data/movies/pmovies19.json");
+            mapJSONtoMovie("data/movies/pmovies00.json", false);
+            mapJSONtoMovie("data/movies/pmovies01.json", false);
+            mapJSONtoMovie("data/movies/pmovies02.json", false);
+            mapJSONtoMovie("data/movies/pmovies03.json", false);
+            mapJSONtoMovie("data/movies/pmovies04.json", false);
+            mapJSONtoMovie("data/movies/pmovies05.json", false);
+            mapJSONtoMovie("data/movies/pmovies06.json", false);
+            mapJSONtoMovie("data/movies/pmovies07.json", false);
+            mapJSONtoMovie("data/movies/pmovies08.json", false);
+            mapJSONtoMovie("data/movies/pmovies09.json", false);
+            mapJSONtoMovie("data/movies/pmovies10.json", false);
+            mapJSONtoMovie("data/movies/pmovies11.json", false);
+            mapJSONtoMovie("data/movies/pmovies12.json", false);
+            mapJSONtoMovie("data/movies/pmovies13.json", false);
+            mapJSONtoMovie("data/movies/pmovies14.json", false);
+            mapJSONtoMovie("data/movies/pmovies15.json", false);
+            mapJSONtoMovie("data/movies/pmovies16.json", false);
+            mapJSONtoMovie("data/movies/pmovies17.json", false);
+            mapJSONtoMovie("data/movies/pmovies18.json", false);
+            mapJSONtoMovie("data/movies/pmovies19.json", false);
+            mapJSONtoMovie("data/awarded/pMoviesWinnersSearch.json, true");
             
             System.out.println("Movie Done");
             
@@ -154,45 +155,47 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             
             System.out.println("Review Done");
             
-            mapJSONtoTV("data/tvshows/ptvshows00.json");
-            mapJSONtoTV("data/tvshows/ptvshows01.json");
-            mapJSONtoTV("data/tvshows/ptvshows03.json");
-            mapJSONtoTV("data/tvshows/ptvshows04.json");
-            mapJSONtoTV("data/tvshows/ptvshows05.json");
-            mapJSONtoTV("data/tvshows/ptvshows06.json");
-            mapJSONtoTV("data/tvshows/ptvshows07.json");
-            mapJSONtoTV("data/tvshows/ptvshows08.json");
-            mapJSONtoTV("data/tvshows/ptvshows09.json");
-            mapJSONtoTV("data/tvshows/ptvshows10.json");
-            mapJSONtoTV("data/tvshows/ptvshows11.json");
-            mapJSONtoTV("data/tvshows/ptvshows13.json");
-            mapJSONtoTV("data/tvshows/ptvshows14.json");
-            mapJSONtoTV("data/tvshows/ptvshows15.json");
-            mapJSONtoTV("data/tvshows/ptvshows16.json");
-            mapJSONtoTV("data/tvshows/ptvshows17.json");
-            mapJSONtoTV("data/tvshows/ptvshows18.json");
-            mapJSONtoTV("data/tvshows/ptvshows19.json");
+            mapJSONtoTV("data/tvshows/ptvshows00.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows01.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows03.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows04.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows05.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows06.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows07.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows08.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows09.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows10.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows11.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows13.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows14.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows15.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows16.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows17.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows18.json", false);
+            mapJSONtoTV("data/tvshows/ptvshows19.json", false);
+            mapJSONtoMovie("data/awarded/pTVShowsWinnersSearch.json, true");
             
             System.out.println("TV Done");
             
-            mapJSONtoSeason("data/seasons/pseasons00.json");
-            mapJSONtoSeason("data/seasons/pseasons01.json");
-            mapJSONtoSeason("data/seasons/pseasons03.json");
-            mapJSONtoSeason("data/seasons/pseasons04.json");
-            mapJSONtoSeason("data/seasons/pseasons05.json");
-            mapJSONtoSeason("data/seasons/pseasons06.json");
-            mapJSONtoSeason("data/seasons/pseasons07.json");
-            mapJSONtoSeason("data/seasons/pseasons08.json");
-            mapJSONtoSeason("data/seasons/pseasons09.json");
-            mapJSONtoSeason("data/seasons/pseasons10.json");
-            mapJSONtoSeason("data/seasons/pseasons11.json");
-            mapJSONtoSeason("data/seasons/pseasons13.json");
-            mapJSONtoSeason("data/seasons/pseasons14.json");
-            mapJSONtoSeason("data/seasons/pseasons15.json");
-            mapJSONtoSeason("data/seasons/pseasons16.json");
-            mapJSONtoSeason("data/seasons/pseasons17.json");
-            mapJSONtoSeason("data/seasons/pseasons18.json");
-            mapJSONtoSeason("data/seasons/pseasons19.json");
+            mapJSONtoSeason("data/seasons/pseasons00.json", false);
+            mapJSONtoSeason("data/seasons/pseasons01.json", false);
+            mapJSONtoSeason("data/seasons/pseasons03.json", false);
+            mapJSONtoSeason("data/seasons/pseasons04.json", false);
+            mapJSONtoSeason("data/seasons/pseasons05.json", false);
+            mapJSONtoSeason("data/seasons/pseasons06.json", false);
+            mapJSONtoSeason("data/seasons/pseasons07.json", false);
+            mapJSONtoSeason("data/seasons/pseasons08.json", false);
+            mapJSONtoSeason("data/seasons/pseasons09.json", false);
+            mapJSONtoSeason("data/seasons/pseasons10.json", false);
+            mapJSONtoSeason("data/seasons/pseasons11.json", false);
+            mapJSONtoSeason("data/seasons/pseasons13.json", false);
+            mapJSONtoSeason("data/seasons/pseasons14.json", false);
+            mapJSONtoSeason("data/seasons/pseasons15.json", false);
+            mapJSONtoSeason("data/seasons/pseasons16.json", false);
+            mapJSONtoSeason("data/seasons/pseasons17.json", false);
+            mapJSONtoSeason("data/seasons/pseasons18.json", false);
+            mapJSONtoSeason("data/seasons/pseasons19.json", false);
+            mapJSONtoMovie("data/awarded/pSeasonsWinnersSearch.json, true");
             
             System.out.println("Season Done");
             
@@ -217,24 +220,25 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             
             System.out.println("SeasonReview Done");
             
-            mapJSONtoEpisode("data/episodes/pepisodes00.json");
-            mapJSONtoEpisode("data/episodes/pepisodes01.json");
-            mapJSONtoEpisode("data/episodes/pepisodes03.json");
-            mapJSONtoEpisode("data/episodes/pepisodes04.json");
-            mapJSONtoEpisode("data/episodes/pepisodes05.json");
-            mapJSONtoEpisode("data/episodes/pepisodes06.json");
-            mapJSONtoEpisode("data/episodes/pepisodes07.json");
-            mapJSONtoEpisode("data/episodes/pepisodes08.json");
-            mapJSONtoEpisode("data/episodes/pepisodes09.json");
-            mapJSONtoEpisode("data/episodes/pepisodes10.json");
-            mapJSONtoEpisode("data/episodes/pepisodes11.json");
-            mapJSONtoEpisode("data/episodes/pepisodes13.json");
-            mapJSONtoEpisode("data/episodes/pepisodes14.json");
-            mapJSONtoEpisode("data/episodes/pepisodes15.json");
-            mapJSONtoEpisode("data/episodes/pepisodes16.json");
-            mapJSONtoEpisode("data/episodes/pepisodes17.json");
-            mapJSONtoEpisode("data/episodes/pepisodes18.json");
-            mapJSONtoEpisode("data/episodes/pepisodes19.json");
+            mapJSONtoEpisode("data/episodes/pepisodes00.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes01.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes03.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes04.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes05.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes06.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes07.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes08.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes09.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes10.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes11.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes13.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes14.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes15.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes16.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes17.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes18.json", false);
+            mapJSONtoEpisode("data/episodes/pepisodes19.json", false);
+            mapJSONtoMovie("data/awarded/pEpisodesWinnersSearch.json, true");
             
             System.out.println("Episodes Done");
             
@@ -287,7 +291,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		}
 	}
 
-	private void mapJSONtoMovie(String jsonFileName) throws IOException {
+	private void mapJSONtoMovie(String jsonFileName, boolean awarded) throws IOException {
 		Path jsonFilePath = Paths.get(jsonFileName);
 		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
 		ObjectMapper om = new ObjectMapper();
@@ -358,6 +362,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 				movie.setPoster(posterpath2);
 				movie.getImages().add(posterpath2);
 			}
+	
+			movie.setAwarded(awarded);
 			
 			movie = movieRepo.save(movie);
 			
@@ -487,7 +493,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		}
 	}
 	
-	private void mapJSONtoTV(String jsonFileName) throws IOException {
+	private void mapJSONtoTV(String jsonFileName, boolean awarded) throws IOException {
 		Path jsonFilePath = Paths.get(jsonFileName);
 		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
 		ObjectMapper om = new ObjectMapper();
@@ -532,6 +538,8 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 				tvshow.getImages().add(posterpath2);
 			}
 			
+			tvshow.setAwarded(awarded);
+			
 			tvshow = tvRepo.save(tvshow);
 			
 			JsonNode Cast = tree.get("cast");
@@ -569,7 +577,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		}
 	}
 	
-	private void mapJSONtoSeason(String jsonFileName) throws IOException {
+	private void mapJSONtoSeason(String jsonFileName,boolean awarded) throws IOException {
 		Path jsonFilePath = Paths.get(jsonFileName);
 		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
 		ObjectMapper om = new ObjectMapper();
@@ -591,6 +599,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					season.setShow(sourcetv);
 					season.setPoster(sourcetv.getPoster());
 					season.getImages().add(sourcetv.getPoster());
+					season.setAwarded(awarded);
 					
 					String seasonnumber = url.substring(url.length() - 2, url.length());
 					int seasonnumber2 = Integer.parseInt(seasonnumber);
@@ -711,7 +720,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 		}
 	}
 	
-	private void mapJSONtoEpisode(String jsonFileName) throws IOException {
+	private void mapJSONtoEpisode(String jsonFileName,boolean awarded) throws IOException {
 		Path jsonFilePath = Paths.get(jsonFileName);
 		String jsonString = new String(Files.readAllBytes(jsonFilePath.toAbsolutePath()));
 		ObjectMapper om = new ObjectMapper();
@@ -733,6 +742,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					episode.setSeason(sourceseason);
 					episode.setPoster(sourceseason.getPoster());
 					episode.getImages().add(sourceseason.getPoster());
+					episode.setAwarded(awarded);
 					
 					String episodenumber = url.substring(url.length() - 2, url.length());
 					int episodenumber2 = Integer.parseInt(episodenumber);
