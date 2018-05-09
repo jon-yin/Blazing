@@ -37,7 +37,7 @@ public class AdminController {
 		else
 		{
 			List<CriticApplication> applications = userService.retrieveApplications();
-
+			//System.out.println(applications.size());
 			model.addAttribute("applications", applications);
 			List<Review> reported = reviewService.retrieveReportedReviews();
 			model.addAttribute("reported", reported);
@@ -49,7 +49,7 @@ public class AdminController {
 	@ResponseBody
 	public void approveCritic(@RequestBody CriticApplication application)
 	{
-		userService.upgradeUser(application.getUser().getId(), Roles.CRITIC);
+		userService.upgradeUser(application.getUserId(), Roles.CRITIC);
 		userService.removeApplication(application);
 	}
 	

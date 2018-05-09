@@ -132,7 +132,7 @@ public class UserService {
 	@Transactional
 	public void removeApplication(CriticApplication application)
 	{
-		appRepo.delete(application);
+		appRepo.deleteById(application.getId());;
 	}
 	
 	@Transactional
@@ -154,16 +154,15 @@ public class UserService {
 		sesService.updateCurrentUser(newUser);
 	}
 
+	@Transactional
 	public boolean changePassword(String password, String newPass, String confirm, User user) {
 		if (user == null)
 		{
-			System.out.println("user is null");
 			return false;
 		}
 		else
 		{
-			String encoded = encoder.encode(password);
-			if (encoded.equals(user.getPassword()))
+			if (encoder.matches(password, user.getPassword()))
 			{
 				if (password.equals(newPass))
 				{
@@ -187,9 +186,6 @@ public class UserService {
 			}
 			else
 			{
-				System.out.println("wrong current password");
-				System.out.println(encoded);
-				System.out.println(user.getPassword());
 				return false;
 			}
 		}

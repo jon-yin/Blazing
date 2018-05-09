@@ -7,6 +7,6 @@ import com.blazing.objects.User;
 
 public interface CriticApplicationRepository extends JpaRepository<CriticApplication,Long> {
 	
-	CriticApplication findApplicationByUser(User id);
+	CriticApplication findApplicationByUser(User user);
 
 }
