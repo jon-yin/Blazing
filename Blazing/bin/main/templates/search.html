@@ -45,10 +45,11 @@
 							<div class="movie-results-list" th:if="${relevantMovies.size()}">
 								<a class="w-100 p-2 d-flex align-items-center border-top border-bottom" th:each="movie : ${relevantMovies}" th:href="@{/viewmovie/{id}(id=${movie.id})}">
 									<div class="score pr-2 text-center" style="min-width: 75px;">
-										<span class="icon tiny burning"></span>
-										<span th:text="${movie.blazingScore}">70</span>%
+										<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+										<span th:text="${movie.blazingScore*100}">70</span>%
 									</div>
-									<img src="/images/black-panther.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
+									<img th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>
 										<div class="font-weight-bold" th:text="${movie.title}">title</div>
 										<div class="search-desc" th:text="${#strings.abbreviate(movie.description,480)}">movie description</div>
@@ -61,14 +62,15 @@
 						</div>
 						<div class="tab-pane show fade" id="tv-results" role="tabpanel" aria-labelledby="show-tv-results">
 							<div class="tv-results-list" th:if="${relevantTV.size()}">
-								<a class="w-100 m-2 d-flex align-items-center" th:each="tv : ${relevantTV}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
-									<div class="score pr-2">
-										<span class="icon tiny burning"></span>
-										<span th:text="${tv.blazingScore}">70</span>%
+								<a class="w-100 p-2 d-flex align-items-center border-top border-bottom" th:each="tv : ${relevantTV}" th:href="@{/viewtv/{id}/1(id=${tv.id})}">
+									<div class="score pr-2 text-center" style="min-width: 75px;">
+										<span class="icon tiny burning" th:if="${tv.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${tv.blazingScore*100 > 70}"></span>
+										<span th:text="${tv.blazingScore*100}">70</span>%
 									</div>
-									<img src="/images/counterpart.jpg" class="search-image pr-2" style="width: 100px; height: auto;">
+									<img th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}" class="search-image pr-2" style="width: 100px; height: auto;">
 									<div>
-										<span class="font-weight-bold" th:text="${tv.title}">TV</span> (<span>year started</span> - <span>year ended</span>)
+										<span class="font-weight-bold" th:text="${tv.title}">TV</span>
 									</div>
 								</a>
 							</div>
