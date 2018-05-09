@@ -142,9 +142,9 @@ public class BrowseService {
 	public List<TV> findWeeklyTVReleases()
 	{
 		List<TV> tv = findAllTVReleases();
-		LocalDate monthsAgo = LocalDate.now().minusMonths(2);
 		if (tv == null)
 			return tv;
+		LocalDate monthsAgo = LocalDate.now().minusMonths(2);
 		List<TV> filtered = tv.parallelStream().filter(Tv -> (Tv.LatestEpisodeDate().compareTo(monthsAgo) > 0)).collect(Collectors.toList());
 		return filtered;
 	}

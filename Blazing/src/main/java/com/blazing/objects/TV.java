@@ -56,14 +56,19 @@ public class TV extends Media{
 	@Transient
 	public LocalDate LatestEpisodeDate()
 	{
-		if (seasons.size() == 0)
+		if (seasons == null || seasons.size() == 0)
 		{
 			return LocalDate.MIN;
 		}
 		seasons.sort(Comparator.comparing(Season::getSeasonNumber));
 		Season season = seasons.get(seasons.size()-1);
 		season.getEpisodes().sort(Comparator.comparing(Episode::getEpisodeNumber));
-		Episode latest = season.getEpisodes().get(season.getEpisodes().size());
-		return latest.getAirtimes()[0];
+		if (season.getEpisodes().size() != 0) {
+			Episode latest = season.getEpisodes().get(season.getEpisodes().size() - 1);
+			return latest.getAirtimes()[0];
+		}
+		else {
+			return LocalDate.MIN;
+		}
 	}
 }

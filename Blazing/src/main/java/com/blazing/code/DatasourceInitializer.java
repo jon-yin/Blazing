@@ -81,32 +81,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // load json file, add to my sql db
-        /*
-    	try {
-        	User user = new User();
-            user.setEmailAddress("a@a.com");
-            user.setPassword(encoder.encode("a"));
-            user.setEnabled(true);
-            user.setRole(Roles.ADMIN);
-            user.setFirstName("Jonathan");
-            user.setLastName("Yin");
-            userRepo.save(user);
-            User testUser = new User();
-            testUser.setEmailAddress("c@c.com");
-            testUser.setPassword(encoder.encode("c"));
-            testUser.setEnabled(true);
-            testUser.setFirstName("Critic");
-            testUser.setLastName("guy");
-            testUser.setRole(Roles.USER);
-            userRepo.save(testUser);
-            User testUser2 = new User();
-            testUser2.setEmailAddress("b@b.com");
-            testUser2.setPassword(encoder.encode("b"));
-            testUser2.setEnabled(true);
-            testUser2.setFirstName("User");
-            testUser2.setLastName("guy");
-            testUser2.setRole(Roles.USER);
-            userRepo.save(testUser2); 
+        /*try {
         	
             mapJSONtoCelebrities("data/celebs/pcelebs00.json");
             mapJSONtoCelebrities("data/celebs/pcelebs01.json");
@@ -161,7 +136,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             mapJSONtoReviews("data/reviews/pcritic18.json");
             mapJSONtoReviews("data/reviews/pcritic19.json");
             
-            System.out.println("Review Done");
+            System.out.println("Review Done"); 
             
             mapJSONtoTV("data/tvshows/ptvshows00.json", false);
             mapJSONtoTV("data/tvshows/ptvshows01.json", false);
@@ -250,8 +225,32 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             
             System.out.println("Episodes Done");
             
+            System.out.println("Started");
             
-            System.out.println("Started"); 
+            User user = new User();
+            user.setEmailAddress("a@a.com");
+            user.setPassword(encoder.encode("a"));
+            user.setEnabled(true);
+            user.setRole(Roles.ADMIN);
+            user.setFirstName("Jonathan");
+            user.setLastName("Yin");
+            userRepo.save(user);
+            User testUser = new User();
+            testUser.setEmailAddress("c@c.com");
+            testUser.setPassword(encoder.encode("c"));
+            testUser.setEnabled(true);
+            testUser.setFirstName("Critic");
+            testUser.setLastName("guy");
+            testUser.setRole(Roles.USER);
+            userRepo.save(testUser);
+            User testUser2 = new User();
+            testUser2.setEmailAddress("b@b.com");
+            testUser2.setPassword(encoder.encode("b"));
+            testUser2.setEnabled(true);
+            testUser2.setFirstName("User");
+            testUser2.setLastName("guy");
+            testUser2.setRole(Roles.USER);
+            userRepo.save(testUser2); 
         } catch (IOException e) {
             e.printStackTrace();
         }*/
@@ -288,7 +287,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			String url = tree.get("url").textValue();
 			celebURLtoID.put(url, celeb.getId());
 			
-			String posterpath = "data/celebposters/" + url.substring(11, url.length()) + "_poster.jpg";
+			String posterpath = "data/celebposters/" + url.substring(11, url.length()) + "_portrait.jpg";
 			Path posterFilePath = Paths.get(posterpath);
 			if (Files.exists(posterFilePath)) {
 				String posterpath2 = url.substring(11,url.length()) + "_portrait.jpg";
@@ -407,7 +406,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			
 			movie = movieRepo.save(movie);
-			System.out.println(movie.getPoster());
 		}
     }
 	
@@ -462,7 +460,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 						
 						CriticReview review = new CriticReview();
 						review.setPublication(criticReview.get("criticOrganization").textValue());
-						review.setBlazing(true);
+						review.setBlazing(criticReview.get("criticFresh").booleanValue());
 						if (criticReview.get("criticScore") == null) {
 							review.setCustomScore("");
 						}
@@ -536,10 +534,12 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 			}
 			tvshow.getAirtimes()[0] = airtime2;
 			
+			tvshow = tvRepo.save(tvshow);
+			
 			String url = tree.get("url").textValue();
 			tvURLtoID.put(url, tvshow.getId());
 			
-			String posterpath = "data/tvposters/" + url.substring(4, url.length()) + "_poster.jpg";
+			String posterpath = "data/tvposters/" + url.substring(4, url.length()) + "_portrait.jpg";
 			Path posterFilePath = Paths.get(posterpath);
 			if (Files.exists(posterFilePath)) {
 				String posterpath2 = url.substring(4,url.length()) + "_portrait.jpg";
@@ -638,6 +638,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 					season.getAirtimes()[0] = airtime2;
 					
 					season = seasonRepo.save(season);
+					seasonURLtoID.put(url, season.getId());
 				}
 			}
 		}
@@ -694,7 +695,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
 						
 						CriticReview review = new CriticReview();
 						review.setPublication(criticReview.get("criticOrganization").textValue());
-						review.setBlazing(true);
+						review.setBlazing(criticReview.get("criticFresh").booleanValue());
 						review.setCustomScore(criticReview.get("criticScore").textValue());
 						String body = criticReview.get("criticPost").textValue();
 						if (criticReview.get("postUrl") != null ) {
