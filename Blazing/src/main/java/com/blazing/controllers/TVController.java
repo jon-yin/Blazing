@@ -48,6 +48,7 @@ public class TVController extends MediaController<TV>{
 		long trueIndex = season - 1;
 		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
 		model.addAttribute("season", sSeason);
+		model.addAttribute("sNum", season);
 		super.retrieveUnblockedReviews(user, sSeason, model);
 		return "tv-details";
 	}
@@ -64,7 +65,9 @@ public class TVController extends MediaController<TV>{
 		Season sSeason = currentTV.getSeasons().get((int) trueIndex);
 		Episode sEpisode = sSeason.getEpisodes().get((int) trueEpisode);
 		model.addAttribute("season", sSeason);
+		model.addAttribute("sNum", season);
 		model.addAttribute("episode", sEpisode);
+		model.addAttribute("eNum", episode);
 //		super.retrieveUnblockedReviews(user, sEpisode, model);
 		return "episode-details";
 	}

@@ -23,39 +23,33 @@
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 
 <body class="bg-dark">
-	<header></header>
+	<header th:insert="/fragments/header.html :: header"></header>
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-auto main-content">
+			<div class="col">
 				<section class="container-fluid">
-					<h3 class="section-header">TITLE OF EPISODE</h3>
+					<h3 class="section-header" th:text="${episode.title}">TITLE OF EPISODE</h3>
 					<div class="row">
 						<section class="col-md-auto mx-auto text-center sidebar">
 							<div class="d-flex align-items-center justify-content-center" style="margin-bottom: 10px;">
 								<div class="dropdown show">
-									<a class="btn dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Seasons
+									<a class="btn dropdown-toggle" href="#" role="button" id="episodes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Episodes
 									</a>
-									<div class="dropdown-menu" aria-labelledby="seasons-link">
-										<a class="dropdown-item" href="#">Season 1</a>
-										<a class="dropdown-item" href="#">Season 2</a>
-										<a class="dropdown-item" href="#">Season 3</a>
+									<div class="dropdown-menu" aria-labelledby="episodes-link">
+										<a class="dropdown-item" th:each="e,i : ${season.getEpisodes()}" th:href="@{/viewtv/{tvid}/{sNum}/{eNum}(tvid=${tv.id},sNum=${sNum},eNum=${i.index+1})}" th:classappend="${e.episodeNumber == episode.episodeNumber} ? 'active' : ''" th:text="|Episode ${e.episodeNumber}|"></a>
 									</div>
 								</div>
 							</div>
-							<img src="/images/counterpart.jpg">
+							<img th:src="${(tv.poster != null) ? '/images/'+tv.poster : '/images/placeholder.png'}" style="width: 206px; height: auto;">
 							<table class="table text-left">
-								<tr class="align-top">
-									<th>GENRE:</th>
-									<td><span th:text="${tv.Genres}">genre</span></td>
-								</tr>
 								<tr class="align-top">
 									<th>NETWORK:</th>
 									<td><span th:text="${tv.network}">network</span></td>
 								</tr>
 								<tr class="align-top">
 									<th>PREMIERE DATE:</th>
-									<td><span th:text="|${tv.airtimes[0].getMonthValue()}/${tv.airtimes[0].getDayOfMonth()}/${tv.airtimes[0].getYear()}|">this</span></td>
+									<td><span th:text="|${tv.airtimes[0].getMonthValue()}/${tv.airtimes[0].getDayOfMonth()}/${tv.airtimes[0].getYear()}|"></span></td>
 								</tr>
 							</table>
 						</section>
@@ -63,7 +57,7 @@
 							<div class="row">
 								<section class="col">
 									<h5 class="section-header">EPISODE INFO</h5>
-									<div id="description">
+									<div id="description" th:text="${episode.description}">
 										description
 									</div>
 								</section>
@@ -74,7 +68,7 @@
 			</div>
 		</div>
 	</div>
-	<footer></footer>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>

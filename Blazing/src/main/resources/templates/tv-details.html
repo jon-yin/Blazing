@@ -33,9 +33,9 @@
 						<section class="col-md-auto mx-auto text-center sidebar" th:style="${tv.isAwarded() ? 'background-color:#EEE8AA;' : ''}">
 							<div class="d-flex align-items-center justify-content-center" style="margin-bottom: 10px;">
 								<div class="dropdown show">
-									<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="|Season ${season.seasonNumber+1}|"></a>
+									<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="seasons-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="|Season ${season.seasonNumber}|"></a>
 									<div class="dropdown-menu" aria-labelledby="seasons-link">
-										<a class="dropdown-item" th:each="s : ${tv.getSeasons()}" th:href="@{/viewtv/{tvid}/{sNum}(tvid=${tv.id},sNum=${s.seasonNumber+1})}" th:classappend="${s.seasonNumber == season.seasonNumber} ? 'active' : ''" th:text="|Season ${s.seasonNumber+1}|"></a>
+										<a class="dropdown-item" th:each="s,i : ${tv.getSeasons()}" th:href="@{/viewtv/{tvid}/{sNum}(tvid=${tv.id},sNum=${i.index+1})}" th:classappend="${s.seasonNumber == season.seasonNumber} ? 'active' : ''" th:text="|Season ${s.seasonNumber}|"></a>
 									</div>
 								</div>
 							</div>
@@ -182,7 +182,7 @@
 				<section>
 					<h5 class="section-header">EPISODES</h5>
 					<div class="episode-list">
-						<a class="episode" th:each="e : ${season.episodes}" th:href="@{/{eNum}(eNum=${e.episodeNumber+1})}">
+						<a class="episode" th:each="e,i : ${season.episodes}" th:href="@{~/viewtv/{tvid}/{sNum}/{eNum}(tvid=${tv.id},sNum=${sNum},eNum=${i.index+1})}">
 							<div class="episode-number" style="width: 25px;" th:text="${e.episodeNumber}">1</div>
 							<div class="episode-score" style="width: 75px;">
 								<span class="icon tiny burning"></span>
@@ -572,7 +572,7 @@
 			</div>
 		</div>
 	</div>
-	<footer th:insert="/fragments/footer.html :: footer"></header>
+	<footer th:insert="/fragments/footer.html :: footer"></footer>
 </body>
 
 <script type="application/javascript" th:src="@{/js/properties.js}"></script>
