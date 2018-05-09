@@ -49,11 +49,12 @@
 							<h5 class="section-header">OPENING THIS WEEK</h5>
 							<div class="section-carousel infinite-scroll">
 								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${thisWeek}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
-									<img class="image" th:src="@{${movie.poster}}" alt="placeholder image">
+									<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
-										<span class="icon tiny burning"></span>
-										<span th:text="${movie.blazingScore}">70</span>%
+										<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+										<span th:text="${movie.blazingScore*100}">70</span>%
 									</div>
 								</a>
 							</div>
@@ -63,11 +64,12 @@
 							<h5 class="section-header">COMING SOON TO THEATERS</h5>
 							<div class="section-carousel infinite-scroll">
 								<a class="section-carousel-item details-link btn text-center" th:each="movie : ${upcoming}" th:href="@{/viewmovie/{id}(id=${movie.id})}" role="button">
-									<img class="image" th:src="@{${movie.poster}}" alt="placeholder image">
+									<img class="image" th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}">
 									<div class="name text-truncate" th:text="${movie.title}">Black Panther</div>
 									<div>
-										<span class="icon tiny burning"></span>
-										<span th:text="${movie.blazingScore}">70</span>%
+										<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+										<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+										<span th:text="${movie.blazingScore*100}">70</span>%
 									</div>
 								</a>
 							</div>

@@ -141,6 +141,14 @@ public class UserService {
 		return appRepo.findAll();
 	}
 	
+
+	@Transactional
+	public List<User> getCritics()
+	{
+		List<User> critics = userRepo.findAll();
+		return critics;
+	}
+	
 	public void updateSessionUser(User newUser)
 	{
 		sesService.updateCurrentUser(newUser);

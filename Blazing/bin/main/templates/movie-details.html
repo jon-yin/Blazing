@@ -28,11 +28,14 @@
 		<div class="row">
 			<div class="col">
 				<div>
-					<video id="vid-cover" style="width: 100%; height: auto;" preload="metadata" data-toggle="modal" data-target="#vid-modal1">
-						<source th:src="@{/videos/Black Panther.mp4#t=30}" type="video/mp4">
+					<video id="vid-cover" style="width: 100%; height: auto;" preload="metadata">
+						<source id="vid-source" th:src="@{'/videos/'+${movie.title}+'.mp4#t=30'}" type="video/mp4">
 					</video>
 					<script>
 					$(function(){
+						$("#vid-source").on("error", function(){
+							$("#vid-cover").remove();
+						});
 						$("#vid-cover").on("click",function(){
 							if (!$(this).attr("controls")){
 								$(this).attr("controls","controls");
@@ -47,7 +50,7 @@
 					<h3 class="section-header" th:text="${movie.title}">TITLE</h3>
 					<div class="row flex-row-reverse">
 						<section class="col-md-auto mx-auto text-center sidebar">
-							<img th:src="@{${movie.poster}}">
+							<img th:src="${(movie.poster != null) ? '/images/'+movie.poster : '/images/placeholder.png'}" style="width: 206px; height: auto;">
 							<table class="table text-left">
 								<tr class="align-top">
 									<th>RATING:</th>
@@ -86,9 +89,9 @@
 									<div class="row d-flex flex-row align-items-center">
 										<div class="col d-flex justify-content-center">
 											<div>
-												<span class="icon med burning"></span> <span
-													style="font-size: 64px;"><span
-													th:text="${movie.blazingScore*100}">70</span>%</span>
+												<span class="icon med burning" th:if="${movie.blazingScore*100 > 70}"></span>
+												<span class="icon med ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+												<span style="font-size: 64px;"><span th:text="${movie.blazingScore*100}">70</span>%</span>
 											</div>
 										</div>
 										<div class="col">
@@ -149,6 +152,23 @@
 											</a>
 										</div>
 									</div>
+									<div>
+										<a id="viewall-celebs" style="display: none;" href="#">View All...</a>
+									</div>
+									<script>
+									$(function(){
+										if ($(".celebrity-link").length > 10){
+											$(".celebrity-link").hide();
+											$(".celebrity-link").slice(0,10).show();
+											$("#viewall-celebs").show();
+										}
+										$("#viewall-celebs").on("click",function(e){
+											e.preventDefault();
+											$("#viewall-celebs").hide();
+											$(".celebrity-link").show();
+										});
+									})
+									</script>
 								</section>
 							</div>
 						</div>
