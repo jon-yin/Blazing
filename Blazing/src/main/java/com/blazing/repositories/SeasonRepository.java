@@ -14,7 +14,7 @@ public interface SeasonRepository extends GeneralMediaRepository<Season>{
 	@Query("select t from Season t where t.blazingScore > 0.7 order by t.blazingScore DESC, size(t.reviews) DESC")
 	List<Season> findBlazingSeason();
 	
-	@Query("select t from Season t where t.criticScore > 0.7 order by t.criticScore DESC, size(t.reviews) DESC")
+	@Query("select t from Season t where t.blazingScore > 0.7 order by t.blazingScore DESC, size(t.reviews) DESC")
 	List<Season> findPopularSeason();
 	
 }
