@@ -117,6 +117,7 @@ public class MediaController<T> {
 			}
 			else
 			{
+				review.setCritic(false);
 				Review castedReview = (Review) review;
 				status = mediaService.addReview(user, id, castedReview);
 			}
