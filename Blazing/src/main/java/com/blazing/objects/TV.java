@@ -60,9 +60,9 @@ public class TV extends Media{
 		{
 			return LocalDate.MIN;
 		}
-		seasons.sort(Comparator.comparing(Season::getSeasonNumber));
+		//seasons.sort(Comparator.comparing(Season::getSeasonNumber));
 		Season season = seasons.get(seasons.size()-1);
-		season.getEpisodes().sort(Comparator.comparing(Episode::getEpisodeNumber));
+		//season.getEpisodes().sort(Comparator.comparing(Episode::getEpisodeNumber));
 		if (season.getEpisodes().size() != 0) {
 			Episode latest = season.getEpisodes().get(season.getEpisodes().size() - 1);
 			return latest.getAirtimes()[0];
