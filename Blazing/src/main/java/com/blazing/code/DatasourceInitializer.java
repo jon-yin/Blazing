@@ -83,7 +83,6 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
         // load json file, add to my sql db
         /*
     	try {
-        	
         	User user = new User();
             user.setEmailAddress("a@a.com");
             user.setPassword(encoder.encode("a"));
@@ -255,8 +254,7 @@ public class DatasourceInitializer implements ApplicationListener<ApplicationRea
             System.out.println("Started"); 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        */
+        }*/
     }
 
     private void mapJSONtoCelebrities(String jsonFileName) throws IOException {

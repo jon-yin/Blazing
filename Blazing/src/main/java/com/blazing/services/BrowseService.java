@@ -32,7 +32,7 @@ public class BrowseService {
 			List<Movie> findMovies = findBlazingMovieReleases();
 			model.addAttribute("movies", findMovies);
 			model.addAttribute("tvs", null);
-			model.addAttribute("browseTitle", "Blazing Movies Picks");
+			model.addAttribute("browseTitle", "Blazing Movie Picks");
 			break;
 		case "opening-movies":
 			List<Movie> weeklyMovies = findWeeklyMovieReleases();
@@ -94,6 +94,7 @@ public class BrowseService {
 		model.addAttribute("allMovie", findAllMoviesReleases());
 		model.addAttribute("upcomingTvs", findWeeklyTVReleases());
 		model.addAttribute("blazingTvs", findBlazingTVReleases());
+		model.addAttribute("popularTvs", findPopularTVReleases());
 		model.addAttribute("allTV", findAllTVReleases());
 	}
 	

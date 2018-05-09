@@ -75,12 +75,13 @@
 					<div class="tab-pane show fade active" id="wts-ni" role="tabpanel" aria-labelledby="show-wts-ni">
 						<section th:if="${foundUser.getWishlist().size()} != 0">
 							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
-							<a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
-								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+							<a class="details-link btn text-center" th:each="media : ${foundUser.getWishlist()}" th:href="${media.class.name == 'com.blazing.objects.Movie' ? '/viewmovie/'+media.id : '/viewtv/'+media.id+'/1'}" role="button">
+								<img class="image" th:src="${(media.poster != null) ? '/images/'+media.poster : '/images/placeholder.png'}">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
-									<span class="icon tiny burning"></span>
-									<span th:text="${media.blazingScore}">70</span>%
+									<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+									<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+									<span th:text="${media.blazingScore*100}">70</span>%
 								</div>
 							</a>
 						</section>
@@ -90,17 +91,18 @@
 						</section>
 						<section th:if="${foundUser.getNotInterested().size()} != 0">
 							<h5 class="section-header">NOT-INTERESTED MOVIES &amp; TV</h5>
-							<a class="details-link btn text-center" th:each="media : ${foundUser.getNotInterested()}" th:href="@{/viewmovie/{id}(id=${media.id})}" role="button">
-								<img class="image" src="/images/black-panther.jpg" alt="placeholder image">
+							<a class="details-link btn text-center" th:each="media : ${foundUser.getNotInterested()}" th:href="${media.class.name == 'com.blazing.objects.Movie' ? '/viewmovie/'+media.id : '/viewtv/'+media.id+'/1'}" role="button">
+								<img class="image" th:src="${(media.poster != null) ? '/images/'+media.poster : '/images/placeholder.png'}">
 								<div class="name text-truncate" th:text="${media.title}">Black Panther</div>
 								<div>
-									<span class="icon tiny burning"></span>
-									<span th:text="${media.blazingScore}">70</span>%
+									<span class="icon tiny burning" th:if="${movie.blazingScore*100 > 70}"></span>
+									<span class="icon tiny ashes" th:unless="${movie.blazingScore*100 > 70}"></span>
+									<span th:text="${media.blazingScore*100}">70</span>%
 								</div>
 							</a>
 						</section>
 						<section th:if="${foundUser.getNotInterested().size()} == 0">
-							<h5 class="section-header">WANT-TO-SEE MOVIES &amp; TV</h5>
+							<h5 class="section-header">NOT-INTERESTED MOVIES &amp; TV</h5>
 							<h4 class="h-100 text-center">No Not-Interested Media!</h4>
 						</section>
 					</div>
@@ -138,9 +140,9 @@
 			<div class="mr-auto">
 				<button type="button" class="btn btn-light" id="acc-settings">Account Settings</button>
 				<button type="button" class="btn btn-light" id="admin-page" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Admin Page</button>
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Movie</button>
+				<!-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-movie" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Movie</button>
 				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-tv" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a TV Show</button>
-				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Celebrity</button>
+				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#add-celebrity" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Add a Celebrity</button> -->
 			</div>
 			<div class="ml-auto">
 				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ban-user" th:if="${foundUser.equals(session.currentUser)} and ${session.currentUser.role.name() == 'ADMIN'}">Ban</button>
