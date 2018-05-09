@@ -132,11 +132,13 @@
 										var rejButton = /*[['#rej-app-button'+${app.id}]]*/ "#";
 										$(accButton).on("click",function(e){
 											e.preventDefault();
-											var id = /*[[${app.getUser().id}]]*/ 0;
+											var userId = /*[[${app.getUser().id}]]*/ 0;
 											var body = /*[[${app.body}]]*/ "#";
+											var appId = /*[[${app.id}]]*/ 0;
 											var app = {};
 											app["body"] = body;
-											app["userId"] = id;
+											app["userId"] = userId;
+											app["id"] = appId;
 											var jsonString = JSON.stringify(app);
 											$.ajax({
 												type : "POST",
@@ -153,11 +155,13 @@
 										});
 										$(rejButton).on("click",function(e){
 											e.preventDefault();
-											var id = /*[[${app.getUser().id}]]*/ 0;
-											var body = /*[[${app.body}]]*/ "";
+											var userId = /*[[${app.getUser().id}]]*/ 0;
+											var body = /*[[${app.body}]]*/ "#";
+											var appId = /*[[${app.id}]]*/ 0;
 											var app = {};
 											app["body"] = body;
-											app["userId"] = id;
+											app["userId"] = userId;
+											app["id"] = appId;
 											var jsonString = JSON.stringify(app);
 											$.ajax({
 												type : "POST",
