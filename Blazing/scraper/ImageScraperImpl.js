@@ -28,13 +28,16 @@ try {
 
   let queryStrs = [];
   pmovies.forEach((m) => {
-    let premiereYear = m.premiered.match(/\d\d\d\d$/);
+    // for movies
+    // let premiereYear = m.premiered.match(/\d\d\d\d$/);
+    // for tvshows
+    let premiereYear = m.premiere.match(/\d\d\d\d$/);
     let title = m.title.replace(/\(.*\)/g, '');
     let q = APIURL + title + YEAR + premiereYear[0] + APIKEY;
     queryStrs.push({ url: m.url, query: q });
   });
 
-  queryStrs = queryStrs.slice(9);
+  queryStrs = queryStrs.slice(0, 10);
 
   console.info(`there are ${queryStrs.length} to query the OMDB api`);
   var omdb = new OMDBParser(queryStrs, options);
@@ -45,7 +48,8 @@ try {
     console.info(`got image urls for ${results.length} out of ${queryStrs.length}`);
     // download posters
     var imageScraper = new ImageScraper(results);
-    let outputPath = path.resolve(__dirname, 'output', 'awardWinners', 'posters');
+    // let outputPath = path.resolve(__dirname, 'output', 'awardWinners', 'posters');
+    let outputPath = path.resolve(__dirname, 'output', 'posters');
 
     let delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     let delayTime = 2000;

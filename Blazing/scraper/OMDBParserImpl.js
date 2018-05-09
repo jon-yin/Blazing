@@ -10,7 +10,6 @@ const { OMDBParser } = require('./code/OMDBParser.js');
 
 try {
 
-
   let APIURL = 'http://www.omdbapi.com/?t=';
   let YEAR = '&y=';
   let APIKEY = '&apikey=cea2a16a';
@@ -23,12 +22,16 @@ try {
     }
   }
 
-  let pmovieFile = './output/parsedMovies/parsedMovies1950Up/pmovies19.json';
-  var pmovies = JSON.parse(fs.readFileSync(pmovieFile));
+  // let pmovieFile = './output/parsedMovies/parsedMovies1950Up/pmovies19.json';
+  // var pmovies = JSON.parse(fs.readFileSync(pmovieFile));
+  var pmovies = JSON.parse(fs.readFileSync(process.argv[2]));
 
   let queryStrs = [];
   pmovies.forEach((m) => {
-    let q = APIURL + m.title + YEAR + m.premiered.match(/\d\d\d\d$/) + APIKEY;
+    // for movies
+    // let q = APIURL + m.title + YEAR + m.premiered.match(/\d\d\d\d$/) + APIKEY;
+    // for tv shows
+    let q = APIURL + m.title + YEAR + m.premiere.match(/\d\d\d\d$/) + APIKEY;
     queryStrs.push({ url: m.url, query: q });
   });
 
